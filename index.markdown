@@ -7,7 +7,7 @@ title: Sirupsen and his codeabouts
 
 I'm a [tweeter](http://twitter.com/Sirupsen), [blogger](http://blog.sirupsen.com), <span class="red">rubyist</span>, <span class="simplicity">minimalist</span>, <span class="red">dane</span>, student and [developer](http://github.com/Sirupsen).
 
-I mostly do <span class="red">Ruby</span>, in which I hack together my own (and others) crazy ideas, some of these end up at [Github](http://github.com/Sirupsen).
+Primarily, I do <span class="red">Ruby</span>, in which I hack together my own (and others) crazy ideas, some of these end up at [Github](http://github.com/Sirupsen).
 
 I work at [The Hybrid Group](http://hybridgroup.com/) where I build amazing things with a bunch of awesome people. Some [open-source ones](http://github.com/hybridgroup), too!
 
