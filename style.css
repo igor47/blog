@@ -241,6 +241,10 @@ ul li ul li ul li {
 	color: #777;
 }
 
+.gray a {
+  color: #999;
+}
+
 #tweetmeme {
 	position: relative;
 	right: 0px;
