@@ -14,16 +14,17 @@ I also stumbled upon "Namebench":http://code.google.com/p/namebench/ in the proc
 
 h2. Fix two: IPV6
 
-Currently, the standard for IPs is IPV4 - the thing is, that there's always a limit towards to maximum number of IP-adresses available. We're nearing this limit rapidly with IPV4, and therefore IPV6 is set to replace the old IPV4. However, some providers doesn't support IPV6 yet, and Linux might attempt to use IPV6, conclude it fails, and then use IPV4 - each time it connects. This can be result in bad performance. Luckily, you can disable the IPV6 kernel module, which fixes this.
+Currently, the standard for IPs is IPV4 - the thing is, that there's always a limit towards to maximum number of IP-adresses available. We're nearing this limit rapidly with IPV4, and therefore IPV6 is set to replace the old IPV4. [1] However, some providers doesn't support IPV6 yet, and Linux might attempt to use IPV6, conclude it fails, and then use IPV4 - each time it connects. This can be result in bad performance. Luckily, you can disable the IPV6 kernel  module, which fixes this.
 
 h3. Fixing on Debian-based sytems
 
 I don't know for sure, if this is the routine on anything non-debian based. I know this is not the way to go on e.g. Arch Linux. Debian-based systems include Linux Mint and Ubuntu.
 
-bq. You should be able to disable IPv6 by adding %(fixed-width)ipv6.disable=1% to kernel boot parameters (editing Grub config in %(fixed-width)/boot/grub/menu.lstand% running %(fixed-width)sudo update-grub% as instructed for example here). [1]
+bq. You should be able to disable IPv6 by adding %(fixed-width)ipv6.disable=1% to kernel boot parameters (editing Grub config in %(fixed-width)/boot/grub/menu.lstand% running %(fixed-width)sudo update-grub% as instructed for example here). [2]
 
 h3. Other distros
 
 Again, use Google and you'll probably be geared towards a Wiki, or forum thread for your specific distro.
 
-fn1. "http://superuser.com/questions/67921/slow-website-loading-on-ubuntu-karmic":http://superuser.com/questions/67921/slow-website-loading-on-ubuntu-karmic
+fn2. "http://en.wikipedia.org/wiki/IPv6":http://en.wikipedia.org/wiki/IPv6
+fn2. "http://superuser.com/questions/67921/slow-website-loading-on-ubuntu-karmic":http://superuser.com/questions/67921/slow-website-loading-on-ubuntu-karmic
