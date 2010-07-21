@@ -26,5 +26,6 @@ h3. Other distros
 
 Again, use Google and you'll probably be geared towards a Wiki, or forum thread for your specific distro.
 
-fn2. "http://en.wikipedia.org/wiki/IPv6":http://en.wikipedia.org/wiki/IPv6
-fn2. "http://superuser.com/questions/67921/slow-website-loading-on-ubuntu-karmic":http://superuser.com/questions/67921/slow-website-loading-on-ubuntu-karmic
+fn1. "http://en.wikipedia.org/wiki/IPv6":http://en.wikipedia.org/wiki/IPv6
+
+fn2."http://superuser.com/questions/67921/slow-website-loading-on-ubuntu-karmic":http://superuser.com/questions/67921/slow-website-loading-on-ubuntu-karmic
