@@ -298,3 +298,9 @@ ul.posts li {
 strong {
   font-weight: bold;
 }
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #ddd;
+}

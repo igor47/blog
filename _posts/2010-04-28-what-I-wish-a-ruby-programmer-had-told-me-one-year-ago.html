@@ -21,17 +21,145 @@ title: What I wish a Ruby programmer had told me one year ago
 	<li>End-statements</li>
 	<li>Ruby had become popular due to Rails, not the other way around as it is with Django</li>
 </ul>
+
 <p>So a Saturday night, I turned off the light, locked the door and sealed the windows. It was time to check out this Japanese creation. The fanboys all over the web seemed to recommend this fabulous book called <a href="http://en.wikipedia.org/wiki/Why's_(poignant)_Guide_to_Ruby">Why's (poignant) guide to Ruby</a>. I installed Ruby, and dove into the book.</p>
 
 <p>A few hours later, I had forgotten everything about Python. Stupid language. Ruby was where it was at, and I instantly started recommending it to all my code-buddies. It's such an awesome language, why not spread the joy? They said I was a fanboy, and told me to gtfo. And I quickly realized what had happened.</p>
 <ul>
 	<li>Ruby is evil</li>
 </ul>
+
 <p>Ruby is indeed evil. So evil. Extremely evil. But why so evil? Because it's so <em>beautiful</em>. The syntax is so elegant, everything are objects. Everything makes sense. The Ruby-way of doing things is so sexy.</p>
 
 <p>I quickly headed over to #ruby and asked them what I should do to practise my all-so-awesome Ruby skills, and some guy recommended me coding a todo-app. It seemed it was the new semi-advanced-but-no-so-advanced hello world. So I did, and here's the extremely awesome output (be prepared, it's extremely bad code and you should <strong>NEVER</strong> do something like this in Ruby):</p>
 
-<p><script src="http://gist.github.com/255066.js"></script> Proudly I showed it to the guy who recommended me to create a Todo-app. "Look at this! Ruby is so narwhal!" It took him a while to reply. It would've taken me a while to reply too if somebody showed me such code. It looks like some Bash code, in an object oriented language. Woah.  So this guy, he was very helpful and told me he'd make a skeleton for the app. and make me fill in the holes/methods, it was something like this:  <script src="http://gist.github.com/382000.js"></script></p>
+{% highlight ruby %}
+class Todo
+  def initialize(*argv)
+    @argv = argv
+
+    begin
+      send(@argv[0])
+    rescue TypeError
+      list
+    rescue NoMethodError
+      puts "Command #{@argv[0]} not found.\n\n"
+      help
+    end
+  end
+
+  # Lists help information
+  def help
+    puts <<-help
+Commands for Todo.rb:
+   add [task name] - Add a new task
+   list - Lists all tasks
+   done [task id] - Complete a task
+   help - Prints out this information
+    help
+  end
+
+  # Add task
+  def add
+    unless @argv[1]
+      puts "Lacking argument [name]"
+      exit
+    end
+
+    # Append task to file
+    contents = File.read('todo.td')
+
+    File.open('todo.td', 'w') do |f|
+      todo = contents + @argv[1] + "\n"
+      f.write(todo)
+    end
+  end
+
+  # List all tasks
+  def list
+    # Read content
+    contents = File.read('todo.td')
+    puts "No tasks" unless contents
+
+    # Show it with ids
+    i = 0
+    contents.each_line do |todo|
+      i += 1
+      puts "##{i} - #{todo}"
+    end
+  end
+
+  # Finished a task
+  def done
+    unless @argv[1]
+      puts "Lacking argument [id]"
+      exit
+    end
+
+    # Put tasks into an array
+    todos = File.read('todo.td').split("\n")
+
+    unless todos
+      puts "No tasks"
+      exit
+    end
+
+    puts "Completed task: " + todos[@argv[1].to_i - 1]
+
+    # Delete task from array and make string
+    todos.delete_at(@argv[1].to_i - 1)
+    content = todos.join("\n")
+
+    # Update file
+    File.open('todo.td', 'w') do |f|
+      f.write(content)
+    end
+  end
+end
+
+todo = Todo.new(*ARGV)
+{% endhighlight %}
+
+<p>Proudly I showed it to the guy who recommended me to create a Todo-app. "Look at this! Ruby is so narwhal!" It took him a while to reply. It would've taken me a while to reply too if somebody showed me such code. It looks like some Bash code, in an object oriented language. Woah.  So this guy, he was very helpful and told me he'd make a skeleton for the app. and make me fill in the holes/methods, it was something like this:</p>
+
+{% highlight ruby %}
+class TodoList
+  def self.load(file)
+      # read the file, create a list, create items, add them
+  end
+
+  def initialize
+  end
+
+  def add(item)
+  end
+
+  def write(file)
+    # write the file, only write the undone items
+  end
+
+  def [](id)
+    @list[id]
+  end
+end
+
+class TodoItem
+# provide reader and setter for name and state
+
+  def initialize(name)
+    # store name
+    # set state to undone
+  end
+end
+
+# ---
+# the library will be used like this:
+# list = TodoList.load("todo.td")
+# list[0].done = true
+# list.add TodoItem.new("another cool item")
+# list.write("todo.td")
+#
+{% endhighlight %}
 
 <p>So I did. It took a while to adapt from the bad PHP-style, to the Ruby-style. I ended up with <a href="https://gist.github.com/6656de5cc00df7802c5e">this</a>. And then I added <a href="https://gist.github.com/94bc0e64442de04deb0b">an interface.</a> And then <a href="http://gist.github.com/255203">meta-programming.</a> And then I was in love.</p>
 
