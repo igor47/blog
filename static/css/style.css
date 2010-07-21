@@ -68,7 +68,14 @@ a:hover {
   cursor: pointer;
 }
 
-pre {
+blockquote {
+	margin: 1em 3em;
+	color: #999;
+	border-left: 2px solid #999;
+	padding-left: 1em; 
+}
+
+code {
   font-size: 90%;
   font-family: Monaco, Consolas, monospace;
   background-color: #F8F8F8;
@@ -279,6 +286,10 @@ ol li ol li ol li {
   clear: both;
 }
 
+.fixed-width {
+	font-family: Monaco, Consolas, monospace;
+	color: #000;
+}
 /* Specific */
 
 ul.posts li {
@@ -292,4 +303,28 @@ ul.posts li {
   width: 95px;
   display: block;
   float: left;
+}
+
+.footnote {
+	color: #999;
+	font-size: 10pt;
+	margin-left: 1em;
+}
+
+.footnote a {
+	padding-right: 2px;
+	color: #999;
+}
+
+.footnote a sup {
+	color: #06A;
+}
+
+p .footnote {
+	margin-left: 0;
+	font-size: 11pt;
+}
+
+p .footnote a {
+	color: #06A;
 }
