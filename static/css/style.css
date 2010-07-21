@@ -264,3 +264,9 @@ ul li ul li ul li {
 .clear {
   clear: both;
 }
+
+ul.posts li {
+  color: #999;
+  list-style-type: none;
+  margin-left: 0;
+}

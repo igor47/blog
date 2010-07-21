@@ -1,0 +1,12 @@
+---
+layout: post
+title: Test Post
+---
+
+Hello World
+
+{% highlight ruby %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
