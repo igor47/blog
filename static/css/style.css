@@ -173,6 +173,18 @@ ul li ul li ul li {
   margin-left: 30px;
 }
 
+ol li {
+  margin-left: 50px;
+}
+
+ol li ol li {
+  margin-left: 30px;
+}
+
+ol li ol li ol li {
+  margin-left: 30px;
+}
+
 /*
  * Menu
  */
@@ -269,4 +281,9 @@ ul.posts li {
   color: #999;
   list-style-type: none;
   margin-left: 0;
+}
+
+span .date {
+  width: 300px;
+  height: 200px;
 }

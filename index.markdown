@@ -15,7 +15,7 @@ I work at [The Hybrid Group](http://hybridgroup.com/) where I work with a bunch 
 
 <ul class="posts">
   {% for post in site.posts %}
-    <li>{{ post.date | date_to_string }} » <a href="{{ post.url }}">{{ post.title }}</a></li>
+    <li><span class="date">{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
 
