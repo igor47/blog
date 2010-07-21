@@ -249,6 +249,10 @@ ol li ol li ol li {
   color: #777;
 }
 
+.red {
+  color: #BE0027;
+}
+
 .footer {
 	color: #777;
 }
@@ -283,7 +287,8 @@ ul.posts li {
   margin-left: 0;
 }
 
-span .date {
-  width: 300px;
-  height: 200px;
+.date {
+  width: 95px;
+  display: block;
+  float: left;
 }
