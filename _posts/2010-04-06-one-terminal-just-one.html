@@ -1,0 +1,16 @@
+---
+layout: post
+title: One terminal, just one
+---
+
+Until not-so-long ago, I always had a million terminals open at the same time. I have this neat keyboard-shortcut (Alt-T) which opens a new terminal. That's nice and all, but the problem is, that I can't be arsed to alt-tab to my old terminals, leaving a million terminals open, making alt-tabbing between other applications a pain. And I rely quite a bit on Alt-tab, I don't have any task bar, since I'd rather just alt-tab between stuff than clicking on a task bar (which also takes up precious screen space).
+
+<!--more-->
+
+So yes, one day I realised I really had this problem. So I scaled it down, my goal was to: <em>Make a script that when launched, looks for terminals.</em> <em>If any terminal is found, this terminal should appear in front of all other windows, instead of launching a new terminal. If, however, no terminals are present, a new one should be launched. </em>That's when I realised: <strong>"How-the-bob am I going to do this?"</strong> - Google to the rescue, and I eventually scaled down each problem in the application, and found a neat little application called <strong>wmctrl </strong>which (apparently) handles Windows. And by looking a bit at this application, I came up with this script, which handles the problem nicely:
+
+<script src="http://gist.github.com/341179.js?file=launch-sakura"></script>
+
+Just change the variables to reflect your environment, it should be rather obvious what to change. So yeah, you just c/p this script to a <strong>whatever.sh </strong>file, and put it in your <strong>bin </strong>and launch your terminal via this script from now on. It's also in my <a href="http://github.com/Sirupsen/Kittybin">kittybin</a>, I might cover some of the other scripts from there in further blog posts. :)
+
+And there we go. <strong>Problem solved.</strong>

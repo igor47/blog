@@ -1,0 +1,37 @@
+---
+layout: post
+title: A simple Imgur Bash screenshot utilitu
+---
+
+I tend to use screenshots a lot when I do instant messaging, since they tend to help explaining things much better - and faster than raw text in many situations. It's very rare I need to actually edit the screenshot, and in these rare occasions, It doesn't bother me to fire up something like <a href="http://pinta-project.com/">Pinta</a> or <a href="http://www.gimp.org/">Gimp</a> - to make these small changes.
+
+<!--more-->
+
+Just scroll down to get right to the script.
+
+I just needed this functionality:
+<ol>
+	<li>Activate script</li>
+	<li>Select region</li>
+	<li>Put direct Imgur link to screenshot in clipboard</li>
+</ol>
+The part with selecting, is quite easy with scrot:
+<pre>scrot -s</pre>
+Does exactly this, uploading to Imgur via Bash is also quite simple:
+<pre>curl -s -F "image=@$1" -F "key=api-key" <a href="http://imgur.com/api/upload.xml">http://imgur.com/api/upload.xml</a></pre>
+This returns some XML, including the direct link to the image. I am by no means a ninja with regex, so my method of getting the direct link URL is quite possibly far from the most effective (please comment if you are aware of a better/faster method of adding this functionality)
+<pre>grep -E -o "&lt;original_image&gt;(.)*&lt;/original_image&gt;" | grep -E -o "<a href="http://i.imgur.com/[^">http://i.imgur.com/[^</a>&lt;]*"</pre>
+Putting it into the clipboard is quite easy with <strong>Xclip</strong>:
+<pre>xclip -selection c</pre>
+And then I wanted it to notify me whenever the upload was performed, and the direct link was in my clipboard, quite easy with <strong>libnotify</strong>:
+<pre>notify-send "Done"</pre>
+And this all ended with the following script (yes, I know it can be one line and everything, but this just seemed like a more elegant solution, also I am quite aware there's probably a much better way of doing this, if you can come up with a better solution - please put it in the comments!):
+<pre>function uploadImage {
+  curl -s -F "image=@$1" -F "key=486690f872c678126a2c09a9e196ce1b" <a href="http://imgur.com/api/upload.xml">http://imgur.com/api/upload.xml</a> | grep -E -o "&lt;original_image&gt;(.)*&lt;/original_image&gt;" | grep -E -o "<a href="http://i.imgur.com/[^">http://i.imgur.com/[^</a>&lt;]*"
+}
+scrot -s "shot.png"
+uploadImage "shot.png" | xclip -selection c &amp;&amp; rm "shot.png"
+notify-send "Done"</pre>
+Hope this script can be as useful for you, as it has been to me.
+
+You should follow me on twitter <a href="http://twitter.com/Sirupsen">here.</a>

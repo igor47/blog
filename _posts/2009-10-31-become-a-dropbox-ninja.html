@@ -1,0 +1,26 @@
+---
+layout: post
+title: Become a Dropbox ninja!
+---
+
+I've known Dropbox for very long. I found it nice that it provided the service it did, however - I like to have things automated, I didn't want to "Drop" my files there manually all the time. That was time consuming, and I would forget to do it - and then when I'd need that file somewhere else, I would be fucked since the chance my recent "Drop" was the latest update of that file, would be low.
+
+I wanted my Dropbox to sync everything automatically, I wanted to still have my files where they would originally be on my Desktop. On my Laptop, that didn't matter - since I only use it for browsing the web. On my Desktop, I have all my Photos, configuration files, and programming. I wanted to have these files available everywhere, anytime.
+
+<!--more-->
+
+The solution to this was simple, very simple. Apparently Dropbox understands symbolic links, under Linux (my desktop, and main computer) I'd just Download dropbox, and put it in my home folder, then start linking everything together, by creating symbolic links. I started with my Photos.
+
+<a href="https://www.getdropbox.com/static/images/tour_4.jpg"><img class="alignleft" title="Dropbox backup" src="https://www.getdropbox.com/static/images/tour_4.jpg" alt="" width="441" height="304" /></a>
+<pre>sirupsen@rawr:~$ ln -s Photos Dropbox/Photos</pre>
+Then all my local programming:
+<pre>sirupsen@rawr:~$ ln -s /var/www Dropbox/Programming</pre>
+Then my "Dumper" which is basically anything else than videos, photos, music and programming:
+<pre>sirupsen@rawr:~$ ln -s Dumper Dropbox/Dumper</pre>
+In my dumper I even did symbolic links to some of the configuration directories (i.e. Vim configuration, .bashrc etc)
+
+It started syncing, and the magic of Dropbox was a lot more tempting to me. I now have everything, in the newest version, available everywhere (iPhone, Laptop, Web), and it's securely backed up.
+
+If Dropbox seems tempting to you (now?), be sure to sign up at <a href="https://www.getdropbox.com/">Getdropbox.com!</a> If you'd like to help me, and yourself actually, you can signup via <a href="https://www.getdropbox.com/referrals/NTgzODk4OTk">my referral link</a> and get 250 mb extra to the 2gb which are default! (And give me the same extra, at a limit of 3 free gb)
+
+Also, Dropbox has <a href="http://wiki.getdropbox.com/">a great wiki</a> with <a href="http://wiki.getdropbox.com/DropboxAddons">various addons</a> and <a href="http://wiki.getdropbox.com/TipsAndTricks">tips &amp; tricks!</a>
