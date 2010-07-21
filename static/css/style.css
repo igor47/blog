@@ -98,7 +98,7 @@ pre {
 
 #container {
   margin: 40px auto;
-  width: 600px;
+  width: 550px;
 }
 
 /*
@@ -245,16 +245,17 @@ ol li ol li ol li {
   display: none;
 }
 
-.date {
-  color: #777;
+.post-date {
+  color: #999;
 }
 
 .red {
   color: #BE0027;
+  text-shadow: 2px 2px 2px #ddd;
 }
 
 .footer {
-	color: #777;
+	color: #999;
 }
 
 .gray a {
@@ -288,6 +289,7 @@ ul.posts li {
 }
 
 .date {
+  color: #999;
   width: 95px;
   display: block;
   float: left;
