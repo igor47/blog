@@ -294,3 +294,7 @@ ul.posts li {
   display: block;
   float: left;
 }
+
+strong {
+  font-weight: bold;
+}
