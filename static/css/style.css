@@ -78,13 +78,7 @@ blockquote {
 code {
   font-size: 90%;
   font-family: Monaco, Consolas, monospace;
-  background-color: #F8F8F8;
-  border: 1px solid #DDD;
-  color: #000;
-  display: block;
-  line-height: 150%;
-  overflow: auto;
-  padding: 1em;
+  text-shadow: 0px 2px 2px #ddd;
 }
 
 pre {
