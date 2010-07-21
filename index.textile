@@ -1,0 +1,30 @@
+---
+layout: default
+title: Sirupsen and his codeabouts
+---
+
+h1. Hello World
+
+I'm a "tweeter":twitter, "blogger":blog, %(red)rubyist%, %(gray)minimalist%, %(red)dane%, student and "developer":github.
+
+Primarily, I do %(red)Ruby%, in which I hack together my own (and others) crazy ideas, some of these end up at "Github":github.
+
+I work at "The Hybrid Group":hybrid where I build amazing things with a bunch of awesome people. Some "open-source things":hybrid-github, too!
+
+h2. Blog Posts
+
+<ul class="posts">
+  {% for post in site.posts %}
+    <li>%(date){{ post.date | date_to_string }}% %(red)»% "{{ post.title }}":{{ post.url }}</li>
+  {% endfor %}
+</ul>
+
+p(gray). Reach me at "sirup@sirupsen.dk":mail
+
+<a href="http://github.com/Sirupsen"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+
+[twitter]http://twitter.com/Sirupsen/
+[blog]http://blog.sirupsen.com/
+[github]http://github.com/Sirupsen
+[hybrid]http://hybridgroup.com
+[hybrid-github]http://github.com/HybridGroup
