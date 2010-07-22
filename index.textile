@@ -15,7 +15,7 @@ h2. Blog Posts
 
 <ul class="posts">
   {% for post in site.posts %}
-    <li>%(date){{ post.date | date_to_string }}% %(red)»% "{{ post.title }}":{{ post.url }}</li>
+    <li class="clicky" onclick="location.href='{{ post.url }}'">%(date){{ post.date | date_to_string }}% %(red)»% "{{ post.title }}":{{ post.url }}</li>
   {% endfor %}
 </ul>
 

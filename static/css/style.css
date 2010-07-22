@@ -342,3 +342,8 @@ p.footnote {
 	margin-top: 0;
 	margin-bottom: 0;
 }
+
+.clicky:hover {
+  background: #f7f7f7;
+  cursor: pointer;
+}
