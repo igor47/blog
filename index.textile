@@ -19,18 +19,6 @@ h2. Blog Posts
   {% endfor %}
 </ul>
 
-<div id="footer">
-  <div class="contact">
-    Sirupsen
-    "sirup@sirupsen.com":mail
-  </div>
-
-  <div class="contact">
-    "http://github.com/Sirupsen":github
-    "http://twitter.com/Sirupsen":twitter
-  </div>
-</div>
-
 [twitter]http://twitter.com/Sirupsen/
 [github]http://github.com/Sirupsen
 [hybrid]http://hybridgroup.com
