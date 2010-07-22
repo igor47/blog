@@ -347,3 +347,16 @@ p.footnote {
   background: #f7f7f7;
   cursor: pointer;
 }
+
+#footer {
+  border-top: 3px solid #ccc;
+  padding-top: 5px;
+  font-size: 80%;
+  opacity: 0.6;
+}
+
+.contact {
+  width: 150px;
+  float: left;
+  font-size: 10pt;
+}

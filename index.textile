@@ -19,9 +19,17 @@ h2. Blog Posts
   {% endfor %}
 </ul>
 
-p(gray). Reach me at "sirup@sirupsen.com":mail
+<div id="footer">
+  <div class="contact">
+    Sirupsen
+    "sirup@sirupsen.com":mail
+  </div>
 
-<a href="http://github.com/Sirupsen"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+  <div class="contact">
+    "http://github.com/Sirupsen":github
+    "http://twitter.com/Sirupsen":twitter
+  </div>
+</div>
 
 [twitter]http://twitter.com/Sirupsen/
 [github]http://github.com/Sirupsen
