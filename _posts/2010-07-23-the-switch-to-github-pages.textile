@@ -31,7 +31,7 @@ bq. Jekyll is a blog-aware, static site generator in Ruby[3]
 By formatting your blog posts in either "Markdown":markdown, "Textile":textile or HTML, you could use "Liquid":liquid to format your pages. Resulting in the perfect environment for any hackers website. I'm using this right now, to write this post. Having a Textile file, editing it with Vim. Whenever I want to deploy a new post, or change something -- I just push it to my site repository.
 
 The best thing about Github Pages is, that it has allowed me to cancel my Linode, and I can also redirect my domain here. Furthermore, my blog should be able to handle Social Media attacks just fine now. And all this is for free.  
-If you can see yourself in some of this, I advice you to try out Github Pages -- it's been a great experience for me this far.
+If you can see yourself in some of this, I advice you to try out "Github Pages":github_pages -- it's been a great experience for me this far.
 
 My entire site is open source, "hosted at Github":sirupsen.github.com -- of course. Perhaps it could help you get started!
 
