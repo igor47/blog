@@ -329,6 +329,7 @@ p .footnote {
 
 p .footnote a {
 	color: #06A;
+  padding-left: 5px;
 }
 
 p.footnote {
