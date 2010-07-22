@@ -11,7 +11,7 @@ I looked around for a "low end box":lowendbox, since I didn't need much power. W
 
 I ended up buying a "Fivebean":bluemile (they are now called "bluemile":bluemile) node with 256 mb. of ram, and 512 mb. burst. This should do good, and would only be $16/month, which seemed fair. The first month, I used it *a lot* -- I had never had a server before, so I learned a great deal on this node. I set it up with "Arch Linux":arch -- following the philosophy:
 
-bq. For a personal Linux server, it doesn't matter too much which distro. you are using. As long as you feel confident with it.[1]
+bq. For a personal Linux server, use the distro you feel the most comfortable with.[1]
 
 As I've had previous "experience with Arch Linux":arch_post, I decided to go for it on the server-side too, even though Arch tends to be "bleeding edge":arch_bleeding -- it worked out just fine. I set the web server up with "Nginx":nginx which I had heard great things about, mostly it was to try something else than "Apache":apache. I also set up "Passenger":passenger for Ruby/Rack deployment. I even documented this process on the "Arch Linux wiki":rack_arch_deployment.
 
