@@ -11,19 +11,19 @@ I wanted Dropbox to sync everything automatically across all my machine, I wante
 The solution to this was simple, very simple because of symbolic links, under Linux (my desktop, and main computer) I'd just download Dropbox, and place the special folder in my %(fixed)~%, then start throwing symbolic links in. First of, my photos.
 
 {% highlight bash %}
-sirupsen@rawr:~$ ln -s Photos Dropbox/Photos
+$ ln -s Photos Dropbox/Photos
 {% endhighlight %}
 
 Then all my local code:
 
 {% highlight bash %}
-sirupsen@rawr:~$ ln -s /var/www Dropbox/Programming
+$ ln -s /var/www Dropbox/Programming
 {% endhighlight %}
 
 Then my %(fixed)Dumper% which is basically anything else than videos, photos, music and programming:
 
 {% highlight bash %}
-sirupsen@rawr:~$ ln -s Dumper Dropbox/Dumper
+$ ln -s Dumper Dropbox/Dumper
 {% endhighlight %}
 
 In my dumper I even did symbolic links to some of the configuration directories (e.g. %(fixed)Vim% configuration, %(fixed).bashrc% etc.)
