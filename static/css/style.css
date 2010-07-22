@@ -355,6 +355,10 @@ p.footnote {
   opacity: 0.6;
 }
 
+#footer a {
+  text-shadow: 0;
+}
+
 .contact {
   width: 150px;
   float: left;
