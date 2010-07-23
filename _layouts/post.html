@@ -4,18 +4,29 @@ blog: true
 ---
 
 <h1>{{ page.title }}</h1>
-<p class="gray clicky" onclick="location.href='/'">
-	<a href="/" title="Back">&#x21A9;</a> 
-	{{ page.date | date_to_string }}
+<div class="gray">
+  <div class="left">
+    <a href="/" title="Back" class="back">&#x21A9;</a> 
+    {{ page.date | date_to_string }}
 
-	{% if page.updated %}
-		updated
-		{{ page.updated }}
-	{% endif %}
-</p>
+    {% if page.updated %}
+      last updated
+      {{ page.updated }}
+    {% endif %}
+  </div>
+    
+  <div class="right">
+    <a href="http://twitter.com/?status={{ page.title }}%20http://sirupsen.com{{ page.url }}%20(via%20@Sirupsen)">Tweet this</a>
+  </div>
+</div>
 
+<div class="clear"></div>
+
+<!--
 <div id="tweetmeme">
   <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
 </div>
+-->
 
 {{ content }}
+

@@ -281,7 +281,10 @@ ol li ol li ol li {
 }
 .right {
   float:right;
-  width:50%;
+}
+
+.back {
+  font-size: 16pt;
 }
 
 .clear {
