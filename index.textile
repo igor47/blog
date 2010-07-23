@@ -5,9 +5,9 @@ title: Sirupsen and his codeabouts
 
 h1. Hello World
 
-I'm a "tweeter":twitter, blogger, %(red)rubyist%, %(gray)minimalist%, %(red)dane%, student and "developer":github.
+I'm a "tweeter":twitter, blogger, minimalist, rubyist, "developer":github, student and dane.
 
-Primarily, I do %(red)Ruby%, in which I hack together my own (and others) crazy ideas, some of these end up at "Github":github.
+Primarily, I do Ruby, in which I hack together my own (and others) crazy ideas, some of these end up at "Github":github.
 
 I work at "The Hybrid Group":hybrid where I build amazing things with a bunch of awesome people. Some "open-source things":hybrid-github, too!
 
@@ -15,7 +15,7 @@ h2. Blog Posts
 
 <ul class="posts">
   {% for post in site.posts %}
-    <li class="clicky" onclick="location.href='{{ post.url }}'">%(date){{ post.date | date_to_string }}% %(red)»% "{{ post.title }}":{{ post.url }}</li>
+    <li class="clicky" onclick="location.href='{{ post.url }}'">%(date){{ post.date | date_to_string }}% %(text)»% "{{ post.title }}":{{ post.url }}</li>
   {% endfor %}
 </ul>
 
