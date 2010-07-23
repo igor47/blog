@@ -48,7 +48,7 @@ Before you start on the next step, please register at<a href="http://github.com/
 	<li>Provide this SSH-key to Git</li>
 	<li>Introduce ourselves to Git!</li>
 </ul>
-<p>There is no reason for me to reinvent the wheel, Github has already done this. First, read their guide about <a href="http://github.com/guides/providing-your-ssh-key">Providing your SSH Key</a>, then go ahread and <a href="http://github.com/guides/tell-git-your-user-name-and-email-address">Tell git your user name and email address</a>.</p>
+<p>There is no reason for me to reinvent the wheel, Github has already done this. First, read their guide about <a href="http://github.com/guides/providing-your-ssh-key">Providing your SSH Key</a>, then go ahead and <a href="http://github.com/guides/tell-git-your-user-name-and-email-address">Tell git your user name and email address</a>.</p>
 
 <a href="http://github.com/repositories/new"><img class="size-medium wp-image-34 alignleft" style="padding-left: 5px;" title="Create a new Project" src="http://img197.imageshack.us/img197/2483/275300x159.png" alt="The dialog to create a new project" width="300" height="159" /></a>
 
@@ -83,7 +83,7 @@ Before you start on the next step, please register at<a href="http://github.com/
 <p>Now, let's make a change to this file, by writing something to it:</p>
 <pre> echo "Hello, is this on Github?!" &gt; README</pre>
 
-<p>Now, we need to commit. Commiting is a small message of what you just did (we'll cover more about that later):</p>
+<p>Now, we need to commit. Committing is a small message of what you just did (we'll cover more about that later):</p>
 <pre> git commit -m 'Initial upload'</pre>
 <img class="size-medium wp-image-38 alignleft" style="padding-left: 5px;" title="README File" src="http://img197.imageshack.us/img197/8923/277300x170.png" alt="README file on Github" width="300" height="170" />
 
@@ -109,7 +109,7 @@ And finally, let's push it to Github.
 <h2>Pulling changes from the origin</h2>
 <a href="http://blog.kirth.be/wp-content/uploads/2009/09/279.png"><img class="alignright" style="padding-left: 5px; border: 0px initial initial;" title="Edit File on Github" src="http://img195.imageshack.us/img195/8963/279300x126.png" alt="Click Edit to edit the file" width="300" height="126" /></a>
 
-<p>But, what if I change something online. And would like to apply thiese updates on my local copy of the repository? That's what we're going to do now. First, let's go to our Github repository. Click on the file you'd like to edit (you'll probably only have your README file currently). When your viewing the file, you can chose edit to edit it.</p>
+<p>But, what if I change something online. And would like to apply these updates on my local copy of the repository? That's what we're going to do now. First, let's go to our Github repository. Click on the file you'd like to edit (you'll probably only have your README file currently). When your viewing the file, you can chose edit to edit it.</p>
 
 <p>Now you can edit your file. Make a few changes - create a small commit message, then hit commit.</p>
 
@@ -135,7 +135,7 @@ And finally, let's push it to Github.
 <h2>Deleting files from your repository</h2>
 <p>Sometimes you may need to delete files permanently from your Git repository. The command for this is almost the same as the basic delete command ("rm"), we just need to have git in front of it. This command will both remove the file form your harddrive, as well as remove it from the git repository.</p>
 
-<p>For instance, I've added a file called "INSTALL". But I ended up just adding this text to the README file. I already added the content of the INSTALL file to the README file, and commited these changes - but now I want to delete the INSTALL file, as it serves no purpose anymore.</p>
+<p>For instance, I've added a file called "INSTALL". But I ended up just adding this text to the README file. I already added the content of the INSTALL file to the README file, and committed these changes - but now I want to delete the INSTALL file, as it serves no purpose anymore.</p>
 
 <p>To delete the file, we type:</p>
 <pre> git rm INSTALL</pre>
@@ -163,7 +163,7 @@ And finally, let's push it to Github.
 <pre> git commit -m 'Added function to calculate average'</pre>
 You can do:
 <pre> git commit -a -m 'Added function to calculate average'</pre>
-<p>It automaticly picks up the changed file(s), and then commits them. Cool, right?</p>
+<p>It automatically picks up the changed file(s), and then commits them. Cool, right?</p>
 
 <h2>Workflow</h2>
 <p>Now you know all the basic commands of git, and you know how to work with Github. Let's take a quick look at an example of how our workflow could be like now:</p>

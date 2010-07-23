@@ -16,7 +16,7 @@ h2. Fix two: IPV6
 
 Currently, the standard for IPs is IPV4 - the thing is, that there's always a limit towards to maximum number of IP-adresses available. We're nearing this limit rapidly with IPV4, and therefore IPV6 is set to replace the old IPV4. [1] However, some providers doesn't support IPV6 yet, and Linux might attempt to use IPV6, conclude it fails, and then use IPV4 - each time it connects. This can be result in bad performance. Luckily, you can disable the IPV6 kernel  module, which fixes this.
 
-h3. Fixing on Debian-based sytems
+h3. Fixing on Debian-based systems
 
 I don't know for sure, if this is the routine on anything non-debian based. I know this is not the way to go on e.g. Arch Linux. Debian-based systems include Linux Mint and Ubuntu.
 
