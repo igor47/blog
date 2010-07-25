@@ -33,6 +33,8 @@ By formatting your blog posts in either "Markdown":markdown, "Textile":textile o
 The best thing about Github Pages is, that it has allowed me to cancel my Linode, and I can also redirect my domain here. Furthermore, my blog should be able to handle Social Media attacks just fine now. And all this is for free.  
 If you can see yourself in some of this, I advice you to try out "Github Pages":github_pages -- it's been a great experience for me this far.
 
+If you want to run a blog, and are already using another blog system, like Wordpress, Jekyll has some built in code for "converting your blog posts for Jekyll":blog_migrations!
+
 My entire site is open source, "hosted at Github":sirupsen.github.com -- of course. Perhaps it could help you get started!
 
 
@@ -55,6 +57,7 @@ My entire site is open source, "hosted at Github":sirupsen.github.com -- of cour
 [arch_post]/2010/04/06/my-experience-with-arch-linux.html
 [arch_bleeding]http://wiki.archlinux.org/index.php/Arch_Compared_to_Other_Distributions#Slackware 
 [apache]http://apache.org
+[blog_migrations]http://wiki.github.com/mojombo/jekyll/blog-migrations
 
 fn1. Own wisdom
 
