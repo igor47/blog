@@ -53,8 +53,8 @@ My entire site is open source, "hosted at Github":sirupsen.github.com -- of cour
 [textile]http://en.wikipedia.org/wiki/Textile_(markup_language)
 [liquid]http://www.liquidmarkup.org/
 [sirupsen.github.com]http://github.com/sirupsen/sirupsen.github.com
-[what_i_wish]/2010/04/28/what-I-wish-a-ruby-programmer-had-told-me-one-year-ago.html
-[arch_post]/2010/04/06/my-experience-with-arch-linux.html
+[what_i_wish]/what-I-wish-a-ruby-programmer-had-told-me-one-year-ago.html
+[arch_post]/my-experience-with-arch-linux.html
 [arch_bleeding]http://wiki.archlinux.org/index.php/Arch_Compared_to_Other_Distributions#Slackware 
 [apache]http://apache.org
 [blog_migrations]http://wiki.github.com/mojombo/jekyll/blog-migrations
