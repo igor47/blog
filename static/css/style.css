@@ -11,7 +11,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #333;
   text-shadow: 0px 3px 3px #ddd;
   font-family: "Trebuchet MS", "Tahoma","Helvetica","Arial",sans-serif;
   letter-spacing: 0px;
@@ -24,7 +23,6 @@ h1 {
   font-size: 220%;
   margin: 0.3em 0 .3em 0;
   line-height: 1.25em;
-  font-weight: bold;
 }
 
 h1 a {
@@ -37,7 +35,6 @@ h2 {
   font-size: 160%;
   margin: .75em 0 .5em 0;
   line-height: 1.25em;
-  font-weight: bold;
 }
 
 h3 {
@@ -101,7 +98,7 @@ pre {
 }
 
 #container {
-  margin: 40px auto;
+  margin: 80px auto;
   width: 550px;
 }
 
@@ -111,7 +108,7 @@ strong {
 
 hr {
   border: 0;
-  height: 1px;
+  height: 3px;
   background-color: #ddd;
 }
 
