@@ -300,8 +300,12 @@ p.footnote {
 	margin-bottom: 0;
 }
 
+.clicky {
+  padding-left: 15px;
+}
+
 .clicky:hover {
-  background: #f7f7f7;
+  background: #eee;
   cursor: pointer;
 }
 
@@ -333,7 +337,6 @@ p.footnote {
 #container {
   float: left;
   border-left: 2px solid #eee;
-  padding-left: 15px;
   width: 60%;
 }
 
