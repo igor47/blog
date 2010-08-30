@@ -323,11 +323,13 @@ p.footnote {
 
 #contact {
   float: left;
-  width: 240px;
+  width: 200px;
+  margin-left: 50px;
 }
 
 #contact li {
   list-style-type: none;
+  margin-left: 0;
 }
 
 #contact ul {
