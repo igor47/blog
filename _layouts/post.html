@@ -3,31 +3,31 @@ layout: default
 blog: true
 ---
 
-<h1>{{ page.title }}</h1>
-<div class="gray">
-  <div class="left">
-    {{ page.date | date_to_string }}
+<div id="post">
+  <h1>{{ page.title }}</h1>
+  <div class="gray">
+    <div class="left">
+      {{ page.date | date_to_string }}
 
-    {% if page.updated %}
+      {% if page.updated %}
       updated
       {{ page.updated }}
-    {% endif %}
+      {% endif %}
+    </div>
+
+    <div class="right">
+      <a href="http://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }}" data-count="none" data-via="Sirupsen">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    </div>
   </div>
-    
-  <div class="right">
-    <a href="http://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }}" data-count="none" data-via="Sirupsen">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+  <div class="clear"></div>
+
+  <!--
+  <div id="tweetmeme">
+    <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
   </div>
-</div>
+  -->
 
-<div class="clear"></div>
-
-<!--
-<div id="tweetmeme">
-  <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
-</div>
--->
-
-<div id="post">
   {{ content }}
 
   <div class="sticker">
