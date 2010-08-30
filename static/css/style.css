@@ -3,7 +3,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 body {
   background: #fff;
   /*font-family: Helvetica, Arial, Verdana, sans-serif;*/
-  font: 1em/1.5em "Minion Pro", Georgia, serif;
+  font-family: Georgia, serif;
   font-size: 16px;
   line-height: 24px;
   background: #fff;
