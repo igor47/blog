@@ -349,3 +349,7 @@ p.footnote {
   font-size: 20pt;
   line-height: 26pt;
 }
+
+#post {
+  margin-left: 15px;
+}
