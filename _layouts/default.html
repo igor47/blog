@@ -11,20 +11,22 @@
     <link href='/static/css/syntax.css' rel='stylesheet' /> 
   </head> 
   <body> 
-    <div id='container'> 
-      {{ content }}
+    <div id="wrapper">
+      <div id="contact">
+        <ul id="essentials">
+          <li id="name"><a href="/">Sirupsen</a></lI>
+          <li>Simon Hørup Eskildsen</li>
+          <li><a href="mailto:sirup@sirupsen.com">sirup@sirupsen.com</a></li>
+        </ul>
 
-      <div id="footer">
-        <div class="contact">
-          Sirupsen<br/>
-          Simon Hørup Eskildsen
-          <a href="mailto:sirup@sirupsen.com">sirup@sirupsen.com</a>
-        </div>
+        <ul id="links">
+          <li><a href="http://twitter.com/Sirupsen">Twitter</a></li>
+          <li><a href="http://github.com/Sirupsen">Github</a></li>
+        </ul>
+      </div>
 
-        <div class="contact">
-          <a href="http://twitter.com/Sirupsen">Twitter</a><br/>
-          <a href="http://github.com/Sirupsen">Github</a>
-        </div>
+      <div id='container'> 
+        {{ content }}
       </div>
     </div>
 

@@ -11,17 +11,13 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  text-shadow: 0px 3px 3px #ddd;
-  font-family: "Trebuchet MS", "Tahoma","Helvetica","Arial",sans-serif;
-  letter-spacing: 0px;
-  word-spacing: 0px;
+  /*font-family: "Trebuchet MS", "Tahoma","Helvetica","Arial",sans-serif;*/
   font-weight: normal;
   line-height:1.1em;
 }
 
 h1 {
   font-size: 220%;
-  margin: 0.3em 0 .3em 0;
   line-height: 1.25em;
 }
 
@@ -95,11 +91,6 @@ pre {
   line-height: 150%;
   overflow: auto;
   padding: 1em;
-}
-
-#container {
-  margin: 50px auto;
-  width: 550px;
 }
 
 strong {
@@ -197,32 +188,6 @@ ol li ol li ol li {
 }
 
 /*
- * Menu
- */
-
-#menu {
-  margin-bottom: 10px;
-  overflow: hidden;
-}
-
-#menu ul li {
-  float: left;
-  list-style-type: none;
-  margin-left: 0;
-  width: 25%;
-}
-
-/*
- * Footer
- *
- */
-
-#footer {
-  margin-top: 20px;
-}
-
-
-/*
  * Pretty colors
  *
  */
@@ -308,9 +273,7 @@ ul.posts li {
 
 .date {
   color: #999;
-  width: 95px;
-  display: block;
-  float: left;
+  float: right;
 }
 
 .footnote {
@@ -349,23 +312,6 @@ p.footnote {
   cursor: pointer;
 }
 
-#footer {
-  border-top: 3px solid #ccc;
-  padding-top: 5px;
-  font-size: 80%;
-  opacity: 0.6;
-  padding-bottom: 50px;
-}
-
-#footer a {
-  text-shadow: 0;
-}
-
-.contact {
-  width: 180px;
-  float: left;
-}
-
 .text {
   color: #444;
 }
@@ -376,4 +322,35 @@ p.footnote {
   margin: 10px 0 10px 0;
   border-radius: 4px;
   box-shadow: 10px 10px 5px #ddd;
+  margin-bottom: 50px;
+}
+
+#contact {
+  float: left;
+  width: 240px;
+}
+
+#contact li {
+  list-style-type: none;
+}
+
+#contact ul {
+  margin-bottom: 10px;
+}
+
+#container {
+  float: left;
+  border-left: 2px solid #eee;
+  padding-left: 15px;
+  width: 60%;
+}
+
+#wrapper {
+  margin-top: 50px;
+  margin-left: 0;
+}
+
+#name {
+  font-size: 20pt;
+  line-height: 26pt;
 }
