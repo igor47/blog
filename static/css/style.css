@@ -98,7 +98,7 @@ pre {
 }
 
 #container {
-  margin: 80px auto;
+  margin: 50px auto;
   width: 550px;
 }
 
@@ -362,11 +362,18 @@ p.footnote {
 }
 
 .contact {
-  width: 150px;
+  width: 180px;
   float: left;
-  font-size: 10pt;
 }
 
 .text {
   color: #444;
+}
+
+.sticker {
+  background-color: #eee;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  border-radius: 4px;
+  box-shadow: 10px 10px 5px #ddd;
 }

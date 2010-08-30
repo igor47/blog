@@ -3,20 +3,8 @@ layout: default
 title: Sirupsen and his codeabouts
 ---
 
-"Tweeter":twitter, blogger, minimalist, rubyist, "developer":github, student and dane.
-
-Primarily, I do Ruby, in which I hack together my own (and others) crazy ideas, some of these end up at "Github":github.
-
 <ul class="posts">
   {% for post in site.posts %}
     <li class="clicky" onclick="location.href='{{ post.url }}'">%(date){{ post.date | date_to_string }}% %(text)»% "{{ post.title }}":{{ post.url }}</li>
   {% endfor %}
 </ul>
-
-<!-- Begin Olark Chat <script type="text/javascript">(function(){document.write(unescape('%3Cscript src=%27' + (document.location.protocol == 'https:' ? "https:" : "http:") + '//static.olark.com/js/wc.js%27 type=%27text/javascript%27%3E%3C/script%3E'));})();</script><div id="olark-data"><a class="olark-key" id="olark-1272-193-10-6413" title="Powered by Olark" href="http://olark.com/about" rel="nofollow">Powered by Olark</a></div> <script type="text/javascript"> wc_init();</script> End Olark Chat -->
-
-[twitter]http://twitter.com/Sirupsen/
-[github]http://github.com/Sirupsen
-[hybrid]http://hybridgroup.com
-[hybrid-github]http://github.com/HybridGroup
-[mail]mailto:sirup@sirupsen.com
