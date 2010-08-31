@@ -1,7 +1,10 @@
+{% assign description = "I'm a developer, and minimalist. I usually build stuff using Ruby." %}
+
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml' xml:lang="en" lang="en-us"> 
   <head> 
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type' /> 
+    <meta name="Description" content="{{ description }}">
     <title>{{ page.title }}</title> 
 
    	<link href="http://feeds.feedburner.com/Sirupsen" rel="alternate" title="Sirupsen" type="application/atom+xml" />
@@ -19,7 +22,7 @@
           <li><a href="mailto:sirup@sirupsen.com">sirup@sirupsen.com</a></li>
         </ul>
 
-        <p>I'm a developer, and minimalist. I usually build stuff using Ruby.</p>
+        <p>{{ description }}</p>
 
         <ul id="links">
           <li><a href="http://twitter.com/Sirupsen">Twitter</a></li>
