@@ -70,7 +70,7 @@ blockquote {
 	margin: 1em 3em;
 	color: #999;
   font-style: italic;
-	border-left: 2px solid #DDD;
+	border-left: 2px solid #EEE;
 	padding-left: 1em; 
 }
 
@@ -82,7 +82,7 @@ code {
 pre {
   font-size: 90%;
   background-color: #F8F8F8;
-  border: 1px solid #DDD;
+  border: 1px solid #EEE;
   color: #000;
   display: block;
   line-height: 150%;
@@ -294,7 +294,7 @@ p.footnote {
 }
 
 .clicky:hover {
-  background: #DDD;
+  background: #EEE;
   cursor: pointer;
 }
 
@@ -303,7 +303,7 @@ p.footnote {
 }
 
 .sticker {
-  border: 1px solid #DDD;
+  border: 1px solid #EEE;
   background-color: #F8F8F8;
   padding: 1em;
   margin: 15px 0 15px 0;
@@ -327,7 +327,7 @@ p.footnote {
 
 #container {
   float: left;
-  border-left: 2px solid #DDD;
+  border-left: 2px solid #EEE;
   width: 600px;
 }
 
