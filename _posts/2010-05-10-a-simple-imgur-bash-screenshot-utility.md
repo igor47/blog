@@ -7,13 +7,15 @@ I use screenshots a lot, every day. Mostly when I do instant messaging, they can
 
 ## Installation
 
-`shoot` depends on:
+`shoot`'s dependencies are: 
 
 * `curl`
 * `grep`
 * `scrot` 
 * `xclip`
 * `libnotify` (*optional*)
+
+You probably have those already, if not, install them via your package manager.
 
 {% highlight bash %}
 curl http://sirupsen.com/static/misc/shoot > ~/bin/shoot && chmod 755 ~/bin/shoot
