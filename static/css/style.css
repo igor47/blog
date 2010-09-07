@@ -94,6 +94,10 @@ strong {
   font-weight: bold;
 }
 
+em {
+  font-style: italic;
+}
+
 hr {
   border: 0;
   height: 3px;
