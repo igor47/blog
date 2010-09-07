@@ -14,19 +14,27 @@ I've always run Ruby, and I've always used RVM. But it's not until recently I re
 
 I figured I'd take the change to clean my system; I'd remove all my old gems. I found this nifty command, [via Google](http://geekystuff.net/2009/1/14/remove-all-ruby-gems):
 
-    $ gem list | cut -d" " -f1 | xargs gem uninstall -aIx
+{% highlight bash %}
+$ gem list | cut -d" " -f1 | xargs gem uninstall -aIx
+{% endhighlight %}
 
 Before running this though, for safety, I wanted a file that contained all my old gems, from which I could install everything, just for some safety, this is easy with RVM (if you don't have RVM installed, install it first via Step 1, and then come back):
 
-    $ rvm gemset export backup.gems
+{% highlight bash %}
+$ rvm gemset export backup.gems
+{% endhighlight %}
 
 I ended out with [*quite of a file*](http://gist.github.com/568262). If you want to install all these gems again (and no, I personally don't, just look at that file!), you could just run:
 
-    $ rvm gemset import backup.gems
+{% highlight bash %}
+$ rvm gemset import backup.gems
+{% endhighlight %}
 
 And now.. to run the command discussed in the first place!
 
-    $ gem list | cut -d" " -f1 | xargs gem uninstall -aIx
+{% highlight bash %}
+$ gem list | cut -d" " -f1 | xargs gem uninstall -aIx
+{% endhighlight %}
 
 So now, everything should be gone--and we have a clear install; exciting! We can verify it by issuing `gem list`.
 
@@ -34,20 +42,28 @@ So now, everything should be gone--and we have a clear install; exciting! We can
 
 If you don't already have RVM installed, you should do it now. It's fairly simple to install:
 
-    $ bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
+{% highlight bash %}
+$ bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
+{% endhighlight %}
 
 And then add what it says to `.bashrc`, `.bash_profile` or whatever you use.
 
-    $ echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> .bashrc
+{% highlight bash %}
+$ echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> .bashrc
+{% endhighlight %}
 
 Then you should be up and running! Verify it:
 
-    $ type rvm | head -n1
-    rvm is a function
+{% highlight bash %}
+$ type rvm | head -n1
+rvm is a function
+{% endhighlight %}
 
 Check your system notes, also verify `RVM` is working:
 
-    $ rvm notes
+{% highlight bash %}
+$ rvm notes
+{% endhighlight %}
 
 ## Step 2: Installing Rubies
 
@@ -55,26 +71,36 @@ Rubies are essentially Ruby versions, let's go ahead and get `Ruby 1.9.2` first,
 
 Installing `1.9.2` is very easy, it's simply a matter of issuing:
 
-    $ rvm install 1.9.2
+{% highlight bash %}
+$ rvm install 1.9.2
+{% endhighlight %}
 
 It can take a while, since it downloads the source, and compiles it all. Let's switch to it, and then verify it all works!
 
-    $ rvm 1.9.2
-    $ ruby -v
-    ruby 1.9.2p0 (2010-08-18 revision 29036) [i686-linux]
+{% highlight bash %}
+$ rvm 1.9.2
+$ ruby -v
+ruby 1.9.2p0 (2010-08-18 revision 29036) [i686-linux]
+{% endhighlight %}
 
 Great!  
 We want `1.9.2` to be our default interpreter:
     
-    $ rvm --default 1.9.2
+{% highlight bash %}
+$ rvm --default 1.9.2
+{% endhighlight %}
 
 Restart your shell, and run `ruby -v` to verify it's all working. Let's install `1.8.6` along with `1.9.2`:
 
-    $ rvm install 1.8.6
+{% highlight bash %}
+$ rvm install 1.8.6
+{% endhighlight %}
 
 And then we can switch to it, like we switched to `1.9.2` before:
 
-    $ rvm 1.9.2
+{% highlight bash %}
+$ rvm 1.9.2
+{% endhighlight %}
 
 (Which is a shortcut for `rvm use 1.9.2`). Now you should be up and running fine with RVM!
 
@@ -88,64 +114,74 @@ So what are gemsets? The shortest explanation, is found within the name. Gem-set
 
 So then let's create one of those fancy gemsets:
 
-    $ rvm gemset create foo
-    'foo' gemset created (/home/sirup/.rvm/gems/ruby-1.9.2-p0@foo).
+{% highlight bash %}
+$ rvm gemset create foo
+'foo' gemset created (/home/sirup/.rvm/gems/ruby-1.9.2-p0@foo).
 
-    $ rvm 1.9.2@foo
-    $ gem list
-    *** LOCAL GEMS ***
+$ rvm 1.9.2@foo
+$ gem list
+*** LOCAL GEMS ***
+{% endhighlight %}
 
 This is rather self-explanatory. First we create our gemset, then we change to use that gemset. And then we can see we are within the empty gemset, because no gems are installed. Let's try to install a few gems, note again, we do not use `sudo` to install gems, they are all kept in `~/.rvm`:
 
-    $ gem install rails
-    $ gem list
-    gem list
-    *** LOCAL GEMS ***
+{% highlight bash %}
+$ gem install rails
+$ gem list
+gem list
+*** LOCAL GEMS ***
 
-    abstract (1.0.0)
-    actionmailer (3.0.0)
-    actionpack (3.0.0)
-    activemodel (3.0.0)
-    activerecord (3.0.0)
-    activeresource (3.0.0)
-    activesupport (3.0.0)
-    arel (1.0.1)
-    builder (2.1.2)
-    bundler (1.0.0)
-    erubis (2.6.6)
-    i18n (0.4.1)
-    mail (2.2.5)
-    mime-types (1.16)
-    polyglot (0.3.1)
-    rack (1.2.1)
-    rack-mount (0.6.13)
-    rack-test (0.5.4)
-    rails (3.0.0)
-    railties (3.0.0)
-    rake (0.8.7)
-    thor (0.14.0)
-    treetop (1.4.8)
-    tzinfo (0.3.23)
+abstract (1.0.0)
+actionmailer (3.0.0)
+actionpack (3.0.0)
+activemodel (3.0.0)
+activerecord (3.0.0)
+activeresource (3.0.0)
+activesupport (3.0.0)
+arel (1.0.1)
+builder (2.1.2)
+bundler (1.0.0)
+erubis (2.6.6)
+i18n (0.4.1)
+mail (2.2.5)
+mime-types (1.16)
+polyglot (0.3.1)
+rack (1.2.1)
+rack-mount (0.6.13)
+rack-test (0.5.4)
+rails (3.0.0)
+railties (3.0.0)
+rake (0.8.7)
+thor (0.14.0)
+treetop (1.4.8)
+tzinfo (0.3.23)
+{% endhighlight %}
 
 Great! Let's switch back to our `global` gemset:
     
-    $ rvm 1.9.2@global
+{% highlight bash %}
+$ rvm 1.9.2@global
+{% endhighlight %}
 
 And `gem list` here returns an empty list. This has a lot of uses, for instance if you are working on one project, you can work in a gemset for that specific project only. Then you can export your gemset, so others can easily get up and running with exactly your gems. Let's try that out quickly:
 
-    $ rvm 1.9.2@foo
-    $ rvm gemset export rails.gems
-    $ cat rails.gems
-    abstract -v1.0.0
-    actionmailer -v3.0.0
-    actionpack -v3.0.0
-    activemodel -v3.0.0
-    [..]
+{% highlight bash %}
+$ rvm 1.9.2@foo
+$ rvm gemset export rails.gems
+$ cat rails.gems
+abstract -v1.0.0
+actionmailer -v3.0.0
+actionpack -v3.0.0
+activemodel -v3.0.0
+[..]
+{% endhighlight %}
 
 You could send `rails.gem` to someone else, and that person would simply import the gemset like so:
 
-    $ rvm gemset create rails
-    $ rvm 1.9.2@rails
-    $ rvm gemset import rails.gems
+{% highlight bash %}
+$ rvm gemset create rails
+$ rvm 1.9.2@rails
+$ rvm gemset import rails.gems
+{% endhighlight %}
 
 Which would install all the gems that the first guy had, and the exact same versions. This is great when you work in teams, because we all tried messing up the versions..
