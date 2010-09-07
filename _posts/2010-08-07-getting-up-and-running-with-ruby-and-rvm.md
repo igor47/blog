@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [WIP] Getting up and running with Ruby and RVM
+title: WIP - Getting up and running with Ruby and RVM
 ---
 
 *Work in progress*
