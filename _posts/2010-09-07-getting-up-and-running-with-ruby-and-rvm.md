@@ -18,6 +18,12 @@ I figured I'd take the change to clean my system; I'd remove all my old gems. I 
 $ gem list | cut -d" " -f1 | xargs gem uninstall -aIx
 {% endhighlight %}
 
+If you have RVM installed already, you can simply empty the gemset (this'll all make more sense later):
+
+{% highlight bash %}
+$ rvm gemset empty
+{% endhighlight %}
+
 Before running this though, for safety, I wanted a file that contained all my old gems, from which I could install everything, just for some safety, this is easy with RVM (if you don't have RVM installed, install it first via Step 1, and then come back):
 
 {% highlight bash %}
@@ -157,7 +163,7 @@ activemodel -v3.0.0
 [..]
 {% endhighlight %}
 
-You could send `rails.gem` to someone else, and that person would simply import the gemset like so:
+You could send `rails.gems` to someone else, and that person would simply import the gemset like so:
 
 {% highlight bash %}
 $ rvm gemset create rails
