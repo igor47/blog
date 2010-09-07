@@ -39,7 +39,7 @@ The functionality needed, came down to this:
 * Upload screenshot to [Imgur](http://imgur.com)
 * Put direct link to screenshot into the clipboard
 
-Taking a screenshot, of a specified region is quite easy with `scrot`:
+Taking a screenshot of a specified region is quite easy with `scrot`:
 
 {% highlight bash %}
 scrot -s
@@ -65,7 +65,7 @@ Now this is optional, but quite handy. It uses `libnotify` to notify you when th
 
 ## The script
 
-And I compiled all this into this simple script (I'm aware that this can be a one-liner, and everything, but this just seems more readable, and *works*. If you have a better solution, please contact me!):
+And I compiled all this into this simple script (I'm aware that this can be a one-liner and everything but this just seems more readable and *works*. If you have a better solution, be sure to contact me!):
 
 {% highlight bash %}
 function uploadImage {
