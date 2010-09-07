@@ -5,7 +5,7 @@ title: WIP - Getting up and running with Ruby and RVM
 
 *Work in progress*
 
-I've always run Ruby, and I've always used RVM. But it's not until recently I realized how wrong I was using RVM. Basically, I'm somewhat always using system Ruby, installing all gems with sudo. However, digging into RVM I found useful features, such as gemsets. And installing gem not as sudo, and so forth. Thus I realized I should actually run my Ruby environment through RVM, instead of only using RVM when I had to run some code that was not compatible with whatever Ruby version I was using on the system, usually the latest.
+I've always run Ruby, and I've always used RVM. But it's not until recently I realized how wrong I was using RVM. Basically, I'm somewhat always using system Ruby, installing all gems with `sudo`. However, digging into RVM I found useful features, such as gemsets. And installing gem not as `sudo`, and so forth. Thus I realized I should actually run my Ruby environment through RVM, instead of only using RVM when I had to run some code that was not compatible with whatever Ruby version I was using on the system, usually the latest.
 
 
 ## Step 0: Uninstalling all gems in system Ruby (Optional)
@@ -78,7 +78,7 @@ And then we can switch to it, like we switched to `1.9.2` before:
 
 (Which is a shortcut for `rvm use 1.9.2`). Now you should be up and running fine with RVM!
 
-## Step 3: Gemsets
+## Step 3: gemsets
 
 So what are gemsets? The shortest explanation, is found within the name. Gem-sets. As RVM's documentation puts it:
 
