@@ -102,7 +102,7 @@ And then we can switch to it, like we switched to `1.9.2` before:
 $ rvm 1.8.6
 {% endhighlight %}
 
-(Which is a shortcut for `rvm use 1.9.2`). Now you should be up and running fine with RVM!
+(Which is a shortcut for `rvm use 1.8.6`). Now you should be up and running fine with RVM!
 
 ## Step 3: Gemsets
 
