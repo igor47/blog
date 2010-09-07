@@ -30,7 +30,7 @@ Before running this though, for safety, I wanted a file that contained all my ol
 $ rvm gemset export backup.gems
 {% endhighlight %}
 
-I ended out with [*quite of a file*](http://gist.github.com/568262). If you want to install all these gems again (and no, I personally don't, just look at that file!), you could just run:
+I ended up with [*quite of a file*](http://gist.github.com/568262). If you want to install all these gems again (and no, I personally don't, just look at that file!), you could just run:
 
 {% highlight bash %}
 $ rvm gemset import backup.gems
@@ -42,7 +42,7 @@ And now.. to run the command discussed in the first place!
 $ gem list | cut -d" " -f1 | xargs gem uninstall -aIx
 {% endhighlight %}
 
-So now, everything should be gone--and we have a clear install; exciting! We can verify it by issuing `gem list`.
+Everything should be gone--and we have a clean install! We can verify that we're clean, by issuing `gem list`, which of course should list no gems.
 
 ## Step 1: Installing RVM
 
