@@ -1,0 +1,8 @@
+function uploadImage { 
+    curl -s -F "image=@$1" -F "key=486690f872c678126a2c09a9e196ce1b" [http://imgur.com/api/upload.xml][] | grep -E -o "<original\_image\>(.)\*</original\_image\>" | grep -E -o "<a >http://i.imgur.com/[\^</a><]\*" 
+}
+
+scrot -s "shot.png"
+uploadImage "shot.png" | xclip -selection c
+rm "shot.png"
+#notify-send "Clipboard ready" 
