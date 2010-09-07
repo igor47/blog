@@ -5,6 +5,28 @@ title: A simple Imgur Bash screenshot utility
 
 I use screenshots a lot, every day. Mostly when I do instant messaging, they can usually help explain something much quicker than anything else. It's rare that I edit the screenshot, and in these rare occasions, it doesn't bother me all that much having to fire up [Pinta](http://pinta-project.com/) or [Gimp](http://www.gimp.org/) - to make these small changes.
 
+## Installation
+
+`shoot` depends on:
+
+* `curl`
+* `grep`
+* `scrot` 
+* `xclip`
+* `libnotify` (*optional*)
+
+{% highlight bash %}
+curl http://sirupsen.com/static/misc/shoot > ~/bin/shoot && chmod 755 ~/bin/shoot
+{% endhighlight %}
+
+Assuming `~/bin` is in your `$PATH`, you're ready to `shoot`:
+
+{% highlight bash %}
+$ shoot
+$ xclip -selection c -o
+http://imgur.com/Z8prG.jpg
+{% endhighlight %}
+
 ## Coming up with the script
 
 The functionality needed, came down to this:
@@ -42,31 +64,14 @@ Now this is optional, but quite handy. It uses `libnotify` to notify you when th
 And I compiled all this into this simple script (I'm aware that this can be a one-liner, and everything, but this just seems more readable, and *works*. If you have a better solution, please contact me!):
 
 {% highlight bash %}
-function uploadImage { 
-  curl -s -F "image=@$1" -F "key=486690f872c678126a2c09a9e196ce1b" [http://imgur.com/api/upload.xml][] | grep -E -o "<original\_image\>(.)\*</original\_image\>" | grep -E -o "<a >http://i.imgur.com/[\^</a><]\*" 
+function uploadImage {
+  curl -s -F "image=@$1" -F "key=486690f872c678126a2c09a9e196ce1b" http://imgur.com/api/upload.xml | grep -E -o "<original_image>(.)*</original_image>" | grep -E -o "http://i.imgur.com/[^<]*"
 }
 
-scrot -s "shot.png"
+scrot -s "shot.png" 
 uploadImage "shot.png" | xclip -selection c
 rm "shot.png"
-notify-send "Done" function uploadImage { 
-  curl -s -F "image=@$1" -F "key=486690f872c678126a2c09a9e196ce1b" [http://imgur.com/api/upload.xml][] | grep -E -o "<original\_image\>(.)\*</original\_image\>" | grep -E -o "<a >http://i.imgur.com/[\^</a><]\*" 
-}
-
-scrot -s "shot.png"
-uploadImage "shot.png" | xclip -selection c
-rm "shot.png"
-notify-send "Done" 
+notify-send "Done"
 {% endhighlight %}
 
-## Installation
-
-This script assumes that `~/bin` is in your path, if not issue the following first:
-
-{% highlight bash %}
-echo "PATH=$PATH:~/bin" >> ~/.bashrc
-{% endhighlight %}
-
-{% highlight bash %}
-curl http://sirupsen.com/static/misc/shoot > ~/bin/shoot && chmod 755 ~/bin/shoot
-{% endhighlight %}
+That's it. Hopefully you'll enjoy it as much as I do.
