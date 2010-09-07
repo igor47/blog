@@ -99,7 +99,7 @@ $ rvm install 1.8.6
 And then we can switch to it, like we switched to `1.9.2` before:
 
 {% highlight bash %}
-$ rvm 1.9.2
+$ rvm 1.8.6
 {% endhighlight %}
 
 (Which is a shortcut for `rvm use 1.9.2`). Now you should be up and running fine with RVM!
