@@ -104,7 +104,7 @@ $ rvm 1.9.2
 
 (Which is a shortcut for `rvm use 1.9.2`). Now you should be up and running fine with RVM!
 
-## Step 3: gemsets
+## Step 3: Gemsets
 
 So what are gemsets? The shortest explanation, is found within the name. Gem-sets. As RVM's documentation puts it:
 
