@@ -29,6 +29,8 @@ $ xclip -selection c -o
 http://imgur.com/Z8prG.jpg
 {% endhighlight %}
 
+I recommend that you bind the script to a key, so you can easily activate it.
+
 ## Coming up with the script
 
 The functionality needed, came down to this:
