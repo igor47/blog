@@ -23,8 +23,8 @@ $ echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >>
 
 What I hate about installing gems, is that `ri` and `rdoc` usually are extremely slow. I never use this offline documentation anyway, and it's faily easy to disable the generation of it and speed up your gem installs, just put this in `~/.gemrc`:
 
-{% highlight bash %}
-gem --no-ri --no-rdoc
+{% highlight ruby %}
+gem: --no-ri --no-rdoc
 {% endhighlight %}
 
 Then you should be up and running! Verify it:
