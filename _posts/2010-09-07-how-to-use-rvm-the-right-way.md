@@ -7,7 +7,7 @@ I've always run Ruby, and I've always used RVM. But it's not until recently when
 
 Here are my new discoveries, compiled down to a blog post.
 
-## Step 0: Installing RVM
+## Installing RVM
 
 If you don't already have RVM installed, you should do it now. It's fairly simple to install:
 
@@ -40,7 +40,7 @@ Check your system notes, also verify `RVM` is working:
 $ rvm notes
 {% endhighlight %}
 
-## Step 1: Uninstalling all gems in system Ruby (Optional)
+## Uninstalling all gems in system Ruby (Optional)
 
 *Now this is not required, I just did it to clean my system. Therefore you can safely skip this step.*
 
@@ -62,7 +62,7 @@ This leaves you with (usually) [*quite a file, in my case*](http://gist.github.c
 $ rvm gemset import backup.gems
 {% endhighlight %}
 
-## Step 2: Installing Rubies
+## Installing Rubies
 
 Rubies are essentially Ruby versions, let's go ahead and get `Ruby 1.9.2` first, and set that as our default interpreter. Afterwards, we'll install `Ruby 1.8.6`. And then we'll try to switch between the two environments.
 
@@ -102,7 +102,7 @@ $ rvm 1.8.6
 
 (Which is a shortcut for `rvm use 1.8.6`). You are now up and running with two Ruby environments, congratulations!
 
-## Step 3: Gemsets
+## Gemsets
 
 So what are gemsets? The shortest explanation, is found within the name. Gem-sets.  
 RVM's documentation puts it like this:
