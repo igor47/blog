@@ -175,10 +175,11 @@ In Rails 3, the gem problem is somewhat solved with the neat integration of Bund
 Now there are different kinds of `rvmrc` files:
 
 * System `/etc/rvmrc`
+    - System wide configuration
 * User `~/.rvmrc`
+    - User wide configuration
 * Project `.rvmrc`
-
-The system one is for system wide configuration, and the user one is the same for one user. With these files you can configure where RVM is installed, install flags, compile threads, .. and this is all adressed [here](http://rvm.beginrescueend.com/workflow/rvmrc/).
+    - Project wide configuration
 
 The most interesting one is the project `.rvmrc`. Every time you `cd`, RVM looks for a file called `.rvmrc`. If it finds it, it executes it.  
 Ouput from `bash` says more than a thousand words:
@@ -196,3 +197,5 @@ ruby 1.8.6 (2010-02-05 patchlevel 399) [i686-linux]
 ~/projects/ruby-1.8.6-project $ rvm gemset name
 project
 {% endhighlight %}
+
+You can read more about `rvmrc` in [RVM's documentation](http://rvm.beginrescueend.com/workflow/rvmrc/).
