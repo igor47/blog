@@ -27,14 +27,7 @@ What I hate about installing gems, is that `ri` and `rdoc` usually are extremely
 gem: --no-ri --no-rdoc
 {% endhighlight %}
 
-Then you should be up and running! Verify it:
-
-{% highlight bash %}
-$ type rvm | head -n1
-rvm is a function
-{% endhighlight %}
-
-Check your system notes, also verify `RVM` is working:
+Verify if the `rvm` command works, and check your system notes:
 
 {% highlight bash %}
 $ rvm notes
