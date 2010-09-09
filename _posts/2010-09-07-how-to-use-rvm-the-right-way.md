@@ -169,3 +169,30 @@ $ rvm gemset import rails.gems
 
 Which would install all the gems from `rails.gems`, and the exact same versions. This is great when you work in teams, because we all tried messing up the versions..  
 In Rails 3, the gem problem is somewhat solved with the neat integration of Bundler. However, the gemset still has a lot of great uses. For instance testing an application with different gemsets, etc.
+
+## rvmrc
+
+Now there are different kinds of `rvmrc` files:
+
+* System `/etc/rvmrc`
+* User `~/.rvmrc`
+* Project `.rvmrc`
+
+The system one is for system wide configuration, and the user one is the same for one user. With these files you can configure where RVM is installed, install flags, compile threads, .. and this is all adressed [here](http://rvm.beginrescueend.com/workflow/rvmrc/).
+
+The most interesting one is the project `.rvmrc`. Every time you `cd`, RVM looks for a file called `.rvmrc`. If it finds it, it executes it.  
+Ouput from `bash` says more than a thousand words:
+
+{% highlight bash %}
+$ echo "rvm 1.8.6@project" > ~/projects/ruby-1.8.6-project/.rvmrc
+{% endhighlight %}
+
+{% highlight bash %}
+~/projects $ ruby -v
+ruby 1.9.2p0 (2010-08-18 revision 29036) [i686-linux]
+~/projects $ cd ruby-1.8.6-project/
+~/projects/ruby-1.8.6-project $ ruby -v
+ruby 1.8.6 (2010-02-05 patchlevel 399) [i686-linux]
+~/projects/ruby-1.8.6-project $ rvm gemset name
+project
+{% endhighlight %}
