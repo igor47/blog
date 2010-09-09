@@ -3,7 +3,7 @@ layout: post
 title: How to use RVM - the right way
 ---
 
-I've always run Ruby, and I've always used RVM. But it's not until recently when I attended [#aarhusrb](http://arhusrb.dk) and [@chopmo](http://twitter.com/chopmo) gave a talk on RVM, that I realized how wrong I was using RVM. Basically, I'm somewhat always using system Ruby, installing all gems with `sudo`. However, digging into RVM I found useful features, such as gemsets. And installing gem not as `sudo`, and so forth. Thus I realized I should actually run my Ruby environment through RVM, instead of only using RVM when I had to run some code that was not compatible with whatever Ruby version I was using on the system, usually the latest.  
+I've always run Ruby, and I've always used RVM. But it's not until recently when I attended [Aarhusrb](http://aarhusrb.dk) and [@chopmo](http://twitter.com/chopmo) gave a talk on RVM, that I realized how wrong I was using RVM. Basically, I'm somewhat always using system Ruby, installing all gems with `sudo`. However, digging into RVM I found useful features, such as gemsets. And installing gem not as `sudo`, and so forth. Thus I realized I should actually run my Ruby environment through RVM, instead of only using RVM when I had to run some code that was not compatible with whatever Ruby version I was using on the system, usually the latest.  
 
 Here are my new discoveries, compiled down to a blog post.
 
