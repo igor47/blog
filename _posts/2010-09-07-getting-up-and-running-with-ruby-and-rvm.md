@@ -22,7 +22,7 @@ $ echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >>
 {% endhighlight %}
 
 <div class="tip">
-You're going to install a lot of gems, and what takes the most time is usually generating the documentation. Personally, I never use the offline documentation, I'm always online where I can find the documentation. If you want to disable `ri` and `rdoc` generation, this should be in your `~/.gemrc`:
+What I hate about installing gems, is that `ri` and `rdoc` usually are extremely slow. I never use this offline documentation anyway, and it's faily easy to disable the generation of it and speed up your gem installs, just put this in `~/.gemrc`:
 
 {% highlight bash %}
 gem --no-ri --no-rdoc
