@@ -49,11 +49,13 @@ Before running this you can take a backup of all your currently installed gems:
 $ rvm gemset export backup.gems
 {% endhighlight %}
 
-This leaves you with (usually) [*quite a file, in my case*](http://gist.github.com/568262). If you want to install all these gems again, it's simply a matter of running:
+This leaves you with a file, desribing all your system's gems. ([*Quite a file, in my case*](http://gist.github.com/568262)). If you at some point need to install all these gems again, it's simply a matter of running:
 
 {% highlight bash %}
 $ rvm gemset import backup.gems
 {% endhighlight %}
+
+We'll talk a bit more about `rvm gemset {import,export}` later; why it's as nifty as it is.
 
 ## Installing Rubies
 
