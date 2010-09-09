@@ -22,13 +22,13 @@ And then add what it says to `.bashrc`, `.bash_profile` or whatever you use.
 $ echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> .bashrc
 {% endhighlight %}
 
-What I hate about installing gems, is that `ri` and `rdoc` usually are extremely slow. I never use this offline documentation anyway, and it's faily easy to disable the generation of it and speed up your gem installs, just put this in `~/.gemrc`:
+What I hate about installing gems is that it's slow due to `ri` and `rdoc`. I never use this local documentation anyway, and it's faily easy to disable the generation of it; speeding up your gem installs a great deal. Just put this in your `~/.gemrc`:
 
 {% highlight ruby %}
 gem: --no-ri --no-rdoc
 {% endhighlight %}
 
-Verify if the `rvm` command works, and check your system notes:
+Verify whether the `rvm` command works, and use the chance to also check your system notes:
 
 {% highlight bash %}
 $ rvm notes
