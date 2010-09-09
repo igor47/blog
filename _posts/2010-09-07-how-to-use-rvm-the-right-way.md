@@ -136,7 +136,7 @@ activemodel (3.0.0)
 Great! Let's switch back to our `global` gemset (this is the default gemset, you can also switch to it more explicitly with `rvm 1.9.2@global`):
     
 {% highlight bash %}
-$ rvm 1.9.2@global
+$ rvm 1.9.2
 {% endhighlight %}
 
 And `gem list` here returns an empty list, as expected since no gems are installed in the global gemset.  
