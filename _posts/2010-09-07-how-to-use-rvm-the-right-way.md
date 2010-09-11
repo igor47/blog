@@ -203,6 +203,6 @@ foo
 global
 $ rvm gemset use foobar
 Now using gemset 'foobar'
-{% endhighliht %}
+{% endhighlight %}
 
 You can read more about `rvmrc` in [RVM's documentation](http://rvm.beginrescueend.com/workflow/rvmrc/).
