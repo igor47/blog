@@ -163,7 +163,12 @@ $ rvm gemset import rails.gems
 {% endhighlight %}
 
 Which would install all the gems from `rails.gems`, and the exact same versions. This is great when you work in teams, because we all tried messing up the versions..  
-In Rails 3, the gem problem is somewhat solved with the neat integration of Bundler. However, the gemset still has a lot of great uses. For instance testing an application with different gemsets, etc.
+
+The typical use of this, is that you have a gemset for each project that you are working on, so that your gems are seperated on your system. Running `bundle install` will use the project defined gemset to also store the gems.
+
+Two interesting gemsets are the `global` (`~/.rvm/gemsets/global.gems`) and `default` (`~/.rvm/gemsets/default.gems`) gemsets.  
+Gems in the `global gemset`, will be added to the global gemset in *every* new Ruby you install. `rake` and `rdoc` are good examples of handy global gems.  
+The `default gemset` is the gems included in every new gemset.
 
 ## rvmrc
 
@@ -193,7 +198,7 @@ ruby 1.8.6 (2010-02-05 patchlevel 399) [i686-linux]
 project
 {% endhighlight %}
 
-My favorite configuration option is `rvm_gemset_create_on_use_flag=1`, having this line in `/etc/rvmrc` or `~/.rvmrc`, makes you able to create gemsets on the fly:
+My favorite configuration option is `rvm_gemset_create_on_use_flag=1`, having this line in `/etc/rvmrc` or `~/.rvmrc`, will create gemsets to be automatically created when used:
 
 {% highlight bash %}
 $ rvm gemset list
