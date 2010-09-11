@@ -126,8 +126,7 @@ $ gem list # Lists installed gems
 *** LOCAL GEMS ***
 {% endhighlight %}
 
-This is rather self-explanatory. First we create our gemset, then we change to use that gemset. And then we check to see we are within the new (empty) gemset.  
-Let's try to install a few gems, note again, we do not use `sudo` to install gems, as everything is kept in `~/.rvm`:
+Let's try to install a few gems in our new gemset, note again, we do not *need* to use `sudo` to install gems, as everything is kept in `~/.rvm`:
 
 {% highlight bash %}
 $ gem install rails
