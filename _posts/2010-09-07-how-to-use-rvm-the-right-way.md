@@ -143,7 +143,10 @@ $ rvm 1.9.2
 {% endhighlight %}
 
 And `gem list` here returns an empty list, as expected since no gems are installed in the global gemset.  
-This has a lot of uses, for instance if you are working on one project, you can work in a gemset for that specific project only. You can even export your gemset (explained as a "backup solution" in [Step 1](#step1)), so others can easily get up and running with exactly your gems, with all the correct versions.  
+
+### Dumping and loading gemsets
+
+Gemsets has a lot of great uses, for instance if you are working on one project, you can work in a gemset for that specific project only. You can even export your gemset (explained as a "backup solution" in [Step 1](#step1)), so others can easily get up and running with exactly your gems, with all the correct versions.  
 Let's try that export feature again:
 
 {% highlight bash %}
@@ -167,6 +170,8 @@ $ rvm gemset import rails.gems
 Which would install all the gems from `rails.gems`, and the exact same versions. This is great when you work in teams, because we all tried messing up the versions..  
 
 The typical use of this, is that you have a gemset for each project that you are working on, so that your gems are seperated on your system. Running `bundle install` will use the project defined gemset to also store the gems.
+
+### The global and default gemset
 
 Two interesting gemsets are the `global` (`~/.rvm/gemsets/global.gems`) and `default` (`~/.rvm/gemsets/default.gems`) gemsets.  
 Gems in the `global gemset`, will be added to the global gemset in *every* new Ruby you install. `rake` and `rdoc` are good examples of handy global gems.  
