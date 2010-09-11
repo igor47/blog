@@ -110,11 +110,11 @@ RVM's documentation puts it like this:
 So let's go ahead and create one of those fancy gemsets:
 
 {% highlight bash %}
-$ rvm gemset create foo
+$ rvm gemset create foo # Create gemset 'foo'
 'foo' gemset created (/home/sirup/.rvm/gems/ruby-1.9.2-p0@foo).
 
-$ rvm 1.9.2@foo
-$ gem list
+$ rvm 1.9.2@foo # Switch to Ruby 1.9.2 with gemset 'foo'
+$ gem list # Lists installed gems
 *** LOCAL GEMS ***
 {% endhighlight %}
 
@@ -158,8 +158,7 @@ activemodel -v3.0.0
 You are then free to send `rails.gems` to someone else, and that person would simply import the gemset like so:
 
 {% highlight bash %}
-$ rvm gemset create rails
-$ rvm 1.9.2@rails
+$ rvm use 1.9.2@rails --create # Shortcut to create, then switch to it
 $ rvm gemset import rails.gems
 {% endhighlight %}
 
@@ -193,5 +192,17 @@ ruby 1.8.6 (2010-02-05 patchlevel 399) [i686-linux]
 ~/projects/ruby-1.8.6-project $ rvm gemset name
 project
 {% endhighlight %}
+
+My favorite configuration option is `rvm_gemset_create_on_use_flag=1`, having this line in `/etc/rvmrc` or `~/.rvmrc`, makes you able to create gemsets on the fly:
+
+{% highlight bash %}
+$ rvm gemset list
+gemsets for ruby-1.9.2-p0 (found in /home/sirup/.rvm/gems/ruby-1.9.2-p0)
+
+foo
+global
+$ rvm gemset use foobar
+Now using gemset 'foobar'
+{% endhighliht %}
 
 You can read more about `rvmrc` in [RVM's documentation](http://rvm.beginrescueend.com/workflow/rvmrc/).
