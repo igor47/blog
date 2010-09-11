@@ -102,6 +102,8 @@ $ rvm 1.8.6
 
 ## Gemsets
 
+### What?
+
 So what are gemsets? The shortest explanation, is found within the name. Gem-sets.  
 RVM's documentation puts it like this:
 
@@ -109,7 +111,11 @@ RVM's documentation puts it like this:
 > You may even have separate named gemsets.  
 > Let's say, for example, that you are testing two versions of a gem with ruby 1.9.2-head. You can install one to the default 1.9.2-head and create a named gemset for the other version and switch between them easily.
 
-So let's go ahead and create one of those fancy gemsets:
+Ideally you have a Gemset for each project that you are working on. This keeps your system clean, and eliminates "Gem clutter". Also running `bundle install` will use the project defined gemset to also store the gems.
+
+### Creating and using a gemset
+
+So let's go ahead and create a gemset:
 
 {% highlight bash %}
 $ rvm gemset create foo # Create gemset 'foo'
@@ -146,8 +152,7 @@ And `gem list` here returns an empty list, as expected since no gems are install
 
 ### Dumping and loading gemsets
 
-Gemsets has a lot of great uses, for instance if you are working on one project, you can work in a gemset for that specific project only. You can even export your gemset (explained as a "backup solution" in [Step 1](#step1)), so others can easily get up and running with exactly your gems, with all the correct versions.  
-Let's try that export feature again:
+Let's try that export feature, that I previously explained as a backup solution, again:
 
 {% highlight bash %}
 $ rvm 1.9.2@foo
@@ -168,8 +173,6 @@ $ rvm gemset import rails.gems
 {% endhighlight %}
 
 Which would install all the gems from `rails.gems`, and the exact same versions. This is great when you work in teams, because we all tried messing up the versions..  
-
-The typical use of this, is that you have a gemset for each project that you are working on, so that your gems are seperated on your system. Running `bundle install` will use the project defined gemset to also store the gems.
 
 ### The global and default gemset
 
