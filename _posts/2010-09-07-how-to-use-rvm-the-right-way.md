@@ -198,7 +198,7 @@ ruby 1.8.6 (2010-02-05 patchlevel 399) [i686-linux]
 project
 {% endhighlight %}
 
-My favorite configuration option is `rvm_gemset_create_on_use_flag=1`, having this line in `/etc/rvmrc` or `~/.rvmrc`, will create gemsets to be automatically created when used:
+My favorite configuration option is `rvm_gemset_create_on_use_flag=1`, having this line in `/etc/rvmrc` or `~/.rvmrc`, gemsets will be automatically created when used:
 
 {% highlight bash %}
 $ rvm gemset list
