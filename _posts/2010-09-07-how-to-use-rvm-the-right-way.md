@@ -16,6 +16,8 @@ If you don't already have RVM installed, you should do it now. It's fairly simpl
 $ bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
 {% endhighlight %}
 
+(If there are > 1 users on your system wishing to use RVM, you may want to look into a [system-wide installation](http://rvm.beginrescueend.com/deployment/system-wide/))
+
 And then add what it says to `.bashrc`, `.bash_profile` or whatever you use.
 
 {% highlight bash %}
