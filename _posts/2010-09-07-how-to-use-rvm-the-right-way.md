@@ -3,7 +3,7 @@ layout: post
 title: How to use RVM - the right way
 ---
 
-I've always run Ruby, and I've always used RVM. But it's not until recently when I attended [Aarhusrb](http://aarhusrb.dk) and [@chopmo](http://twitter.com/chopmo) gave a talk on RVM, that I realized how wrong I was using RVM. Basically, I'm somewhat always using system Ruby, installing all gems with `sudo`. However, digging into RVM I found useful features, such as gemsets, installing gems on a user basis, ..
+I've always run Ruby, and I've always used [RVM](http://rvm.beginrescueend.com/). But it's not until recently when I attended [Aarhusrb](http://aarhusrb.dk) and [@chopmo](http://twitter.com/chopmo) gave a talk on RVM, that I realized how wrong I was using RVM. Basically, I'm somewhat always using system Ruby, installing all gems with `sudo`. However, digging into RVM I found useful features, such as gemsets, installing gems on a user basis, ..
 Thus I realized I ideally should run my entire Ruby environment through RVM, instead of only using RVM for anything not supported by my system install.  
 
 Here are my new discoveries, compiled down to a blog post. Most of this can be found in the great [RVM documentation](http://rvm.beginrescueend.com/).
@@ -213,3 +213,7 @@ Now using gemset 'foobar'
 {% endhighlight %}
 
 You can read more about `rvmrc` in [RVM's documentation](http://rvm.beginrescueend.com/workflow/rvmrc/).
+
+## Conclusion
+
+This is all briefly describing what can be found in [RVM's (fantastic) documentation](http://rvm.beginrescueend.com/). Go there and read up, the goal of this post was to get you started well, and right.
