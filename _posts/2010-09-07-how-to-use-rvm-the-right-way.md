@@ -104,7 +104,7 @@ $ rvm 1.8.6
 
 ### What?
 
-So what are gemsets? The shortest explanation, is found within the name. Gem-sets.  
+The shortest explanation, is found within the name. Gem-sets.  
 RVM's documentation puts it like this:
 
 > RVM gives you compartmentalized independent ruby setups. This means that ruby, gems and irb are all separate and self-contained from system and from each other.   
