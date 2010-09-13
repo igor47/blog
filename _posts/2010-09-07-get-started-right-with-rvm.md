@@ -126,7 +126,7 @@ $ gem list # Lists installed gems
 *** LOCAL GEMS ***
 {% endhighlight %}
 
-Let's try to install a few gems in our new gemset, note again, we do not *need* to use `sudo` to install gems, as everything is kept in `~/.rvm`:
+Let's try to install a few gems in our new gemset, note again, we do shouldn't use `sudo` to install gems, as that would install it outside of your gemset:
 
 {% highlight bash %}
 $ gem install rails
