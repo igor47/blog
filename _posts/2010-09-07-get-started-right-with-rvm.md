@@ -234,3 +234,5 @@ You can read more about `rvmrc` in [RVM's documentation](http://rvm.beginrescuee
 ## Conclusion
 
 This is all briefly describing what can be found in [RVM's (fantastic) documentation](http://rvm.beginrescueend.com/). For basic use, this article should cover the main topics, however, RVM can still do a whole lot more than I adressed here. The goal of this post was simply to get you started well, and right, with RVM.
+
+[Discuss this on Hacker News](http://news.ycombinator.com/item?id=1686435)
