@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to get started and use RVM
+title: Get started right with RVM
 ---
 
 I've always run Ruby, and I've always used [RVM](http://rvm.beginrescueend.com/). But it's not until recently when I attended [Aarhusrb](http://aarhusrb.dk) and [@chopmo](http://twitter.com/chopmo) gave a talk on RVM, that I realized how wrong I was using RVM. Basically, I'm somewhat always using system Ruby, installing all gems with `sudo`. However, digging into RVM I found useful features, such as gemsets, installing gems on a user basis, ..
