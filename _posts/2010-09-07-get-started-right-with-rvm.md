@@ -197,6 +197,14 @@ Ouput from `bash` says more than a thousand words:
 $ echo "rvm 1.8.6@project" > ~/projects/ruby-1.8.6-project/.rvmrc
 {% endhighlight %}
 
+I recieved [a tip](http://twitter.com/wayneeseguin/status/24387445101) from [@wayneeseguin](http://twitter.com/wayneeseguin), that we can be even more sneaky about this:
+
+{% highlight bash %}
+$ rvm --create --rvmrc 1.9.2@project
+{% endhighlight %}
+
+This will create the gemset, and the `.rvmrc` file!
+
 {% highlight bash %}
 ~/projects $ ruby -v
 ruby 1.9.2p0 (2010-08-18 revision 29036) [i686-linux]
@@ -218,6 +226,8 @@ global
 $ rvm gemset use foobar
 Now using gemset 'foobar'
 {% endhighlight %}
+
+[@wayneeseguin](http://twitter.com/wayneeseguin) sent in [another tip](http://twitter.com/wayneeseguin/status/24387379953) about [`bash` and `zsh` completion](http://rvm.beginrescueend.com/workflow/completion/). 
 
 You can read more about `rvmrc` in [RVM's documentation](http://rvm.beginrescueend.com/workflow/rvmrc/).
 
