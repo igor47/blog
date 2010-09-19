@@ -38,7 +38,7 @@ $ ln -s Dropbox/dotfiles/.vim ~/
 
 To get my Vim plugins on a machine. If I change it at machine `x`, it's instantly updated at machine `y`. I have found this to be an amazing use of Dropbox. I've made a [Rake task](http://github.com/Sirupsen/dotfiles/blob/master/Rakefile) to automate all this linking of dotfiles, note I wrote ths script pretty quickly, and not too well, and it uses `FileUtils#rm_rf`, so watch out if you are going to use it for yourself.
 
-## Coding
+## Using dual screen for coding
 
 When I work, I usually work on two monitors. A 19", and a 24".  
 
