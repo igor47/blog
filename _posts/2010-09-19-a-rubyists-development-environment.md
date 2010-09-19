@@ -10,7 +10,7 @@ I've open sourced all my dotfiles [on Github](http://github.com/Sirupsen/dotfile
 
 ## Operating System: Linux and Mac
 
-My primary development platform is my desktop computer, running [Arch Linux](http://localhost:4000/my-experience-with-arch-linux "See my blog post about my experience with Arch Linux"). It's a dual screen setup, which I learned to *love*. I also own a Macbook, primarily used for schoolwork and field coding.
+My primary development platform is my desktop computer, running [Arch Linux](http://sirupsen.com/my-experience-with-arch-linux "See my blog post about my experience with Arch Linux"). It's a dual screen setup, which I learned to *love*. I also own a Macbook, primarily used for schoolwork and field coding.
 
 As for my desktop setup of noteworthy tools besides my editor, I use bleeding-edge Chromium as my browser. And I use [Openbox](http://openbox.org/wiki) as my window manager. I use Sakura as my terminal, simply because it's lightweight, simple to setup and it does its job.
 
