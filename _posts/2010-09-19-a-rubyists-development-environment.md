@@ -3,7 +3,7 @@ layout: post
 title: A Rubyist's development environment
 ---
 
-I consider myself a Rubyist and a minimalist. I want my tools to be few, and sharp. That means I only want few tools, but I want to master these tools.
+I consider myself as a Rubyist and a minimalist. I want my tools to be few, and sharp. That means I only want few tools, but I want to master these tools.
 Now it's been about a year since I started programming, this post is supposed to give you a look into my toolbox. I hope it can be of inspiration to you.
 
 I've open sourced all my dotfiles [on Github](http://github.com/Sirupsen/dotfiles).
