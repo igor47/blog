@@ -40,4 +40,4 @@ To get my Vim plugins on a machine. I've made a [Rake task](http://github.com/Si
 
 ## Coding
 
-When I work, I usually work on two monitors. A 19", and a 24". On the 19" I have Pidgin running. On my 24" I have a browser running in the right side, and Vim and a terminal (overlapping each other) in the left side. I *rarely* use any other applications, so I never have to close any windows when I work. I don't use workspaces with this setup either. [Screenshot](http://imm.io/1m9x).
+When I work, I usually work on two monitors. A 19", and a 24". On the 19" I have Pidgin running. On my 24" I have a browser running in the right side, and Vim and a terminal (overlapping each other) in the left side. I *rarely* use any other applications, so I never have to close any windows when I work. I don't use workspaces with this setup either.
