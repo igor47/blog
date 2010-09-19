@@ -24,7 +24,7 @@ My bash configuration is pretty simple. It just defines some default values, sou
 
 ## Editor: Vim
 
-I've been through many editors. Many. Believe me. A little less than a year ago, a friend recommended me Vim. And I started digging into it. In the start, it was hard. But he promised me it'd be worth it. So I sticked to it. In the start, I felt less productive in Vim, because it was somewhat hard to learn. After a few days in it however, I began taking advantage of the endless sets of commands, this all resulted in a *more* productive me. I now love Vim, and nowadays I almost do all of my text-processing in it: I take notes in Vim, I'm writing this very blog post in Vim, and I make kickass code in Vim.
+I've been through many editors. Many. Believe me. A little less than a year ago, a friend recommended me Vim. And I started digging into it. In the beginning, it was hard. But he promised me it'd be worth it. So I sticked to it. In the start, I felt less productive in Vim, because it was somewhat hard to learn. After a few days in it however, I began taking advantage of the endless sets of commands, this all resulted in a *more* productive me. I now love Vim, and nowadays I almost do all of my text-processing in it: I take notes in Vim, I'm writing this very blog post in Vim, and I make kickass code in Vim.
 
 My Vim setup really is nothing special. I use a few plugins, and I have a small configuration file which is just parts stolen and compiled from others. I can't remember who I stole what from, though. So they are not credited. I use Monaco as my Vim (and terminal) font, I simply like this font a lot. [Screenshot](http://imgur.com/IdNuY.png).
 
