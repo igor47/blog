@@ -40,7 +40,7 @@ To get my Vim plugins on a machine. If I change it at machine `x`, it's instantl
 
 ## Using dual screen for coding
 
-When I work, I usually work on two monitors. A 19", and a 24".  
+When I work, I usually work on two monitors. A 19", and a 24".
 
 On my 19" I have Pidgin running. This makes me able to talk to colleges, or friends while working on my other monitor. I might also shring my windows here, and have another terminal open with tests.
 
