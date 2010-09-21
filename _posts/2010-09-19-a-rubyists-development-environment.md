@@ -46,6 +46,10 @@ $ homesick clone Sirupsen/dotfiles # goes to ~/homesick/repos/Sirupsen/dotfiles
 
 Instead of updating the dotfiles with Git via pulling, however, I wanted it to go through Dropbox, so changes are reflected on my other computers instantly. Later, I can commit these changes:
 
+{% highlight bash %}
+$ ln -s Dropbox/dotfiles ~/.homesick/repos/
+{% endhighlight %}
+
 Now I can symlink everything easily:
 
 {% highlight bash %}
