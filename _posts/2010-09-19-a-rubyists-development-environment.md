@@ -60,7 +60,7 @@ $ homesick symlink dotfiles
 
 When I work, I usually work on two monitors. A 19", and a 24".
 
-On my 19" I have Pidgin running. This makes me able to talk to colleges, or friends while working on my other monitor. I might also shring my windows here, and have another terminal open with tests.
+On my 19" I have Pidgin running. This makes me able to talk to colleagues, or friends while working on my other monitor. I might also shring my windows here, and have another terminal open with tests.
 
 On my 24" I have my browser running in the right side, taking up about 50% of horizontal space. When i am coding, this is great for documentation and general googling, githubing and ticket managing while coding. I have experimented with fullscreen Vim, however I just don't need more than these 80 columns horizontally, so this setup works great. More vertical space is always nice, I've heard great things about having a screen that can be turned around to a portrait view for coding. I usually have my terminal running beneath my Vim window, it's super easy to switch between them with my Openbox Vim configuration.
 
