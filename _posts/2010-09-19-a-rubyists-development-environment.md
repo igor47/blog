@@ -6,7 +6,7 @@ title: A Rubyist's development environment
 I consider myself as a Rubyist and a minimalist. I want my tools to be few, and sharp. That means I only want few tools, but I want to master these tools.
 Now it's been about a year since I started programming, this post is supposed to give you a look into my toolbox. I hope it can be of inspiration to you.
 
-I've open sourced all my dotfiles [on Github](http://github.com/Sirupsen/dotfiles).
+I've open sourced all my dotfiles [on Github][dotfiles].
 
 ## Operating System: Linux and Mac
 
@@ -34,7 +34,7 @@ As I have multiple computers, I sync *everything* with Dropbox. This also has th
 
 ### Configuration between multiple computers
 
-As I have multiple computers, I want my configuration files (*dotfiles*) to change on other computers as soon as I have changed it somewhere else. In the beginning I had an ugly Rake task to do all this symbolic linking, but later I discovered [Homesick][homesick]. 
+As I have multiple computers, I want [my configuration files][dotfiles] (*dotfiles*) to change on other computers as soon as I have changed it somewhere else. In the beginning I had an ugly Rake task to do all this symbolic linking, but later I discovered [Homesick][homesick]. 
 
 > Homesick is sorta like rip, but for dotfiles. It uses git to clone a repository containing dotfiles, and saves them in `~/.homesick`. It then allows you to symlink all the dotfiles into place with a single command.
 
@@ -61,3 +61,4 @@ On my 19" I have Pidgin running. This makes me able to talk to colleges, or frie
 On my 24" I have my browser running in the right side, taking up about 50% of horizontal space. When i am coding, this is great for documentation and general googling, githubing and ticket managing while coding. I have experimented with fullscreen Vim, however I just don't need more than these 80 columns horizontally, so this setup works great. More vertical space is always nice, I've heard great things about having a screen that can be turned around to a portrait view for coding. I usually have my terminal running beneath my Vim window, it's super easy to switch between them with my Openbox Vim configuration.
 
 [homesick]: http://github.com/technicalpickles/homesick
+[dotfiles]: http://github.com/Sirupsen/dotfiles
