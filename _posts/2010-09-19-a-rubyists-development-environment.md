@@ -41,7 +41,7 @@ As I have multiple computers, I want [my configuration files][dotfiles] (*dotfil
 When you clone a `castle`, as they are called in Homesick, it puts the castle in `~/.homesick/repos/<repo>`, for instance:
 
 {% highlight bash %}
-homesick clone Sirupsen/dotfiles # goes to ~/homesick/repos/Sirupsen/dotfiles
+$ homesick clone Sirupsen/dotfiles # goes to ~/homesick/repos/Sirupsen/dotfiles
 {% endhighlight %}
 
 Instead of updating the dotfiles with Git via pulling, however, I wanted it to go through Dropbox, so changes are reflected on my other computers instantly. Later, I can commit these changes:
@@ -49,7 +49,7 @@ Instead of updating the dotfiles with Git via pulling, however, I wanted it to g
 Now I can symlink everything easily:
 
 {% highlight bash %}
-homesick symlink dotfiles
+$ homesick symlink dotfiles
 {% endhighlight %}
 
 ## Using dual screen for coding
