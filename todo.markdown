@@ -12,3 +12,4 @@ List of things I gotta do. Basically just to have a collection of things I can e
     - Learn something about sockets too meanwhile
     - I gotta make something cool in Node too then, seems like that's the new hello world for cool kids
 * Organize my bookmarks somewhere nice and start sharing, e.g. Delicious
+* Create a script to add stuff here
