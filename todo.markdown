@@ -68,3 +68,15 @@ I want [a Doxie scanner](http://getdoxie.com/). I don't want papers anymore. I a
 ## Bookmarks
 
 I need to share my bookmarks in a smart way. Uuh, maybe I could use fancy technologies to do it?
+
+## Evul plans
+
+I have them, too.
+
+### IE5
+
+It has returned.
+
+{% highlight bash %}
+$ google-chrome --user-agent="Mozilla/4.0 (compatible; MSIE 5.0; Windows NT;)"
+{% endhighlight %}
