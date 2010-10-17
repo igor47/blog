@@ -1,8 +1,12 @@
 ---
 layout: post
 title: Things I gotta do
-updated: 14 Oct, 2010
+updated: 17 Oct, 2010
 ---
+
+Here's a page that will grow more than it will shrink. It describes what I want to do. Why, and maybe even how.
+
+> Seek knowledge from the cradle to the grave.
 
 # Unix
 
@@ -47,11 +51,15 @@ Truly beautiful. But how do you scale this to multiple servers?
 
 Thought:
 
-1. Request
-2. Nginx reverse proxy
-3. Varnish (content if cache?)
-4. HAProxy (load balancing)
-5. Unicorn server puts request into Unix socket, and lets a worker pick it up
+* Request
+* Nginx reverse proxy
+* Varnish (content if cache?)
+* HAProxy (load balancing)
+* Unicorn server puts request into Unix socket, and lets a worker pick it up
+
+# Doxie
+
+I want [a Doxie scanner](http://getdoxie.com/). I don't want papers anymore. I always throw the papers somewhere far away.
 
 # Misc
 
