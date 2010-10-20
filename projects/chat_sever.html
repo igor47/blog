@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>sockets.rb</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>sockets.rb</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        <p> A Ruby chatsever written for the sole purpose of learning to use
+ sockets and writing non-blocking I/O in Ruby. Furthermore I&rsquo;ve
+ written comments for you to understand how it all works. They
+ are presented in this awesome format with <a href="http://github.com/rtomayko/rocco">Rocco</a>!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <h3>Prerequesties</h3>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p> We&rsquo;ll need a few libraries to get started, these are &ldquo;socket&rdquo;
+ which is found within the Ruby standard library and <a href="http://github.com/defunkt/colored">colored</a>
+ which is for pretty terminal colors.</p>
+
+<p> Install colored:</p>
+
+<pre><code> $ gem install colored
+</code></pre>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="sx">%w{</span>
+<span class="sx">  socket</span>
+<span class="sx">  colored</span>
+<span class="sx">}</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span><span class="o">|</span><span class="n">lib</span><span class="o">|</span> <span class="nb">require</span> <span class="n">lib</span><span class="p">}</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p> We start by defining our chat Module (or namespace, if you prefer)</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">module</span> <span class="nn">Chat</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        <h3>Connection</h3>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        <p> Our connections class which is a metaclass of Array that adds a few
+ methods that are handy for our application.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">class</span> <span class="nc">Connections</span> <span class="o">&lt;</span> <span class="nb">Array</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-7'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-7">#</a>
+        </div>
+        <p> Collect all the sockets from the objects.</p>
+
+<p> Example:</p>
+
+<pre><code>clients = Connections.new Client.new(:socket =&gt; socket), 
+                          Client.new(:socket =&gt; socket)
+sockets = clients.sockets
+
+#=&gt; [TCPSocket, TCPSocket]
+</code></pre>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">sockets</span>
+      <span class="n">collect</span> <span class="p">{</span><span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="n">e</span><span class="o">.</span><span class="n">socket</span><span class="p">}</span>
+    <span class="k">end</span>
+    </pre></div>
+      </td>
+    </tr>
+    <tr id='section-8'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-8">#</a>
+        </div>
+        <p> Reverse lookup the socket; find the object the socket belongs to.</p>
+
+<p> Example (continues example for Chat::Connections#sockets):</p>
+
+<pre><code> clients[sockets.first]
+
+ #=&gt; Chat::Client
+</code></pre>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">[]</span><span class="p">(</span><span class="n">socket</span><span class="p">)</span>
+      <span class="nb">select</span> <span class="p">{</span><span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="n">e</span><span class="o">.</span><span class="n">socket</span> <span class="o">===</span> <span class="n">socket</span><span class="p">}</span><span class="o">.</span><span class="n">first</span> <span class="k">if</span> <span class="n">socket</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="no">TCPSocket</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-9'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-9">#</a>
+        </div>
+        <h3>Client class</h3>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  </pre></div>
+      </td>
+    </tr>
+    <tr id='section-10'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-10">#</a>
+        </div>
+        <p> Client class, each chat client has a corresponding instance of
+ this class.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">class</span> <span class="nc">Client</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-11'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-11">#</a>
+        </div>
+        <p> We want out clients to have a:</p>
+
+<ul>
+<li> Username
+
+<ul>
+<li> Name of the user</li>
+</ul>
+</li>
+<li> Socket
+
+<ul>
+<li> Biredirectional connection to the user</li>
+</ul>
+</li>
+<li> Channel(s)
+
+<ul>
+<li> Channel(s) the user is on</li>
+</ul>
+</li>
+</ul>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="kp">attr_accessor</span> <span class="ss">:username</span><span class="p">,</span> <span class="ss">:socket</span><span class="p">,</span> <span class="ss">:channel</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-12'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-12">#</a>
+        </div>
+        <p> We give our client some properties.</p>
+
+<p> Example:</p>
+
+<pre><code> Chat::Client.new :socket =&gt; socket,
+                  :channel =&gt; self,
+                  :username =&gt; "Goomba"
+</code></pre>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">properties</span><span class="p">)</span>
+      <span class="vi">@socket</span><span class="p">,</span> <span class="vi">@channel</span> <span class="o">=</span> <span class="n">properties</span><span class="o">[</span><span class="ss">:socket</span><span class="o">]</span><span class="p">,</span> <span class="n">properties</span><span class="o">[</span><span class="ss">:channel</span><span class="o">]</span>
+      <span class="vi">@username</span> <span class="o">=</span> <span class="n">properties</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span>
+    <span class="k">end</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-13'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-13">#</a>
+        </div>
+        <h3>Channel class</h3>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  </pre></div>
+      </td>
+    </tr>
+    <tr id='section-14'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-14">#</a>
+        </div>
+        <p> The channel class handles our chat channel. Currently our app.
+ doesn&rsquo;t support multiple channels, however, this is a great
+ example of how well structured OO can make something much
+ easier in the future.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">class</span> <span class="nc">Channel</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-15'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-15">#</a>
+        </div>
+        <p> As with Client we want some information about our channel,
+ this includes:</p>
+
+<ul>
+<li> Name
+
+<ul>
+<li> Name of the channel</li>
+</ul>
+</li>
+<li> Clients
+
+<ul>
+<li> Channel clients</li>
+</ul>
+</li>
+<li> Server socket
+
+<ul>
+<li> The server socket</li>
+</ul>
+</li>
+</ul>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:clients</span><span class="p">,</span> <span class="ss">:socket</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-16'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-16">#</a>
+        </div>
+        <p> Specify what port the channel should run on</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">port</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-17'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-17">#</a>
+        </div>
+        <p> Start the server socket</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="vi">@socket</span> <span class="o">=</span> <span class="no">TCPServer</span><span class="o">.</span><span class="n">new</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-18'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-18">#</a>
+        </div>
+        <p> We want a Connections array for our clients</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="vi">@clients</span> <span class="o">=</span> <span class="no">Connections</span><span class="o">.</span><span class="n">new</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-19'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-19">#</a>
+        </div>
+        <p> We&rsquo;re ready!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="nb">puts</span> <span class="s2">&quot;Chatserver started on port </span><span class="si">#{</span><span class="n">port</span><span class="o">.</span><span class="n">to_s</span><span class="o">.</span><span class="n">bold</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-20'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-20">#</a>
+        </div>
+        <p> Accepts a new connection on the server</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">accept_new_connection</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-21'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-21">#</a>
+        </div>
+        <p> Create a new Client with the accepted socket, add our channel
+ and default username.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="n">new_client</span> <span class="o">=</span> <span class="no">Client</span><span class="o">.</span><span class="n">new</span> <span class="ss">:socket</span> <span class="o">=&gt;</span> <span class="vi">@socket</span><span class="o">.</span><span class="n">accept_nonblock</span><span class="p">,</span>
+                              <span class="ss">:channel</span> <span class="o">=&gt;</span> <span class="nb">self</span><span class="p">,</span>
+                              <span class="ss">:username</span> <span class="o">=&gt;</span> <span class="s2">&quot;Guest</span><span class="si">#{</span><span class="vi">@clients</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">&quot;</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-22'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-22">#</a>
+        </div>
+        <p> Add the new client to the channel&rsquo;s clients</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="vi">@clients</span> <span class="o">&lt;&lt;</span> <span class="n">new_client</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-23'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-23">#</a>
+        </div>
+        <p> Write to all the channels users that someone has connected</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="nb">self</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">new_client</span><span class="o">.</span><span class="n">username</span><span class="o">.</span><span class="n">bold</span><span class="si">}</span><span class="s2"> has joined!</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-24'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-24">#</a>
+        </div>
+        <p> Send a message to the channel</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-25'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-25">#</a>
+        </div>
+        <p> Send the message to each user in the channel via the socket</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="vi">@clients</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">client</span><span class="o">|</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">socket</span><span class="o">.</span><span class="n">write_nonblock</span> <span class="n">message</span>
+      <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-26'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-26">#</a>
+        </div>
+        <p> Print the message to the server log</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="nb">print</span> <span class="n">message</span>
+    <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-27'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-27">#</a>
+        </div>
+        <p> Makes #&lt;&lt; an alias for #send_message</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="n">alias_method</span> <span class="ss">:&lt;&lt;</span><span class="p">,</span> <span class="ss">:send_message</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-28'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-28">#</a>
+        </div>
+        <h3>Server class</h3>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-29'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-29">#</a>
+        </div>
+        <p> The server class handles the chat server</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">class</span> <span class="nc">Server</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-30'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-30">#</a>
+        </div>
+        <p> What port are we running on?</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">port</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-31'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-31">#</a>
+        </div>
+        <p> Channels connections</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="vi">@channels</span> <span class="o">=</span> <span class="no">Connections</span><span class="o">.</span><span class="n">new</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-32'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-32">#</a>
+        </div>
+        <p> Add a &ldquo;default&rdquo; channel</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="vi">@channels</span> <span class="o">&lt;&lt;</span> <span class="no">Channel</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+    <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-33'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-33">#</a>
+        </div>
+        <p> The run method sets the server in an infinite loop where
+ it listens for events.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">run</span>
+      <span class="kp">loop</span> <span class="k">do</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-34'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-34">#</a>
+        </div>
+        <p> Refresh new clients (someone could have been accepted
+ in the last loop)</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>        <span class="vi">@clients</span> <span class="o">=</span> <span class="n">refresh_clients</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-35'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-35">#</a>
+        </div>
+        <p> This is where the magic happens.
+ select(2), see <code>man 2 select</code> listens on all the sockets passed
+ and blocks until I/O is ready on any of the sockets. In this case
+ it listens on <strong>all</strong> of our client sockets, and channel server
+ sockets for I/O. I/O on a channel server typically means someone
+ has connected on the server, and ready I/O on a client socket usually
+ means the client has attempted to send a message to the socket or
+ has terminated its session.
+ When I/O is ready on anything, it returns an array like this:</p>
+
+<pre><code> [[readable_sockets], [write], [errors]]
+</code></pre>
+
+<p> In this case, we&rsquo;re only interested in the readable_sockets.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>        <span class="n">read</span><span class="p">,</span> <span class="n">write</span> <span class="o">=</span> <span class="nb">select</span><span class="p">(</span><span class="vi">@clients</span><span class="o">.</span><span class="n">sockets</span> <span class="o">+</span> <span class="vi">@channels</span><span class="o">.</span><span class="n">sockets</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-36'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-36">#</a>
+        </div>
+        <p> For each (readable) socket that is ready for I/O</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>        <span class="n">read</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">socket</span><span class="o">|</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-37'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-37">#</a>
+        </div>
+        <p> Reverse lookup the socket so we get the right client object
+ back, so we have access to #username, etc.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>          <span class="n">client</span> <span class="o">=</span> <span class="vi">@clients</span><span class="o">[</span><span class="n">socket</span><span class="o">]</span> <span class="k">unless</span> <span class="vi">@clients</span><span class="o">.</span><span class="n">empty?</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-38'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-38">#</a>
+        </div>
+        <p> If the readable socket is a server, someone is trying to connect</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>          <span class="k">if</span> <span class="n">socket</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="no">TCPServer</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-39'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-39">#</a>
+        </div>
+        <p> We accept that connection</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>            <span class="n">accept_new_connection</span><span class="p">(</span><span class="n">socket</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-40'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-40">#</a>
+        </div>
+        <p> If we&rsquo;re at EOF of the socket, someone has disconnected</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>          <span class="k">elsif</span> <span class="n">socket</span><span class="o">.</span><span class="n">eof?</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-41'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-41">#</a>
+        </div>
+        <p> So we close the connection to the socket</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>            <span class="n">close_connection</span><span class="p">(</span><span class="n">socket</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+          <span class="k">else</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-42'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-42">#</a>
+        </div>
+        <p> Else, someone is sending a message to our socket, and
+ we can parse it!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>            <span class="n">parse</span><span class="p">(</span><span class="n">socket</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="kp">private</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-43'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-43">#</a>
+        </div>
+        <p> Helper method for parsing a message, note that we could
+ easily add more to it like the ability to change a users
+ username by sending a message like &ldquo;/nick Newnick&rdquo;, again
+ this is free from good design!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">socket</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-44'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-44">#</a>
+        </div>
+        <p> Read 1024 bytes a time, and strip the output so we don&rsquo;t get
+ fancy newlines etc. we want to control this ourselves.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="n">buffer</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">read_nonblock</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-45'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-45">#</a>
+        </div>
+        <p> And finally write the message to the server.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="n">client</span><span class="o">.</span><span class="n">channel</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">client</span><span class="o">.</span><span class="n">username</span><span class="o">.</span><span class="n">bold</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">buffer</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-46'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-46">#</a>
+        </div>
+        <p> Helper method for accepting a new connection</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">accept_new_connection</span><span class="p">(</span><span class="n">socket</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-47'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-47">#</a>
+        </div>
+        <p> Reverse lookup the sever to get the server object and
+ then accept the new connection.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="vi">@channels</span><span class="o">[</span><span class="n">socket</span><span class="o">].</span><span class="n">accept_new_connection</span>
+    <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-48'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-48">#</a>
+        </div>
+        <p> Helper method for closing a connection</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">close_connection</span><span class="p">(</span><span class="n">socket</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-49'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-49">#</a>
+        </div>
+        <p> Tell people in the channel that the client left</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="n">client</span><span class="o">.</span><span class="n">channel</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Client left </span><span class="si">#{</span><span class="n">client</span><span class="o">.</span><span class="n">username</span><span class="o">.</span><span class="n">bold</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-50'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-50">#</a>
+        </div>
+        <p> Close the socket</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="n">client</span><span class="o">.</span><span class="n">socket</span><span class="o">.</span><span class="n">close</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-51'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-51">#</a>
+        </div>
+        <p> And delete the client so we don&rsquo;t attempt to listen on
+ a closed socket</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="vi">@clients</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">sock</span><span class="p">)</span>
+    <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-52'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-52">#</a>
+        </div>
+        <p> Refresh client list</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">refresh_clients</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-53'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-53">#</a>
+        </div>
+        <p> Basically it just checks all the channels for clients
+ and returns them in an array.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="n">clients</span> <span class="o">=</span> <span class="no">Connections</span><span class="o">.</span><span class="n">new</span>
+      <span class="vi">@channels</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">channel</span><span class="o">|</span>
+        <span class="n">clients</span> <span class="o">&lt;&lt;</span> <span class="n">channel</span><span class="o">.</span><span class="n">clients</span>
+      <span class="k">end</span>
+      <span class="n">clients</span><span class="o">.</span><span class="n">flatten</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-54'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-54">#</a>
+        </div>
+        <p> Start our server!</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="no">Chat</span><span class="o">::</span><span class="no">Server</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1337</span><span class="p">)</span><span class="o">.</span><span class="n">run</span></pre></div>
+      </td>
+    </tr>
+    </table>
+</div>
+</body>
