@@ -3,7 +3,7 @@ layout: default
 blog: true
 ---
 
-<div id="post">
+<article>
   <h1>{{ page.title }}</h1>
 
   <div class="gray">
@@ -23,13 +23,7 @@ blog: true
     </div>
   </div>
 
-  <div class="clear"></div>
-
-  <!--
-  <div id="tweetmeme">
-    <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
-  </div>
-  -->
+  <div class="clearfix"></div>
 
   {{ content }}
 
@@ -40,5 +34,4 @@ blog: true
   <div class="sticker">
     Questions and comments <a href="http://twitter.com/Sirupsen">@Sirupsen</a>
   </div>
-</div>
-
+</article>
