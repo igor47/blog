@@ -30,7 +30,7 @@ In my dumper I even did symbolic links to some of the configuration directories 
 
 It started syncing, and now the magic of Dropbox is a lot more tempting to me. I now have everything, and the most recent version of it, available everywhere (iPhone, Laptop, Web), and it's securely backed up.
 
-!/static/images/dropbox.jpg!
+!/images/dropbox.jpg!
 
 If Dropbox seems tempting to you (now?), be sure to sign up at "Dropbox.com":dropbox If you'd like to help me, and yourself, you can signup via "my referral link":https://www.getdropbox.com/referrals/NTgzODk4OTk and you'll get (and give) 250 mb extra to the 2gb default free limit!
 
