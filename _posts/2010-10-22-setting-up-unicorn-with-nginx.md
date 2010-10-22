@@ -47,7 +47,7 @@ Unicorn disfavors slow clients. Instead of stacking people up in long queues beh
 
 ## Deploying
 
-With Unicorn one can deploy wht *zero* downtime. This is rad stuff:
+With Unicorn one can deploy with *zero* downtime. This is rad stuff:
 
 > You can upgrade Unicorn, your entire application, libraries and even your Ruby interpreter without dropping clients.
 
