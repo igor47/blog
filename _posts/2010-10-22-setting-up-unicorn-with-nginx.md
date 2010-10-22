@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Setting up Unicorn with Nginx
+title: "Setting up Unicorn with Nginx"
+published: true
 ---
 
 Unicorn is a cool new Ruby HTTP server, and [we like it because it's Unix][tomayko].
