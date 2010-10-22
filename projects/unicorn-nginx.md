@@ -72,7 +72,7 @@ Start by installing [Nginx][nginx]. Afterwards we need to configure it for Unico
 
 In `nginx.conf` you may have stumbled upon and wondered about this line:
 
-{% highlight %}
+{% highlight bash %}
 user nobody nogroup; # for systems with a "nogroup"
 {% endhighlight %}
 
