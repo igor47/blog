@@ -11,7 +11,13 @@ So what is Unicorn?
 
 # Design 
 
-It's design is Unix. It uses the OS features where they are better. Unicorn has [a whole document][udesign] dedicated to address it's design. Let's take a few points from there that are essential to Unicorn.
+It's design is Unix.
+
+> Do one thing and do it right.
+
+For instance, load balancing in Unicorn is done by the OS kernel.
+
+Unicorn has [a whole document][udesign] dedicated to address its design. Let's take a few points from there that are essential to Unicorn:
 
 ## Load balancing
 
@@ -24,7 +30,7 @@ This is really, really cool. Normally load balancers reverse proxy to the worker
 
 Unicorn sets up a shared Unix socket. When a worker is not currently serving a request, it listens on the socket and throws an `accept()` when a request is ready. This is called **push balancing**.
 
-### Slow clients
+## Slow clients
 
 Some clients are slow. And this slows down everything. Twitter has put this issue nicely in [their blog post][twitter] on why they moved to Unicorn:
 
@@ -40,11 +46,11 @@ Unicorn dislikes slow clients. Instead of stacking people up in long queues behi
 
 ## Deploying
 
-This is rad:
+With zero downtime. This is rad stuff:
 
 > You can upgrade Unicorn, your entire application, libraries and even your Ruby interpreter without dropping clients.
 
-The Unicorn master and worker processes [responds](usignal) to `SIGNALS`. Here's what Github does:
+The Unicorn master and worker processes [responds][usignal] to `SIGNALS`. Here's what Github does:
 
 > First we send the existing Unicorn master a USR2 signal. This tells it to begin starting a new master process, reloading all our app code. When the new master is fully loaded it forks all the workers it needs. The first worker forked notices there is still an old master and sends it a QUIT signal.
 
@@ -52,8 +58,101 @@ The Unicorn master and worker processes [responds](usignal) to `SIGNALS`. Here's
 
 > We can also use this process to upgrade Unicorn itself.
 
+This requires a bit of Unicorn-config-fu to achieve, but Github has shared [their config][gconfig] with us.
+
+# Rails on Unicorns
+
+Ready to be powered by rainbows?
+
+We're going to set up Nginx in front of Unicorn.
+
+## Nginx
+
+Start by installing [Nginx][nginx]. Afterwards we need to configure it for Unicorn, we're gonna grab [the Nginx.conf example shipped with Unicorn][unginx], the Nginx configuration file is usually located at `/etc/nginx/nginx.conf`, tweak it to your likings, read the comments--they're quite good.
+
+In `nginx.conf` you may have stumbled upon and wondered about this line:
+
+{% highlight %}
+user nobody nogroup; # for systems with a "nogroup"
+{% endhighlight %}
+
+While this works, it's generally adviced to run as a seperate user. Let's create an Nginx user, and a web group:
+
+{% highlight bash %}
+$ sudo useradd -s /sbin/nologin -r nginx
+$ sudo usermod -a -G nginx web
+{% endhighlight %}
+
+Configure your static path to `/var/www`, and give permissions to the web group:
+
+{% highlight bash %}
+$ sudo mkdir /var/www
+$ sudo chgrp -R web /var/www # set /var/www owner group to "web"
+$ sudo chmod -R 755 /var/www # group write permission
+{% endhighlight %}
+
+Then add add yourself to this group so you can modify the contents of `/var/www`:
+
+{% highlight bash %}
+$ sudo usermod -a -G web USERNAME
+{% endhighlight %}
+
+## Unicorn
+
+Time for flying rainbow horses. Start by installing the Unicorn gem:
+
+{% highlight bash %}
+# gem install unicorn
+{% endhighlight %}
+
+You should now have Unicorn installed: `unicorn` (for non-Rails rack applications) and `unicorn_rails` (for Rails applications version >= 1.2) should be in your path.
+
+Time to take a test run! (You may wish to relogin with `su - USERNAME` if you haven't already so your permission tokens are set, else you will not have write permission to `/var/www`)
+
+{% highlight bash %}
+$ cd /var/www
+$ rails new unicorn
+{% endhighlight %}
+
+There we go, we now have our Unicorn Rails test app. in `/var/www`! Let's fetch a config and start the madness. We're going for the `unicorn.conf` example that comes with the Unicorn source:
+
+{% highlight bash %}
+$ curl -o config/unicorn.rb http://github.com/defunkt/unicorn/raw/master/examples/unicorn.conf.rb
+{% endhighlight %}
+
+You might want to tweak a few things:
+
+{% highlight ruby %}
+APP_PATH = "/var/www/unicorn/"
+working_directory APP_PATH
+
+stdeer_path APP_PATH + "/log/unicorn.stderr.log"
+stdout_path APP_PATH + "/log/unicorn.stderr.log"
+
+pid APP_PATH + "/tmp/pid/unicorn.pid"
+{% endhighlight %}
+
+Unicorn is ready!
+
+## Rainbow magic
+
+Start Nginx, how this is done depends on your OS. Then start Unicorn:
+
+{% highlight ruby %}
+$ unicorn_rails -c /var/www/unicorn/config/unicorn.rb -D
+{% endhighlight %}
+
+`-D` deamonizes it. `-c` should be pretty obvious; it specifies the configuration. In production you will probably want to pass `-E production` as well to run the app. in the production environment.
+
+That's it! Visiting [localhost](http://localhost) should take you to the Rails default page.
+
+You've been served by Unicorn magic!
+
 
 [tomayko]: http://tomayko.com/writings/unicorn-is-unix
+[gconfig]: http://gist.github.com/206253
 [udesign]: http://unicorn.bogomips.org/DESIGN.html
 [usignal]: http://unicorn.bogomips.org/SIGNALS.html
 [twitter]: http://engineering.twitter.com/2010/03/unicorn-power.html
+[unginx]: http://github.com/defunkt/unicorn/blob/master/examples/nginx.conf
+[nginx]: http://nginx.org
