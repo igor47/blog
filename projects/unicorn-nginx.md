@@ -102,7 +102,7 @@ $ sudo usermod -a -G web USERNAME
 Time for flying rainbow horses. Start by installing the Unicorn gem:
 
 {% highlight bash %}
-# gem install unicorn
+$ gem install unicorn
 {% endhighlight %}
 
 You should now have Unicorn installed: `unicorn` (for non-Rails rack applications) and `unicorn_rails` (for Rails applications version >= 1.2) should be in your path.
@@ -138,7 +138,7 @@ Unicorn is ready!
 
 Start Nginx, how this is done depends on your OS. Then start Unicorn:
 
-{% highlight ruby %}
+{% highlight bash %}
 $ unicorn_rails -c /var/www/unicorn/config/unicorn.rb -D
 {% endhighlight %}
 
