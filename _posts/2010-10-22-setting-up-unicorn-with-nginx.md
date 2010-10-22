@@ -61,7 +61,7 @@ The Unicorn master and worker processes [respond][usignal] to `SIGNALS`. Here's 
 
 This behaviour requires a bit of Unicorn-config-fu to achieve, but Github has shared [their config][gconfig] with us. There's a handy bash script taking advantage of the `SIGNAL` Unicorn API [baked in][init] with Unicorn.
 
-Unicorn makes 100% uptime possible. With Unicorn you can deploy as much as you want, without any downtime. Deploy safe, and do it often.Unicorn makes 100% uptime possible. With Unicorn you can deploy as much as you want, without any downtime. Deploy safe, and do it often.
+Unicorn makes 100% uptime possible.
 
 # Rails on Unicorns
 
