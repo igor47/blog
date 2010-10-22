@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Setting up Nginx and Unicorn
+title: Setting up Unicorn with Nginx
 ---
 
-Unicorn is a cool new Ruby HTTP server, and [we especially like it because it's Unix][tomayko].
-
-So what is Unicorn?
+Unicorn is a cool new Ruby HTTP server, and [we like it because it's Unix][tomayko].
 
 > Unicorn is an HTTP server for Rack applications designed to only serve fast clients on low-latency, high-bandwidth connections and take advantage of features in Unix/Unix-like kernels.
+
+I'm going to talk about Unicorn's design, and then I'll walk you through setting it up on your server.
 
 # Design 
 
