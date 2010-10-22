@@ -62,15 +62,15 @@ This behaviour requires a bit of Unicorn-config-fu to achieve, but Github has sh
 
 # Rails on Unicorns
 
-Ready to be powered by rainbows?
+Ready power your app by rainbows?
 
-We're going to set up Nginx in front of Unicorn.
+We're going to set up [Nginx][nginx] in front of Unicorn.
 
 ## Nginx
 
-Start by installing [Nginx][nginx]. Afterwards we need to configure it for Unicorn, we're gonna grab [the Nginx.conf example shipped with Unicorn][unginx], the Nginx configuration file is usually located at `/etc/nginx/nginx.conf`, tweak it to your likings, read the comments--they're quite good.
+Start by installing [Nginx][nginx] via your favorite package manager. Afterwards we need to configure it for Unicorn, we're gonna grab [the `nginx.conf` example configuration shipped with Unicorn][unginx], the Nginx configuration file is usually located at `/etc/nginx/nginx.conf`, so place it there, and tweak it to your likings, read the comments--they're quite good.
 
-In `nginx.conf` you may have stumbled upon and wondered about this line:
+In `nginx.conf` you may have stumbled upon this line:
 
 {% highlight bash %}
 user nobody nogroup; # for systems with a "nogroup"
@@ -83,7 +83,7 @@ $ sudo useradd -s /sbin/nologin -r nginx
 $ sudo usermod -a -G nginx web
 {% endhighlight %}
 
-Configure your static path to `/var/www`, and give permissions to the web group:
+Configure your static path in `nginx.conf` to `/var/www`, and give permissions to that folder to the web group:
 
 {% highlight bash %}
 $ sudo mkdir /var/www
@@ -91,7 +91,7 @@ $ sudo chgrp -R web /var/www # set /var/www owner group to "web"
 $ sudo chmod -R 755 /var/www # group write permission
 {% endhighlight %}
 
-Then add add yourself to this group so you can modify the contents of `/var/www`:
+Then add yourself to the web group so you can modify the contents of `/var/www`:
 
 {% highlight bash %}
 $ sudo usermod -a -G web USERNAME
@@ -107,14 +107,14 @@ $ gem install unicorn
 
 You should now have Unicorn installed: `unicorn` (for non-Rails rack applications) and `unicorn_rails` (for Rails applications version >= 1.2) should be in your path.
 
-Time to take a test run! (You may wish to relogin with `su - USERNAME` if you haven't already so your permission tokens are set, else you will not have write permission to `/var/www`)
+Time to take it for a spin! (You may wish to re-login with `su - USERNAME` if you haven't already, this ensures your permission tokens are set, otherwise you will not have write permission to `/var/www`)
 
 {% highlight bash %}
 $ cd /var/www
 $ rails new unicorn
 {% endhighlight %}
 
-There we go, we now have our Unicorn Rails test app. in `/var/www`! Let's fetch a config and start the madness. We're going for the `unicorn.conf` example that comes with the Unicorn source:
+There we go, we now have our Unicorn Rails test app in `/var/www`! Let's fetch some Unicorn config and start the madness. We're going for the `unicorn.conf` example that comes with the Unicorn source:
 
 {% highlight bash %}
 $ curl -o config/unicorn.rb http://github.com/defunkt/unicorn/raw/master/examples/unicorn.conf.rb
@@ -132,22 +132,19 @@ stdout_path APP_PATH + "/log/unicorn.stderr.log"
 pid APP_PATH + "/tmp/pid/unicorn.pid"
 {% endhighlight %}
 
-Unicorn is ready!
+Our Unicorn is ready!
 
 ## Rainbow magic
 
-Start Nginx, how this is done depends on your OS. Then start Unicorn:
+Start the Nginx deamon, how this is done depends on your OS. And then start Unicorn:
 
 {% highlight bash %}
 $ unicorn_rails -c /var/www/unicorn/config/unicorn.rb -D
 {% endhighlight %}
 
-`-D` deamonizes it. `-c` should be pretty obvious; it specifies the configuration. In production you will probably want to pass `-E production` as well to run the app. in the production environment.
+`-D` deamonizes it. `-c` should be pretty obvious; it specifies the configuration. In production you will probably want to pass `-E production` as well to run the app in the production environment.
 
 That's it! Visiting [localhost](http://localhost) should take you to the Rails default page.
-
-You've been served by Unicorn magic!
-
 
 [tomayko]: http://tomayko.com/writings/unicorn-is-unix
 [gconfig]: http://gist.github.com/206253
