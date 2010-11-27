@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Wishlist"
-updated: November 6th, 1994
 ---
 
 * [Wakemate][wkm]
