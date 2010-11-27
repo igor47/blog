@@ -1,1 +1,1 @@
-Dropbox/documents/misc/wishlist.md
+/home/sirup/Dropbox/documents/misc/wishlist.md
