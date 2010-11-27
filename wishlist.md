@@ -19,6 +19,7 @@ title: "Wishlist"
 * Gavekort
     - [Amazon][agc]
     - iTunes
+    - [Komplett][kgc]
 * Bøger
     - [Create Your Own Programming Language][cyp] (Ebog)
     - [The Power of Less][pof]
@@ -33,3 +34,4 @@ title: "Wishlist"
 [cyp]: http://createyourproglang.com/index2.html
 [pof]: http://thepowerofless.com/
 [agc]: http://www.amazon.com/gp/gc
+[kgc]: http://www.komplett.dk/k/k.aspx?action=page&page=giftcardbuy
