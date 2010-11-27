@@ -18,8 +18,10 @@ title: "Wishlist"
 * [Livescribe blokke][lsb]
 * Gavekort
     - [Amazon][agc]
-    - iTunes
+    - [Evernote][egc]
     - [Komplett][kgc]
+    - [6sync Virtual Private Server][6sy]
+    - iTunes
 * Bøger
     - [Create Your Own Programming Language][cyp] (Ebog)
     - [The Power of Less][pof]
@@ -35,3 +37,5 @@ title: "Wishlist"
 [pof]: http://thepowerofless.com/
 [agc]: http://www.amazon.com/gp/gc
 [kgc]: http://www.komplett.dk/k/k.aspx?action=page&page=giftcardbuy
+[6sy]: http://6sync.com
+[egc]: https://www.evernote.com/Gift.action
