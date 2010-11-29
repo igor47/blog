@@ -9,6 +9,8 @@ title: "Wishlist"
 * Magnet cykellygter
 * [Github T-shirt][ioc]
 * [Tonido Plug][tp]
+* Vinterstøvler
+* Bidrag til skitur med Gymnasiet
 * Verbatim USB-hubs
     - Skal sidde i mit nøglebundt
     + [4gb][vb4]
@@ -20,8 +22,8 @@ title: "Wishlist"
     - [Amazon][agc]
     - [Evernote][egc]
     - [Komplett][kgc]
-    - [6sync Virtual Private Server][6sy]
     - iTunes
+* iPhone 4
 * Bøger
     - [Create Your Own Programming Language][cyp] (Ebog)
     - [The Power of Less][pof]
