@@ -7,7 +7,8 @@ title: "Wishlist"
 * Pung
     - Gerne simpel
 * Magnet cykellygter
-* [Github T-shirt][ioc]
+* [Github stuff][ioc]
+    - Dog ikke laptop klisterm√rker samt "fork you" t-shirten
 * Vinterst√∏vler
 * Bidrag til skitur med Gymnasiet
 * Verbatim USB-hubs
@@ -29,7 +30,7 @@ title: "Wishlist"
 
 [vb4]: http://3.ly/4gb
 [vb8]: http://3.ly/8gb
-[ioc]: http://shop.github.com/products/i-octocat-code
+[ioc]: http://shop.github.com/
 [tmk]: http://typematrix.com/
 [wkm]: http://wakemate.com/
 [lsb]: http://www.livescribe.com/store
