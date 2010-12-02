@@ -8,7 +8,6 @@ title: "Wishlist"
     - Gerne simpel
 * Magnet cykellygter
 * [Github T-shirt][ioc]
-* [Tonido Plug][tp]
 * Vinterstøvler
 * Bidrag til skitur med Gymnasiet
 * Verbatim USB-hubs
@@ -30,7 +29,6 @@ title: "Wishlist"
 
 [vb4]: http://3.ly/4gb
 [vb8]: http://3.ly/8gb
-[tp]:  http://www.tonidoplug.com/index.html
 [ioc]: http://shop.github.com/products/i-octocat-code
 [tmk]: http://typematrix.com/
 [wkm]: http://wakemate.com/
