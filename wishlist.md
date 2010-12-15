@@ -11,6 +11,7 @@ title: "Wishlist"
     - Dog ikke laptop klisterm�rker samt "fork you" t-shirten
 * Vinterstøvler
 * Bidrag til skitur med Gymnasiet
+* Sportssko
 * Verbatim USB-hubs
     - Skal sidde i mit nøglebundt
     + [4gb][vb4]
