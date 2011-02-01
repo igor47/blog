@@ -26,11 +26,13 @@ When I returned, I thought I should do my website in tables -- quickly figured I
 
 But these frameworks were all magic. I had no idea how they worked, so I ended up building my own framework. That has probably been my greatest learning experience so far. Building something that wasn't CRUD webinterfaces.
 
-Although when I build the framework I came to dislike PHP more and more, I figured it might not be the programming language for me, so I picked up Python. I liked Python a lot, and I did a basic Django site. Someone told me about Ruby, and I decided to try it out. Much more about why I went to the Ruby site in my [other blog post][wish].
+Although when I build the framework I came to dislike PHP more and more, I figured it might not be the programming language for me, so I picked up Python. I liked Python a lot, and I did a basic Django site. Someone told me about Ruby, and I decided to try it out. Much more about why I went to the Ruby side in my [other blog post][wish].
 
 I started building basic Ruby applications, I mostly stuck with plain Ruby until an american company contacted me after writing "What I wish a Ruby programmer had told me one year ago" and asked whether I'd like to come work for them, where I started getting familiar with Sinatra and Rails.
 
 In August I switched to work for a Danish startup, [Firmafon][fm], maintaining and developing the Rails backend, and that's what I'm doing now. Firmafon just got a venture investment around christmas, so I'm defiantly looking forward to working more with this awesome team.
+
+I wanted this to have a more catchy title, such as "How I ditched Microsoft and got an awesome job", but I resisted..
 
 [wish]: http://sirupsen.com/what-I-wish-a-ruby-programmer-had-told-me-one-year-ago/
 [fm]: http://firmafon.dk
