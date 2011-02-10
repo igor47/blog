@@ -3,11 +3,11 @@ layout: post
 title: Create your first Ruby Gem and release it to Gemcutter
 ---
 
-<p>A few days ago I was set off to create my first RubyGem. There are many resources on how to do this, but it took me a good while to gather all the information I figured I'd need for my application, so I've decided to gather my bit of knowledge in this article.</p>
+A few days ago I was set off to create my first RubyGem. There are many resources on how to do this, but it took me a good while to gather all the information I figured I'd need for my application, so I've decided to gather my bit of knowledge in this article.
 
-<p>This article's goal is kick start the creation of your first Gem. To make this experience more enjoyable, I've chosen to use a gem called <a href="http://github.com/technicalpickles/jeweler">Jeweler</a>.</p>
+This article's goal is kick start the creation of your first Gem. To make this experience more enjoyable, I've chosen to use a gem called [Jeweler][jw].
 
-<p><strong>Note:</strong> I am by <strong>no</strong> means a <em>"ruby-pro"</em>. I have only created a single Gem, but I thought this article could be helpful to a lot of people, and thus I wrote it. If you have any corrections, questions, or suggestions please either email me at sirup@sirupsen.dk or comment below.</p>
+**Note:** I am by no means a "ruby-pro". I have only created a single Gem, but I thought this article could be helpful to a lot of people, and thus I wrote it. If you have any corrections, questions, or suggestions please either email me at sirup@sirupsen.dk or comment below.
 
 <!--more-->
 <h2>Preparing</h2>
@@ -210,3 +210,6 @@ Installing RDoc documentation for helloworld-0.0.0...</pre>
 	<li>Go to #2</li>
 
 </ol>
+
+
+[jw]: http://github.com/technicalpickles/jeweler
