@@ -13,7 +13,7 @@ Most open source projects have no designers attached. However, some do, for inst
 > For every % in sales invested in product design, a company's sales and profits rise 3-4% on average.
 From [A Whole New Mind][awnm], p. 78
 
-This is relevant for open source too good product design attract users.
+This is relevant for open source too; good product design attract users.
 
 People tend to design for themselves, and generally it just doesn't work when developers create software for non-developers. Even so, developers are taking care of designing and implementing the user interface in the majority of open source projects. Leaving us with an unconsistent, probably not well thought through, interface that is very much hacked together and is something the developers just want to get over with. Most importantly: An interface which may confuse users. Designing interfaces usually is not what developers enjoy doing the most, very much reflected in the finished interface. 
 
