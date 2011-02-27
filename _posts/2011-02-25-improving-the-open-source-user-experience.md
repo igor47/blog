@@ -6,12 +6,14 @@ published: false
 
 I absolutely love open source, I contribute myself and I use tons of open source software every day. I am attached to the idea that what I use is completely open, I can change everything about it if I want, I can figure out how it works, learn from it, contribute to it. Open source is many things: browsers, databases, operating systems and what not.
 
-However, there's one thing I always thought could be drastically improved in many open source projects: The User Experience. When I ask a not-so-techinal friend why they don't use *some open source project instead of commercial one* many say that "it's because ugly". What they mean by ugly is that it's hard to find what you are looking for in the interface, and yeah, it might not be eye candy either.
+However, there's one thing I always thought could be drastically improved in many open source projects: The User Experience. When I ask a not-so-techinal friend why they don't use *some open source project instead of commercial one* many say that "it's because ugly". What they mean by ugly is that it's hard to find what you are looking for in the interface, and yeah, it's usually not eye candy either.
 
 Most open source projects have no designers attached. However, some do, for instance [Ubuntu][ua], most people, again non-techinal people, I know like Ubuntu because it's pretty and easy to use:
 
 > For every % in sales invested in product design, a company's sales and profits rise 3-4% on average.
 From [A Whole New Mind][awnm], p. 78
+
+This is relevant for open source too good product design attract users.
 
 People tend to design for themselves, and generally it just doesn't work when developers create software for non-developers. Even so, developers are taking care of designing and implementing the user interface in the majority of open source projects. Leaving us with an unconsistent, probably not well thought through, interface that is very much hacked together and is something the developers just want to get over with. Most importantly: An interface which may confuse users. Designing interfaces usually is not what developers enjoy doing the most, very much reflected in the finished interface. 
 
