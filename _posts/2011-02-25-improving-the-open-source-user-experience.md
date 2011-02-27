@@ -1,8 +1,10 @@
 ---
 layout: post
 title: Improving the Open Source user experience
-published: false
+published: true
 ---
+
+## Draft
 
 I absolutely love open source, I contribute myself and I use tons of open source software every day. I am attached to the idea that what I use is completely open, I can change everything about it if I want, I can figure out how it works, learn from it, contribute to it. Open source is many things: browsers, databases, operating systems and what not.
 
