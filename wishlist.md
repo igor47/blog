@@ -14,6 +14,13 @@ title: "Wishlist"
     - [Komplett][kgc]
     - iTunes
 * iPhone 4
+* Højtalere
+* Flere skærme
+* Fjernsyn
+    - Med USB indgang, eller noget hvor jeg kan streame film over lokalnetværket
+* Di.fm
+* Grooveshark
+* Evernote
 
 [ioc]: http://shop.github.com/
 [wkm]: http://wakemate.com/
