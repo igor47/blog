@@ -12,7 +12,7 @@ You have a blog listing a bunch of posts: title, content, author, date and the n
 
 Typically one would do it like this in Rails:
 
-{% highlight erb %}
+{% highlight html %}
 <% for post in @posts %>
   <h1><%= post.title %></h1>
   <p><%= post.content %></p>
