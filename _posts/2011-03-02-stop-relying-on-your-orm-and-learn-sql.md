@@ -10,16 +10,17 @@ Let me go through the most common pitfall I see.
 
 You have a blog listing a bunch of posts: title, content, author, date and the number of associated comments. 
 
-Typically one would do it like this:
+Typically one would do it like this in Rails:
 
 {% highlight erb %}
-- for post in @posts
-<h1><%= post.title %></h1>
-<p><%= post.content %></p>
-<p>
-  <%= post.author %> posted on <%= post.created_at %>
-  <%= post.comments.count %> comments
-</p>
+<% for post in @posts %>
+  <h1><%= post.title %></h1>
+  <p><%= post.content %></p>
+  <p>
+    <%= post.author %> posted on <%= post.created_at %>
+    <%= post.comments.count %> comments
+  </p>
+<% end %>
 {% endhighlight %}
 
 This looks simple enough, and it is -- the issue here is the query for retrieving the number of comments (`post.comments.count`) associated is run for each blog post, although it could easily be included in the main SQL query fetching the posts with a join:
