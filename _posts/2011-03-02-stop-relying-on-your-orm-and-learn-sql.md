@@ -23,7 +23,7 @@ Typically one would do it like this in Rails:
 <% end %>
 {% endhighlight %}
 
-This looks simple enough, and it is -- the issue here is the query for retrieving the number of comments (`post.comments.count`) associated is run for each blog post, although it could easily be included in the main SQL query fetching the posts with a join:
+This looks simple enough, and it is -- the issue here is the query for retrieving the number of comments associated (`post.comments.count`) is run for each blog post, although it could easily be included in the main SQL query fetching the posts with a join:
 
 {% highlight sql %}
 SELECT posts.*, count(comments.id) as comments_count FROM "users" INNER JOIN "comments" ON comments.post_id = posts.id GROUP BY posts.id
