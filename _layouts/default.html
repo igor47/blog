@@ -1,7 +1,5 @@
 {% assign description = "I'm a developer, rubyist, and minimalist: I build amazing <i>(simple)</i> things using Ruby." %}
 
-<!doctype html>  
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
@@ -21,7 +19,8 @@
     <link href="http://feeds.feedburner.com/Sirupsen" rel="alternate" title="Sirupsen" type="application/atom+xml" />
 
     <!-- CSS : implied media="all" -->
-    <link rel="stylesheet" href="/static/css/style.css?v=1">
+    <link rel="stylesheet" href="/static/css/style.css?v=2">
+    <link rel="stylesheet" href="/static/css/custom.css?v=2">
     <link rel="stylesheet" href="/static/css/syntax.css?v=1">
 
     <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects
@@ -34,17 +33,17 @@
       <ul id="essentials">
         <h2><a href="/">Sirupsen</a></h2>
         <li><span class="gray">Simon Hørup Eskildsen</span></li>
-        <li><a href="mailto:sirup@sirupsen.com" title="If you are seeing this, you should definitly email me. I don't bite even though my avatar is a cat.">sirup@sirupsen.com</a></li>
+        <li><a href="mailto:sirup@sirupsen.com" title="If you are seeing this, you should definitely email me">sirup@sirupsen.com</a></li>
       </ul>
 
       <p>{{ description }}</p>
 
       <ul id="links">
-        <li><a href="http://twitter.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Twitter']);" title="You should follow me">Twitter</a></li>
-        <li><a href="http://github.com/Sirupsen" title="I share and fork here">Github</a></li>
-        <li><a href="http://pinboard.in/u:sirupsen" title="I share my links here">Pinboard</a></li>
-        <li><a href="talk:chat?jid=sirup@sirupsen.com" title="Feel free to add me!">Google Talk</a></li>
-        <li><a href="http://feeds.feedburner.com/Sirupsen" title="You should subscribe">RSS</a></li>
+        <li><a href="http://twitter.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Twitter']);" title="You should follow me">Twitter</a></li>
+        <li><a href="http://github.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Github']);" title="I share and fork code here">Github</a></li>
+        <li><a href="http://pinboard.in/u:sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Pinboard']);" title="I share my links here">Pinboard</a></li>
+        <li><a href="talk:chat?jid=sirup@sirupsen.com" onHover="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar GoogleTalk']);" title="Feel free to add me">Google Talk</a></li>
+        <li><a href="http://feeds.feedburner.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Rss']);" title="You should subscribe">RSS</a></li>
       </ul>
     </div>
 
@@ -63,6 +62,5 @@
     <![endif]-->
 
     <!-- Trackin yer visits -->
-    <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-9939782-5']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script>
-  </body> 
+    <script> var _gaq=[["_setAccount","UA-9939782-5"],["_trackPageview"]]; (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1; g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js"; s.parentNode.insertBefore(g,s)}(document,"script")); </script>
 </html> 
