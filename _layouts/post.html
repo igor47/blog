@@ -3,35 +3,35 @@ layout: default
 blog: true
 ---
 
-<article>
+<header>
   <h1>{{ page.title }}</h1>
 
-  <div class="gray">
-    <div class="left">
-      {% if page.date %}
-        {{ (page.date | date_to_string) }}
-      {% endif %}
+  <div class="left gray">
+    {% if page.date %}
+      {{ (page.date | date_to_string) }}
+    {% endif %}
 
-      {% if page.updated %}
-        updated
-        {{ page.updated }}
-      {% endif %}
-    </div>
-
-    <div class="right">
-      <a href="http://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }}" data-count="horizontal" data-via="Sirupsen">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-    </div>
+    {% if page.updated %}
+      updated
+      {{ page.updated }}
+    {% endif %}
   </div>
 
-  <div class="clearfix"></div>
+  <div class="right gray">
+    <a href="http://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }}" data-count="horizontal" data-via="Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Post Twitter Share']);">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  </div>
+</header>
 
+<div class="clearfix"></div>
+
+<article>
   {{ content }}
 
   <p>
-    If you've read this far, you should follow me on Twitter <a href="http://twitter.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Post Twitter']);">>here.</a>
+    If you've read this far, you should follow me on Twitter <a href="http://twitter.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Post Twitter']);">here.</a>
   </p>
-
-  <div class="sticker">
-    Questions and comments <a href="http://twitter.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Post Twitter Feedback']);">@Sirupsen</a>
-  </div>
 </article>
+
+<footer>
+  Questions and comments <a href="http://twitter.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Post Twitter Feedback']);">@Sirupsen</a>
+</footer>

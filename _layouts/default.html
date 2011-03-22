@@ -1,4 +1,5 @@
 {% assign description = "I'm a developer, rubyist, and minimalist: I build amazing <i>(simple)</i> things using Ruby." %}
+<!DOCTYPE html>
 
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
@@ -29,25 +30,30 @@
   </head> 
 
   <body> 
-    <div id="contact">
+    <aside>
+      <h2><a href="/">Sirupsen</a></h2>
+
       <ul id="essentials">
-        <h2><a href="/">Sirupsen</a></h2>
         <li><span class="gray">Simon Hørup Eskildsen</span></li>
         <li><a href="mailto:sirup@sirupsen.com" title="If you are seeing this, you should definitely email me">sirup@sirupsen.com</a></li>
       </ul>
 
-      <p>{{ description }}</p>
+      <section>
+        {{ description }}
+      </section>
 
-      <ul id="links">
-        <li><a href="http://twitter.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Twitter']);" title="You should follow me">Twitter</a></li>
-        <li><a href="http://github.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Github']);" title="I share and fork code here">Github</a></li>
-        <li><a href="http://pinboard.in/u:sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Pinboard']);" title="I share my links here">Pinboard</a></li>
-        <li><a href="talk:chat?jid=sirup@sirupsen.com" onHover="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar GoogleTalk']);" title="Feel free to add me">Google Talk</a></li>
-        <li><a href="http://feeds.feedburner.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Rss']);" title="You should subscribe">RSS</a></li>
-      </ul>
-    </div>
+      <nav>
+        <ul>
+          <li><a href="http://twitter.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Twitter']);" title="You should follow me">Twitter</a></li>
+          <li><a href="http://github.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Github']);" title="I share and fork code here">Github</a></li>
+          <li><a href="http://pinboard.in/u:sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Pinboard']);" title="I share my links here">Pinboard</a></li>
+          <li><a href="talk:chat?jid=sirup@sirupsen.com" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar GoogleTalk']);" title="Feel free to add me">Google Talk</a></li>
+          <li><a href="http://feeds.feedburner.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Rss']);" title="You should subscribe">RSS</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-    <div id='container'> 
+    <div id="container">
       {{ content }}
     </div>
 
@@ -63,4 +69,5 @@
 
     <!-- Trackin yer visits -->
     <script> var _gaq=[["_setAccount","UA-9939782-5"],["_trackPageview"]]; (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1; g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js"; s.parentNode.insertBefore(g,s)}(document,"script")); </script>
+  </body>
 </html> 

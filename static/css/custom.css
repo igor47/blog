@@ -13,18 +13,18 @@ body {
 }
 
 h1 { 
-  font-size: 220%; 
-  line-height: 1.25em;
+  font-size: 190%; 
+  line-height: 1.60em;
 }
 
 h2 { 
-  font-size: 160%;
-  line-height: 1.20em;
+  font-size: 150%;
+  line-height: 1.50em;
 }
 
 h3 {
   font-size: 130%;
-  line-height: 1.10em;
+  line-height: 1.40em;
 }
 
 p {
@@ -56,12 +56,16 @@ code {
 
 pre {
   background-color: #F8F8F8;
-  border: 1px solid #EEE;
+  border: 2px solid #EEE;
+  border-left: 0;
+  width: 100%;
   color: #000;
   display: block;
   line-height: 150%;
   overflow: auto;
-  padding: 1em;
+  position: relative;
+  left: -20px;
+  padding: 20px;
   margin: 24px 0 24px 0;
 }
 
@@ -131,19 +135,14 @@ table tr td {
   padding: 5px 24px 5px 24px;
 }
 
-.gray {
-  color: #999;
+article {
+  margin-bottom: 0;
 }
 
-/*
- * Container
- *
- */
-
 #container {
-  float: left;
+  width: 650px;
   border-left: 2px solid #EEE;
-  width: 600px;
+  float: left;
 }
 
 /*
@@ -152,17 +151,17 @@ table tr td {
  *
  */
 
-#contact {
+aside {
   float: left;
   width: 200px;
   margin-left: 50px;
 }
 
-#contact li {
+aside li {
   list-style-type: none;
 }
 
-#contact ul {
+aside ul {
   margin-bottom: 10px;
   margin-left: 0;
 }
@@ -189,7 +188,8 @@ ul.posts {
 }
 
 .clicky:hover {
-  background: #EEE;
+  background: #F8F8F8;
+
   cursor: pointer;
 }
 
@@ -198,20 +198,31 @@ ul.posts {
   float: right;
 }
 
-.sticker {
-  border: 1px solid #EEE;
+footer {
+  border: 2px solid #EEE;
+  border-left: 0;
+
   background-color: #F8F8F8;
-  padding: 1em;
-  margin: 15px 0 15px 0;
+  padding: 20px;
   margin-bottom: 50px;
 }
 
-article {
-  margin: 0 0 50px 15px;
+header {
+  border: 2px solid #EEE;
+  border-left: 0;
+
+  background-color: #F8F8F8;
+  padding: 20px;
+  overflow: hidden;
 }
 
-.gray {
-  color: #999;
+article {
+  padding: 20px;
+  padding-top: 0;
+}
+
+nav {
+  margin-top: 10px;
 }
 
 .left {
@@ -223,4 +234,8 @@ article {
   float: right;
   text-align: right;
   width: 50%;
+}
+
+.gray {
+  color: #999;
 }
