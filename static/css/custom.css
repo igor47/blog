@@ -55,7 +55,7 @@ code {
 }
 
 pre {
-  background-color: #F8F8F8;
+  background-color: #F7F7F7;
   border: 2px solid #EEE;
   border-left: 0;
   width: 100%;
@@ -188,7 +188,7 @@ ul.posts {
 }
 
 .clicky:hover {
-  background: #F8F8F8;
+  background: #F7F7F7;
 
   cursor: pointer;
 }
@@ -202,7 +202,7 @@ footer {
   border: 2px solid #EEE;
   border-left: 0;
 
-  background-color: #F8F8F8;
+  background-color: #F7F7F7;
   padding: 20px;
   margin-bottom: 50px;
 }
@@ -211,7 +211,7 @@ header {
   border: 2px solid #EEE;
   border-left: 0;
 
-  background-color: #F8F8F8;
+  background-color: #F7F7F7;
   padding: 20px;
   overflow: hidden;
 }

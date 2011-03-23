@@ -10,3 +10,19 @@ task :css do
   `yuicompressor static/css/temp.css > static/css/main.css`
   `rm static/css/temp.css`
 end
+
+desc "Deploy site"
+task :deploy do
+  Rake::Task['css'].execute
+
+  puts "Pushing to Github"
+  `git push origin master`
+end
+
+task "Serve"
+task :serve do
+  Rake::Task['css'].execute
+
+  `open http://localhost:4000`
+  `jekyll --serve --no-pygments`
+end
