@@ -2,10 +2,11 @@ require 'rake'
 
 desc "Compile CSS files"
 task :css do
-  puts "Deleting old style.css.."
-  `rm static/css/style.css`
-  puts "Populating style.css.."
-  `cat static/css/base.css > static/css/style.css`
-  `cat static/css/specific.css >> static/css/style.css`
-  puts "Done!"
+  puts "Merging CSS"
+  `cat static/css/style.css > static/css/temp.css`
+  `cat static/css/custom.css >> static/css/temp.css`
+  `cat static/css/syntax.css >> static/css/temp.css`
+  puts "Compressing CSS"
+  `yuicompressor static/css/temp.css > static/css/main.css`
+  `rm static/css/temp.css`
 end
