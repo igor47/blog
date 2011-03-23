@@ -7,8 +7,6 @@ body {
   font-size: 16px;
   line-height: 24px;
   
-  /* Use body as wrapper: camendesign.com/code/developpeurs_sans_frontieres */
-  /*width: 800px;*/
   margin: 40px auto;
 }
 
@@ -177,23 +175,20 @@ aside ul {
 
 ul.posts li {
   list-style-type: none;
+  padding-left: 15px;
 }
 
 ul.posts {
   margin: 0;
 }
 
-.clicky {
-  padding-left: 15px;
-}
-
-.clicky:hover {
+ul.posts li:hover {
   background: #F7F7F7;
 
   cursor: pointer;
 }
 
-.date {
+ul.posts span {
   color: #999;
   float: right;
 }
@@ -214,6 +209,8 @@ header {
   background-color: #F7F7F7;
   padding: 20px;
   overflow: hidden;
+}
+
 }
 
 article {

@@ -5,9 +5,9 @@ title: Sirupsen and his codeabouts
 
 <ul class="posts">
   {% for post in site.posts %}
-    <li class="clicky" onclick="location.href='{{ post.url }}'">
+    <li onclick="location.href='{{ post.url }}'">
       <a href="{{ post.url }}">{{ post.title }}</a>
-      <span class="date">{{ post.date | date_to_string }}</span>
+      <span>{{ post.date | date_to_string }}</span>
     </li>
   {% endfor %}
 </ul>
