@@ -83,7 +83,7 @@ While this works, it's generally adviced to run as a seperate user for security 
 
 {% highlight bash %}
 $ sudo useradd -s /sbin/nologin -r nginx
-$ sudo usermod -a -G nginx web
+$ sudo usermod -a -G web nginx
 {% endhighlight %}
 
 Configure your static path in `nginx.conf` to `/var/www`, and give permissions to that folder to the web group:
