@@ -4,6 +4,8 @@ body {
   font-size: 12pt;
 }
 
+h1 { font-size: 46px; }
+
 .four.columns h1 {
   margin-bottom: 10px;
 }
@@ -29,7 +31,7 @@ a:hover {
 
 a:visited { color: #607890; }
 
-.sidebar section {
+.sidebar {
   width: 220px; 
   position: fixed;
 }
