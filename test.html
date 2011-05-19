@@ -1,4 +1,3 @@
-{% assign description = "I'm a developer, rubyist, and minimalist: I build amazing <i>(simple)</i> things using Ruby." %}
 <!doctype html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -15,11 +14,11 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
 
-	<link rel="stylesheet" href="/static/css/base.css">
-	<link rel="stylesheet" href="/static/css/skeleton.css">
-	<link rel="stylesheet" href="/static/css/layout.css">
-	<link rel="stylesheet" href="/static/css/custom.css">
-	<link rel="stylesheet" href="/static/css/syntax.css">
+	<link rel="stylesheet" href="static/css/base.css">
+	<link rel="stylesheet" href="static/css/skeleton.css">
+	<link rel="stylesheet" href="static/css/layout.css">
+	<link rel="stylesheet" href="static/css/custom.css">
+	<link rel="stylesheet" href="static/css/syntax.css">
 </head>
 <body>
 	<div class="container">	
@@ -32,7 +31,7 @@
           <li><a href="mailto:sirup@sirupsen.com" title="If you are seeing this, you should definitely email me">sirup@sirupsen.com</a></li>
         </ul>
 
-        <p>{{ description }}</p>
+        <p>I'm a developer, rubyist, and minimalist: I build amazing <i>(simple)</i> things using Ruby.</p>
 
         <ul>
           <li><a href="http://twitter.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Twitter']);" title="You should follow me">Twitter</a></li>
@@ -42,9 +41,14 @@
           <li><a href="http://feeds.feedburner.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Rss']);" title="You should subscribe">RSS</a></li>
         </ul>
       </section>
-    </div>
+		</div>
 
-    {{ content }}
+    <ul id='posts'>
+      <li> 
+        <a class="ten columns offset-by-four" href="/improving-the-open-source-user-experience">Improving the Open Source user experience</a> 
+        <span class="two columns">25 Feb 2011</span> 
+      </li>
+    </ul>
 
     <div id='mobile' class='two columns hidden'>
       <ul>
@@ -55,13 +59,5 @@
       </ul>
     </div>
   </div>
-
-    <!-- Grab Google CDN's jQuery. fall back to local if necessary
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script>!window.jQuery && document.write(unescape('%3Cscript src="/static/js/jquery-1.4.2.min.js"%3E%3C/script%3E'))</script>
-    -->
-
-    <!-- Trackin yer visits -->
-    <script> var _gaq=[["_setAccount","UA-9939782-5"],["_trackPageview"]]; (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1; g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js"; s.parentNode.insertBefore(g,s)}(document,"script")); </script>
-  </body>
-</html> 
+</body>
+</html>
