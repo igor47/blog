@@ -52,7 +52,11 @@ a:visited { color: #607890; }
 
 .sidebar {
   width: 220px; 
+}
+
+.sidebar > section {
   position: fixed;
+  width: inherit;
 }
 
 .hidden { display: none; }
