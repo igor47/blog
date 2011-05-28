@@ -76,6 +76,10 @@ a:visited { color: #607890; }
   margin-bottom: 20px;
 }
 
+pre {
+  margin-bottom: 20px;
+}
+
 code {
   font-size: 90%;
   font-family: Monaco, Consolas, monospace;
