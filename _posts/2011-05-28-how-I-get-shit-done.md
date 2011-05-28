@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Starting with Git!
+title: How I get shit done
 ---
 
 Today I decided to ditch my to do list.
