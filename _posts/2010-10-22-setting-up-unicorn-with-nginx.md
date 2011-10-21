@@ -91,7 +91,7 @@ Configure your static path in `nginx.conf` to `/var/www`, and give permissions t
 {% highlight bash %}
 $ sudo mkdir /var/www
 $ sudo chgrp -R web /var/www # set /var/www owner group to "web"
-$ sudo chmod -R 755 /var/www # group write permission
+$ sudo chmod -R 775 /var/www # group write permission
 {% endhighlight %}
 
 Then add yourself to the web group so you can modify the contents of `/var/www`:
@@ -120,13 +120,13 @@ $ rails new unicorn
 There we go, we now have our Unicorn Rails test app in `/var/www`! Let's fetch some Unicorn config and start the madness. We're going for the `unicorn.conf` example that comes with the Unicorn source:
 
 {% highlight bash %}
-$ curl -o config/unicorn.rb http://github.com/defunkt/unicorn/raw/master/examples/unicorn.conf.rb
+$ curl -o config/unicorn.rb https://raw.github.com/defunkt/unicorn/master/examples/unicorn.conf.rb
 {% endhighlight %}
 
 You might want to tweak a few things:
 
 {% highlight ruby %}
-APP_PATH = "/var/www/unicorn/"
+APP_PATH = "/var/www/unicorn"
 working_directory APP_PATH
 
 stdeer_path APP_PATH + "/log/unicorn.stderr.log"
