@@ -8,9 +8,9 @@ blog: true
 </header>
 
 <div class='five columns offset-by-four gray'>
-  {{ unless page.date }}
-      {{ page.date | date_to_string }}
-  {{ undunless }}
+{{ if page.date }}
+    {{ page.date | date_to_string }}
+{{ endif }}
 </div>
 
 <div class='five columns' id='tweet'>
