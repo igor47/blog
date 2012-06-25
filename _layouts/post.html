@@ -7,11 +7,11 @@ blog: true
   <h1>{{ page.title }}</h1>
 </header>
 
-<div class='five columns offset-by-four gray'>
-  {{ if page.date }}
-    {{ page.date | date_to_string }}
-  {{ endif }}
-</div>
+{{ unless page.date == nil }}
+  <div class='five columns offset-by-four gray'>
+      {{ page.date | date_to_string }}
+  </div>
+{{ endif }}
 
 <div class='five columns' id='tweet'>
   <a href="http://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }}" data-count="horizontal" data-via="Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Post Twitter Share']);">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>

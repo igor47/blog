@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Solution to dice
-date: "2012-06-25"
 ---
 
 This is an implementation task, which means that it does not require any
