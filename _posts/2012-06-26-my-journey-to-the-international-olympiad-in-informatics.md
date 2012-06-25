@@ -55,7 +55,7 @@ The citizens of Ventspils seemed very proud of their city, so in lieu of the muc
 
 The difficulty on the second day was much like the first. Thus I decided to once again devote all the time to [a single task][fire], exploring edge-cases with pen and paper, rethinking even the most trivial logic. Once again, I was quite sure I had figured out a 30-point solution. But when we received our results, it turned out I had only received 10 points on the second day.
 
-According to the other, more experienced Danish participants the tasks had been unusually difficult, and normally you get more points for a slow, working solution (like mine on the second day), about 30-40 points. The 10 points from the second day became my final score, I was positioned as the fifth dane, so I was rather certain to not get on the IOI-team of 4. I was disappointed now that I had come so far, but taken the experience of the other participants into consideration, I could be quite happy with my result, and follow my plan to go all-in next year. I chose to focus on the wrong tasks on both days, wrong because they were not the easiest, even if they looked like that at a first glance. But these are the kinds of things you learn from experience. Once again, I had learned a lot, and I had a great time with the team in Latvia.
+According to the other, more experienced Danish participants the tasks had been unusually difficult, and normally you get more points for a slow, working solution (like mine on the second day), about 30-40 points. The 10 points from the second day became my final score, I was [positioned as the fifth dane](boiresults), so I was rather certain to not get on the IOI-team of 4. I was disappointed now that I had come so far, but taken the experience of the other participants into consideration, I could be quite happy with my result, and follow my plan to go all-in next year. I chose to focus on the wrong tasks on both days, wrong because they were not the easiest, even if they looked like that at a first glance. But these are the kinds of things you learn from experience. Once again, I had learned a lot, and I had a great time with the team in Latvia.
 
 They loved taking us out for excursions, preferably several per day, to see old Soviet radars, light towers, trains and Europe’s widest waterfall, which we drove a total of 3 hours to see....
 
@@ -106,3 +106,4 @@ I can continue to bring many of the things I learn from the competitions into my
 [au]: http://www.au.dk/
 [dicesolution]: http://sirupsen.com/dice
 [mobilesolution]: http://sirupsen.com/mobile
+[boiresults]: http://www.boi2012.lv/results "Results for BOI 2012 in Latvia"
