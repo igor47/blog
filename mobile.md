@@ -34,12 +34,13 @@ ended up submitting.
 
 I said that I made the mistake of not simulating the real thing, after the
 competition we agreed that the best solution would probably have been exactly
-this. If you start with some radius `r`, and then check whether it the circles
-cover the whole road, based on this you perform a binary search. You can check
+this. If you start with some radius `r`, and then check whether the circles from
+all the towers cover the whole road, you should do a binary search based on the results.
+  You can check
 whether it covers the whole road by finding the intersections between each
 circle and the road, then you check whether you can merge these ranges of
 intersections in a fashion so that the entire road is covered. This binary
-search checks all `n` towers, thus it runs in `O(log(n) * n)` time, where `m` is
+search checks all `n` towers, thus it runs in `O(log(m) * n)` time, where `m` is
 the maximum coordinate of a tower.
 
 ![](/static/images/ioi/mobile-task-2.jpg)
