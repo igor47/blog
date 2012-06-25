@@ -24,7 +24,7 @@ I was pretty disappointed with myself that I had not been able to score the 100 
 
 ## Nationals with a hangover
 
-In the end of February I received an email that I had been selected to participate in the Nationals in Informatics! Excited for the coming week, I went to Barcelona in mid-March with my class. We had a great trip, and after a physics teacher frighteningly keen on getting us into a strip club and solving [a preparation task](teleports) (teleports) given to us by the team leaders on the plane, I arrived 8 hours late at the boarding school where the Nationals were held.
+In the end of February I received an email that I had been selected to participate in the Nationals in Informatics! Excited for the coming week, I went to Barcelona in mid-March with my class. We had a great trip, and after a physics teacher frighteningly keen on getting us into a strip club and solving [a preparation task][teleports] (teleports) given to us by the team leaders on the plane, I arrived 8 hours late at the boarding school where the Nationals were held.
 
 The purpose of the national competition is a weekend of intense training rounded off with a 5-hour IOI-style competition. Based on the general impression, results of the qualification tasks and tasks solved during the weekend as well as the results of the competition, 6 of the 10 in the Nationals were chosen to compete in the Baltic Olympiad. 
 
@@ -81,7 +81,7 @@ I have learned much by visiting “the other side”, and I am looking forward t
 
 I can continue to bring many of the things I learn from the competitions into my day-to-day work. I see more and more opportunities, interesting ways to process data and I am starting to understand how some of the magical services actually work underneath. It opens many possibilities for me as a developer. Combining different algorithms and data structures, I can make applications I never dreamt of creating. It has a brought a unique and fundamental missing tool to my toolbox. My ultimate goal is to win a medal in IOI 2013 in Brisbane, Australia, which is the last year in which I can compete, because I finish high school next year. Now I am looking forward to Italy in September, and I’ll be sure to do a writeup when I am on the other side of that.
 
-[charlie]: http://charliesomerville.com/ "Charlie's personal website"
+[charlie]: http://twitter.com/charliesome "Charlie's personal website"
 [orac]: http://orac.amt.edu.au/ "Australian Informatics Competition"
 [ddd]: http://ddd.emu.dk/ "Dansk Datalogi Dyst's website"
 [ioi]: http://en.wikipedia.org/wiki/International_Olympiad_in_Informatics "Wikipedia Page on IOI"
