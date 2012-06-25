@@ -59,9 +59,9 @@ According to the other, more experienced Danish participants the tasks had been 
 
 They loved taking us out for excursions, preferably several per day, to see old Soviet radars, light towers, trains and Europe’s widest waterfall, which we drove a total of 3 hours to see....
 
-Europe’s widest waterfall (impressive height: ~0.5 meter) in Kuldiga, Latvia
-
 ![](/static/images/ioi/waterfall.jpg)
+
+Europe’s widest waterfall (impressive height: ~0.5 meter) in Kuldiga, Latvia
 
 [All tasks for BOI 2012.][boitasks]
 
