@@ -6,10 +6,10 @@ title: Solution to mobile
 I assume you have read the [task
 description](http://www.boi2012.lv/data/day1/eng/mobile.pdf).
 
-I used about 30 minutes thinking before I started implementing my first solution
-to this task. First, I was thinking about doing an actual simulatio of
+I used about 45 minutes of thinking before I started implementing my first solution
+to this task. First, I was thinking about doing an actual simulation of
 expanding the radius of the mobile towers, but I thought that would be very
-slow, so I quickly abondoned this idea. That was very stupid. I learned from
+slow, so I abondoned this idea. That was very stupid. I learned from
 this task, that sometimes you SHOULD simulate whatever is actually going on!
 
 Because you can have an error margin of 10^-3, my first solution was pretty
@@ -39,6 +39,8 @@ circle and the road, then you check whether you can merge these ranges of
 intersections in a fashion so that the entire road is covered. This binary
 search checks all `n` towers, thus it runs in `O(log(n) * n)` time, where `m` is
 the maximum coordinate of a tower.
+
+![](/static/images/ioi/mobile-task-2.jpg)
 
 Not even the binary search is the optimum, and you would not get full points for
 that solution. Nobody at the competition achieved full points in this task.
