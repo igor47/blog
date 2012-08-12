@@ -3,10 +3,9 @@ layout: post
 title: Handle passwords with Keychain
 ---
 
-I once considred 1password, but playing with
+I considred [1password][1password], but playing with
 Keychain, which ships with OS X, I found out it does all I need from a password manager. 
-No need for any browser extensions or app store purchases. It's all built in to OS X, 
-as long as you use Chrome or Safari.
+No need for any browser extensions or app store purchases. It's all built in to OS X.
 
 Safari and Chrome both save and fetch passwords from Keychain. You want to have
 the encrypted keychain you'll store all your passwords in backed up. I store it
@@ -29,16 +28,16 @@ Twitter on your phone, you can copy the password to the clipboard from `Keychain
 
 ![](/static/images/passwords/copy-to-clipboard.png)
 
-Once a password is in `Keychain` it will auto-fill in your browser, regardless of
+Once a password is in Keychain it will auto-fill in your browser, regardless of
 how you add it, as long as the "where" attribute is the same as the page you are
 currently on:
 
-![](/static/images/passwords/keychain-facebook-details)
+![](/static/images/passwords/keychain-facebook-details.png)
 
 ![](/static/images/passwords/facebook-autocomplete.png)
 
 Since there's no magic in adding keys, you can just as well add them from the
-command line or in `Keychain`, as long as the "where" attribute (as shown on the
+command line or in the Keychain app, as long as the "where" attribute (as shown on the
 picture above) is right.
 
 `security` also allows you to easily add new passwords with the
@@ -58,8 +57,8 @@ Furthermore, passwords in Keychain can be accessed via `security` on the command
 It will prompt me for the password to the keychain, then output the decrypted
 password. This is handy for [various][mutt] [packages][gist] that require passwords.
 
-You can also add notes to your keychain. You can add arbitary HTML to the notes,
-which means can store images etc. here.
+You can also add encrypted notes to your keychain, these can be used for credit card
+numbers, images, bank account information, secret documents etc.
 
 [gist]: https://github.com/defunkt/gist/#authentication
 [mutt]: http://www.mutt.org/
