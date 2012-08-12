@@ -6,11 +6,11 @@ title: Handle passwords with Keychain
 I considred [1password][1password], but playing with
 Keychain, which ships with OS X, I found out it does all I need from a password manager. 
 No need for any browser extensions or app store purchases. It's all built in to OS X. 
-Simply understanding how "Save Password" works in my browser was enough to solve
-my problem.
+Simply understanding how "Save Password" works in the browser is enough to solve
+the problem.
 
 Safari and Chrome both save and fetch passwords from Keychain. You want to have
-the encrypted keychain you'll store all your passwords in backed up. I store it
+the encrypted keychain whcih you'll store all your passwords in backed up. I store it
 in my Dropbox. You can find the default keychain at
 `~/Library/Keychains/login.keychain`. Once you've moved it to your Dropbox, open
 `Keychain Access` and add it from the file menu. Most of your passwords will 
