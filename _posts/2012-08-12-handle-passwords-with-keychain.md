@@ -21,8 +21,8 @@ password to the login keychain is your user login. You change it by right
 clicking it in the left-hand pane.
 
 Whenever I create a new account, or change a password, I come up with a 
-[random password](http://xkcd.com/936/) myself and put it in my clipboard. 
-When I sign into my account I allow Safari/Chrome to remember my password, which means 
+[random password](http://xkcd.com/936/) myself and put it in my clipboard. Paste
+it when signing up, and when signing in. On sign in I allow Safari/Chrome to remember my password, which means 
 it stores the password in Keychain. 
 
 If you ever need the password outside your OS X browser, for instance to sign in to
