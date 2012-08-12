@@ -5,7 +5,9 @@ title: Handle passwords with Keychain
 
 I considred [1password][1password], but playing with
 Keychain, which ships with OS X, I found out it does all I need from a password manager. 
-No need for any browser extensions or app store purchases. It's all built in to OS X.
+No need for any browser extensions or app store purchases. It's all built in to OS X. 
+Simply understanding how "Save Password" works in my browser was enough to solve
+my problem.
 
 Safari and Chrome both save and fetch passwords from Keychain. You want to have
 the encrypted keychain you'll store all your passwords in backed up. I store it
@@ -62,3 +64,4 @@ numbers, images, bank account information, secret documents etc.
 
 [gist]: https://github.com/defunkt/gist/#authentication
 [mutt]: http://www.mutt.org/
+[1password]: https://agilebits.com/onepassword
