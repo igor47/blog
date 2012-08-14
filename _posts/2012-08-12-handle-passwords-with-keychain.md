@@ -59,9 +59,12 @@ Furthermore, passwords in Keychain can be accessed via `security` on the command
 It will prompt me for the password to the keychain, then output the decrypted
 password. This is handy for [various][mutt] [packages][gist] that require passwords.
 
+[Keychain2go][keychain2go] exists if you want to bring it to your iPhone.
+
 You can also add encrypted notes to your keychain, these can be used for credit card
 numbers, images, bank account information, secret documents etc.
 
 [gist]: https://github.com/defunkt/gist/#authentication
 [mutt]: http://www.mutt.org/
 [1password]: https://agilebits.com/onepassword
+[keychain2go]: http://www.jinx.de/Keychain2Go.html
