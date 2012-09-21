@@ -133,6 +133,45 @@ article li li li {
 	
 	/* Mobile Landscape Only */
 	@media only screen and (min-width: 480px) and (max-width: 767px) and (max-device-width: 1000px) {}
+
+  @media only print {
+    .sidebar { display: none; }
+    #tweet { display: none; }
+
+    #article-header {
+      float: none !important;
+      padding-left: 0 !important;
+      margin: 0 auto !important;
+      display: block;
+      width: 700px !important;
+    }
+
+    #date-header {
+      float: none !important;
+      padding-left: 0 !important;
+      margin: 0 auto !important;
+      display: block;
+      width: 700px !important;
+      padding-bottom: 50px;
+    }
+
+    #article-content {
+      float: none !important;
+      padding-left: 0 !important;
+      margin: 0 auto !important;
+      display: block;
+      width: 700px !important;
+      padding-bottom: 20px;
+    }
+
+    #article-content footer {
+      display: none;
+    }
+
+    a {
+      color: #999 !important;
+    }
+  }
 	
 
 /* #Font-Face
