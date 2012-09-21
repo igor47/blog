@@ -152,7 +152,7 @@ article li li li {
       margin: 0 auto !important;
       display: block;
       width: 700px !important;
-      padding-bottom: 50px;
+      margin-bottom: 20px !important;
     }
 
     #article-content {
@@ -161,10 +161,13 @@ article li li li {
       margin: 0 auto !important;
       display: block;
       width: 700px !important;
-      padding-bottom: 20px;
     }
 
-    #article-content footer {
+    body {
+      font-size: 14pt;
+    }
+
+    #follow {
       display: none;
     }
 
