@@ -15,15 +15,21 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href="http://feeds.feedburner.com/sirupsen" rel="alternate" title="Sirupsen" type="application/atom+xml" /> 
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
 
+    <link rel="stylesheet" href="/static/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/css/syntax.css">
     <link rel="stylesheet" href="/static/css/skeleton.css">
     <link rel="stylesheet" href="/static/css/base.css">
     <link rel="stylesheet" href="/static/css/layout.css">
-    <link rel="stylesheet" href="/static/css/syntax.css">
+
+    <!--[if IE 7 ]>
+      <link rel="stylesheet" href="/static/css/font-awesome-ie7.css">
+    <![endif]-->
   </head>
   <body>
     <div class="container">	
@@ -40,20 +46,30 @@
         <section>
           <a id="avatar" href="/"></a>
 
-          <ul>
+          <ul id="social">
+            <li>
+              <a href="http://twitter.com/Sirupsen" class="icon-twitter" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Twitter']);" title="You should follow me" style="font-size: 28px;"></a>
+            </li>
+
+            <li>
+              <a href="http://github.com/Sirupsen" class="icon-github" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Github']);" title="I share and fork code here"></a>
+            </li>
+
+            <li>
+              <a href="skype:sirupsen?add" class="icon-comment" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Skype']);" title="Feel free to add me on Skype"></a>
+            </li>
+
+            <li>
+              <a href="http://feeds.feedburner.com/sirupsen" class="icon-rss" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar RSS']);"></a>
+            </li>
+          </ul>
+
+          <ul id="me">
             <li><span class="gray">Simon Hørup Eskildsen</span></li>
             <li><a href="mailto:sirup@sirupsen.com" title="If you are seeing this, you should definitely email me" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Email']);">sirup@sirupsen.com</a></li>
           </ul>
 
           <p>{{ description }}</p>
-
-          <ul>
-            <li><a href="http://twitter.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Twitter']);" title="You should follow me">Twitter</a></li>
-            <li><a href="http://github.com/Sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Github']);" title="I share and fork code here">Github</a></li>
-            <li><a href="skype:sirupsen?add" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Skype']);" title="Feel free to add me">Skype</a></li>
-            <li><a href="http://feeds.feedburner.com/sirupsen" onClick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar RSS']);">RSS</a></li>
-            
-          </ul>
         </section>
       </div>
 

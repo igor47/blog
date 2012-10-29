@@ -61,6 +61,7 @@ a {
   text-decoration: none;
 }
 
+
 a:hover {
   color: #06A;
   text-decoration: underline;
@@ -132,6 +133,48 @@ article li li li {
   border-radius: 50%;
   margin-bottom: 8px;
   border: 2px solid #999;
+  opacity: 0.8;
+  -webkit-transition:all 500ms ease-in;
+  -o-transition:all 500ms ease-in;
+}
+
+#avatar:hover {
+  border: 2px solid #999;
+  opacity: 1.0;
+  border-color: #423F37;
+}
+
+#me {
+  clear: left;
+}
+
+#social ul {
+  text-align: center;
+  margin-left: 10px;
+}
+
+#social li:first-child {
+  margin-left: 30px;
+}
+
+#social li {
+  display: inline-block;
+  font-size: 22px;
+}
+
+#social a, #social a:visited {
+  color: #999;
+  -webkit-transition:color 200ms ease-in;
+  -o-transition:color 200ms ease-in;
+}
+
+#social a:hover, #social a:visited:hover {
+  color: #423F37;
+  text-decoration: none;
+}
+
+#social {
+  list-style-type: none;
 }
 
 /* #Page Styles
