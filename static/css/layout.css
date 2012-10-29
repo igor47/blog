@@ -20,17 +20,35 @@
 body {
   margin: 20px;
   font-family: 'Open sans', sans-serif;
-  font-size: 12pt;
+  font-size: 16px;
 }
 
-h1 { font-size: 46px; }
-
-.four.columns h1 {
+h1 { 
+  font-size: 30px; 
+  color: #423F37;
+  font-weight: 600;
+  line-height: 40px;
   margin-bottom: 10px;
 }
 
+p {
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
 #posts {
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
 #posts span {
@@ -65,17 +83,6 @@ a:visited { color: #607890; }
   margin-top: 24px;
 }
 
-.highlight {
-  /* background: #F7F7F7; */
-  /* border: 2px solid #EEE; */
-  /* color: #000; */
-  /* display: block; */
-  /* line-height: 150%; */
-  /* margin: 24px 0 24px 0; */
-  /* padding: 10px; */
-  margin-bottom: 20px;
-}
-
 pre {
   margin-bottom: 20px;
 }
@@ -83,6 +90,14 @@ pre {
 code {
   font-size: 90%;
   font-family: Monaco, Consolas, monospace;
+}
+
+.sidebar ul {
+  margin-bottom: 10px !important;
+}
+
+.sidebar p {
+  margin-bottom: 10px !important;
 }
 
 article li {
@@ -100,7 +115,10 @@ article li li li {
 
 #tweet {
   text-align: right;
-  margin-bottom:20px;
+}
+
+#date-header {
+  margin-bottom: 10px;
 }
 
 /* #Page Styles
