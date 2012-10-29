@@ -7,7 +7,7 @@ title: Sirupsen and his codeabouts
   {% for post in site.posts %}
     <li>
       <a class="nine columns offset-by-four" href="{{ post.url }}">{{ post.title }}</a>
-      <span class="three columns">{{ post.date | date_to_string }}</span>
+      <span class="three columns">{{ post.date | date: "%b %Y" }}</span>
     </li>
   {% endfor %}
 </ul>
