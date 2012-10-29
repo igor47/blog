@@ -19,7 +19,7 @@
 
 body {
   margin: 20px;
-  font-family: Georgia, serif;
+  font-family: 'Open sans', sans-serif;
   font-size: 12pt;
 }
 
@@ -157,7 +157,7 @@ article li li li {
 
     #article-content {
       float: none !important;
-      padding-left: 0 !important;
+      padding: 0 !important;
       margin: 0 auto !important;
       display: block;
       width: 700px !important;
