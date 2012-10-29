@@ -8,9 +8,11 @@ blog: true
 </header>
 
 <div class='five columns offset-by-four gray' id="date-header">
-{{ if page.date }}
-    {{ page.date | date: "%b %Y" }}
-{{ endif }}
+  {{ page.date | date: "%b %Y" }}
+
+{% if page.updated_at %}
+    revised {{ page.updated_at }}
+{% endif %}
 </div>
 
 <!-- 
