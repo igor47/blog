@@ -4,15 +4,13 @@ title: Get started right with RVM
 updated_at: "Nov 2012"
 ---
 
-<div id="intro">
-  I've always run Ruby and with [RVM](http://rvm.beginrescueend.com/).  After
-  [@chopmo's](http://twitter.com/chopmo) talk at [Aarhusrb](http://aarhusrb.dk) on
-  RVM, I realized how much more I could get out of RVM. I found I basically use
-  RVM as just a way to switch between Ruby versions and implementations, rather
-  than leveraging the power of gemsets, installing gems on a user basis and the
-  `.rvmrc` file. This post is a compiled version of what I learned from the
-  previously mentioned talk and digging into the [RVMdocumentation](http://rvm.beginrescueend.com/).
-</div>
+I've always run Ruby and with [RVM](http://rvm.beginrescueend.com/). After
+[@chopmo's](http://twitter.com/chopmo) talk at [Aarhusrb](http://aarhusrb.dk) on
+RVM, I realized how much more I could get out of RVM. I found I basically use
+RVM as just a way to switch between Ruby versions and implementations, rather
+than leveraging the power of gemsets, installing gems on a user basis and the
+`.rvmrc` file. This post is a compiled version of what I learned from the
+previously mentioned talk and digging into the [RVMdocumentation](http://rvm.beginrescueend.com/).
 
 ## Installing RVM
 
@@ -22,7 +20,7 @@ If you haven't already, install RVM at the user level:
 $ bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
 {% endhighlight %}
 
-With $$ > 1 $$ users on the system, you may want to look into a system-wide
+With > 1 RVM users on the system, you may want to look into a system-wide
 [system-wide installation](http://rvm.beginrescueend.com/deployment/system-wide/).
 Otherwise, it is recommended to stay with the default user-wide installation.
 
