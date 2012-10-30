@@ -92,7 +92,7 @@ a:visited { color: #607890; }
 }
 
 pre {
-  margin-bottom: 20px;
+  margin: 0 0 20px 20px;
   white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
   white-space: -pre-wrap; /* Opera */
   white-space: -o-pre-wrap; /* Opera */
