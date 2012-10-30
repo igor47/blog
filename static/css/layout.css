@@ -49,6 +49,7 @@ h4 {
 
 #posts {
   padding-top: 5px;
+  font-size: 20px;
 }
 
 #posts span {
@@ -57,14 +58,13 @@ h4 {
 }
 
 #posts li {
-  padding-bottom: 4px;
+  padding-bottom: 35px;
 }
 
 a {
   color: #06A;
   text-decoration: none;
 }
-
 
 a:hover {
   color: #06A;
@@ -96,6 +96,7 @@ pre {
 code {
   font-size: 90%;
   font-family: Monaco, Consolas, monospace;
+  max-width: 100%;
 }
 
 .sidebar ul {
@@ -138,9 +139,8 @@ article li li li {
 #avatar {
   background-image: url('/static/images/sirup.jpg');
   background-size: cover;
-  height: 100px;
-  width: 100px;
-  margin-left: 40px;
+  height: 124px;
+  width: 124px;
   display: block;
   border-radius: 50%;
   margin-bottom: 8px;
@@ -164,10 +164,6 @@ article li li li {
 #social ul {
   text-align: center;
   margin-left: 10px;
-}
-
-#social li:first-child {
-  margin-left: 30px;
 }
 
 #social li {
