@@ -28,19 +28,19 @@ h1 {
   color: #423F37;
   font-weight: 600;
   line-height: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-p {
-  margin-bottom: 14px;
-}
+/* p { */
+/*   margin-bottom: 14px; */
+/* } */
 
 h2 {
-  font-size: 25px;
+  font-size: 24px;
 }
 
 h3 {
-  font-size: 21px;
+  font-size: 20px;
 }
 
 h4 {
@@ -57,13 +57,13 @@ h4 {
   text-align: right;
 }
 
-#posts li {
-  padding-bottom: 35px;
-}
-
 a {
   color: #06A;
   text-decoration: none;
+}
+
+#posts a {
+  padding-bottom: 15px;
 }
 
 a:hover {
@@ -83,7 +83,9 @@ a:visited { color: #607890; }
   width: inherit;
 }
 
-.hidden { display: none; }
+.hidden {
+  display: none; 
+}
 
 #mobile { 
   margin-top: 24px;
@@ -99,12 +101,8 @@ code {
   max-width: 100%;
 }
 
-.sidebar ul {
-  margin-bottom: 10px !important;
-}
-
 .sidebar p {
-  margin-bottom: 10px !important;
+  margin-bottom: 10px;
 }
 
 img {
@@ -133,7 +131,7 @@ article li li li {
 }
 
 #date-header {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 #avatar {
@@ -161,14 +159,10 @@ article li li li {
   clear: left;
 }
 
-#social ul {
-  text-align: center;
-  margin-left: 10px;
-}
-
 #social li {
   display: inline-block;
   font-size: 22px;
+  overflow: hidden;
 }
 
 #social a, #social a:visited {
