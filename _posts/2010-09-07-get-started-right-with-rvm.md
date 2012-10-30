@@ -10,7 +10,7 @@ RVM, I realized how much more I could get out of RVM. I found I basically use
 RVM as just a way to switch between Ruby versions and implementations, rather
 than leveraging the power of gemsets, installing gems on a user basis and the
 `.rvmrc` file. This post is a compiled version of what I learned from the
-previously mentioned talk and digging into the [RVMdocumentation](http://rvm.beginrescueend.com/).
+previously mentioned talk and digging into the [RVM documentation](http://rvm.beginrescueend.com/).
 
 ## Installing RVM
 
@@ -51,7 +51,7 @@ $ rvm notes
 
 This step can safely be skipped, I simply performed it to clean my system.
 
-With RVM installed, you can simply empty your current, global Gemset (this'll
+With RVM installed, you can simply empty your current, global gemset (this'll
 make more sense in a minute):
 
 {% highlight bash %}
@@ -86,7 +86,7 @@ Installing `1.9.3` is the trivial matter of issuing:
 $ rvm install 1.9.3
 {% endhighlight %}
 
-This can take a while, since it compiles from source. When this proccess has
+This can take a while, since it compiles from source. When this process has
 finished, switch to it with the following command to verify it works:
 
 {% highlight bash %}
@@ -97,7 +97,7 @@ ruby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-darwin11.4.0]
 
 By default, your default interpreter is the system Ruby provided by your
 operating system, for instance in OS X this is `MRI Ruby 1.8.7`. You want to set
-this to a Ruby mantained by RVM to make use of all RVM's features:
+this to a Ruby maintained by RVM to make use of all RVM's features:
     
 {% highlight bash %}
 $ rvm --default 1.9.3
@@ -148,7 +148,7 @@ environment by running scripts in your project with `bundler exec` rather than
 `ruby`. `bundler` projects thus make simpler approaches to the problem RVM solves
 possible, the most popular alternative nowadays is
 [rbenv](https://github.com/sstephenson/rbenv) which I use on most of my systems
-thes days.
+these days.
 
 ### Creating and using a gemset
 
@@ -246,14 +246,14 @@ There are three different kinds of `rvmrc` files:
 
 The most interesting one is the project `.rvmrc`. Every time you `cd`, RVM looks
 for a file called `.rvmrc`. If it finds it, it executes it. The following
-`.rvmrc` file would switch to `Ruby MRI 1.8.7` and gemset `project` everytime
+`.rvmrc` file would switch to `Ruby MRI 1.8.7` and gemset `project` every time
 we change into that directory:
 
 {% highlight bash %}
 $ echo "rvm 1.8.7@project" > ~/projects/ruby-1.8.6-project/.rvmrc
 {% endhighlight %}
 
-I recieved [a tip](http://twitter.com/wayneeseguin/status/24387445101) from
+I received [a tip](http://twitter.com/wayneeseguin/status/24387445101) from
 RVM's creator [@wayneeseguin](http://twitter.com/wayneeseguin), that we can be
 even more sneaky about this:
 
@@ -299,7 +299,7 @@ You can read more about `rvmrc` in [RVM's documentation](http://rvm.beginrescuee
 This is all briefly describing what can be found in [RVM's (fantastic)
 documentation](http://rvm.beginrescueend.com/). For basic use, this article
 should cover the main topics, however, RVM can still do a whole lot more than I
-adressed here. The goal of this post was simply to get you started well, and
+addressed here. The goal of this post was simply to get you started well, and
 right, with RVM.
 
 [Discuss this on Hacker News](http://news.ycombinator.com/item?id=1686435)
