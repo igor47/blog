@@ -5,8 +5,7 @@ published: true
 updated_at: Nov 2012
 ---
 
-Unicorn is an interesting Ruby HTTP server which [we like it because it's
-Unix][tomayko].
+Unicorn is an interesting Unix Ruby HTTP server which [makes great use of Unix][tomayko]:
 
 > Unicorn is an HTTP server for Rack applications designed to only serve fast
 > clients on low-latency, high-bandwidth connections and take advantage of
