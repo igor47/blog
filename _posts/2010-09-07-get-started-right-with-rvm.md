@@ -4,7 +4,7 @@ title: Get started right with RVM
 updated_at: "Nov 2012"
 ---
 
-I've always run Ruby and with [RVM](http://rvm.beginrescueend.com/). After
+I've always run Ruby with [RVM](http://rvm.beginrescueend.com/). After
 [@chopmo's](http://twitter.com/chopmo) talk at [Aarhusrb](http://aarhusrb.dk) on
 RVM, I realized how much more I could get out of RVM. I found I basically use
 RVM as just a way to switch between Ruby versions and implementations, rather
