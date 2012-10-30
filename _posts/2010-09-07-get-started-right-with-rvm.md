@@ -104,7 +104,7 @@ $ rvm --default 1.9.3
 {% endhighlight %}
 
 Restart your shell, and run `ruby -v` to verify it is not the default Ruby.
-Let's install `1.8.7` along with `1.9.2`:
+Let's install `1.8.7` along with `1.9.3`:
 
 {% highlight bash %}
 $ rvm install 1.8.7
@@ -130,8 +130,8 @@ RVM's documentation puts it like this:
 > RVM gives you compartmentalized independent ruby setups. This means that ruby,
 > gems and irb are all separate and self-contained from system and from each
 > other.   You may even have separate named gemsets.  Let's say, for example,
-> that you are testing two versions of a gem with ruby 1.9.2-head. You can
-> install one to the default 1.9.2-head and create a named gemset for the other
+> that you are testing two versions of a gem with ruby 1.9.3-head. You can
+> install one to the default 1.9.3-head and create a named gemset for the other
 > version and switch between them easily.
 
 Ideally you have a Gemset for each project that you are working on. This keeps
@@ -156,7 +156,7 @@ Let's go ahead and create a gemset:
 
 {% highlight bash %}
 $ rvm gemset create foo # Create gemset 'foo'
-'foo' gemset created (/home/sirup/.rvm/gems/ruby-1.9.2-p0@foo).
+'foo' gemset created (/home/sirup/.rvm/gems/ruby-1.9.3-p0@foo).
 
 $ rvm 1.9.3@foo # Switch to Ruby 1.9.3 with gemset 'foo'
 $ gem list # Lists installed gems
@@ -196,7 +196,7 @@ global gemset which we cleared earlier.
 Exporting a gemset is easy with RVM as previously mentioned:
 
 {% highlight bash %}
-$ rvm 1.9.2@foo
+$ rvm 1.9.3@foo
 $ rvm gemset export rails.gems
 $ cat rails.gems
 abstract -v1.0.0
@@ -210,7 +210,7 @@ You can then toss `rails.gems` to someone else, who'd be able to import that
 gemset as follows:
 
 {% highlight bash %}
-$ rvm use 1.9.2@rails --create # shortcut to create, then switch to it
+$ rvm use 1.9.3@rails --create # shortcut to create, then switch to it
 $ rvm gemset import rails.gems
 {% endhighlight %}
 
@@ -250,7 +250,7 @@ for a file called `.rvmrc`. If it finds it, it executes it. The following
 we change into that directory:
 
 {% highlight bash %}
-$ echo "rvm 1.8.7@project" > ~/projects/ruby-1.8.6-project/.rvmrc
+$ echo "rvm 1.8.7@project" > ~/projects/ruby-1.8.7-project/.rvmrc
 {% endhighlight %}
 
 I received [a tip](http://twitter.com/wayneeseguin/status/24387445101) from
@@ -268,11 +268,11 @@ To demonstrate what we just did:
 
 {% highlight bash %}
 ~/projects $ ruby -v
-ruby 1.9.2p0 (2010-08-18 revision 29036) [i686-linux]
-~/projects $ cd ruby-1.8.6-project/
-~/projects/ruby-1.8.6-project $ ruby -v
-ruby 1.8.6 (2010-02-05 patchlevel 399) [i686-linux]
-~/projects/ruby-1.8.6-project $ rvm gemset name
+ruby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-darwin11.4.0]
+~/projects $ cd ruby-1.8.7-project/
+~/projects/ruby-1.8.7-project $ ruby -v
+ruby 1.8.7 (2012-02-08 patchlevel 358) [universal-darwin12.0]
+~/projects/ruby-1.8.7-project $ rvm gemset name
 project
 {% endhighlight %}
 
@@ -282,7 +282,8 @@ if they do not exist when you switch to them:
 
 {% highlight bash %}
 $ rvm gemset list
-gemsets for ruby-1.9.2-p0 (found in /home/sirup/.rvm/gems/ruby-1.9.2-p0)
+gemsets for ruby-1.9.3-p194 (found in /home/sirup/.rvm/gems/ruby-1.9.3-p0)
+gemsets for ruby-1.8.7-p358 (found in /home/sirup/.rvm/gems/ruby-1.9.3-p358)
 
 foo
 global
