@@ -1,7 +1,6 @@
 ---
 layout: post
 title: My experience with Arch Linux
-updated: 21 Jul, 2010
 ---
 
 After about 8 months with [Ubuntu][1], I decided it was time for change. I had for a while wanted to switch to some other distribution, not because I did not like Ubuntu, more because I wanted to learn more about Linux, and try something new. And I felt Ubuntu limited me in this direction. Furthermore, I wanted to have a system which I did not feel I had to reinstall whenever new major updates came out, I wanted a system I could improve over time. I wanted a system where I could switch desktop environment/window manager quickly, and without googling myself on how to then remove all the old, now useless, packages. And rolling-release seems to be the solution, to that problem.
@@ -26,7 +25,7 @@ I've been running this system for a few weeks (as of this update, months), and I
 
 Here's a screenshot of my Archbox, because everyone loves screenshots.
 
-[<img src="http://img202.imageshack.us/img202/8011/201004050121043200x1080.png" alt="" width="1152" height="389" />][9]
+[![](/static/images/arch.png)][9]
 
  [1]: http://www.ubuntu.com/
  [2]: http://www.archlinux.org/
