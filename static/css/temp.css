@@ -1130,39 +1130,32 @@ sub {
   @media only print {
     .sidebar { display: none; }
     #tweet { display: none; }
-    #mobile { margin-top: 24px; }
+
+    .offset-by-four {
+      padding-left: 0 !important;
+    }
 
     #article-header {
       float: none !important;
       padding-left: 0 !important;
-      margin: 0 auto !important;
       display: block;
+      margin: 0 auto;
       width: 700px !important;
     }
 
     #date-header {
       float: none !important;
-      padding-left: 0 !important;
-      margin: 0 auto !important;
       display: block;
       width: 700px !important;
+      margin: 0 auto;
       margin-bottom: 20px !important;
     }
 
     #article-content {
       float: none !important;
-      padding: 0 !important;
-      margin: 0 auto !important;
       display: block;
+      margin: 0 auto;
       width: 700px !important;
-    }
-
-    body {
-      font-size: 14pt;
-    }
-
-    #follow {
-      display: none;
     }
 
     a {
