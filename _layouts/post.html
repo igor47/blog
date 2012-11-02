@@ -9,11 +9,13 @@ blog: true
   </header>
 
   <div class='ten columns gray' id="date-header">
-    <p>{{ page.date | date: "%b %Y" }}</p>
-
+    <p>
+      {{ page.date | date: "%b %Y" }}
   {% if page.updated_at %}
       revised {{ page.updated_at }}
   {% endif %}
+    </p>
+
   </div>
 
   <div class="ten columns" id="article-content">
