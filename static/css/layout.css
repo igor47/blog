@@ -1,24 +1,5 @@
-/* 
-* Skeleton V1.0.1
-* Copyright 2011, Dave Gamache
-* www.getskeleton.com
-* Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 5/19/2011
-*/
-
-/* Table of Content
-==================================================
-	#Site Styles
-	#Page Styles
-	#Media Queries
-	#Font-Face */
-	
-/* #Site Styles
-================================================== */
-
 body {
-  margin: 20px;
+  margin-top: 20px;
   font-family: 'Open sans', sans-serif;
   font-size: 16px;
 }
@@ -30,10 +11,6 @@ h1 {
   line-height: 40px;
   margin-bottom: 20px;
 }
-
-/* p { */
-/*   margin-bottom: 14px; */
-/* } */
 
 h2 {
   font-size: 24px;
@@ -47,23 +24,9 @@ h4 {
   font-size: 18px;
 }
 
-#posts {
-  padding-top: 5px;
-  font-size: 20px;
-}
-
-#posts span {
-  color: #999;
-  text-align: right;
-}
-
 a {
   color: #06A;
   text-decoration: none;
-}
-
-#posts a {
-  padding-bottom: 15px;
 }
 
 a:hover {
@@ -72,10 +35,21 @@ a:hover {
   cursor: pointer;
 }
 
-a:visited { color: #607890; }
+a:visited { 
+  color: #607890; 
+}
 
-.sidebar {
-  width: 220px; 
+#posts a {
+  padding-bottom: 15px;
+}
+
+#posts {
+  font-size: 20px;
+}
+
+#posts span {
+  color: #999;
+  text-align: right;
 }
 
 .sidebar > section {
@@ -87,23 +61,15 @@ a:visited { color: #607890; }
   display: none; 
 }
 
-#mobile { 
-  margin-top: 24px;
-}
-
 pre {
   margin: 0 0 20px 20px;
+  font-size: 90%;
+  font-family: Monaco, Consolas, monospace;
   white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
   white-space: -pre-wrap; /* Opera */
   white-space: -o-pre-wrap; /* Opera */
   white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
   word-wrap: break-word; /* IE 5.5+ */
-}
-
-code {
-  font-size: 90%;
-  font-family: Monaco, Consolas, monospace;
-  max-width: 100%;
 }
 
 .sidebar p {
@@ -118,8 +84,11 @@ img {
   display: block;
 }
 
+article ul {
+  margin-left: 20px;
+}
+
 article ul li {
-  margin-left: 40px;
 	list-style: disc outside;
 }
 
@@ -129,14 +98,6 @@ article ul li li {
 
 article ul li li li {
 	list-style: square outside;
-}
-
-#tweet {
-  text-align: right;
-}
-
-#date-header {
-  margin-bottom: 20px;
 }
 
 #avatar {
@@ -152,10 +113,6 @@ article ul li li li {
   -webkit-transition:all 500ms ease-in;
   -moz-transition:all 500ms ease-in;
   -o-transition:all 500ms ease-in;
-}
-
-#me {
-  clear: left;
 }
 
 #social li {
@@ -174,10 +131,6 @@ article ul li li li {
 #social a:hover, #social a:visited:hover {
   color: #423F37;
   text-decoration: none;
-}
-
-#social {
-  list-style-type: none;
 }
 
 sup, sub {
@@ -248,6 +201,7 @@ sub {
   @media only print {
     .sidebar { display: none; }
     #tweet { display: none; }
+    #mobile { margin-top: 24px; }
 
     #article-header {
       float: none !important;
