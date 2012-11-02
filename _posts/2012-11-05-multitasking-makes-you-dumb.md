@@ -7,7 +7,7 @@ title: Multitasking makes you dumb
   As part of researching for my 30 days of super productivity, I have explored
   the topics of context switching and multitasking. I found that multitasking has
   a tremendous effect on how we approach tasks and too much multitasking can
-  actually alter how our brain processes information in a negative way.
+  negatively alter how our brain processes information.
 </div>
 
 Multitasking is attempting to handle more than one task at a time. The human
@@ -16,23 +16,20 @@ rapidly alternating between the tasks. This makes for a higher rate of errors
 due to lack of attention, and since context switching from one task to another
 is expensive, the sum of time spent on the tasks is larger than if the tasks
 were done sequentially. (Think green threads with a huge context switch cost
-with lots of deadlocks and race conditions.) [^4]
+with lots of deadlocks and race conditions.)[^4]
 
 Furthermore, our brain exercises something Dr. Meyer of the University of
 Michigan calls "adaptive executive control" where our brain assigns priorities
 to the tasks we are performing in parallel.[^3] For instance, when driving and
 talking in cell phone, our brain assigns a higher priority to responding to our
-the phone conversation than focusing on the road. This deteriorates the reaction
-time to worse than drivers intoxicated over the 0.08% legal limit. [^5]
-
-Multitaskers are unable to devote all their focus into one task, thus their work is
-worth less and consumes more time.
+the phone conversation than focusing on the road. This deteriorates reaction
+time to worse than drivers intoxicated over the 0.08% legal limit.[^5]
 
 ## Multitasking impairs cognitive control
 
-Stanford professors guessed before a study that people who frequently
-multitask must be excellent in filtering important elements of a series of
-tasks: [^1]
+Stanford professors thought before their study on multitasking that people who
+frequently multitask must be excellent in recognizing important elements in a
+series of tasks: [^1]
 
 > In one experiment, the groups were shown sets of two red rectangles alone or
 > surrounded by two, four or six blue rectangles. Each configuration was flashed
@@ -46,12 +43,13 @@ tasks: [^1]
 Desperately they attempted to find tasks in which the frequent multitaskers
 performed better, such as short term memory and context switching, but
 multitaskers failed to show any improvement in any task the Stanford
-psychologists presented. They are have trouble paying attention and are easily
+psychologists presented. Multitaskers have trouble paying attention and are easily
 distracted. They have their mind in a myriad of different places at the same
 time, not effectively processing any information.
 
-One last theory was that the multitaskers could be faster at context switching,
-performing this all the time, but even here they performed inferior:
+One last theory involved the possibility of multitaskers being faster at context
+switching, performing this all the time, but even here their performance was
+inferior:
 
 > The test subjects were shown images of letters and numbers at the same time and
 > instructed what to focus on. When they were told to pay attention to numbers,
@@ -66,11 +64,11 @@ performing this all the time, but even here they performed inferior:
 
 ## Multitaskers worse at multitasking
 
-Effectively, multitaskers train themselves to superficially consume
-multiple sources of input from memory of the external world. Their ability to
-filter relevance to their current goal declines, because multitaskers are
-distracted by highly irrelevant information. Multitaskers actually become bad at
-multitasking, by multitasking. [^2]
+Effectively, multitaskers train themselves to superficially consume multiple
+sources of input from memory of the external world. Their ability to filter
+relevance to their current goal declines and are distracted by irrelevant
+information. Multitaskers actually become bad at multitasking, by multitasking.
+[^2]
 
 Multitasking students report to have more problems in their academic work.
 Students who browse Facebook and instant messaging while doing homework, on
