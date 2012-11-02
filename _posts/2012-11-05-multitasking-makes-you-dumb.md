@@ -69,11 +69,11 @@ sources of input from memory of the external world. Their ability to filter
 relevance to their current goal declines and are distracted by irrelevant
 information. Multitaskers actually become bad at multitasking, by multitasking.[^2]
 
-Multitasking students report to have more problems in their academic work.
+Multitasking students report to have more issues in their academic work.
 Students who browse Facebook and instant messaging while doing homework, on
-average achieve lower grades in school, 16% of media was combined, in 2005 26%
-of media was used together. This number must have skyrocketed since, with
-Generation Z and Y being its victims.[^7]
+average achieve lower grades in school.[^6] In 1999 16% of media consumption was
+combined, in 2005 26% of media was used together. This number must have
+skyrocketed since, with Generation Z and Y being its victims.[^7]
 
 [^1]: [Media multitaskers pay mental price](http://news.stanford.edu/news/2009/august24/multitask-research-study-082409.html)
 [^2]: [Multitaskers bad at multitasking](http://news.bbc.co.uk/2/hi/technology/8219212.stm)
