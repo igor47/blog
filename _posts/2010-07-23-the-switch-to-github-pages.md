@@ -4,8 +4,8 @@ title: The switch to Github Pages
 updated_at: Nov 2012
 ---
 
-<div class="intro">I recently ditched my VPS to migrate my blog to Github
-Pages. A simple platform to host a hacker's blog.</div>
+<div class="intro">I ditched my VPS to migrate my blog to Github
+Pages. A simple blogging platform for hackers.</div>
 
 I hosted my previous Wordpress blog on my dad's server. Limiting me in terms
 of technological mobility. The lack of free deployment methods kept me from
