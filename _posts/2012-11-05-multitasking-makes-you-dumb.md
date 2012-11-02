@@ -3,10 +3,12 @@ layout: post
 title: Multitasking makes you dumb
 ---
 
-As part of researching for my 30 days of super productiviy, I have explored
-the topics of context switching and multitasking. I found that multitasking has
-a tremendous effect on how we approach tasks and too much multitasking can
-actually alter how our brain processes information in a negative way.
+<div class="intro">
+  As part of researching for my 30 days of super productiviy, I have explored
+  the topics of context switching and multitasking. I found that multitasking has
+  a tremendous effect on how we approach tasks and too much multitasking can
+  actually alter how our brain processes information in a negative way.
+</div>
 
 Multitasking is attempting to handle more than one task at a time. The human
 mind is not directly capable of this, thus it emulates multitasking by
@@ -20,11 +22,13 @@ Furthermore, our brain excercises something Dr. Meyer of the University of
 Michigan calls "adaptive executive control" where our brain assigns priorities
 to the tasks we are performing in parallel.[^3] For instance, when driving and
 talking in cell phone, our brain assigns a higher priority to responding to our
-the phone conversation than focusing on the road, resulting in a worse response
-time than drivers intoxicated over the 0.08% legal limit. [^5]
+the phone conversation than focusing on the road. This deteriorates the reaction
+time to worse than drivers intoxicated over the 0.08% legal limit. [^5]
 
 Multitaskers are unable to devote all their focus into one task, thus their work is
 worth less and consumes more time.
+
+## Multitasking impairs cognitive control
 
 Stanford professors gussed before a study that people who frequently
 multitask must be excellent in filtering important elements of a series of
@@ -42,12 +46,12 @@ tasks: [^1]
 Desperately they attempted to find tasks in which the frequent multitaskers
 performed better, such as short term memory and context switching, but
 multitaskers failed to show any improvement in any task the Stanford
-psychologists presented. They are worse at paying attention and are easily
+psychologists presented. They are have trouble paying attention and are easily
 distracted. They have their mind in a myriad of different places at the same
 time, not effectively processing any information.
 
 One last theory was that the multitaskers could be faster at context switching,
-performing this all the time, but even here they were siginificantly worse:
+performing this all the time, but even here they performed inferior:
 
 > The test subjects were shown images of letters and numbers at the same time and
 > instructed what to focus on. When they were told to pay attention to numbers,
@@ -60,22 +64,24 @@ performing this all the time, but even here they were siginificantly worse:
 > "The high multitaskers are always drawing from all the information in front of
 > them. They can't keep things separate in their minds."
 
+## Multitaskers worse at multitasking
+
 Effectively, multitaskers train themselves to superficially consume
 multiple sources of input from memory of the external world. Their ability to
 filter relevance to their current goal declines, because multitaskers are
-distracted by highly irrelevant information. Multitaskers actually become worse at
+distracted by highly irrelevant information. Multitaskers actually become bad at
 multitasking, by multitasking. [^2]
 
 Multitasker students report to have more problems in their academic work.
-Students who browse Facebook and instant messaging while doing
-homework, perform worse in school. [^6] In 1999, 16% of media was combined, in 2005
-26% of media was used together. This number must have skyrocketed since, with
+Students who browse Facebook and instant messaging while doing homework, on
+average achieve lower grades in school, 16% of media was combined, in 2005 26%
+of media was used together. This number must have skyrocketed since, with
 Generation Z and Y being its victims. [^7]
 
-[^1]: http://news.stanford.edu/news/2009/august24/multitask-research-study-082409.html # STANFORD STUDY
-[^2]: http://news.bbc.co.uk/2/hi/technology/8219212.stm  # MULTITASKERS WORSE AT MULTITASKING
-[^3]: http://www.thenewatlantis.com/docLib/20080605_TNA20Rosen.pdf
-[^4]: http://en.wikipedia.org/wiki/Human_multitasking
-[^5]: http://www.distraction.gov/download/research-pdf/Comparison-of-CellPhone-Driver-Drunk-Driver.pdf
-[^6]: http://blog.reyjunco.com/pdf/JuncoCottenMultitaskingCAE2010.pdf
-[^7]: http://blog.reyjunco.com/wp-content/uploads/2010/03/JuncoCottenMultitaskingFBTextCAE2012.pdf
+[^1]: [Media multitaskers pay mental price](http://news.stanford.edu/news/2009/august24/multitask-research-study-082409.html)
+[^2]: [Multitaskers bad at multitasking](http://news.bbc.co.uk/2/hi/technology/8219212.stm)
+[^3]: [The Myth of Multitasking](http://www.thenewatlantis.com/docLib/20080605_TNA20Rosen.pdf)
+[^4]: [Human multitasking](http://en.wikipedia.org/wiki/Human_multitasking)
+[^5]: [A Comparison of the Cell Phone Driver and the Drunk Driver](http://www.distraction.gov/download/research-pdf/Comparison-of-CellPhone-Driver-Drunk-Driver.pdf)
+[^6]: [Perceived academic effects of instant messaging use](http://blog.reyjunco.com/pdf/JuncoCottenMultitaskingCAE2010.pdf)
+[^7]: [The relationship between multitasking and academic performance](http://blog.reyjunco.com/wp-content/uploads/2010/03/JuncoCottenMultitaskingFBTextCAE2012.pdf)
