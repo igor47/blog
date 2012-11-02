@@ -4,7 +4,7 @@ title: Multitasking makes you dumb
 ---
 
 <div class="intro">
-  As part of researching for my 30 days of super productiviy, I have explored
+  As part of researching for my 30 days of super productivity, I have explored
   the topics of context switching and multitasking. I found that multitasking has
   a tremendous effect on how we approach tasks and too much multitasking can
   actually alter how our brain processes information in a negative way.
@@ -18,7 +18,7 @@ is expensive, the sum of time spent on the tasks is larger than if the tasks
 were done sequentially. (Think green threads with a huge context switch cost
 with lots of deadlocks and race conditions.) [^4]
 
-Furthermore, our brain excercises something Dr. Meyer of the University of
+Furthermore, our brain exercises something Dr. Meyer of the University of
 Michigan calls "adaptive executive control" where our brain assigns priorities
 to the tasks we are performing in parallel.[^3] For instance, when driving and
 talking in cell phone, our brain assigns a higher priority to responding to our
@@ -30,7 +30,7 @@ worth less and consumes more time.
 
 ## Multitasking impairs cognitive control
 
-Stanford professors gussed before a study that people who frequently
+Stanford professors guessed before a study that people who frequently
 multitask must be excellent in filtering important elements of a series of
 tasks: [^1]
 
@@ -72,7 +72,7 @@ filter relevance to their current goal declines, because multitaskers are
 distracted by highly irrelevant information. Multitaskers actually become bad at
 multitasking, by multitasking. [^2]
 
-Multitasker students report to have more problems in their academic work.
+Multitasking students report to have more problems in their academic work.
 Students who browse Facebook and instant messaging while doing homework, on
 average achieve lower grades in school, 16% of media was combined, in 2005 26%
 of media was used together. This number must have skyrocketed since, with
