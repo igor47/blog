@@ -29,7 +29,7 @@ time to worse than drivers intoxicated over the 0.08% legal limit.[^5]
 
 Stanford professors thought before their study on multitasking that people who
 frequently multitask must be excellent in recognizing important elements in a
-series of tasks: [^1]
+series of tasks:
 
 > In one experiment, the groups were shown sets of two red rectangles alone or
 > surrounded by two, four or six blue rectangles. Each configuration was flashed
@@ -38,7 +38,7 @@ series of tasks: [^1]
 
 > They were told to ignore the blue rectangles, and the low multitaskers had no
 > problem doing that. But the high multitaskers were constantly distracted by the
-> irrelevant blue images. Their performance was horrible.
+> irrelevant blue images. Their performance was horrible.[^1]
 
 Desperately they attempted to find tasks in which the frequent multitaskers
 performed better, such as short term memory and context switching, but
@@ -67,14 +67,13 @@ inferior:
 Effectively, multitaskers train themselves to superficially consume multiple
 sources of input from memory of the external world. Their ability to filter
 relevance to their current goal declines and are distracted by irrelevant
-information. Multitaskers actually become bad at multitasking, by multitasking.
-[^2]
+information. Multitaskers actually become bad at multitasking, by multitasking.[^2]
 
 Multitasking students report to have more problems in their academic work.
 Students who browse Facebook and instant messaging while doing homework, on
 average achieve lower grades in school, 16% of media was combined, in 2005 26%
 of media was used together. This number must have skyrocketed since, with
-Generation Z and Y being its victims. [^7]
+Generation Z and Y being its victims.[^7]
 
 [^1]: [Media multitaskers pay mental price](http://news.stanford.edu/news/2009/august24/multitask-research-study-082409.html)
 [^2]: [Multitaskers bad at multitasking](http://news.bbc.co.uk/2/hi/technology/8219212.stm)
