@@ -10,7 +10,7 @@ title: Multitasking makes you dumb
   negatively alter how our brain processes information.
 </div>
 
-Multitasking is attempting to handle more than one task at a time. The human
+Multitasking is attempting to handle more than one task simultaneously. The human
 mind is not directly capable of this, thus it emulates multitasking by
 rapidly alternating between the tasks. This makes for a higher rate of errors
 due to lack of attention, and since context switching from one task to another
@@ -65,12 +65,12 @@ inferior:
 ## Multitaskers worse at multitasking
 
 Effectively, multitaskers train themselves to superficially consume multiple
-sources of input from memory of the external world. Their ability to filter
-relevance to their current goal declines and are distracted by irrelevant
+sources of input from memory and the external world. Their ability to filter
+relevance to their current goal declines and they are easily distracted by irrelevant
 information. Multitaskers actually become bad at multitasking, by multitasking.[^2]
 
 Multitasking students report to have more issues in their academic work.
-Students who browse Facebook and instant messaging while doing homework, on
+Students who browse Facebook and instant messaging while doing homework on
 average achieve lower grades in school.[^6] In 1999 16% of media consumption was
 combined, in 2005 26% of media was used together. This number must have
 skyrocketed since, with Generation Z and Y being its victims.[^7]
