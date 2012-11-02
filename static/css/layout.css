@@ -154,12 +154,6 @@ article ul li li li {
   -o-transition:all 500ms ease-in;
 }
 
-#avatar:hover {
-  border: 2px solid #999;
-  opacity: 1.0;
-  border-color: #423F37;
-}
-
 #me {
   clear: left;
 }

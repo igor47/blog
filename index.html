@@ -3,10 +3,10 @@ layout: default
 title: Sirupsen and his codeabouts
 ---
 
-<ul id="posts">
+<ul id="posts" class="twelve columns offset-by-four">
   {% for post in site.posts %}
     <li>
-      <a class="ten columns offset-by-four" href="{{ post.url }}">{{ post.title }}</a>
+      <a class="nine columns" href="{{ post.url }}">{{ post.title }}</a>
       <span class="two columns">{{ post.date | date: "%b %Y" }}</span>
     </li>
   {% endfor %}
