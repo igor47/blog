@@ -3,14 +3,18 @@ require 'rake'
 desc "Compile CSS files"
 task :css do
   puts "Merging CSS"
-  Dir["./static/css/*.css"].each do |file|
-    `cat #{file} >> ./static/css/temp.css`
+
+  `rm static/css/style.css`
+  `rm static/css/temp.css`
+
+  %W{font-awesome syntax skeleton base layout}.each do |file|
+    `cat ./static/css/#{file}.css >> ./static/css/temp.css`
   end
 
-  puts "Compressing CSS"
-  `yuicompressor static/css/temp.css > static/css/style.css`
+  # `mv ./static/css/temp.css ./static/css/style.css`
+  `yuicompressor ./static/css/temp.css > ./static/css/style.css`
+
   puts 'CSS dumped to ./static/css/style.css'
-  `rm static/css/temp.css`
 end
 
 desc "Deploy site"
