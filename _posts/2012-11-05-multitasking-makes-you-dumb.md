@@ -22,8 +22,8 @@ Furthermore, our brain exercises something Dr. Meyer of the University of
 Michigan calls "adaptive executive control" where our brain assigns priorities
 to the tasks we are performing in parallel.[^3] For instance, when driving and
 talking in cell phone, our brain assigns a higher priority to responding to our
-the phone conversation than focusing on the road. This deteriorates reaction
-time to worse than drivers intoxicated over the 0.08% legal limit.[^5]
+phone conversation than focusing on the road. This deteriorates reaction time to
+worse than drivers intoxicated over the 0.08% legal limit.[^5]
 
 ## Multitasking impairs cognitive control
 
