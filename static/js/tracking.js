@@ -1,4 +1,4 @@
-(function() {
+window.onload = function() {
   var createEvent = function(id, eventName) {
     document.getElementById(id).onclick = function(event) {
       analytics.track(eventName);
@@ -20,4 +20,4 @@
 
   // Twitter Post Link
   createEvent("follow", "Clicked Twitter Follow Link");
-});
+}
