@@ -3,7 +3,7 @@ window.onload = function() {
     document.getElementById(id).onclick = function(event) {
       analytics.track(eventName);
       event.preventDefault();
-      var href = document.getElementById(id).attr('href');
+      var href = document.getElementById(id).getAttribute("href");
       if (href) setTimeout(function () { window.location = href; }, 100);
     }
   }
