@@ -1,7 +1,10 @@
 (function() {
   var createEvent = function(id, eventName) {
-    document.getElementById(id).onclick = function() {
+    document.getElementById(id).onclick = function(event) {
       analytics.track(eventName);
+      event.preventDefault();
+      var href = document.getElementById(id).attr('href');
+      if (href) setTimeout(function () { window.location = href; }, 100);
     }
   }
 
