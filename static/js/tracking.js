@@ -14,6 +14,7 @@ window.onload = function() {
   createEvent("sidebar-github", "Clicked Github Icon");
   createEvent("sidebar-skype", "Clicked Skype Icon");
   createEvent("sidebar-rss", "Clicked RSS Icon");
+  createEvent("sidebar-linkedin", "Clicked LinkedIn Icon");
 
   // Navigation
   createEvent("avatar", "Clicked Face");
