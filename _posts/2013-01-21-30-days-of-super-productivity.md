@@ -5,8 +5,7 @@ published: false
 ---   
 
 <div class="intro">
-  Throughout November, inspired by [Sebastian
-  Marshall](http://sebastianmarshall.com/what-if-you-were-to-commit-to-having-the-most-productive-90-days-of-your-life),
+  Throughout November, inspired by [Sebastian Marshall](http://sebastianmarshall.com/what-if-you-were-to-commit-to-having-the-most-productive-90-days-of-your-life),
   I decided take on the challenge of having the 30 most productive days of my
   life.
 </div>
@@ -22,17 +21,15 @@ if the result of your absolute max is disappointing? After my
   pocket-philosophical observations—I decided to give the challenge a fair go.
   For the challenge, I jotted down the things I wanted to achieve:
 
-* Start practising reguarly on the piano. Inspired by a concert with [Olafur
-  Arnalds](http://www.youtube.com/watch?v=0kYc55bXJFI)
-  [and](http://www.youtube.com/watch?v=itErRn4T2no) [Nils
-  Frahm](http://www.youtube.com/watch?v=wkbf1-cVUuY) in Berlin, a good friend
-  lend me his piano and volunteered to get me started over some beer. I felt it
-  was about time I started something completely outside my comfort zone. Music
+* Start practising reguarly on the piano. Inspired by a concert with [Olafur Arnalds](http://www.youtube.com/watch?v=0kYc55bXJFI)
+  [and](http://www.youtube.com/watch?v=itErRn4T2no) [Nils Frahm](http://www.youtube.com/watch?v=wkbf1-cVUuY) 
+  in Berlin, a good friend lend me his piano and volunteered to get me started
+  over some beer. I felt it was about time I started something completely
+  outside my comfort zone. Music
   was a great candidate.
 *  Get back into running. Since the summer of 2011 I have enjoyed barefoot
    running on and off. In August and September I had excused myself with the
-   preperations for and the actual [Informatics
-   Olympiad](http://sirupsen.com/my-journey-to-the-international-olympiad-in-informatics/)
+   preperations for and the actual [Informatics Olympiad](http://sirupsen.com/my-journey-to-the-international-olympiad-in-informatics/)
    and got out of my running rhytm.
 * Waste fewer hours a day. Too many hours are wasted on social media, Skype and
   improper planning. Low hanging fruit.
