@@ -17,9 +17,9 @@ As Marshall writes:
 
 It’s scary as it feels like it’s whatever you come down to. When you give
 everything you have, you find yourself in a paradoxical state of weakness. What
-if the result of your absolute max is disappointing? After my
-  pocket-philosophical observations—I decided to give the challenge a fair go.
-  For the challenge, I jotted down the things I wanted to achieve:
+if the result of your absolute max is disappointing? After my home-spun
+philosophical observations – I decided to give the challenge a fair go.  For
+the challenge, I jotted down the things I wanted to achieve:
 
 * Start practising reguarly on the piano. Inspired by a concert with [Olafur Arnalds](http://www.youtube.com/watch?v=0kYc55bXJFI)
   [and](http://www.youtube.com/watch?v=itErRn4T2no) [Nils Frahm](http://www.youtube.com/watch?v=wkbf1-cVUuY) 
