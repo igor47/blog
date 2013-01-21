@@ -5,7 +5,7 @@ published: true
 ---   
 
 <div class="intro">
-  Throughout November, inspired by <a href="http://sebastianmarshall.com/what-if-you-were-to-commit-to-having-the-most-productive-90-days-of-your-life">Sebastian Marshall</a>
+  Throughout November, inspired by <a href="http://sebastianmarshall.com/what-if-you-were-to-commit-to-having-the-most-productive-90-days-of-your-life">Sebastian Marshall</a>,
   I decided take on the challenge of having the 30 most productive days of my
   life.
 </div>
