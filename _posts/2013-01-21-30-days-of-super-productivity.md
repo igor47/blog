@@ -50,7 +50,9 @@ if the result of your absolute max is disappointing? After my
 These were the added things out of the ordinary things that include work,
 assignments, homework, classes, duties and errands.
 
-## The actual month The actual month didn’t actually feel much out of the
+## The actual month 
+
+The actual month didn’t actually feel much out of the
 ordinary. I quickly found out that I am already very productive and it proved
 difficult to cramb in more things. It’s always been a dogma to myself that I
 could always do more, if I just planned better and wasted less time. But I
@@ -63,7 +65,9 @@ than that, I reached all my goals: I used my time more efficiently, I solved a
 lot of Olympiad tasks, wrote a rant every morning and ran 5K or more every other
 day.
 
-## Reflections I learned quite a few things about myself and my approach to my
+## Reflections 
+
+I learned quite a few things about myself and my approach to my
 daily life throughout this month.
 
 * Three things is the fous limit. I reconfirmed for myself that focusing on more
