@@ -50,7 +50,7 @@ if the result of your absolute max is disappointing? After my
 These were the added things out of the ordinary things that include work,
 assignments, homework, classes, duties and errands.
 
-## The actual month 
+## November
 
 The actual month didn’t actually feel much out of the
 ordinary. I quickly found out that I am already very productive and it proved
