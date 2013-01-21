@@ -4,7 +4,8 @@ title: Multitasking makes you dumb
 ---
 
 <div class="intro">
-  As part of researching for my 30 days of super productivity, I have explored
+  As part of researching for my <a
+  href="http://sirupsen.com/30-days-of-super-productivity/">30 days of super productivity</a>, I have explored
   the topics of context switching and multitasking. I found that multitasking has
   a tremendous effect on how we approach tasks and too much multitasking can
   negatively alter how our brain processes information.
