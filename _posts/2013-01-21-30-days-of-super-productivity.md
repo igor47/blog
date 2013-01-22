@@ -23,7 +23,7 @@ the challenge, I jotted down the things I wanted to achieve:
 
 * **Start practising regularly on the piano.** Inspired by a concert with [Olafur Arnalds](http://www.youtube.com/watch?v=0kYc55bXJFI)
   [and](http://www.youtube.com/watch?v=itErRn4T2no) [Nils Frahm](http://www.youtube.com/watch?v=wkbf1-cVUuY) 
-  in Berlin, a good friend lend me his piano and volunteered to get me started
+  in Berlin, a good friend lent me his piano and volunteered to get me started
   over some beer. I felt it was about time I started something completely
   outside my comfort zone. Music
   was a great candidate.
@@ -57,7 +57,7 @@ assignments, homework, classes, duties and errands.
 
 The productivity month did not feel as much out of the ordinary as I had feared.
 I quickly found out that I am already very productive and it proved difficult to
-cramp in more things. It’s always been a dogma to myself that I could always do
+cramp in more things. It has always been a dogma to myself that I could always do
 more, if I just planned better and wasted less time. But I believe I did hit a
 well-sought limit with the piano-training. I decided to peel that off in the
 first week. Every week, I experimented with a new planning method: planning the
