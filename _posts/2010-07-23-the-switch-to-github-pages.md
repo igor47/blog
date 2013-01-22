@@ -27,9 +27,8 @@ I looked into [Github Pages][pages], which runs [Jekyll][jekyll] allowing you to
 host a sophisticated static blog, with support for the mandatory hacker features
 such as code highlighting and clever handling of the static blog posts. It's
 super easy to set up. Deployment is performed just by pushing to a Github
-repository with the name "<username>.github.com", i.e. I push to the repo at
-[Sirupsen/sirupsen.github.com][source]. Here's a little guide to [migrate 
-from other blogging engines][migrate].
+repository with the name "<username>.github.com", i.e. I push to [my repo][source].
+Here's a guide to [migrate to Jekyll from other blogging engines][migrate].
 
 I've since cancelled my VPS. I no longer have to worry about a server or uptime.
 You're welcome to [fork my blog][source] to create your own.
