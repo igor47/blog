@@ -73,7 +73,7 @@ I learned quite a few things about myself and my approach to my
 daily life throughout this month.
 
 * **Three is the focus limit.** I reconfirmed for myself that focusing on more than
-  three times at once is almost impossible for me. For now, these three things
+  three things at once is almost impossible for me. For now, these three things
   are: school, work and the Olympiad. I am in a point of my life where my mind
   is active from 7 AM to 11 PM every single day.  Piano currently does not fit.
   Although three is not many, I would always prefer just one thing. The less you
