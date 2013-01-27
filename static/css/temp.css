@@ -920,23 +920,28 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 body {
   margin-top: 20px;
   font-family: 'Open sans', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
+}
+
+p {
+  line-height: 28px;
 }
 
 h1,h2,h3,h4 {
   font-family: 'Droid Serif', serif;
+  color: #423F37;
 }
 
 h1 { 
-  font-size: 30px; 
-  color: #423F37;
+  font-size: 2em;
   line-height: 40px;
   margin-bottom: 20px;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 1.8em;
+  line-height: 1.3em;
   font-weight: bold;
 }
 
@@ -946,10 +951,6 @@ h3 {
 
 h4 {
   font-size: 18px;
-}
-
-p {
-  line-height: 28px;
 }
 
 a {
@@ -1090,8 +1091,8 @@ sub {
 }
 
 .intro {
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 1.25em;
+  line-height: 1.3em;
   margin-bottom: 20px;
 }
 
