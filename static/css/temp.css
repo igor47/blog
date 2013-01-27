@@ -923,16 +923,21 @@ body {
   font-size: 16px;
 }
 
+h1,h2,h3,h4 {
+  font-family: 'Droid Serif', serif;
+}
+
 h1 { 
   font-size: 30px; 
   color: #423F37;
-  font-weight: 600;
   line-height: 40px;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 h2 {
   font-size: 24px;
+  font-weight: bold;
 }
 
 h3 {
@@ -1088,6 +1093,10 @@ sub {
   font-size: 20px;
   line-height: 28px;
   margin-bottom: 20px;
+}
+
+#follow {
+  font-style: italic;
 }
 
 /* #Page Styles
