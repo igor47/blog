@@ -1,6 +1,6 @@
 # Sirupsen.com
 
-My personal website and blog.
+My personal website and blog. I wrote [blogged about it](http://sirupsen.com/the-switch-to-github-pages/).
 
 ## License
 
