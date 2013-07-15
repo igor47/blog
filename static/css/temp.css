@@ -2227,6 +2227,7 @@ article ul li li li {
 }
 
 #social a, #social a:visited {
+  padding: 0 5px;
   color: #999;
   -webkit-transition:color 200ms ease-in;
   -moz-transition:color 200ms ease-in;
