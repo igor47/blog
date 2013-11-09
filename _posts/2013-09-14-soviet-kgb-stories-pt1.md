@@ -1,4 +1,7 @@
-## Soviet KGB Stories Pt 1 ##
+---
+layout: post
+title: Soviet KGB Stories Pt. 1
+---
 
 In 1986, my uncle Michael got summoned to the offices of the KGB in Nikolaev, Ukraine.
 They wanted to know about his friend, Tolic Dobrusin.

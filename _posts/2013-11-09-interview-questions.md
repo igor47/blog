@@ -1,4 +1,7 @@
-# Tech Interview Questions #
+---
+layout: post
+title: Tech Interview Questions
+---
 
 As an engineer at [Airbnb](https://www.airbnb.com), I do a LOT of interviewing.
 I talk to at least two to three people a week, but sometimes it's as many as 5 or 6.
