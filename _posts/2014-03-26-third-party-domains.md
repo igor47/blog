@@ -53,6 +53,16 @@ For instance, suppose that `blog.yourdomain.com` does not properly sanitize java
 This is the equivalent of your own site allowing [javascript injection](https://en.wikipedia.org/wiki/Cross-site_scripting).
 An attacker putting malicious javascript into the blog comments will force your users to perform actions on your main site.
 
+### Session Clobbering/Cookie Fixation ###
+
+If your blog provider happens to set the same cookies as you do, you will log out your user or ruin your tracking or analytics.
+For instance, if both you and your blog provider use google analytics, you will both be attempting to set the various `_utm*` cookies.
+
+The name collision can cause usability problems for your users.
+However, this is also a potential security vulnerability given vulnerable browsers.
+An attacker who can set cookies on your domain can set a sensitive cookie to a value he controls and then force you to make that value valid.
+[Here is a description](http://homakov.blogspot.com/2013/03/hacking-github-with-webkit.html) of such an attack on Github.
+
 ### Personal Data Leakage (PII) ###
 
 You might be leaking other data than your session cookies via additional cookies, such as tracking cookies.
@@ -67,12 +77,6 @@ Users assume that content under `yourdomain.com` comes from you.
 By gaining access to your delegated domains, an attacker can convince users to simply give you their passwords or other information.
 Additionally, you can gain a poor reputation if your delegated domains are defaced or simply contain negative content.
 The internet will assume that you endorse that content.
-
-### Session Clobbering ###
-
-If your blog provider happens to set the same cookies as you do, you will log out your user or ruin your tracking or analytics.
-For instance, if both you and your blog provider use google analytics, you will both be attempting to set the various `_utm*` cookies.
-The name collision can cause usability problems for your users, but is not strictly a security problem of itself.
 
 ## Workarounds ##
 
