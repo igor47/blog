@@ -30,7 +30,7 @@ The first is statically hard-coding a list of Zookeeper instances and relying on
 The second is static configuration of bootstrapping information for Serf and relying on Serf's [gossip protocol](http://www.serfdom.io/docs/internals/gossip.html).
 
 The gossip protocol is a modified version of [SWIM](http://www.cs.cornell.edu/~asdas/research/dsn02-swim.pdf).
-Consul uses this not just for bootstrapping but for propogate ALL information, including the availability information you're trying to discover.
+Consul uses this not just for bootstrapping but for propagate ALL information, including the availability information you're trying to discover.
 I have many unanswered questions about the gossip protocol.
 For instance, in the case of a network partition, it seems like a partitioned-off node will be alternatively marked suspected-down and then back up by different group members.
 This may result in a partitioned-off node never leaving the cluster.
@@ -52,7 +52,7 @@ I view this as a benefit, not a drawback.
 
 Another benefit is using [HAProxy](http://haproxy.1wt.eu/#desc) to actually route between services.
 Whenever a service inside Airbnb talks to a dependency SmartStack, that service knows nothing about the underlying implementation.
-The ability to avoid writing a client (even a simple, HTTP client) for service discovery into each application was a fundemental design goal for us.
+The ability to avoid writing a client (even a simple, HTTP client) for service discovery into each application was a fundamental design goal for us.
 If you want a third-party application you didn't write to run on your network and consume Consul information, you must use DNS.
 However, DNS is even worse -- when, how, and for how long will DNS resolutions be cached by your underlying libraries or applications?
 
@@ -62,7 +62,7 @@ Your infrastructure should aim to be as simple and flat as possible.
 A service instance is a service instance, and if it's different then it is a different service!
 If you find yourself 6 months in, only talking to instances of service Y which provide property X from some unknown number of clients which have requirement X hardcoded into an HTTP request buried in their codebase, you are going to wish that you hadn't done that.
 
-Finally, HAProxy is an extremely stable, popular, well-tested, well-utilized, fundemental component of the internet which provides amazing introspection.
+Finally, HAProxy is an extremely stable, popular, well-tested, well-utilized, fundamental component of the internet which provides amazing introspection.
 That we use HAProxy means that synapse and zookeeper can just go away, and your service will keep on working (although it won't get updates about new or down instances).
 Using connectivity checks in HAProxy means that we can survive network partitions -- services which remain registered will be taken out of rotation by HAProxy.
 Using HAProxy's [built-in load balancing algorithms](http://docs.neo4j.org/chunked/stable/ha-haproxy.html) meant that we didn't have to write them.
@@ -97,7 +97,14 @@ Running a Zookeeper cluster across the public internet is also not an ideal situ
 
 I think that the correct approach is to provide mostly-local service clusters per datacenter.
 A single, global Zookeeper cluster will contain only the list of services that are truly cross-DC (like the front-end load balancers), while most services only talk to services inside their local DC.
-Assuming a flat cross-DC topography is setting yourself up for much higher than necessary latancy.
+Assuming a flat cross-DC topography is setting yourself up for much higher than necessary latency.
 
 Of course, with Consul you could probably configure your services to discover only dependencies tagged with your local datacenter.
 But this reaches into the realm of configuration management, and at that point both Consul and SmartStack become equivalent -- a Chef change is a Chef change.
+
+## Summing up ##
+
+I love Hashicorp, and I think Serf is a great idea, implemented well.
+I think that from an operations perspective, SmartStack has a bit of an edge on Consul.
+I am happy to have the opportunity to engage in dialog like this, and I'm excited about how much easier it's getting all of the time to operate internet infrastructure.
+If you have comments, or corrections, please do get in touch!
