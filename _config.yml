@@ -1,3 +1,5 @@
 highlighter: rouge
 permalink: '/:title'
 markdown: redcarpet
+gems:
+  - jekyll-feed
