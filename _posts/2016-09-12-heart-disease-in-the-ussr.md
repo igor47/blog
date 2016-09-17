@@ -62,7 +62,7 @@ His opinion is that the on-call physician is a dick.
 
 My heart murmur persists, and so my family is referred to doctors in Kiev who may be able to diagnose the cause.
 Kiev is no Nikolayev (a regional back-water), but my family is still well-connected there.
-Antonina Grigorivna, a good friend of my grandfather, is the head of the 4th Municipal Hospital, which served the Communist Party apparatus of Ukraine -- the party bosses and their families.
+Antonina Grigorivna, a good friend of my grandfather, is the head of the 4th Municipal Pharmacy, which served the Communist Party apparatus of Ukraine -- the party bosses and their families.
 As a result we are able to get an appointment very quickly, and the doctors in Kiev perform an ultrasound -- the first I'd had at that point!
 (Aside: In the US at that point, prenatal screening with ultrasound [was routine](http://www.ob-ultrasound.net/history1.html)).
 
@@ -103,7 +103,7 @@ I was able to find [a reference to Falkovsky](http://articles.dailypress.com/199
 So, when my mom and I show up in Moscow in June, we have at least some tenuous connection to the people at the top.
 I am immediately admitted to the hospital.
 There, using some newly-purchased markers from my mom, a girl in my ward and I cover each other in little red dots, creating a chicken pox scare.
-The nurses demand payback of the .5l of medical-grade ethanol they used to wash the dots off us (remember, people drink this stuff straight!)
+The nurses demand payback of the half-litre of medical-grade ethanol they used to wash the dots off us (remember, people drink this stuff straight!)
 
 That night, the Soviet surgeons perform their first balloon angioplasty on an infant.
 Rather than using the femoral artery, as is common for adults, they gain access via the brachial artery in my left arm.
@@ -123,7 +123,7 @@ Mom shows up there with Aunt Lora, and they bribe the head of the ICU (Dr. Yuri 
 My dad was already planning to come to Moscow, but my mom calls his boss at the ship-building plant, who puts him on the next plane.
 Because in the USSR, family is not allowed to visit in the hospital, Mom enrolls temporarily as a hospital worker so she can spend time with me while I recover.
 
-Although gangrene started in my arm, it slowly recovered.
+Although gangrene starts in my arm, it slowly recovers.
 I lost a lot of range of motion in it -- for instance, when crawling I kept the left hand balled up in a fist.
 To help in the recovery, Prof. Falkovsky connects my mom to a woman named Valentina Nikolayevna.
 She is a neurologist, but she also practices alternative medicine -- probably not legal, but she has cover from her husband, a KGB officer.
