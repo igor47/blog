@@ -3,8 +3,6 @@ layout: post
 title: Congenital Heart Disease in the USSR
 ---
 
-## Congenital Heart Disease in the USSR
-
 I recently had heart surgery to fix a [leaky mitral valve](http://www.heart.org/HEARTORG/Conditions/More/HeartValveProblemsandDisease/Problem-Mitral-Valve-Regurgitation_UCM_450612_Article.jsp).
 When investigating my condition and the surgery online, I found individual people's accounts of their progression to be most helpful to understand what I'll be going through.
 These accounts are unfortunately rare -- they mostly seem to crop up in individual posts in random forums in the dusty corners of the web.
