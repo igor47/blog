@@ -114,7 +114,7 @@ I had been complaining of arm pain all night -- my earliest memory may be of sta
 However, the on-call doctors don't realize that anything is wrong.
 Thankfully, the two chief cardiologist recognize the problem with my arm, and proceed to raise hell.
 By the time my mom arrives in the hospital in the morning, I am already in surgery again.
-Dr. Bakeria re-opens my incision, cuts out he dead portion of the brachial artery, and connects the two remaining sections together to save my arm.
+Dr. Bakeria re-opens my incision, cuts out the dead portion of the brachial artery, and connects the two remaining sections together to save my arm.
 
 ### The Recovery
 
