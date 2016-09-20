@@ -44,13 +44,15 @@ The capacity of deep-cycle batteries is measured in [amp-hours](https://en.wikip
 A `120Ah` battery will run a device which consumes 120 amps for an hour, 60 amps for two hours, etc...
 I recommend buying the 120 amp-hour ones because they're not much heavier or more expensive than smaller batteries, and give you more capacity.
 
-I buy my deep-cycle batteries at Costco, because they're readily available there, and relatively inexpensive.
+I buy my deep-cycle batteries at Costco, because they're readily available there, and relatively inexpensive (around $150 per battery).
 Also, Costco will let you trade them in if they lose their capacity too quickly.
 I've owned maybe fifteen of the Costco-branded or Interstate batteries over the last decade, and I've found most of them to last for three to four years with no problems and when they stop holding their charge you can trade them in for new ones.
 
 I charge my batteries using a couple of [these Duracell battery chargers](http://amzn.to/2cZGlzX).
 At $50 each, these are the most economical 12V battery chargers I've found.
 Also, their maximum charge rate is 15 amps, which means it can charge a `120Ah` battery from fully empty to totally full in about 8 hours (overnight).
+Even at Burning Man, [Camp Warp Zone](http://igor.moomers.org/warpzone/) never ran any lights or art pieces off the generator.
+We always run everything off 12V power, but several times during the burn we'll run the generator to recharge all the batteries.
 
 ### The Amp ###
 
@@ -89,7 +91,7 @@ They sound much better at higher volumes, which is perfect for parties.
 
 I don't own my own subwoofer yet, but I had great success driving a friend's [Behringer B1800X](http://amzn.to/2cE7qcx).
 I wouldn't buy this sub for myself, though, because it's a little too large and unwieldy.
-I've been eyeing the [Peavy 118D](http://amzn.to/2cZJdg6) because it's a few pounds less, and it can run in both active and passive mode.
+I've been eyeing the [Peavy 118D](http://amzn.to/2cZJdg6) because it's weighs a few pounds less, and it can run in both active and passive mode.
 I could run it in passive mode off batteries during parties, and use the built-in amp if I wanted to blast bass in my one-bedroom apartment.
 
 You'll probably want to make up your own mind on which speakers to buy.
@@ -105,7 +107,9 @@ I doubt if the capacitor has any impact on sound quality, since the amps themsel
 I like that the capacitor comes with a built-in volt meter, so I can keep an eye on the charge of the battery and avoid draining it too far.
 
 Another useful component is [this electronic crossover](http://amzn.to/2cyrk3E).
-It gives better control over the distribution of signal than the built-in crossover in the monoblock amp, and it also allows me to connect an additional amp if I need it.
+It gives better control over the distribution of signal than the built-in crossover in the monoblock amp, and it also allows me to connect an additional amp if I want to run even more speakers.
+I usually configure the sound so that two of the Behringers sit *behind* the DJ but still facing forward, so the DJ gets good monitors but they're still contributing to the party.
+But the crossover makes it easy to connect dedicated monitors if desired.
 
 Finally, it's helpful to have some power plugs.
 I use [this cigarette lighter block](http://amzn.to/2dc9iVN) to provide USB power, which is nice to charge phones and also to run [little USB lights](http://amzn.to/2dc7WdK) (super-helpful when you need to plug and unplug stuff, or to see the DJ equipment).
