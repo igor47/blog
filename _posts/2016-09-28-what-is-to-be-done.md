@@ -3,11 +3,19 @@ layout: post
 title: What is to be done?
 ---
 
-Over the past year, I experienced a crisis of confidence.
-I had become a technologist and had devoted myself to building things -- most recently, better systems for writing large-scale software.
-But I found that my work lost all meaning.
-I don't just mean my specific job -- improving developer infrastructure, or building distributed systems.
-I had lost faith in the ability of technology to improve the world.
+Over the past year, I experienced a crisis of faith.
+I'm a technologist -- someone who builds tools and systems.
+I'm also not someone who draws sharp distinctions between work and life.
+I view life as a series of projects I care about, the only distinction being that sometimes people want to pay me money to work on some of these projects.
+
+I was motivated in my work by the premise that what I was doing was somehow helping to improve the world.
+My crisis was losing faith in this premise.
+This post is a somewhat-personal account of how this crisis came about, how I dealt with it, and what I concluded in the end.
+
+I wrote this for me, so I have a record of the journey.
+But if you, too, are a technologist who is finding herself depressed and uninspired, then maybe this could help.
+Or maybe you're just trying to figure out where best to apply yourself?
+If so, [skip to the end](#ok-but-whats-to-be-done).
 
 ## Catch-22 ##
 
