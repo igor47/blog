@@ -3,15 +3,14 @@ layout: post
 title: What is to be done?
 ---
 
-Over the past year, I experienced a crisis of faith.
 I'm a technologist -- someone who builds tools and systems.
 I'm also not someone who draws a sharp distinction between work and life.
 I view life as a series of projects I care about, the only distinction being that sometimes people want to pay me money to work on some of these projects.
 
-I was motivated in my work by the premise that what I was doing was somehow helping to improve the world.
-My crisis was losing faith in this premise.
-This post is a somewhat-personal account of how this crisis came about, how I dealt with it, and what I concluded in the end.
+I am motivated in my work by the premise that what I am doing is somehow helping to improve the world.
+In the past year, I experienced a crisis of faith, where I stopped believing this premise, and as a result my work (and so also my life) became meaningless to me.
 
+This post is a somewhat-personal account of how this crisis came about, how I dealt with it, and what I concluded in the end.
 I wrote this for me, so I have a record of the journey.
 But if you, too, are a technologist who is finding herself depressed and uninspired, then maybe this could help.
 Or maybe you're just trying to figure out where best to apply yourself?
@@ -21,14 +20,13 @@ If so, [skip to the end](#ok-but-whats-to-be-done).
 
 I am an environmentalist as well as a technologist.
 I really, really like this awesome planet we're all riding around on; so beautiful, so full of neat things.
-But it's clear that we humans are really making a mess of things.
-What's more, it seems obvious that we have gained a huge lever in our Trash-the-Planet project through our use of technology.
+My environmentalism came into direct conflict with my profession, as it became clear to me that we're using technology to make a mess of things.
 
-We [create nuclear fuel which will last for 10,000 years and has to be stored in complicated facilities lest it poison us all](https://www.damninteresting.com/this-place-is-not-a-place-of-honor/).
+For instance, [we create nuclear fuel which will last for 10,000 years and has to be stored in complicated facilities lest it poison us all](https://www.damninteresting.com/this-place-is-not-a-place-of-honor/).
 We release chemicals into the environment which are [turning amphibians female](http://www.newsweek.com/female-frogs-estrogen-hermaphrodites-suburban-waste-369553).
-[Our bees are dying](https://en.wikipedia.org/wiki/Colony_collapse_disorder) but [our pine beetles are thriving (and killing all the trees)](http://www.tahoedailytribune.com/news/california-tahoe-area-tree-deaths-climb-to-record-levels-thanks-to-bugs-drought/).
+[Our bees are dying](https://en.wikipedia.org/wiki/Colony_collapse_disorder), probably [thanks to our pestides](https://en.wikipedia.org/wiki/Neonicotinoid#Bees), but [our pine beetles are thriving (and killing all the trees)](http://www.tahoedailytribune.com/news/california-tahoe-area-tree-deaths-climb-to-record-levels-thanks-to-bugs-drought/) because of global warming.
 
-Technology is not just causing environmental degradation, but it seems to be digging at the very fabric of society.
+Technology is not just causing environmental degradation, but seems to be digging at the very fabric of society.
 We can [build weapons which may destroy us all](https://en.wikipedia.org/wiki/Nuclear_warfare).
 At the same time, we have isolated ourselves in [filter bubbles](https://www.techopedia.com/definition/28556/filter-bubble), wherein conflict and rhetoric can escalate until [the use of those weapons doesn't seem so bad](http://www.politicususa.com/2016/08/03/trump-asks-if-nuclear-weapons-them.html).
 At a time when we're faced with huge collective challenges, technology seems to [have taken away even our ability to agree on 'facts'](http://www.newyorker.com/magazine/2016/03/21/the-internet-of-us-and-the-end-of-facts).
@@ -36,7 +34,7 @@ At a time when we're faced with huge collective challenges, technology seems to 
 So, here was the catch-22.
 How could technology be both the cause of *and* the solution to all of our problems?
 If I continued working on improving technology, wouldn't I be hastening the very outcomes I decried?
-And, if I refused to work on technology any further, than what was I to do instead?
+But if I refused to work on technology any further, than what was I to do instead?
 I could retreat into the woods and hide from the world, but that didn't seem like the solution to *any* problem -- not even my distinctly personal one.
 
 ## Descent ##
