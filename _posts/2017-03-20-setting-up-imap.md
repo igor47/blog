@@ -1,4 +1,3 @@
-# Migrating to Dovecot
 
 Recently, I wanted the ability to more reliably check email while on my phone.
 So far, I had gotten by with [VX ConnectBot](http://connectbot.vx.sk/), which I would use to SSH into my phone and connect to my `tmux` session running `mutt`.
@@ -8,7 +7,7 @@ It turns out that setting up IMAP is easier than I thought, because the software
 What's difficult is navigating the maze of confusing, overlapping email standards and options.
 Here's how I did my setup, but YMMV.
 
-## migrate existing mail
+## Migrate existing mail
 
 I decided to run [Dovecot](https://www.dovecot.org/) as an IMAP server.
 Dovecot has excellent documentation.
@@ -95,6 +94,8 @@ Once the cert was acquired, I double-checked that automatic renewal works, too:
 ```
 letsencrypt renew --dry-run
 ```
+
+[This article was very helpful with helping to configure Dovecot/Postfix for SSL](https://ubuntu101.co.za/ssl/postfix-and-dovecot-on-ubuntu-with-a-lets-encrypt-ssl-certificate/).
 
 ## Configure Dovecot
 
