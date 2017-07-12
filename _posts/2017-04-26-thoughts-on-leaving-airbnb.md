@@ -57,7 +57,7 @@ We decided that we would abstract this problem away -- first, with [Synapse](htt
 The entire system was called SmartStack, and the design is more comprehensively justified in the [SmartStack blog post](https://medium.com/airbnb-engineering/smartstack-service-discovery-in-the-cloud-4b8a080de619#.m0x2ks9ja).
 
 SmartStack was very easily to deploy incrementally via our new configuration management system.
-Registerng a service via `nerve` and making it available through `synapse`/`haproxy` required only configuration changes in the Chef monorepo.
+Registering a service via `nerve` and making it available through `synapse`/`haproxy` required only configuration changes in the Chef monorepo.
 Actual deployment of SmartStack involved merely changing where a service finds it's dependent services, and also killing any retry or load balancing mechanisms (since these would now be handled by `haproxy`).
 By the end of the summer of 2013, all of our services were communicating via an HAProxy, and we were able to kill lots of Zookeeper and server-set-management code in the Rails monolith and other services.
 SmartStack also remains in-use at Airbnb today.
@@ -65,29 +65,28 @@ SmartStack also remains in-use at Airbnb today.
 ### Load Balancing ###
 
 Once our services were talking internally through HAProxy, we wanted to bring the same approach to our upstream load balancing.
-At the time, all traffic inbound to Airbnb always went directly from an ELB to a rails monolith instance, and managing the set of instances registered with the ELB was a manual process.
+At the time, all traffic inbound to Airbnb always went directly from an [ELB](https://aws.amazon.com/elasticloadbalancing/) to a Rails monolith instance, and managing the set of instances registered with the ELB was a manual process.
 Initially, we planned an ambitious service that would accept all incoming traffic and would be able to mutate it -- for instance, handling authentication and session management and setting authoritative headers for downstream services.
 However, we quickly learned that writing a proxy service that could handle Airbnb traffic, even in 2013, was nontrivial.
-After several attempts to deploy a Java version, we punted and instead deployed Nginx.
+After several attempts to deploy a Java version, we punted and instead deployed [Nginx](https://www.nginx.com/resources/wiki/).
 
 The Nginx instances, collectively known as Charon, become our front-end load balancer.
-These were entered into DNS manually, and all inbound traffic would arrive at them.
-`Synapse` for any service that accepted front-end traffic -- such as the mobile web service or the rails monolith -- was enabled on these boxes.
-Nginx would dispatch traffic to `haproxy` based on request parameters, most often the hostname in the request.
-Load balancing to the service instances happened inside `haproxy` as usual.
+The Charon instances were discovered by Akamai through DNS, where they were entered manually.
+After inbound traffic arrived at a Charon instnace, it would be routed to the correct service based on request parameters -- most often the hostname in the request headers.
+`HAProxy` took traffic for a specific service and dispatch load balance it to actual instances providing that service.
 Once this system was deployed, I was able to kill our ELBs.
 It was very convenient to have service routing be consistent throughout the stack -- an instance would receive traffic if and only if `nerve` was active on that instance.
 
 This system worked well enough until Spring 2016.
 At that time, several problems arose.
 The biggest was that all traffic bound for the Charon boxes was coming from Akamai, and Akamai was not doing a good job load-balancing between the Charon instances.
-Since some of these instances were receiving a lion's share of the traffic, and since haproxy is single-threaded, were starting to hit high CPU usage on those instances.
-Scaling the Charon cluster wasn't helping, since we would still end up individual hot instances.
+Since some of these instances were receiving a lion's share of the traffic, and since `haproxy` is single-threaded, we were seeing high CPU usage on those instances.
+Scaling the Charon cluster wasn't helping, since we would still end up with individual hot instances.
 
-Akamai claimed that Route53 weighted resource sets were to blame, since they return only a single IP address every time a name is resolved.
+Akamai claimed that [Route53](https://aws.amazon.com/route53/) [weighted resource sets](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted) were to blame, since they return only a single IP address every time a name is resolved.
 To avoid Akamai internally caching a single IP, we switched to vanilla `A`-record sets, which return all the IP addresses for a name with each request.
 We hoped that this would result in Akamai traffic being balanced between Charon nodes, but the approach did not work.
-Eventually, we resorted to re-introducing ELB into our stack, this time as a way to load-balance between Charon (not rails monolith) instances, at the cost of an additional 3ms of latency per request.
+Eventually, we resorted to re-introducing ELB into our stack, this time as a way to load-balance between Charon instances.
 Insert yo-dawg joke about load balancers here.
 
 As part of this project, we spent a lot of time manually managing DNS or ELB registration for Charon instances.
@@ -111,16 +110,16 @@ While the `.dyno` instances were initially manually entered into DNS, once Themi
 ### Monitoring ###
 
 In the beginning of 2014, our systems monitoring was pretty spotty.
-At that time, we were using Scout for instance monitoring, but monitoring was inconsistently available.
+At that time, we were using [Scout](http://server-monitor.pingdom.com/) for instance monitoring, but monitoring was inconsistently available.
 Also, Scout was a dead-end for metrics -- it only supported system-level stats that it's agent was able to collect.
 At the time, several cool monitoring SaaS companies were getting started, and I embarked on a project to evaluate our options.
 
-In the end I ended up choosing DataDog.
-A strong reason was DataDog's very good haproxy integration.
+In the end I ended up choosing [DataDog](https://www.datadoghq.com/).
+A strong reason was DataDog's very good `haproxy` integration.
 This integration allowed us to have metrics for how much traffic each service was getting, where this traffic was coming from, and the distribution of response sizes, result codes, and other interesting statistics.
-Another reason was that the DataDog agent accepted StatsD metrics, so we could monitor instance statistics like CPU, memory, and other resource utilization alongside custom service metrics.
-Furthermore, DataDog had server-side CloudWatch scraping, which meant we could see CloudWatch specific information like RDS utilization stats alongside all other metrics (and avoid asking engineers to log into the AWS console just to see CloudWatch metrics).
-Finally, DataDog had a very comprehensive API, so it seemed possible to do more automation as time went on.
+Another reason was that the [DataDog agent](https://github.com/DataDog/dd-agent) accepted [StatsD metrics](http://docs.datadoghq.com/guides/dogstatsd/), so we could monitor instance statistics like CPU, memory, and other resource utilization alongside custom service metrics.
+Furthermore, DataDog had [server-side CloudWatch scraping](http://docs.datadoghq.com/integrations/aws/), which meant we could see CloudWatch specific information like RDS utilization stats alongside all other metrics (and avoid asking engineers to log into the AWS console just to see CloudWatch metrics).
+Finally, DataDog had a [very comprehensive API](http://docs.datadoghq.com/api/), so it seemed possible to do more automation as time went on.
 
 In early 2014, I rolled out DataDog and removed Scout from all of our systems.
 I would be a primary point of contact for managing Airbnb's relationship with DataDog until my departure from the company.
@@ -130,7 +129,7 @@ Despite some bumps, the product scaled well with Airbnb, and the company was ver
 I strongly recommend DataDog.
 
 I also became a primary point of contact for anything monitoring-related at Airbnb.
-After rolling out the DDAgent to systems, I added DatDog's StatsD client to many of our applications.
+After rolling out the DDAgent to systems, I added [DatDog's StatsD client](https://github.com/DataDog/dogstatsd-ruby) to many of our applications.
 I encouraged other developers to liberally instrument their code with StatsD calls.
 Additionally, I ended up writing lots of internal documentation on monitoring best practices.
 I also developed monitoring curriculum, originally for the SysOps group but later as a bootcamp class for all new hires.
@@ -150,7 +149,7 @@ This was a constant problem during my tenure at Airbnb, and we never really solv
 As people moved around and teams formed and dissolved, systems would become orphaned, and the maintenance burden would fall on "whoever cares most".
 However, I at least made an initial system for assigning ownership, even if the data in that system was not always consistent.
 
-Next, I created Interferon.
+Next, I created [Interferon](https://github.com/airbnb/interferon).
 This project uses a Ruby DSL to programmatically create alerts.
 I chose a DSL because I wanted complicated filtering logic, and found myself inventing mini-programming languages inside pure-data formats like JSON or YAML.
 
@@ -160,6 +159,9 @@ Whenever Interferon ran, it would pull a list of all hosts from inventory and ma
 The alerts would be routed to the owners for each host, and the alert file could be modified to explicitly filter out any systems where high CPU usage is expected.
 Because all changes are code changes, the usual review process applies, so there are no surprises for new alerts or alerts suddenly going missing.
 Also, writing alerts in a file encourages developers to write longer, more informative alert messages, and the DSL allows information about hosts to be encoded in the alert, making alerts more actionable.
+
+I gave [a talk about this work](https://www.usenix.org/conference/srecon15/program/presentation/serebryany) at SREConf 2015, which includes more details if you're interested.
+There's also a [blog post about Interferon/the Alerts Framework](https://medium.com/airbnb-engineering/alerting-framework-at-airbnb-35ba48df894f) on the Airbnb blog.  
 
 ### Product Work ###
 
@@ -254,4 +256,132 @@ Also, the system dependency upgrade system I created was used to upgrade our Ubu
 Other engineers were beginning to use the system to upgrade other system dependencies, including NodeJS versions for Node projects and Ruby versions of other services in our SOA.
 After completing the migration and documenting the work, I announced my departure.
 
+### Non-Technical Projects ###
 
+Besides the big chunks of code I wrote while at Airbnb, I was also involved in lots of non-technical (or at least, non-coding) projects.
+In hindsight, some of those projects were arguably more important than any of the strictly technical work that I did; see the section below on a post-mortem around those thoughts.
+It seems worthwhile to document those here, too, while I still remember them.
+
+One big area of focus was SysOps.
+I spent a lot of time on-call, especially during the hectic years in 2013 and 2014 when we were growing rapidly and our infrastructure was in flux.
+I eventually transitioned into a leadership role of the SysOps group.
+This involved organizing training for new members, planning the on-call schedule, and running the weekly postmortem meetings.
+The SysOps group was incredibly successful, and I frequently hear astonishment from my peers when I tell them that Airbnb has a strictly volunteer on-call rotation.
+The group was so successful that we eventually had more people who wanted to be in the on-call rotation than we could fit into slots during a 6-month period.
+We ended up reducing on-call shift duration from a week to just two days.
+In 2015 several long-tenured members, including me, began stepping back from the group to allow newer engineers to take the lead.
+
+Another big focus was our overall technical vision.
+I was a member of Tech Leads, an initial stab at such a vision, in 2013.
+However, when Mike Curtis became VP of Engineering, he dissolved the group as part of his efforts to abolish any hierarchy among engineers.
+However, we still needed a way to collectively decide how to evolve our infrastructure.
+I took lead on an initial stab at such a system, called Tech Decisions, in late 2013, but that system was too bureaucratic and never had much adoption.
+
+In 2014, a crisis around whether and how we run an SOA precipitated another attempt, called the Infrastructure Working Group.
+We held a series of meetings to come up with a shared set of principles for our infrastructure, which formed the basis of any future decision-making.
+I drafted several of the principles we eventually settled on.
+We also created a structure called the Infrastructure Working Group, which worked to influence individual teams and engineers to make technical decisions in accordance with the principles.
+I was heavily involved with the group, at least until the Developer Happiness Team began taking all my time.
+
+I was very involved with our Bootcamp efforts for new hires.
+I participated in the meetings that created the Airbnb Bootcamp.
+Afterwards, I ended up regularly teaching two of the sessions.
+The first was on monitoring our infrastructure.
+The second was titled "Contributing and Deploying", and covered the developer workflow from committing code (including how to write good commit messages -- a personal quest) to getting that code successfully out in production.
+This was the only mandatory session of the bootcamp.
+
+Finally, as a technical leader and senior engineer, I spent a lot of time on mentorship and code review.
+During our Chef roll-out, I ended up reviewing almost every pull request to our Chef repo in an effort to broadly seed Chef best practices.
+Later, as I transitioned on working primarily on Deployboard, I reviewed most PRs to that repo, trying to ensure consistent architecture, style, and test coverage.
+As the Developer Happiness/Infrastructure group of teams grew and hired many new engineers, I worked to get them up to speed on the codebase and to become productive and self-sufficient contributors.
+
+Finally, I spent a large amount of time maintaining what I call "situational awareness".
+This meant engaging with the firehouse of stuff that the Airbnb engineering team was doing, from project proposals and infrastructure decisions down to individual pull requests, email threads, and even Slack conversations.
+I attempted to inject vision and guidance wherever I could, connect the dots between disparate projects, and in general to be helpful.
+For instance, I could tell an engineer that a project they were trying to accomplish would become easier when another engineer on a different team completed a different project.
+I could catch PRs that were likely to cause problems, or connect outages to specific changes.
+This connector role was performed by several people in the engineering organization, and these people never got the credit they deserved for this thankless and never-ending task.
+
+## What Didn't Work? ##
+
+It took me quite a while to write the preceding section.
+I knew that I had been incredibly productive at Airbnb, but writing it down really threw it into relief.
+Looking back over that I worked on, I see that my technical projects -- Chef, SmartStack, Deployboard, the work on Monitoring -- were very successful.
+They made life easier for other engineers, and have survived the test of time to continue providing value.
+
+However, I always had more grand ambitions than to just accomplish a specific project.
+I had a vision for how I wanted our infrastructure and our engineering team to function, and I did not succeed, in most cases, in making that vision a reality.
+
+A great example of this is our original vision for the Developer Happiness team.
+We did not set out to become the CI team, although that's where we eventually ended up.
+We wanted to improve documentation, communication, and make being an Airbnb engineer easier and more fun.
+I ran the engineering team survey and collected pain points, but never had enough bandwidth to address more than a few of these pain points.
+
+Why didn't I have enough bandwidth?
+I think it's because I failed to navigate the transition from individual contributor to technical leader.
+The easiest way for me to get things done at Airbnb was to just do the things I thought needed doing.
+When our builds were slow, I jumped in with both feet and made them faster -- by writing a build system and a test splitter and a Javascript UI for result visualization, etc...
+
+In the meantime, I let things fall to the floor.
+I ignored the structural problems that lead to the situation, or merely kvetched about them and left others to try to solve them.
+I spent too much time writing code, and not enough time influencing or guiding other contributors -- which would have allowed me to focus on a broader range of problems.
+I let myself be seduced by the promise of definitely solving a smaller problem in favor of some probability of solving a larger one.
+
+This wasn't *entirely* my fault.
+Airbnb could have done better to support my transition.
+The engineering team is completely flat -- even though we have engineering levels, they're supposed to be secret.
+Expectations around what engineers should be focusing on at each level are vague at best, and there's no consensus among managers about what makes a more senior engineer.
+Mike Curtis once told me, in a one-on-one, that it should be possible to reach the highest engineering levels by focusing on deep technical work, but I think that assertion would come as a surprise to most of his engineering managers.
+
+My constant argument to the eng management at Airbnb was to make technical leadership an explicit role, rather than something a few engineers did in their spare time.
+I think I failed to convince anyone, least of all Mike Curtis, of this argument.
+However, some Airbnb engineers were able to make the transition on their own, despite lack of official support.
+I was not one of them.
+
+Finally, I think my biggest failure at Airbnb was making it personal.
+I invested so much life and energy into my work that it became all too easy to become frustrated when things didn't seem to be working out.
+When things got really tough -- see next section -- I lashed out and became a liability.
+I failed to keep my reactions in check, and injected negativity into my entire team.
+
+If I could change anything about my time at Airbnb, it would be a change in focus.
+I wish I was more focused on building relationships, and less on accomplishing objectives.
+In the end, when I was leaving, it was the relationships that I did manage to build that persisted in my life -- the technical stuff is all someone else's problem now.
+
+## Why I Quit ##
+
+It took about 6 months for the Developer Happiness team to go from three to 4 engineers.
+During this time, it felt like the world was on fire.
+The builds and tests were constantly broken.
+It could take an entire day to ship a simple change, and we were concerned about a code backlog so deep we couldn't clear it in one day.
+We were trying to keep the existing system running through multiple crises, even while trying to build and roll out a replacement with minimal headcount.
+It was very frustrating to feel like we were holding the world up on our shoulders while being ignored by the engineering management and failing to secure any help for our team.
+
+So, in the summer of 2015, when our existing engineering manager approached me about potentially taking over as the new manager, I refused.
+Besides, being in the middle of several technical projects which I felt couldn't afford to lose me as an IC, I also had an ideological aversion to going into management.
+Although Airbnb had a narrative about parallel career paths for ICs and managers, I didn't feel that we were living up to our words.
+I wanted to continue being an example of a successful IC who got things done without transitioning.
+
+Instead, another recently-hired team member took on the management role, and was joined by a newly-hired project manager.
+Together, the two of them came up with broad roadmap for the team, and then conducted offsites to plan specific projects to meet the roadmap.
+
+This process turned out to be incredibly frustrating for me.
+I was spending all my time putting out fires and shipping high-impact code, but the new roadmap had no room for several of the projects I thought were most important, including some that I was in the middle of working on.
+I was very angry at losing control over what I saw as 'my team', and at being sidelined in the decision-making.
+It felt like I was demoted from a technical leadership role that I carved out for myself to just being another IC.
+
+The combination of high-stress firefighting and loss of control in planning lead me to utterly burn out.
+I ended up taking a two-month leave of absence in March 2016.
+First, however, I made an ass of myself in several team meetings.
+I claimed (who knows how accurately) that our work was so undervalued by the management organization as to be structurally doomed, and that we would never be able to effect the changes we sought.
+
+As a result, when I returned from leave, I was even further sidelined.
+My manager, as well as his manager, asked me to join a different team, which was a sort of dumping ground for cranky senior engineers.
+One argument was that "there's no need for an engineer of your level on the developer infrastructure projects" -- an argument that seemed patently false.
+
+In several conversations, it became apparent that I had a very different vision of the engineering team from the engineering managers.
+I thought that technical leaders with proven technical accomplishments should play a more active and official role throughout the team -- in creating new teams, planning projects, and guiding newer engineers.
+Instead, I was asked to minimize my input, let teams come up with roadmaps and projects that I felt were destined to fail, and in general stay out of the way.
+
+As a result, instead of continuing my technical leadership work with Developer Infrastructure, I picked a nice and hard technical project I could do by myself -- the Ruby upgrade.
+While I resolved to finish this project, it was clear both that this wasn't the kind of work I wanted to be doing and that it wasn't the kind of work that was likely to get me any brownie points with the engineering management.
+I quit as soon as the project was complete.
