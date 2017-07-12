@@ -182,20 +182,20 @@ Spurious test failure was a constant problem and required regular re-builds, fur
 The build-test-deploy pipeline was unowned, meaning that whenever it broke it was up to whoever was most frustrated to fix it.
 Overall, the experience of being a product engineer was quite frustrating because of gaps in tooling, documentation, ownership, and communication.
 
-So, when my product was finally terminated, Topher Lin and I started the Airbnb Developer Happiness team.
+So, when my product was finally terminated, [Topher Lin](https://github.com/clizzin) and I started the Airbnb Developer Happiness team.
 Our broad mandate was to work on whatever was causing the most frustration.
 Our initial top target was build times, but we envisioned tackling a wide range of issues around internal communication and tooling.
 To understand our problem space and to get buy-in for our projects, we began conducting the Airbnb developer survey.
 I collected and analyzed the data, which showed widespread frustration with our tooling and infrastructure.
 
 I spent most of my remaining time at Airbnb working in this problem space.
-The team Topher and I started ended up expanding to over 40 engineers and at least 4 sub-teams.
+The team Topher and I started ended up expanding to more than 20 engineers on at least 4 sub-teams.
 Although we never got time to work on many of the broader problems we initially envisioned tackling (like internal communication practices), the intersection of people and tooling is the area I remain most passionate about.
 
 ### Build System ###
 
 The Developer Happiness Team's initial target was slow build times, at that time creeping into 30-minute-plus territory.
-At the time, we were using Solano, a third-party ruby testing platform, to run any commit-time tasks including builds.
+At the time, we were using [Solano](https://www.solanolabs.com/), a third-party ruby testing platform, to run any commit-time tasks including builds.
 We had hacked building an artifact into this system as a fake test.
 We were also using Solano to build non-ruby projects, including any fat JARs from our Java monorepo.
 Solano was running on AMIs provided by the company, and we didn't understand the build environment, how to debug any problems or build failures, or how to control system dependencies for builds.
@@ -206,7 +206,7 @@ I also began evaluating multiple build systems to replace Solano, with an eye to
 
 A build system is just a task executor which performs tasks in response to events, usually commit events.
 We already had a system that fed all commit events from Github Enterprise into RabbitMQ, providing a convenient trigger.
-We were already very familiar, too, with Resque, a Ruby task executor for delayed or long-running tasks which we used throughout our production infrastructure.
+We were already very familiar, too, with [Resque](https://github.com/resque/resque), a Ruby task executor for delayed or long-running tasks which we used throughout our production infrastructure.
 Finally, we were tired of writing build tasks as shell scripts (which can't be tested) and which integrated with the build system by making API calls via `curl`.
 We envisioned instead a small library of common tasks, written as Ruby functions with good test coverage, and which could report their status, progress, and results directly into log systems and databases.
 
@@ -222,6 +222,11 @@ In November of 2015, I wrote a Ruby test splitter which allowed arbitrary parall
 This improved test times from 30+ minutes to around 10 minutes, as well as reduced spuriousness and made test result tracking easier.
 By March of 2016, we completely terminated Solano, migrated all builds to Deployboard, and introduced and integrated Travis CI for testing most projects except the Rails monolith and the Java monorepo (which were tested in Deployboard for performance reasons).
 The combination of Deployboard Build System and Travis CI remains in use for all projects at Airbnb today.
+
+There are a few talks about Deployboard online.
+One is [a talk Topher and I gave at Github Universe 2015](https://www.youtube.com/watch?v=4etQ8s74aHg).
+There is also [a talk I gave at FutureStack 2015](https://blog.newrelic.com/2015/12/15/airbnb-democratic-deploys-futurestack15-video/).
+However, Deployboard was also unfortunately never open-sourced.
 
 ### Ruby Migration ###
 
