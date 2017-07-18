@@ -33,13 +33,14 @@ The approach we settled on is documented in [this blog post on Chef at Airbnb](h
 It remains in use at Airbnb today, and has also been adopted by several other companies.
 
 Since we had dumped Chef-Server, we now needed an inventory system -- ideally, one that supported custom metadata.
-I wrote a very simple proof-of-concept one called [optica](https://github.com/airbnb/optica), which also (surprisingly) remains in-use today.
+I wrote a very simple proof-of-concept one called [optica](https://github.com/airbnb/optica), which (surprisingly) remains in-use today.
+(In fact, because optica is now queried from many places, it has become quite embedded, and any replacement would have to re-implement it's rudimentary API.)
 
 Also, since we were no longer using `knife ec2`, we needed a tool for launching and bootstrapping instances.
 Martin wrote another proof-of-concept, called [stemcell](https://github.com/airbnb/stemcell).
 This has been refactored several times to support more advanced features, but also continues to be in-use at Airbnb today.
-While it's still possible to use stemcell on an engineer's laptop (and indeed, would be required to re-bootstrap in case of catastrophic failure), most engineers probably shouldn't have the AWS credentials to launch these instances.
-Most engineers at Airbnb use stemcell though a web service UI.
+While it remains possible to use stemcell on an engineer's laptop (and indeed, this would be required to re-bootstrap the infrastructure in case of catastrophic failure), most engineers probably shouldn't have the AWS credentials to launch instances.
+Instead, engineers at Airbnb use stemcell though a web service UI.
 The web interface helps avoid tedius command-line invocations, is responsible for authorization, and eases other common cluster management tasks (AZ balancing, scaling up/down, cluster-wide chef runs).
 
 ### Service Discovery ###
@@ -54,9 +55,9 @@ However, this service discovery had to be implemented in every service, and requ
 A team was working on a NodeJS service for the mobile web version of the site, and NodeJS had neither of these available at the time.
 
 We decided that we would abstract this problem away -- first, with [Synapse](https://github.com/airbnb/synapse) as a service discovery component, and then with [Nerve](https://github.com/airbnb/nerve) for service registration.
-The entire system was called SmartStack, and the design is more comprehensively justified in the [SmartStack blog post](https://medium.com/airbnb-engineering/smartstack-service-discovery-in-the-cloud-4b8a080de619#.m0x2ks9ja).
+The entire system is called SmartStack, and the design is more comprehensively justified in the [SmartStack blog post](https://medium.com/airbnb-engineering/smartstack-service-discovery-in-the-cloud-4b8a080de619#.m0x2ks9ja).
 
-SmartStack was very easily to deploy incrementally via our new configuration management system.
+SmartStack was very easy to deploy incrementally via our new configuration management system.
 Registering a service via `nerve` and making it available through `synapse`/`haproxy` required only configuration changes in the Chef monorepo.
 Actual deployment of SmartStack involved merely changing where a service finds it's dependent services, and also killing any retry or load balancing mechanisms (since these would now be handled by `haproxy`).
 By the end of the summer of 2013, all of our services were communicating via an HAProxy, and we were able to kill lots of Zookeeper and server-set-management code in the Rails monolith and other services.
@@ -73,14 +74,14 @@ After several attempts to deploy a Java version, we punted and instead deployed 
 The Nginx instances, collectively known as Charon, become our front-end load balancer.
 The Charon instances were discovered by Akamai through DNS, where they were entered manually.
 After inbound traffic arrived at a Charon instnace, it would be routed to the correct service based on request parameters -- most often the hostname in the request headers.
-`HAProxy` took traffic for a specific service and dispatch load balance it to actual instances providing that service.
+`HAProxy` took traffic for a specific service (by port number on `localhost`) and load balance it to actual instances providing that service.
 Once this system was deployed, I was able to kill our ELBs.
-It was very convenient to have service routing be consistent throughout the stack -- an instance would receive traffic if and only if `nerve` was active on that instance.
+It was very convenient to have service routing be consistent throughout the stack -- an instance would receive traffic if and only if `nerve` was active on that instance, whether or not it was a "backend" or "frontend" service.
 
 This system worked well enough until Spring 2016.
 At that time, several problems arose.
 The biggest was that all traffic bound for the Charon boxes was coming from Akamai, and Akamai was not doing a good job load-balancing between the Charon instances.
-Since some of these instances were receiving a lion's share of the traffic, and since `haproxy` is single-threaded, we were seeing high CPU usage on those instances.
+Since some of these instances were receiving a lion's share of the traffic, and since `haproxy` is single-threaded, we were seeing traffic queueing due to high CPU usage on those instances.
 Scaling the Charon cluster wasn't helping, since we would still end up with individual hot instances.
 
 Akamai claimed that [Route53](https://aws.amazon.com/route53/) [weighted resource sets](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted) were to blame, since they return only a single IP address every time a name is resolved.
@@ -90,22 +91,23 @@ Eventually, we resorted to re-introducing ELB into our stack, this time as a way
 Insert yo-dawg joke about load balancers here.
 
 As part of this project, we spent a lot of time manually managing DNS or ELB registration for Charon instances.
-To ease this burn, I wrote a service called `Themis`, which read `nerve` entries from Zookeeper and then took action when the set of these entries changed.
+To ease this burden, I wrote a service called `Themis`, which read `nerve` entries from Zookeeper and then took action when the set of these entries changed.
 I wrote actions to manage ELB registration, or to create Route53 entries for either multi-IP `A` records or weighted record sets.
 As a bonus, this made our stack fully consistent.
-Now, even a load balancer would only receive traffic if and only if `nerve` was up on that instance.
+Now, even a load balancer instance would only receive traffic if and only if `nerve` was up on that instance.
 This system remains in use at Airbnb today.
-Alas, I did not have a chance to open-source Themis before I left Airbnb; maybe someone at the company would take that on as a project.
+Alas, I did not have a chance to open-source Themis before I left Airbnb; hopefully, someone at the company takes that on as a project.
 
 ### Internal Load Balancing ###
 
 While Charon was handling our load balancing needs for production, we were starting to deploy a lot of internal services, too.
-To make writing internal services easier, Pierre Carrier and I launched Dyno in the fall of 2013.
+To make writing internal services easier, [Pierre Carrier](https://github.com/pcarrier) and I launched Dyno in the fall of 2013.
 This was Nginx configured, just like Charon.
 If an engineer marked a service as an internal web service, then `<service name>.dyno` took you to an instance of that service.
 
 Dyno eventually added an authentication mechanism, so internal services didn't have to write their own authentication code.
 While the `.dyno` instances were initially manually entered into DNS, once Themis become available we allowed it to handle DNS registration for those boxes as well.
+Today, Airbnb engineers regularly interact with dozens of dyno services.
 
 ### Monitoring ###
 
@@ -117,7 +119,7 @@ At the time, several cool monitoring SaaS companies were getting started, and I 
 In the end I ended up choosing [DataDog](https://www.datadoghq.com/).
 A strong reason was DataDog's very good `haproxy` integration.
 This integration allowed us to have metrics for how much traffic each service was getting, where this traffic was coming from, and the distribution of response sizes, result codes, and other interesting statistics.
-Another reason was that the [DataDog agent](https://github.com/DataDog/dd-agent) accepted [StatsD metrics](http://docs.datadoghq.com/guides/dogstatsd/), so we could monitor instance statistics like CPU, memory, and other resource utilization alongside custom service metrics.
+Another reason was that the [DataDog agent](https://github.com/DataDog/dd-agent) accepted [StatsD metrics](http://docs.datadoghq.com/guides/dogstatsd/), so we could monitor instance statistics like CPU, memory, and other resource utilization alongside our own custom metrics.
 Furthermore, DataDog had [server-side CloudWatch scraping](http://docs.datadoghq.com/integrations/aws/), which meant we could see CloudWatch specific information like RDS utilization stats alongside all other metrics (and avoid asking engineers to log into the AWS console just to see CloudWatch metrics).
 Finally, DataDog had a [very comprehensive API](http://docs.datadoghq.com/api/), so it seemed possible to do more automation as time went on.
 
@@ -129,12 +131,12 @@ Despite some bumps, the product scaled well with Airbnb, and the company was ver
 I strongly recommend DataDog.
 
 I also became a primary point of contact for anything monitoring-related at Airbnb.
-After rolling out the DDAgent to systems, I added [DatDog's StatsD client](https://github.com/DataDog/dogstatsd-ruby) to many of our applications.
-I encouraged other developers to liberally instrument their code with StatsD calls.
+After rolling out the `dd-agent` to systems, I added [DatDog's StatsD client](https://github.com/DataDog/dogstatsd-ruby) to many of our applications.
+I encouraged other developers to liberally instrument their code with `statsd` calls.
 Additionally, I ended up writing lots of internal documentation on monitoring best practices.
 I also developed monitoring curriculum, originally for the SysOps group but later as a bootcamp class for all new hires.
 I encouraged engineers to formulate hypothesises about what could be causing issues, and then to use the available monitoring tools to test these hypothesises.
-Since it is impossible to formulate such hypothesises without at least some understanding the overall infrastructure, my bootcamp class became a primer on Airbnb infrastructure as a whole as well as the monitoring tools that illuminate that infrastructure.
+Since it is impossible to formulate such hypothesises without at least some understanding the overall infrastructure, my bootcamp class became a primer on both the Airbnb infrastructure as a whole as well as the monitoring tools that illuminate that infrastructure.
 
 ### Alerting ###
 
@@ -148,6 +150,7 @@ First, I had to take a stab at the ownership issue.
 This was a constant problem during my tenure at Airbnb, and we never really solved it.
 As people moved around and teams formed and dissolved, systems would become orphaned, and the maintenance burden would fall on "whoever cares most".
 However, I at least made an initial system for assigning ownership, even if the data in that system was not always consistent.
+I stored the information in the Chef repo, inside the role files which defined instances, and made it available for querying via `optica`.
 
 Next, I created [Interferon](https://github.com/airbnb/interferon).
 This project uses a Ruby DSL to programmatically create alerts.
@@ -197,22 +200,22 @@ Although we never got time to work on many of the broader problems we initially 
 The Developer Happiness Team's initial target was slow build times, at that time creeping into 30-minute-plus territory.
 At the time, we were using [Solano](https://www.solanolabs.com/), a third-party ruby testing platform, to run any commit-time tasks including builds.
 We had hacked building an artifact into this system as a fake test.
-We were also using Solano to build non-ruby projects, including any fat JARs from our Java monorepo.
+We were also using Solano to build non-ruby projects, including all fat JARs from our Java monorepo.
 Solano was running on AMIs provided by the company, and we didn't understand the build environment, how to debug any problems or build failures, or how to control system dependencies for builds.
 
 We decided that we would start by moving builds to our own hardware, where we could optimize the environment.
-Since we would have multiple systems performing build and test tasks, we decided to create a unified UI where all such tasks could be collected and visualized.
+Since we would end up with multiple systems performing build and test tasks, we decided to create a unified UI where all such tasks could be collected and visualized.
 I also began evaluating multiple build systems to replace Solano, with an eye towards a system which supported arbitrary pipelines to support optimizations to the Java builds as well as Ruby builds.
 
-A build system is just a task executor which performs tasks in response to events, usually commit events.
-We already had a system that fed all commit events from Github Enterprise into RabbitMQ, providing a convenient trigger.
+A build system is just an executor which performs tasks in response to events, usually commit events.
+We already had a system that fed all [webhook events](https://developer.github.com/webhooks/) from Github Enterprise into RabbitMQ, providing a convenient trigger.
 We were already very familiar, too, with [Resque](https://github.com/resque/resque), a Ruby task executor for delayed or long-running tasks which we used throughout our production infrastructure.
 Finally, we were tired of writing build tasks as shell scripts (which can't be tested) and which integrated with the build system by making API calls via `curl`.
 We envisioned instead a small library of common tasks, written as Ruby functions with good test coverage, and which could report their status, progress, and results directly into log systems and databases.
 
 These design considerations lead us to decide to roll our own build system.
 We built it into Deployboard, the tool we were already using to deploy the builds.
-Instead of learning about new builds via API calls, Deployboard would generate them using Ruby executed in response to RabbitMQ events.
+Instead of learning about new deployable builds via API calls, Deployboard would now generate them using Ruby executed in response to RabbitMQ events.
 It would display any progress and error logs.
 The end result was the Deployboard Build System -- built in less than 4 months by just three engineers, who were also supporting frequently-failing CI for an engineering team of 400+.
 
@@ -226,7 +229,7 @@ The combination of Deployboard Build System and Travis CI remains in use for all
 There are a few talks about Deployboard online.
 One is [a talk Topher and I gave at Github Universe 2015](https://www.youtube.com/watch?v=4etQ8s74aHg).
 There is also [a talk I gave at FutureStack 2015](https://blog.newrelic.com/2015/12/15/airbnb-democratic-deploys-futurestack15-video/).
-However, Deployboard was also unfortunately never open-sourced.
+However, Deployboard was also unfortunately never open-sourced, mostly due to lots of Airbnb-specific code and it's use of O2, an internal Bootstrap-style CSS framework.
 
 ### Ruby Migration ###
 
@@ -236,16 +239,17 @@ In general, we had no story around how to upgrade system dependencies of any kin
 My goal was to create such a mechanism, and then to use it to upgrade the Ruby version for our Rails monolith.
 
 Our build artifacts were generated directly on build workers, using system versions of any dependencies.
-This meant that system dependencies had to match between build workers and production workers for a deploy to work correctly, and required upgrading build workers and production workers in concert -- a difficult operation that would be difficult to roll back in case of trouble.
-Also, we didn't know what these dependencies even were for each given build.
+They are deployed as tarballs to instances which are required to have matching versions of these system dependencies.
+Upgrading such dependencies had to happen in concert between the build and production systems -- a difficult operation that would be more difficult still to roll back in case of trouble.
+We had no way of even tracking what system dependencies a given artifact required.
 
 I began by tagging builds with system dependencies used to create the build -- things like ruby version, NodeJS version, and Ubuntu version (as a shorthand for any dynamic library dependencies).
-Next, I transitioned our deploy system UI, which previously asked engineers to pick a specific build artifact to deploy.
-The new system asked engineers to pick a specific version (SHA) of the code, which may be associated with any number of build artifacts.
+Next, I rebuilt our deploy system UI, which previously asked engineers to pick a specific build artifact to deploy.
+The new UI asked engineers to pick a specific version (SHA) of the code, which may be associated with any number of build artifacts.
 Finally, I modified the system which actually performed deploys on instances.
-Previously, that system would receive a specific artifact (like a tarball of Ruby code along with it's `bundle install`ed dependencies) and then go through the steps (untar, link, restart) to deploy that artifact.
+Previously, that system would receive a specific artifact (e.g. a tarball of Ruby code along with it's `bundle install`ed dependencies) and then go through the steps (untar, link, restart) to deploy that artifact.
 In the new version, the system would receive a list of possible artifacts, along with their tags.
-It would then compare local dependency versions with the tags on artifacts, and pick an artifact that matched the system (or error out if, for instance, the system Ruby version didn't match the Ruby version on any available artifact).
+It would then compare local dependency versions with the tags on artifacts, and pick an artifact that matched the system (or error out if, for instance, the system Ruby version didn't match the Ruby version tag on any of the available artifact).
 
 This system allowed me to build the Rails monolith concurrently for Ruby 1.9.3 and Ruby 2.1.10.
 It also allowed me to have web workers for both versions of Ruby in production -- each worker, upon receiving a deploy, would pick a correct artifact.
@@ -253,7 +257,7 @@ I also began running tests for the monolith under both versions of Ruby, fixing 
 
 By February of 2017, this preliminary work was completed.
 I began running some upgraded Ruby workers to watch for unexpected errors, and also to compare performance between the populations.
-The vanilla Ruby 2.1.10 build actually had *worse* performance than the Brightbox PPA build of Ruby 1.9.3 we had been using.
+The vanilla Ruby 2.1.10 build actually had *worse* performance than the [Brightbox PPA](https://www.brightbox.com/docs/ruby/ubuntu/) build of Ruby 1.9.3 we had been using.
 In the end, I created a custom build of Ruby 2.1.10 with several performance patches.
 
 In March 2017, I performed the Ruby upgrade for the monolith.
@@ -278,7 +282,7 @@ In 2015 several long-tenured members, including me, began stepping back from the
 
 Another big focus was our overall technical vision.
 I was a member of Tech Leads, an initial stab at such a vision, in 2013.
-However, when Mike Curtis became VP of Engineering, he dissolved the group as part of his efforts to abolish any hierarchy among engineers.
+However, when [Mike Curtis](https://www.linkedin.com/in/curtismike/) became VP of Engineering, he dissolved the group as part of his efforts to abolish any hierarchy among engineers.
 However, we still needed a way to collectively decide how to evolve our infrastructure.
 I took lead on an initial stab at such a system, called Tech Decisions, in late 2013, but that system was too bureaucratic and never had much adoption.
 
