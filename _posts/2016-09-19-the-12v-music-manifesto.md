@@ -149,4 +149,5 @@ I never hit the gain limits on the equipment -- I've always had more volume head
 I can keep the setup running of a single 120-amp-hour battery for two nights, although I like to switch the battery out after one night to avoid draining it down too far and causing damage to the battery.
 Of course, with this setup, there's no generator noise -- all you hear is the music!
 
+![All set up](/static/images/soundsystem.jpg)
 ![Rocking out](/static/images/djing.jpg)
