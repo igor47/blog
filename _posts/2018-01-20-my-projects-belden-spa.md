@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My Projects: The Belden Spa
+title: The Belden Spa Summer 2017
 ---
 
 The Spa was a project for [False Profit's](http://www.false-profit.com/) [Priceless](http://priceless.false-profit.com/) event in 2017.
