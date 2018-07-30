@@ -151,3 +151,8 @@ Of course, with this setup, there's no generator noise -- all you hear is the mu
 
 ![All set up](/static/images/soundsystem.jpg)
 ![Rocking out](/static/images/djing.jpg)
+
+## Updates ##
+
+Dr. Niels has built a version of this system.
+He has [a spreadsheet outlining the components he used](https://docs.google.com/spreadsheets/d/1q0VkUu1GSiJAtObuSfRULU4YRTkQmtfJzZ-F6q1a--8/edit?usp=sharing).
