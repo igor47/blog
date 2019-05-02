@@ -3,10 +3,10 @@ layout: post
 title: Platform for Issue Journalism
 ---
 
-The cover story on NYT today is headlined "Profitable Giants like Amazon pay $0 in taxes, and voters are sick of it".
+The cover story on NYT today is headlined "Profitable Giants like Amazon Pay $0 in Taxes, and Voters are Sick of It".
 Okay, cool, that sounds interesting.
 I would like for corporations to pay their fair share of taxes.
-I read the article, and there are many of stories of laid-off workers, of political strategy, Democrat vs. Republican priorities, and how to defeat Trump in 2020.
+I read the article, and there are many stories of laid-off workers, of political strategy, Democrat vs. Republican priorities, and how to defeat Trump in 2020.
 But what do *I* do about this issue?
 The main takeaway seems to be to vote for Sanders in 2020, or perhaps more immediately, to go donate to his campaign.
 But this is left as an exercise for the reader.
@@ -15,16 +15,15 @@ I think this is a problem.
 It seems like the goal of this article to is to get you to be vaguely informed, but we are in an information abundance age.
 Is this information *useful* to me?
 Does it connect me to my peers?
-How does it __make me feel__?
+How does it *make me feel*?
+
+Also, suppose you really care about the unfairness of corporate taxation, or the plight of the Rohinga.
+How do you actually follow the story?
+Probably, the Gray Lady would like me to just read the paper cover to cover every day in the hopes of spotting stories I care about, but ain't nobody got time for that.
 
 Stories about horrible tragedies, like the genocide of the Rohinga in Myanmar, are are more extreme example of this problem.
 If you read such a story, the main takeaway seems to be "I feel terrible and the world is a terrible place."
-There is never anything actionable, and if you care there's no good way to follow up.
-
-Oh, that's another thing.
-Suppose you really care about the unfairness of corporate taxation, or the plight of the Rohinga.
-How do you actually follow the story?
-Probably, the Gray Lady would like me to just read the paper cover to cover every day in the hopes of spotting stories I care about, but ain't nobody got time for that.
+There is rarely anything actionable to do after reading it, and if you really care there's no good way to follow up or stay informed.
 
 ## An Idea
 
