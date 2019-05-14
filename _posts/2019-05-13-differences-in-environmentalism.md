@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Difference Approaches to Environmentalism
+title: Different Approaches to Environmentalism
 ---
 
 I've been on a climate-change book-reading spree lately.
@@ -12,7 +12,7 @@ Since March, I've read:
 * [Climate: A New Story](https://amzn.to/2HfKT2e)
 * [Falter](https://amzn.to/2JDLnRo)
 
-That's not even counting books that are a bit about climate change.j
+That's not even counting books that are a bit about climate change.
 For example:
 
 * [Braiding Sweetgrass](https://amzn.to/2HgGYlK)
@@ -50,7 +50,9 @@ It was super-interesting to read this section after the following section, from 
 I think comparing them will give you a sense for the different perspectives:
 
 > Economic growth means the growth in goods and services exchanged for money. Therefore, a remote village in India or a traditional tribal area in Brazil presents a big growth opportunity, because the people there barely pay for anything. They grow or forage their own food. They build their own houses. They use traditional healing methods to treat their sick. They make their own music and drama. Imagine the development expert goes there and says, “What a tremendous market opportunity! These backward people grow their own food—they could buy it instead. They cook their own food too—restaurants and supermarket delis could do it for them much more efficiently. The air is full of song—they could buy entertainment instead. The children play with each other for free—they could enroll in day care. They accompany adults learning traditional skills—this society could pay for schooling. When a house burns down, the community gets together to rebuild it—if we can unravel those ties of mutual aid, there’s a big market for insurance. Everyone has a strong sense of social identity, a strong sense of belonging—they could buy brand name products instead. Everyone is joyful and content—they could be buying a semblance of that through legal and illegal drugs and other forms of consumption.”
+>
 > Okay, I’m getting a bit dizzy with visions of riches, but you get the idea. The question is: how are these people going to pay for all that? Easy. They earn money by converting local natural resources and their own labor into commodities. The rainforest becomes a palm oil plantation. The mountain becomes a strip mine. The river becomes a hydroelectric plant. The population abandons their traditional ways and goes to work in the money economy. A few become doctors, lawyers, and engineers. The rest migrate to the slums.
+>
 > In a nutshell, this is the process called “development.” It is what development loans have funded for more than half a century. It accompanies an ideology that says that money equates with well-being, that development along the model of the West is a good thing (or an inevitable thing), that a high-tech life is superior to a life close to nature. These assumptions are difficult to refute using logical arguments. Usually, shedding them requires spending time in less developed cultures, witnessing the joy and depth of aliveness there, and seeing their beauty erode as they modernize.
 
 There's definitely more to say about this, but I wanted to note this down while it's in my mind.
