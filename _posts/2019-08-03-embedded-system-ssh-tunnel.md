@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Syncthing
+title: Reliable SSH Tunnel for Raspberry Pi
 ---
 
 You install [raspbian](https://www.raspberrypi.org/downloads/raspbian/) on a brand-new [Raspberry Pi](https://amzn.to/2GMdnjA).
