@@ -35,11 +35,11 @@ This group should have a policy that looks like this:
 ## Direnv Config ##
 
 Now, you'll need a mechanism to put authenticate via your MFA token, get a session token, and put that session token into your environment.
-I do this using (`direnv`)[https://direnv.net/].
-I've only recently learned about `direnv`, and I'm already using it, in combination with (`asdf`)[https://asdf-vm.com/#/core-manage-asdf-vm], to replace (`rbenv`)[https://github.com/rbenv/rbenv], (`pyenv`)[https://github.com/pyenv/pyenv], and (`nodenv`)[https://github.com/nodenv/nodenv].
-`direnv` and `asdf` setup is beyond the scope of this post, but you can check out (my dotfiles repo)[https://github.com/igor47/dotfiles] to get an idea of how I have it configured.
+I do this using [`direnv`](https://direnv.net/).
+I've only recently learned about `direnv`, and I'm already using it, in combination with [`asdf`](https://asdf-vm.com/#/core-manage-asdf-vm), to replace [`rbenv`](https://github.com/rbenv/rbenv), [`pyenv`](https://github.com/pyenv/pyenv), and [`nodenv`](https://github.com/nodenv/nodenv).
+`direnv` and `asdf` setup is beyond the scope of this post, but you can check out [my dotfiles repo](https://github.com/igor47/dotfiles) to get an idea of how I have it configured.
 
-Here's my configuration in a `.envrc` file of a (terraform)[https://www.terraform.io/] repo for a project hosted on AWS:
+Here's my configuration in a `.envrc` file of a [terraform](https://www.terraform.io/) repo for a project hosted on AWS:
 
 ```
 use asdf
@@ -57,12 +57,12 @@ This file causes 4 environment variables to be exported into my environment when
 The `MASTER_AWS_ACCESS_KEY_ID` and `MASTER_AWS_SECRET_ACCESS_KEY` are just the access key ID and key that I created for my account via IAM.
 I've prefixed their usual environment variable names with `MASTER` to distinguish them from the session-specific keys created by authenticating with MFA.
 The `AWS_MFA_ARN` variable contains the ID of my MFA token.
-You can get this from (your security credentials page)[https://console.aws.amazon.com/iam/home#/security_credentials], under the `Multi-factor authentication (MFA)` section.
+You can get this from [your security credentials page](https://console.aws.amazon.com/iam/home#/security_credentials), under the `Multi-factor authentication (MFA)` section.
 Finally, the `AWS_SESSION_FILE` variable will keep track of where my MFA session is stored in my filesystem.
 
 The next two lines handle reloading the MFA session.
 I've told `direnv` to reload my local environment whenever the contents of the file at `$AWS_SESSION_FILE` change.
-Next, we use `direnv_load` (from the (direnv stdlib)[https://direnv.net/man/direnv-stdlib.1.html]) to load the environment exported by my `aws_load_session` script.
+Next, we use `direnv_load` (from the [direnv stdlib](https://direnv.net/man/direnv-stdlib.1.html)) to load the environment exported by my `aws_load_session` script.
 
 ## Session-management Scripts ##
 
@@ -78,7 +78,7 @@ TOKEN=$1
 shift
 
 if [[ -z $TOKEN ]]; then
-    echo "Missing token value..."
+    echo "Usage: aws_get_session <mfa token value>"
     exit 1
 fi
 
