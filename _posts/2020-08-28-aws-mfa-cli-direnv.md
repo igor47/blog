@@ -5,7 +5,7 @@ title: AWS MFA on the CLI with `direnv`
 
 You might already be using multi-factor authentication (MFA) for logins to your AWS account.
 This will cause AWS to prompt you for your MFA token when you log in via the web console.
-However, if you use AWS via command-line tools (e.g., `terraform` os `aws s3`), you might have issued yourself access keys.
+However, if you use AWS via command-line tools (e.g., `terraform` or `aws s3`), you might have issued yourself access keys.
 Those are single-factor, and if they leak, anyone on the internet can use them to do horrible things to your account.
 
 We can make your admin AWS accounts safer by requiring MFA, even for API requests.
