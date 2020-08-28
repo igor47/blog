@@ -21,13 +21,13 @@ This initial version of the app is quite static, and you could utilize caching t
 Caching here would involve routing requests to your app through a CDN, like Akamai or Cloudflare or Cloudfront.
 The CDN would keep a copy of your “Hello World”, and when visitors ask for it, it would come from the CDN’s servers, not your server.
 
-Suppose your app, instead of printing “Hello World”, printed “Hello World, today is <day of week>”.
+Suppose your app, instead of printing “Hello World”, printed `“Hello World, today is <day of week>”`.
 This is still almost entirely static – the text only changes once a day.
 You will need to carefully configure cache-control headers, so that the CDN mostly serves the file from it’s servers, but will occasionally come back to your servers to retrieve an updated version of the page.
 
 ### Horizontal Scaling ###
 
-Suppose your app prints out “Hello, World! It's <hour>:<minute>:<second> where I’m at.”.
+Suppose your app prints out `“Hello, World! It's <hour>:<minute>:<second> where I’m at.”.`
 Also, assume you have to render this server-side (as a client-side app, you could do the rendering in JS, and then this app just become the perfectly-cached one from the section above).
 
 This app would be perfectly horizontally scalable.
@@ -63,7 +63,7 @@ Then, you would display either “Hello, visitor, for the first time!” or “H
 This version of the web app is stateful – it retains state between requests -- and thus is no longer purely horizontally scalable.
 To realize this, think about where you would store the state.
 You could store it directly on the server which renders “Hello”.
-But, if scale by launching additional servers, then a visitor might get different servers on different requests, and would get the wrong “Hello” message and be sad   .
+But, if scale by launching additional servers, then a visitor might get different servers on different requests, and would get the wrong “Hello” message and be sad.
 
 Typically, looking up some data in a database is much faster than rendering a complicated web page, and so you end up with a two-tier web infrastructure.
 The first tier is a bunch of horizontally scalable, stateless web servers.
