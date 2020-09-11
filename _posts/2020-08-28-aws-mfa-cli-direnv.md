@@ -34,7 +34,7 @@ This group should have a policy that looks like this:
 
 ## Direnv Config ##
 
-Now, you'll need a mechanism to put authenticate via your MFA token, get a session token, and put that session token into your environment.
+Now, you'll need a mechanism to authenticate via your MFA token, get a session token, and put that session token into your environment.
 I do this using [`direnv`](https://direnv.net/).
 I've only recently learned about `direnv`, and I'm already using it, in combination with [`asdf`](https://asdf-vm.com/#/core-manage-asdf-vm), to replace [`rbenv`](https://github.com/rbenv/rbenv), [`pyenv`](https://github.com/pyenv/pyenv), and [`nodenv`](https://github.com/nodenv/nodenv).
 `direnv` and `asdf` setup is beyond the scope of this post, but you can check out [my dotfiles repo](https://github.com/igor47/dotfiles) to get an idea of how I have it configured.
