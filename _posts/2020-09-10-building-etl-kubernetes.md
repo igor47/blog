@@ -24,7 +24,7 @@ These contain very expensive regulatory- or lab-grade equipment that has been st
 This equipment has to be secured and property maintained to retain accuracy.
 As a result, there are not that many such regulatory sites -- here's a map of the Bay Area ones from the [airnow.gov](https://fire.airnow.gov/?lat=37.86988000000008&lng=-122.27053999999998&zoom=12#) website:
 
-![Regulatory sites in the Bay Area](/static/images/regulatory-sites-bay-area.jpg)
+![Regulatory sites in the Bay Area](/static/images/epa-sites-bay-area.jpg)
 
 The problem is that, while the reference stations give very accurate data, that data is only very accurate for the small area immediately adjacent to the regulatory site.
 Air quality, on the other hand, can differ dramatically, even block-by-block.
