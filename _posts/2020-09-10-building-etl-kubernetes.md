@@ -186,7 +186,7 @@ A job would not get dispatched until the jobs it depended on completed successfu
 This allowed us to schedule a workflow to run daily instead of scheduling a pile of jobs individually.
 Most of the code was re-cycled from the code already used by users locally to schedule their jobs -- the `dispatcher` was doing the same thing, just from *inside* Kubernetes.
 
-## Monitoring and Parallelism ##
+## Monitoring via Web UI ##
 
 As the complexity of the ETL pipeline grew, we began encountering workflow failures.
 We needed an audit log of which jobs ran for which days, so we could confirm that we were delivering the data we processed.
@@ -196,26 +196,44 @@ By this point, the ETL system we were building had run for a year without requir
 However, to manage the complexity, it seemed like a UI was needed.
 I ended up building one using [firestore](https://cloud.google.com/firestore/), React, and [ag-grid](https://www.ag-grid.com/).
 
-In the `dispatcher` model, the `controller` job was responsible for running the workflow.
-If any job in the workflow failed, the `dispatcher` would exit, and subsequent jobs would not run.
-In the firestore model, there was, instead, a `scheduler` task which ran all the time as a K8s service.
-The job of the `scheduler` was to look for tasks which entered particular states and take action.
-For instance, if a task finished, the `scheduler` would notice, and clean up that task's pods.
-It would also check if any jobs were waiting for that job and were now unblocked, and create pods for those.
+Previously, the `dispatcher` job that ran workflows was end-to-end responsible for all the jobs in the workflow.
+It ran for as long as any job in the workflow was running.
+If any of the jobs failed the `dispatcher` would exit, and the subsequent jobs would not run.
+Likewise, if `dispatcher` itself failed, remaining workflow jobs would be left orphaned.
 
-The previous `invoke`-based CLI tools, rather than talking directly to the cluster via `kubectl`, instead began to create job entries in firestore.
-This enabled less technical users, without `gcloud` or `kubectl` permissions, to create, terminate, restart, and monitor job progress.
+Instead, we turned the workflow `dispatcher` into something that merely manipulated the state in `firestore`.
+The job would parse the workflow `.yaml` file into a DAG, and then create `firestore` entries for each job in the graph.
+The `firestore` entry would include job parameters like command-line arguments and resource requests, as well as job dependency information.
+Jobs at the head of the DAG would be placed into a `SCHEDULED` state, while jobs that were dependent on other jobs were placed into a `BLOCKED` state.
 
-Also, some jobs that could have benefited from parallelism but were constrained by the GIL and by their container's resource limits could take advantage of the new functionality.
-For instance, imagine a job that must process the data for all [particulate](https://en.wikipedia.org/wiki/Particulates) sensors.
-Previously, it would be a single container, which had to list the sensors, and then process them within the limits of a single machine.
-Instead, the job could list all the sensors, and then schedule child jobs that processed each sensor.
-The parallelism is limited by the auto-scaling constraints of the K8s cluster.
-A final job, which depends on all the child jobs, could perform final aggregations, or serve as the sentinel allowing downstream jobs to continue.
+An always-running K8s service called `scheduler` would subscribe to `firestore` updates and take action when jobs were created or changed state.
+For instance, if a job was in the `SCHEDULED` status, the `scheduler` would create pods for those jobs via the K8s API, and then mark them as `RUNNING`.
+If a task finished (by marking itself as `COMPLETED`), the `scheduler` would notice, and clean up the completed pods.
+It would also check if any jobs were `BLOCKED` waiting on the completed job, make sure all their dependencies had completed, and placed them into the `SCHEDULED` state.
+If a job marked itself as `FAILED` (via a catch-all exception handler), we had the option to track retries and re-schedule the job.
 
-Folks imagine that you need to build K8s [operators](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) and [custom resources](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) to accomplish such goals.
+Because the `scheduler` became the only thing that interacted with the K8s API, it made building user-facing tooling easier.
+Those tools merely had to manipulate the DB state in `firestore`.
+This enabled less technical users, without `gcloud` or `kubectl` permissions, to create, terminate, restart, and monitor job and workflow progress.
+
+From what I can tell, components like the `scheduler` are often built using K8s [operators](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) and [custom resources](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/).
 However, we found that just running a service with permissions to manage pods is sufficient.
 This avoids having to dive too deep into K8s internals, beyond the basic API calls necessary to create and remove pods and check on their status.
+
+## Parallelism ##
+
+Some jobs in our system were trivially parallelise-able, e.g. because they processed a single sensor's data in isolation.
+The system of using the `scheduler` to run additional jobs unlocked infinite parallelism inside jobs.
+For instance, we could schedule a job like `ProcessAllSensors`.
+This job would first list all sensors active during the `start`/`end` interval, and then could create a child job in `firestore` for each sensor.
+Creating child jobs was as simple as writing a job entry into `firestore`, with the ID of the sensor to process.
+Parallelism was limited only by the auto-scaling constraints on the K8s cluster.
+
+I created an abstraction called `TaskPoolExecutor`, based on the existing [`ThreadPoolExecutor`](https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor).
+Each job submitted to the `executor` would run in a different K8s pod.
+Not only did this make data processing much faster, but more resilient, too.
+Previously, if a particular sensor failed in it's processing, restarting that processing was complicated.
+In the new system, the existing retry system baked into the `scheduler` could retry individual sensors, without the parent job even knowing about it.
 
 ## Takeaway ##
 
