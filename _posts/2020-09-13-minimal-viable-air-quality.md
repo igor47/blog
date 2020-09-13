@@ -114,3 +114,44 @@ While it has power, the PMS7003 will be outputting a continuous stream of binary
 The [data sheet](https://download.kamami.com/p564008-p564008-PMS7003%20series%20data%20manua_English_V2.5.pdf) specifies the protocol:
 
 ![PMS7003 protocol](/static/images/minimal-aq-pms7003-protocol.png)
+
+Instead, I recommend using my [mini-aqi repo](https://github.com/igor47/mini-aqm), which includes a python implementation of the PMS7003 protocol.
+
+```
+$ git clone git@github.com:igor47/mini-aqm.git
+Cloning into 'mini-aqm'...
+$ cd mini-aqm/
+mini-aqm {master} $ poetry install
+Installing dependencies from lock file
+
+mini-aqm {master} $ poetry run ./main.py --port=/dev/ttyUSB0
+beginning to read data from /dev/ttyUSB0...
+PM 1.0: 32  PM 2.5: 54  PM 10: 73  AQI: Unhealthy for Certain Groups
+PM 1.0: 31  PM 2.5: 54  PM 10: 73  AQI: Unhealthy for Certain Groups
+```
+
+Here's a screenshot:
+
+![Runtime Screenshot](/static/images/minimal-aq-screenshot.png)
+
+## Subsequent Work
+
+I am running [telegraf](https://www.influxdata.com/time-series-platform/telegraf/) on my laptop.
+I've configured telegraf to read data from the device and store it in [influxdb](https://www.influxdata.com/products/influxdb-overview/), for graphing with [grafana](https://grafana.com/).
+Using this stack, here's a visualization of the past few months of PM data in my workshop:
+
+![Last Few Months in Particulates](/static/images/minimal-aq-last-3-months.png)
+
+Using this setup, it's convenient to perform experiments and look at results.
+For instance, here is what happened with indoor air quality when we turned on our central fan system, which pushes air through two MERV13 filters:
+
+![Central Air](/static/images/minimal-aq-central-fan.png)
+
+Here's where we take a box fan with a MERV13 filter and run it near the sensor:
+
+![Box Fan](/static/images/minimal-aq-box-fan.png)
+
+Here's what happens when we just point a normal fan at the device, with no filter:
+
+![Normal Fan](/static/images/minimal-aq-normal-fan.png)
+
