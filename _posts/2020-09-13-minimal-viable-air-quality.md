@@ -116,15 +116,19 @@ The [data sheet](https://download.kamami.com/p564008-p564008-PMS7003%20series%20
 ![PMS7003 protocol](/static/images/minimal-aq-pms7003-protocol.png)
 
 Instead, I recommend using my [mini-aqi repo](https://github.com/igor47/mini-aqm), which includes a python implementation of the PMS7003 protocol.
+You will need a recent python (I tested with `3.8.3`).
+Then, run these commands:
 
 ```
-$ git clone git@github.com:igor47/mini-aqm.git
-Cloning into 'mini-aqm'...
-$ cd mini-aqm/
-mini-aqm {master} $ poetry install
-Installing dependencies from lock file
+git clone https://github.com/igor47/mini-aqm.git
+cd mini-aqm/
+poetry install
+poetry run ./main.py --port=/dev/ttyUSB0
+```
 
-mini-aqm {master} $ poetry run ./main.py --port=/dev/ttyUSB0
+And you should see the output:
+
+```
 beginning to read data from /dev/ttyUSB0...
 PM 1.0: 32  PM 2.5: 54  PM 10: 73  AQI: Unhealthy for Certain Groups
 PM 1.0: 31  PM 2.5: 54  PM 10: 73  AQI: Unhealthy for Certain Groups
