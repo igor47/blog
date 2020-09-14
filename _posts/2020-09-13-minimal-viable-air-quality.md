@@ -23,7 +23,7 @@ The heart of that device is a plantower laser dust sensor which can be [had on A
 With PurpleAir, you're paying for more than just the sensor.
 That device includes a [BME280](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout) temperature/pressure/humidity sensor, a microcontroller that can access a WiFi network, GPS that helps localize the device on a map, all  conveniently packed into a nice-looking device.
 You pay for integration of all that hardware, firmware to make it work together, and software that integrates the data on the back-end and gives you a nice map to view it on.
-You're also paying for hosting to allow PurpleAir to visualize all the data.
+You're also paying for hosting to allow PurpleAir to store your data and display it to others.
 So, by buying one, you're not only becoming better-informed, but you're also helping folks in your neighborhood be better-informed too -- a *positive* externality, for once!
 
 However, if you're brave enough, there are advantages to building the hardware yourself.
