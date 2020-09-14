@@ -171,11 +171,11 @@ Here's what happens when we just point a normal fan at the device, with no filte
 
 ![Normal Fan](/static/images/minimal-aq-normal-fan.png)
 
-I noticed that the air quality in my workspace was not great.
-I started keeping my door closed, which keeps air from the basement from leaking into my room.
+I noticed that the air quality in my bedroom was not great.
+The basement door is right outside my bedroom door, and is pretty leaky, so I started keeping my bedroom door closed.
 I also taped over my old, leaky windows with masking tape:
 
-![Taped-over windows](/static/images/minimal-aq-taped-windows.jpg)
+![Taped-over windows](/static/images/minimal-aq-tape-on-windows.jpg)
 
 These interventions had a real effect!
 
