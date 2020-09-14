@@ -175,7 +175,7 @@ I noticed that the air quality in my bedroom was not great.
 The basement door is right outside my bedroom door, and is pretty leaky, so I started keeping my bedroom door closed.
 I also taped over my old, leaky windows with masking tape:
 
-![Taped-over windows](/static/images/minimal-aq-tape-on-windows.jpg)
+![Taped-over windows](/static/images/minimal-aq-tape-on-windows.jpg?cache=no)
 
 These interventions had a real effect!
 
