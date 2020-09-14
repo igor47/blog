@@ -21,7 +21,7 @@ The [PurpleAir indoor sensor](https://www2.purpleair.com/products/purpleair-pa-i
 
 The heart of that device is a plantower laser dust sensor which can be [had on AliExpress for about $12](https://www.aliexpress.com/item/32639894148.html).
 With PurpleAir, you're paying for more than just the sensor.
-That device includes a BME280 temperature/pressure/humidity sensor, a microcontroller that can access a WiFi network, and is conveniently packed into a nice-looking device.
+That device includes a [BME280](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout) temperature/pressure/humidity sensor, a microcontroller that can access a WiFi network, GPS that helps localize the device on a map, all  conveniently packed into a nice-looking device.
 You pay for integration of all that hardware, firmware to make it work together, and software that integrates the data on the back-end and gives you a nice map to view it on.
 You're also paying for hosting to allow PurpleAir to visualize all the data.
 So, by buying one, you're not only becoming better-informed, but you're also helping folks in your neighborhood be better-informed too -- a *positive* externality, for once!
@@ -31,9 +31,21 @@ Getting several sensors inside and outside your house can help you understand mo
 It can help quantify interventions, like installing an air purifier or running [a box fan](https://www.texairfilters.com/how-a-merv-13-air-filter-and-a-box-fan-can-help-fight-covid-19/).
 If you have a large house, you can see how quality differs throughout the house.
 
+Also -- while for most readers of this blog, $200 is probably not a lot of money, it *is* a lot of money for *most* people.
+The folks who are most regularly affected by poor air quality are exactly those who cannot just blow $200 to satisfy their curiosity.
+Making air quality monitoring much, much cheaper can potentially make life much better for those people.
 
 This post will help you build a minimum viable sensor that works with your laptop.
-By running from your own computer, you can avoid sending data to a cloud, can avoid interfacing with typically-terrible IoT configuration interfaces, and can log and visualize the data in whatever way you like.
+By using a pre-existing computer, you can avoid having to pay for additional hardware like a microcontroller with WiFi.
+Your computer is probably already on WiFi, so configuration is also minimized.
+
+You can also avoid sending data to a cloud.
+This is a double-edged sword.
+On the one hand, cloud hosting costs are eliminated.
+On the other hand, you lose the positive benefits of open data.
+Also, if you want visualizations, you have to make them yourself.
+
+Anyway, on to the construction!
 
 ## Hardware 
 
@@ -159,3 +171,12 @@ Here's what happens when we just point a normal fan at the device, with no filte
 
 ![Normal Fan](/static/images/minimal-aq-normal-fan.png)
 
+I noticed that the air quality in my workspace was not great.
+I started keeping my door closed, which keeps air from the basement from leaking into my room.
+I also taped over my old, leaky windows with masking tape:
+
+![Taped-over windows](/static/images/minimal-aq-taped-windows.jpg)
+
+These interventions had a real effect!
+
+![Normal Fan](/static/images/minimal-aq-window-tape-effect.png)
