@@ -180,3 +180,19 @@ I also taped over my old, leaky windows with masking tape:
 These interventions had a real effect!
 
 ![Normal Fan](/static/images/minimal-aq-window-tape-effect.png)
+
+Finally, it *is* possible to have *good* air quality.
+I'm currently sitting in my taped-up room, with doors closed, right next to a box-fan-with-filter:
+
+![Good Setup](/static/images/minimal-aq-getting-to-good.jpg)
+
+The results, with other rooms in the house and outside the house on my Grafana dashboard:
+
+![Normal Fan](/static/images/minimal-aq-all-together.png)
+
+## What's Next?
+
+I'd like to help you breathe better air.
+Reach out if you need help building these devices, or have any questions at all.
+Also, if you're in the Bay Area, I have a few spare PMS7003 devices.
+If you'd like one without waiting for them to be shipped from China, please reach out, and I can leave one on my porch for you to come grab.
