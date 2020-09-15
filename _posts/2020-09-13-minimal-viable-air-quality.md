@@ -107,8 +107,8 @@ Here it is, plugged into my computer and ready for software integration:
 ## Software
 
 Next, you'll need some software to integrate with this hardware.
-The USB TTY device is likely already supported by your OS.
-On my laptop, I'm running Ubuntu 20.04, and this is what I see when I plug it in:
+The cables that I got use the Prolific Technology PL2303 chipset.
+This is already supported on linux; if you plug it in and run `dmesg | tail` you'll see something like this:
 
 ```
 [1457958.125315] usb 1-2: new full-speed USB device number 38 using xhci_hcd
@@ -120,22 +120,25 @@ On my laptop, I'm running Ubuntu 20.04, and this is what I see when I plug it in
 [1457958.285306] usb 1-2: pl2303 converter now attached to ttyUSB0
 ```
 
-Looks like it got recognized correctly, and it's also helpful to note the address of the device.
-In my case, it'll be available on `/dev/ttyUSB0`.
+Looks like it got recognized correctly, and is available at `/dev/ttyUSB0`.
+On OSX, you will probably have to [install a driver](http://www.prolific.com.tw/US/ShowProduct.aspx?p_id=229&pcid=41), but you can ignore the warning about restarting your computer.
+On these machines, the device will probably show up at `/dev/tty.usbserial`.
+
 While it has power, the PMS7003 will be outputting a continuous stream of binary data containing the particulate readings onto that TTY device.
 The [data sheet](https://download.kamami.com/p564008-p564008-PMS7003%20series%20data%20manua_English_V2.5.pdf) specifies the protocol:
 
 ![PMS7003 protocol](/static/images/minimal-aq-pms7003-protocol.png)
 
-Instead, I recommend using my [mini-aqi repo](https://github.com/igor47/mini-aqm), which includes a python implementation of the PMS7003 protocol.
-You will need a recent python (I tested with `3.8.3`).
-Then, run these commands:
+I recommend using my [mini-aqi repo](https://github.com/igor47/mini-aqm), which includes a Python implementation of this protocol.
+You will need a recent python (I tested with `3.8.3`; anything above `3.6` should probably work).
+Run these commands to grab the repo, install the code, and begin reading data:
 
 ```
 git clone https://github.com/igor47/mini-aqm.git
 cd mini-aqm/
+pip install poetry
 poetry install
-poetry run ./main.py --port=/dev/ttyUSB0
+poetry run ./main.py
 ```
 
 And you should see the output:
@@ -150,7 +153,11 @@ Here's a screenshot:
 
 ![Runtime Screenshot](/static/images/minimal-aq-screenshot.png)
 
-## Subsequent Work
+`mini-aqm` tries to print informative error messages.
+If `main.py` exits immediately without printing any air quality measurements, read the error message and try to resolve it.
+If you suspect a hardware issue, use a multi-meter to check for a short between pins.
+
+## Visualizations
 
 I am running [telegraf](https://www.influxdata.com/time-series-platform/telegraf/) on my laptop.
 I've configured telegraf to read data from the device and store it in [influxdb](https://www.influxdata.com/products/influxdb-overview/), for graphing with [grafana](https://grafana.com/).
@@ -189,6 +196,10 @@ I'm currently sitting in my taped-up room, with doors closed, right next to a bo
 The results, with other rooms in the house and outside the house on my Grafana dashboard:
 
 ![Normal Fan](/static/images/minimal-aq-all-together.png)
+
+Setting up `telegraf`, `influxdb`, and `grafana` is beyond the scope of this post.
+If you do go this route, however, the `mini-aqm` code is already writing a log of collected data into a `measurements.log` file.
+You can run the collector while you're working on the visualization setup, and then import the "historical" data you've collected when you're done.
 
 ## What's Next?
 
