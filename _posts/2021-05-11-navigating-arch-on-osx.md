@@ -78,6 +78,7 @@ The second install of brew to the rescue (notice, I'm using my alias, `brow` and
 ```
 $ brow install readline
 $ brow install openssl
+$ brow install xz
 ```
 
 Now, you need those libraries in your linker and compiler.
@@ -86,9 +87,10 @@ I created a directory -- `mkdir ~/x86_64` -- and added a `.envrc` that looks lik
 
 ```
 use asdf
-export LDFLAGS="-L/usr/local/homebrew/opt/openssl@1.1/lib -L/usr/local/homebrew/opt/readline/lib"
-export CPPFLAGS="-I/usr/local/homebrew/opt/openssl@1.1/include -I/usr/local/homebrew/opt/readline/include"
-export PATH="/usr/local/homebrew/bin:$PATH"
+export BROW="/usr/local/homebrew"
+export LDFLAGS="-L${BROW}/opt/openssl@1.1/lib -L${BROW}/opt/readline/lib -L${BROW}/opt/xz/lib"
+export CPPFLAGS="-I${BROW}/opt/openssl@1.1/include -I${BROW}/opt/readline/include -I${BROW}/opt/xz/include"
+export PATH="${BROW}/bin:$PATH"
 export ARCHPREFERENCE="x86_64"
 ```
 
@@ -114,4 +116,6 @@ I didn't have to specify `-x86_64` to `arch`, because this is already set by my 
 
 ```
 $ arch asdf install python 3.8.9
+<-- snip -->
+Installed Python-3.8.9 to /Users/igor47/.asdf/installs/python/3.8.9
 ```
