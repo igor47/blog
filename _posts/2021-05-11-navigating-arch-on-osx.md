@@ -1,6 +1,6 @@
 ---
 layout: post
-title: arch-on-osx
+title: x86_64 on an Apple M1 MacBook
 ---
 
 I started a new job, and this job came with a new computer -- an Apple M1 MacBook.
