@@ -63,8 +63,8 @@ My usual retort to this, inside my own head, is "nobody can *make* you feel anyt
 People who up in the way that they choose, and then I feel about it the way that I feel.
 Sometimes, my reframing of this phrase takes an [NVC](https://www.cnvc.org/learn-nvc/what-is-nvc) turn -- "when you leave your dishes unwashed, I feel...".
 When talking of others, I can pivot "I'm sorry I made you feel X" into an opportunity to think about exactly what I said or did that proved a reaction.
-For instance, rather than seeing that a person is angry, I can take a moment to think about what I said which provoked anger, and then say "I'm sorry I said X", instead of just "I'm sorry I made you angry".
-This recognizes the person's feelings, and my role in them, while leaving intact their agency in the situation.
+For instance, seeing that a person is angry, I can take a moment to think about what I said which provoked anger.
+Saying "I'm sorry I said X", instead of "I'm sorry I made you angry" acknowledges the person's feelings and my role in them, while leaving intact their agency in the situation.
 
 ## JUST ##
 
