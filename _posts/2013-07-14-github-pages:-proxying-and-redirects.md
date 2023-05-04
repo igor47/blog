@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Github pages&#58; proxies and redirects
+title: "Github pages: proxies and redirects"
 ---
 
 When I wanted to start a github pages blog, github was serving it's page requests on `<username>.github.com`.

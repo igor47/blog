@@ -52,7 +52,9 @@ export default function Layout({ children }) {
             </div>
           </div>
 
-          <div className="col mt-2 mt-md-0">{children}</div>
+          <div className="col mt-2 mt-md-0">
+            <div style={{ maxWidth: '90rem' }}>{children}</div>
+          </div>
         </div>
       </div>
 
