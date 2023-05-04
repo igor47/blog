@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Syncthing
+slug: my-syncthing-setup
 ---
 
 [Syncthing](https://syncthing.net/) is a file synchronization tool.

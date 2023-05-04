@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -6,7 +8,7 @@ import { Linkedin, Github, StackOverflow, House, ArrowReturnLeft, ChevronBarUp }
 
 import Me from '../public/images/me.jpg'
 
-export default function Layout({ children }) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
     <>
       <Head>

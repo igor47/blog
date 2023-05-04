@@ -186,7 +186,7 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
-"@types/mdast@^3.0.0":
+"@types/mdast@*", "@types/mdast@^3.0.0":
   version "3.0.11"
   resolved "https://registry.yarnpkg.com/@types/mdast/-/mdast-3.0.11.tgz#dc130f7e7d9306124286f6d6cee40cf4d14a3dc0"
   integrity sha512-Y/uImid8aAwrEA24/1tcRZwpxX3pIFTSilcNDKSPn+Y2iDywSEachzRuvgAYYLR3wpGXAsMbv5lvKLDZLeYPAw==
@@ -228,6 +228,15 @@
     "@types/prop-types" "*"
     "@types/scheduler" "*"
     csstype "^3.0.2"
+
+"@types/remark-prism@^1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@types/remark-prism/-/remark-prism-1.3.4.tgz#1b55657d17da8f7105152e82600d6a840c5b3862"
+  integrity sha512-nwb0sLwWuUD2DObMkxFtSfPFVA3frkyJRzDy9qfyv0Flq234p3FOlpRpaq64YdDX6fJ+snj3v2VZdneTBG/NiQ==
+  dependencies:
+    "@types/mdast" "*"
+    remark "^14.0.2"
+    unified "^10.0.0"
 
 "@types/scheduler@*":
   version "0.16.3"

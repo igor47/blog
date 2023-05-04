@@ -33,16 +33,16 @@ export async function getStaticPaths() {
   return {
     paths: posts.map(post => ({
       params: {
-        id: post.id,
+        slug: post.slug,
       },
     })),
     fallback: false,
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: { slug: string } }) {
   const posts = getPosts()
-  const post = posts.find(p => p.id === params.id)!
+  const post = posts.find(p => p.slug === params.slug)!
   const body = await (remark()
     .use(prism)
     .use(html, { sanitize: false })
@@ -58,4 +58,3 @@ export async function getStaticProps({ params }) {
     }
   }
 }
-

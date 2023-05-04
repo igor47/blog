@@ -19,9 +19,9 @@ export default function Home({ posts }: { posts: Array<Post> }) {
       <div className="pt-3">
 
       { posts.map(post => (
-          <div className="d-flex flex-row flex-justify-content-between flex-wrap-reverse" key={post.id}>
+          <div className="d-flex flex-row flex-justify-content-between flex-wrap-reverse" key={post.slug}>
             <div className="flex-grow-1">
-              <Link href={`/posts/${post.id}`}>
+              <Link href={`/posts/${post.slug}`}>
                 {post.title}
               </Link>
             </div>

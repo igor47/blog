@@ -7,6 +7,7 @@ type Post = {
   id: string,
   fullPath: string,
   date: Date,
+  slug: string,
   title: string,
   content: string,
 }
@@ -25,6 +26,9 @@ function getPosts(postsDir = POSTS_DIR) {
     const date = new Date(dateStr);
     if (isNaN(date.getTime())) continue;
 
+    // slug is just the text without the date
+    const slug = id.slice(11);
+
     // Use gray-matter to parse the post
     const fullPath = join(postsDir, fileName);
     const matterResult = matter.read(fullPath);
@@ -38,6 +42,7 @@ function getPosts(postsDir = POSTS_DIR) {
       id,
       fullPath,
       date,
+      slug: matterResult.data.slug || slug,
       title: matterResult.data.title,
       content: matterResult.content,
     });
