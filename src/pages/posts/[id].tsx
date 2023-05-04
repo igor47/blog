@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import { remark } from 'remark';
 import html from 'remark-html';
+import prism from 'remark-prism';
 
 import dayjs from 'dayjs'
 
@@ -42,7 +43,10 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const posts = getPosts()
   const post = posts.find(p => p.id === params.id)!
-  const body = await (remark().use(html).process(post.content))
+  const body = await (remark()
+    .use(prism)
+    .use(html, { sanitize: false })
+    .process(post.content))
 
   return {
     props: {
