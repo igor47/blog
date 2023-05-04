@@ -49,6 +49,7 @@ const nextConfig = {
 
     return redirects
   },
+  output: "standalone",
 }
 
 module.exports = nextConfig
