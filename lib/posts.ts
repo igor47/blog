@@ -11,7 +11,7 @@ type Post = {
   content: string,
 }
 
-function getSortedPosts(postsDir = POSTS_DIR) {
+function getPosts(postsDir = POSTS_DIR) {
   // Get file names under /posts
   const fileNames = readdirSync(postsDir);
   const posts: Array<Post> = []
@@ -47,7 +47,7 @@ function getSortedPosts(postsDir = POSTS_DIR) {
 }
 
 export {
-  getSortedPosts,
+  getPosts,
 }
 
 export type {
