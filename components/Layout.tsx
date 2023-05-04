@@ -52,13 +52,13 @@ export default function Layout({ children }) {
             </div>
           </div>
 
-          <div className="col mt-2 mt-md-0">
-            <div style={{ maxWidth: '90rem' }}>{children}</div>
+          <div className="col-12 col-md-9 mt-2 mt-md-0">
+            <div style={{ maxWidth: '85rem' }}>{children}</div>
           </div>
         </div>
       </div>
 
-      <div className="d-flex justify-content-center border-top border-2 pt-2 border-md-0 pt-md-4 justify-content-md-left ps-md-5">
+      <div className="d-flex justify-content-center border-top border-2 py-2 border-md-0 py-md-4 justify-content-md-left ps-md-5">
         <Link href="/" className="link-secondary px-3 border-end border-2">
           <ArrowReturnLeft size="24" title="Return" />
           <House size="24" title="Home" />
