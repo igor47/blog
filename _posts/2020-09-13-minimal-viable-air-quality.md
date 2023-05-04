@@ -133,7 +133,7 @@ I recommend using my [mini-aqi repo](https://github.com/igor47/mini-aqm), which 
 You will need a recent python (I tested with `3.8.3`; anything above `3.6` should probably work).
 Run these commands to grab the repo, install the code, and begin reading data:
 
-```
+```bash
 git clone https://github.com/igor47/mini-aqm.git
 cd mini-aqm/
 pip install poetry

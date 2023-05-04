@@ -16,7 +16,7 @@ I used [interception](https://gitlab.com/interception/linux/tools) and the [caps
 First, install `caps2esc` (I use the [yay](https://github.com/Jguer/yay#installation) package manager):
 I picked the `community/interception-caps2esc` package, which was option `1` in the `yay` listing.
 
-```
+```bash
 $ yay caps2esc
 ```
 
@@ -33,7 +33,7 @@ This configuration goes into the file `/etc/interception/udevmon.yaml`:
 
 Finally, enable and activate the `udevmon` service, and enjoy no-more caps lock:
 
-```
+```bash
 $ sudo systemctl enable udevmon
 $ sudo systemctl start udevmon
 ```
@@ -92,7 +92,7 @@ WantedBy=timers.target
 My config will activate the timer 1 minute after boot-up, and also 1 minute after every activation.
 I then enable the timer:
 
-```
+```bash
 $ systemctl --user daemon-reload
 $ systemctl --user enable auto_suspend.timer
 $ systemctl --user start auto_suspend.timer
@@ -100,6 +100,6 @@ $ systemctl --user start auto_suspend.timer
 
 You can check the status of the timer like so:
 
-```
+```bash
 $ systemctl --user list-timers
 ```

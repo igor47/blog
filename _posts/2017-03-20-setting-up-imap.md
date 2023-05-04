@@ -22,7 +22,7 @@ So, I began by using [mb2md](http://batleth.sapienti-sat.org/projects/mb2md/) to
 
 I installed this program into `/usr/local/bin` by downloading it from the link above.
 
-```
+```bash
 $ cd /usr/local/bin
 $ wget http://batleth.sapienti-sat.org/projects/mb2md/mb2md-3.20.pl.gz
 $ gunzip mb2md-3.20.pl.gz
@@ -32,7 +32,7 @@ $ ln -s mb2md-3.20.pl mb2md.pl
 
 I ran it like so:
 
-```
+```bash
 igor47@purr:~/procmail $ mb2md.pl -s /var/mail/igor47 
 Converting /var/mail/igor47 to maildir: /home/igor47/Maildir
 Source Mbox is /var/mail/igor47
@@ -42,7 +42,7 @@ Target Maildir is /home/igor47/Maildir
 
 Afterwards, I removed my pre-existing `mbox` inbox to prevent confusion:
 
-```
+```bash
 $ echo > /var/mail/igor47
 ```
 
@@ -53,7 +53,7 @@ I was already using [Procmail](https://wiki.archlinux.org/index.php/Procmail) to
 This meant that any mail not delivered to a specific location by Procmail would come back to Postfix, which delivered it to the `mbox` inbox.
 To resolve the situation, I added a new catch-all rule to my `procmailrc`:
 
-```
+```bash
 $ echo INCLUDERC=${PMDIR}/rc.final > ~/procmail/procmailrc
 ```
 
@@ -85,14 +85,14 @@ I did this in Apache by making `mail.moomers.org` a [`ServerAlias`](https://http
 
 That done, I invoked Let's Encrypt like so:
 
-```
-letsencrypt certonly -a webroot -d mail.moomers.org -w /var/www/moomers.org/htdocs
+```bash
+$ letsencrypt certonly -a webroot -d mail.moomers.org -w /var/www/moomers.org/htdocs
 ```
 
 Once the cert was acquired, I double-checked that automatic renewal works, too:
 
-```
-letsencrypt renew --dry-run
+```bash
+$ letsencrypt renew --dry-run
 ```
 
 [This article was very helpful with helping to configure Dovecot/Postfix for SSL](https://ubuntu101.co.za/ssl/postfix-and-dovecot-on-ubuntu-with-a-lets-encrypt-ssl-certificate/).
@@ -101,7 +101,7 @@ letsencrypt renew --dry-run
 
 I was ready to [install Dovecot](https://help.ubuntu.com/community/Dovecot):
 
-```
+```bash
 $ aptitude install dovecot-imapd
 ```
 
@@ -142,7 +142,7 @@ mail_location = maildir:~/Maildir
 
 I was ready to start dovecot:
 
-```
+```bash
 $ service dovecot restart
 ```
 
@@ -153,6 +153,7 @@ Given that we've already configured Dovecot, above, we can skip straight to [her
 We also need to [enable TLS on postfix](http://www.postfix.org/TLS_README.html).
 
 In the end, my config (the relevant parts) looks like this:
+
 ```
 # Enable TLS using Let'sEncrypt certs:
 smtpd_use_tls=yes

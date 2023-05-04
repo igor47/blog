@@ -41,7 +41,7 @@ I've only recently learned about `direnv`, and I'm already using it, in combinat
 
 Here's my configuration in a `.envrc` file of a [terraform](https://www.terraform.io/) repo for a project hosted on AWS:
 
-```
+```bash
 use asdf
 
 export MASTER_AWS_ACCESS_KEY_ID=AKIA<redacted>
@@ -116,7 +116,7 @@ Both of these scripts depend on having `aws` and `jq` installed and in your `PAT
 
 Here's how this looks in real use, with a terraform repo that stores it's state in AWS S3.
 
-```
+```bash
 igor47@fortress:~/repos/terraform/roots/prod {master} $ terraform plan
 
 Error: error using credentials to get account ID: error calling sts:GetCallerIdentity: ExpiredToken: The security token included in the request is expired

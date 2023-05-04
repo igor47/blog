@@ -23,8 +23,8 @@ This confused me for a bit, but eventually I got the file named properly, reload
 Next, I wanted to get into the configuration web GUI.
 I used a local tunnel:
 
-```
-ssh -L 4567:localhost:8384
+```bash
+$ ssh -L 4567:localhost:8384
 ```
 
 I was then able to visit localhost:4567 in my local browser and configure `syncthing` on the server.
@@ -32,7 +32,7 @@ I picked a custom port for the `syncthing` protocol, and punched a firewall hole
 Also, I picked a custom port for the web GUI server, so I wouldn't conflict with other users who might want to enable their own `syncthing`.
 I set the web GUI to only listen on localhost, and then added a reverse proxy to this port from my web server config.
 
-```
+```apacheconf
   ProxyPass /syncthing/ http://localhost:12345/
   ProxyPassReverse /syncthing/ http://localhost:12345/
 ```

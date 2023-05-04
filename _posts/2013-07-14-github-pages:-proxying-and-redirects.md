@@ -11,7 +11,7 @@ I also wanted the same thing under `igor.monksofcool.org`, which is another doma
 So, I configured apache to just proxy my domains to the github page.
 Here is my config:
 
-```
+```nginx
    ProxyPass / http://igor47.github.com/
    ProxyPassReverse / http://igor47.github.com/
 ```
