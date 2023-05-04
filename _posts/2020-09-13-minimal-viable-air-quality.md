@@ -5,11 +5,11 @@ title: Minimum Viable Air Quality Monitoring
 
 If you, like me, live in the Bay Area, you may have woken up to something like this last week:
 
-![Outdoor Air Quality](/static/images/minimal-aq-outside.jpg)
+![Outdoor Air Quality](/images/minimal-aq-outside.jpg)
 
 This is my back yard, but things looked just as dire in the house:
 
-![Indoor Air Quality](/static/images/minimal-aq-inside.jpg)
+![Indoor Air Quality](/images/minimal-aq-inside.jpg)
 
 If you checked a website, like [PurpleAir](https://www.purpleair.com/map?opt=1/mAQI/a10/cC0#8/38.138/-121.702) or [AirNow](https://fire.airnow.gov/?lat=37.86988000000008&lng=-122.27053999999998&zoom=12), you would see scary numbers and dire warnings about staying indoors and avoiding the air outside.
 However, how *is* the air inside your house?
@@ -66,22 +66,22 @@ If you get a PMS7003 with a breakout and cable, you won't need this.
 My first task was connecting to the PMS7003.
 Here's the pinout, from the [data sheet](https://download.kamami.com/p564008-p564008-PMS7003%20series%20data%20manua_English_V2.5.pdf):
 
-![PMS7003 pinout](/static/images/minimal-aq-pms7003-pinout.gif)
+![PMS7003 pinout](/images/minimal-aq-pms7003-pinout.gif)
 
 You'll only need 4 wires -- for power, ground, serial Tx, and Rx.
 I stripped the tiniest bit of insulation on my wire wrap wire, tinned both the wire and the pin, and touched them together with the soldering iron (very carefully, to avoid bridging the pins).
 
-![soldering wires](/static/images/minimal-aq-wires.jpg)
+![soldering wires](/images/minimal-aq-wires.jpg)
 
 Here's a (blurry) photo with all 4 wires connected:
 
-![soldering wires](/static/images/minimal-aq-all-wires.jpg)
+![soldering wires](/images/minimal-aq-all-wires.jpg)
 
 Next, I stripped my USB TTL cable and tinned the exposed multi-strand wires.
 Tinning just means touching the soldering iron to the wire and allowing some solder to flow onto the wire.
 This makes the wire stiff, so I can wire-wrap onto it using my wire-wrap tool.
 
-![USB TTL](/static/images/minimal-aq-usb-ttl-tinned.jpg)
+![USB TTL](/images/minimal-aq-usb-ttl-tinned.jpg)
 
 Next, I wire-wrapped the exposed, tinned wires.
 Black and Red are for ground and power, and get connected together.
@@ -89,7 +89,7 @@ On my TTL cables, `green` is for `Tx` (transmit) and `white` is for `Rx` (receiv
 You need to connect the `Tx` of the PMS7003 to the `Rx` of the TTL cable, and vice versa.
 I made it easier for myself by making my `white` wire on the PMS7003 be the `Tx` pin (Pin9), so I could just do white-to-white:
 
-![Completed Wiring](/static/images/minimal-aq-wired-up.jpg)
+![Completed Wiring](/images/minimal-aq-wired-up.jpg)
 
 After wire-wrapping, I soldered the wires together (belt *and* suspenders!)
 Finally, I put some heat-shrink tubing over the wires and shrunk it using a lighter.
@@ -98,11 +98,11 @@ Be sure to avoid covering up the air intake and expel ports on the PMS7003.
 Also, be mindful of USB polarity.
 The orientation that I have in the photo is probably the way your USB port is aligned on your computer, so the PMS7003 ends up on top of the USB plug.
 
-![Completeled device](/static/images/minimal-aq-complete.jpg)
+![Completeled device](/images/minimal-aq-complete.jpg)
 
 Here it is, plugged into my computer and ready for software integration:
 
-![Plugged into computer](/static/images/minimal-aq-in-computer.jpg)
+![Plugged into computer](/images/minimal-aq-in-computer.jpg)
 
 ## Software
 
@@ -127,7 +127,7 @@ On these machines, the device will probably show up at `/dev/tty.usbserial`.
 While it has power, the PMS7003 will be outputting a continuous stream of binary data containing the particulate readings onto that TTY device.
 The [data sheet](https://download.kamami.com/p564008-p564008-PMS7003%20series%20data%20manua_English_V2.5.pdf) specifies the protocol:
 
-![PMS7003 protocol](/static/images/minimal-aq-pms7003-protocol.png)
+![PMS7003 protocol](/images/minimal-aq-pms7003-protocol.png)
 
 I recommend using my [mini-aqi repo](https://github.com/igor47/mini-aqm), which includes a Python implementation of this protocol.
 You will need a recent python (I tested with `3.8.3`; anything above `3.6` should probably work).
@@ -151,7 +151,7 @@ PM 1.0: 31  PM 2.5: 54  PM 10: 73  AQI: Unhealthy for Certain Groups
 
 Here's a screenshot:
 
-![Runtime Screenshot](/static/images/minimal-aq-screenshot.png)
+![Runtime Screenshot](/images/minimal-aq-screenshot.png)
 
 `mini-aqm` tries to print informative error messages.
 If `main.py` exits immediately without printing any air quality measurements, read the error message and try to resolve it.
@@ -163,39 +163,39 @@ I am running [telegraf](https://www.influxdata.com/time-series-platform/telegraf
 I've configured telegraf to read data from the device and store it in [influxdb](https://www.influxdata.com/products/influxdb-overview/), for graphing with [grafana](https://grafana.com/).
 Using this stack, here's a visualization of the past few months of PM data in my workshop:
 
-![Last Few Months in Particulates](/static/images/minimal-aq-last-3-months.png)
+![Last Few Months in Particulates](/images/minimal-aq-last-3-months.png)
 
 Using this setup, it's convenient to perform experiments and look at results.
 For instance, here is what happened with indoor air quality when we turned on our central fan system, which pushes air through two MERV13 filters:
 
-![Central Air](/static/images/minimal-aq-central-fan.png)
+![Central Air](/images/minimal-aq-central-fan.png)
 
 Here's where we take a box fan with a MERV13 filter and run it near the sensor:
 
-![Box Fan](/static/images/minimal-aq-box-fan.png)
+![Box Fan](/images/minimal-aq-box-fan.png)
 
 Here's what happens when we just point a normal fan at the device, with no filter:
 
-![Normal Fan](/static/images/minimal-aq-normal-fan.png)
+![Normal Fan](/images/minimal-aq-normal-fan.png)
 
 I noticed that the air quality in my bedroom was not great.
 The basement door is right outside my bedroom door, and is pretty leaky, so I started keeping my bedroom door closed.
 I also taped over my old, leaky windows with masking tape:
 
-![Taped-over windows](/static/images/minimal-aq-tape-on-windows.jpg?cache=no)
+![Taped-over windows](/images/minimal-aq-tape-on-windows.jpg?cache=no)
 
 These interventions had a real effect!
 
-![Normal Fan](/static/images/minimal-aq-window-tape-effect.png)
+![Normal Fan](/images/minimal-aq-window-tape-effect.png)
 
 Finally, it *is* possible to have *good* air quality.
 I'm currently sitting in my taped-up room, with doors closed, right next to a box-fan-with-filter:
 
-![Good Setup](/static/images/minimal-aq-getting-to-good.jpg)
+![Good Setup](/images/minimal-aq-getting-to-good.jpg)
 
 The results, with other rooms in the house and outside the house on my Grafana dashboard:
 
-![Normal Fan](/static/images/minimal-aq-all-together.png)
+![Normal Fan](/images/minimal-aq-all-together.png)
 
 Setting up `telegraf`, `influxdb`, and `grafana` is beyond the scope of this post.
 If you do go this route, however, the `mini-aqm` code is already writing a log of collected data into a `measurements.log` file.
