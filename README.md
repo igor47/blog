@@ -2,6 +2,11 @@
 
 My personal website and blog.
 
+## Hosting
+
+I run this from my own docker-compose.
+See my [docker-compose repo](https://github.com/igor47/services).
+
 ## License
 
 All my blog posts in `_posts` are copyrighted by me.
