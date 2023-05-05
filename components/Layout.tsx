@@ -60,7 +60,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         </div>
       </div>
 
-      <div className="d-flex justify-content-center border-top border-2 py-2 border-md-0 py-md-4 justify-content-md-left ps-md-5">
+      <div className="d-flex justify-content-center border-top border-2 py-2 mt-2 border-md-0 py-md-4 mt-md-4 justify-content-md-left ps-md-5">
         <Link href="/" className="link-secondary px-3 border-end border-2">
           <ArrowReturnLeft size="24" title="Return" />
           <House size="24" title="Home" />
