@@ -30,7 +30,7 @@ export default function Home({ posts }: { posts: Array<Post> }) {
           <Image src={json} alt="JSON feed" width={18} height={18} className="link-secondary mx-2" />
         </a>
 
-        <a href="/feed.rss" target="_blank">
+        <a href="/feed.xml" target="_blank">
           <Image src={rss} alt="RSS feed" width={18} height={18} className="link-secondary mx-2" />
         </a>
       </h3>
