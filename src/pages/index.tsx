@@ -1,11 +1,16 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 
 import dayjs from 'dayjs'
 
 import { generateFeed } from '../../lib/feed'
 import { getPosts } from '../../lib/posts'
 import type { Post } from '../../lib/posts'
+
+import atom from '../icons/atom.svg'
+import json from '../icons/json.svg'
+import rss from '../icons/rss.svg'
 
 export default function Home({ posts }: { posts: Array<Post> }) {
   return (<>
@@ -14,8 +19,21 @@ export default function Home({ posts }: { posts: Array<Post> }) {
     </Head>
 
     <main>
-      <h3>My Posts</h3>
-      <small>See the feed: </small>
+      <h3>
+        All Posts -
+
+        <a href="/feed.atom" target="_blank">
+          <Image src={atom} alt="Atom feed" width={18} height={18} className="link-secondary mx-2" />
+        </a>
+
+        <a href="/feed.json" target="_blank">
+          <Image src={json} alt="JSON feed" width={18} height={18} className="link-secondary mx-2" />
+        </a>
+
+        <a href="/feed.rss" target="_blank">
+          <Image src={rss} alt="RSS feed" width={18} height={18} className="link-secondary mx-2" />
+        </a>
+      </h3>
 
       <div className="pt-3">
 

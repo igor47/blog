@@ -68,7 +68,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             </div>
           </div>
 
-          <div className="col-12 col-md-9 mt-2 mt-md-0">
+          <div className="col-12 col-md-9 mt-3 mt-md-0">
             <div style={{ maxWidth: '85rem' }}>{children}</div>
           </div>
         </div>
