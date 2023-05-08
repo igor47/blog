@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { Linkedin, Github, StackOverflow, House, ArrowReturnLeft, ChevronBarUp } from 'react-bootstrap-icons'
 
 import Me from '../public/images/me.jpg'
+import Myhead from '../public/images/myhead.jpg'
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -15,7 +16,20 @@ export default function Layout({ children }: { children: ReactNode }) {
         <title>Igor47 - Home</title>
         <meta name="description" content="Igor's internet home page" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/images/favicon.ico" />
+
+
+        <meta property="og:type" content="website" key="type" />
+        <meta property="og:title" content="Igor47 - Home" key="title" />
+        <meta property="og:description" content="Igor's internet home page and blog" key="description" />
+        <meta property="og:image" content={`https://igor47.com${Myhead.src}`} key="image" />
+
+        <link rel="manifest" href="/site.webmanifest" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/ >
+        <link rel="icon" href="/favicon.ico" />
+
       </Head>
 
       <div className="container-fluid">

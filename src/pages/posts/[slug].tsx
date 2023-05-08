@@ -11,15 +11,20 @@ import type { Post } from '../../../lib/posts'
 
 export default function Post({ post, body }: { post: Post, body: string }) {
   const title = `Igor47 - ${ post.title }`
+  const date = dayjs(post.date)
 
   return (<>
     <Head>
       <title>{title}</title>
+      <meta property="og:title" content={ post.title } key="title" />
+
+      <meta property="og:type" content="article" key="type" />
+      <meta property="og:article:published_time" content={date.toISOString()} key="published_time" />
     </Head>
 
     <main>
       <h3>{ post.title }</h3>
-      <small>{dayjs(post.date).format('MMM YYYY')}</small>
+      <small>{date.format('MMM YYYY')}</small>
 
       <div className="pt-3" dangerouslySetInnerHTML={{ __html: body }}>
       </div>

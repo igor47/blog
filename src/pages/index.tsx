@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import dayjs from 'dayjs'
 
+import { generateFeed } from '../../lib/feed'
 import { getPosts } from '../../lib/posts'
 import type { Post } from '../../lib/posts'
 
@@ -39,6 +40,10 @@ export default function Home({ posts }: { posts: Array<Post> }) {
 
 export async function getStaticProps() {
   const posts = getPosts()
+
+  // generate rss feeds
+  generateFeed(posts)
+
 
   return {
     props: {
