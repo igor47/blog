@@ -10,6 +10,7 @@ type Post = {
   slug: string,
   title: string,
   content: string,
+  draft: boolean,
   description: string | null,
 }
 
@@ -37,7 +38,6 @@ function getPosts(postsDir = POSTS_DIR) {
     const matterResult = matter.read(fullPath);
 
     if (!matterResult.data.title) skipReasons.push('missing title');
-    if (matterResult.data.draft) skipReasons.push('is draft');
     if (matterResult.data.slug) slug = matterResult.data.slug;
 
     // date could just be in the post front matter
@@ -61,6 +61,7 @@ function getPosts(postsDir = POSTS_DIR) {
       title: matterResult.data.title,
       description: matterResult.data.description || null,
       content: matterResult.content,
+      draft: matterResult.data.draft || false,
     });
   }
 

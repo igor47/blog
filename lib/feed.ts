@@ -26,6 +26,8 @@ function generateFeed(posts: Post[]) {
   });
 
   posts.forEach(post => {
+    if (post.draft) return;
+
     feed.addItem({
       title: post.title,
       id: `https://igor.moomers.org/posts/${post.slug}`,

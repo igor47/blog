@@ -1,0 +1,71 @@
+---
+title: "Refrigerants: What Are They?"
+date: 2023-05-08
+slug: refrigerants-what-are-they
+draft: true
+description: |
+  Recoolit's core mission is to collect and destroy refrigerants. But when even are these gases? Read to find out what refrigerants do, the different kinds that exist, why they can be so concerning, and how the world has managed the risk.
+---
+
+At [Recoolit](https://www.recoolit.com), our mission is to reduce climate impact by collecting and destroying waste refrigerants.
+This mission is often unclear to people who aren't familiar with the refrigeration industry.
+We often hear questions like, "What are refrigerants?" or "Why are refrigerants a problem?"
+We've skipped over such questions on our [explainer page](https://www.recoolit.com/our-work) because they're quite technical, and we don't want to overwhelm our customers.
+However, if you'd like to learn all of the details, this post is for you!
+
+## Heat pumps -- How do they work?
+
+Refrigerators and air conditioners are all a type of heat pump -- a device that moves heat from one location to another.
+They do this by means of a fluid that is pumped through a closed loop.
+First, the fluid is compressed, which causes it to heat up, turn into a gas, and become much warmer than the surrounding air.
+Next, the gas is pumped through a heat exchanger -- like a radiator on a car -- which results in the gas becoming coolerwhile the surrounding air becomes warmer.
+In a heat pump on "warming" mode, this heat exchanger is located inside a building or room, and this warming is the desired effect.
+
+The gas is then pumped to a second heat exchanger, where it is allowed to expand, typically turning it into back into a liquid.
+The expansion also cools the fluid.
+In a heat pump on "cooling" mode, like inside a refrigerator or in an air conditioner, this is the part of the heat pump that's located inside a room or building.
+The heat exchanger allows the fluid to become warmer, while the surrounding air becomes cooler.
+
+The fluid is then pumped back to the compressor, and the cycle repeats.
+At their core, all heat pumps, including refrigerators and air conditioners, rely on just a few components -- a compressor, pumps, heat exchangers, and the fluid -- sometimes a gas, sometimes a liquid -- that runs between them.
+Also, this entire process is driven by 
+
+## What are refrigerants?
+
+Refrigerants are the fluid used inside heat pumps to move heat from one place to another.
+There are many considerations when picking a substance to use as a refrigerant.
+For instance, a common early refrigerant was ammonia (R-717).
+Ammonia boils at a low temperature, which makes it easy to turn into a gas.
+It does not freeze until a very low temperature, so there's no risk of it freezing inside the heat pump during the expansion phase.
+And it has a fairly high specific heat, which means that it can absorb and release a lot of heat.
+
+Unfortunately, ammonia is highly toxic and corrosive.
+Other early refrigerants, such as sulfur dioxide (R-764) and methyl chloride (R-40), were also toxic.
+To avoid the safety issues associated with early refrigerants, scientists began experimenting with other substances.
+In 1928, Thomas Midgley, Jr. invented the first chlorofluorocarbon (CFC) refrigerant, which was marketed as Freon-12 (R-12).
+R-12 was cheap to produce, non-toxic, non-flammable, non-corrosive, and it had a low boiling point and a high specific heat.
+These properties led to R-12 becoming the most popular refrigerant in the world, with production peaking at over 1 billion tons per year in the 1980s.
+
+## The Montreal Protocol
+
+When searching for safer replacements to early refrigerants, scientists looked for substances which were highly stable, since stable substances pose less of a health risk to humans.
+This made R-12 an attractive choice, since it was highly stable and non-toxic.
+However, this stability also proved to be a problem.
+In the 1970s, scientists studying the ultimate fate of CFCs like R-12 discovered that these gases could make their way all the way to the stratosphere, where they could be broken down by ultraviolet radiation.
+The resulting chemical reactions released chlorine atoms, which could then destroy ozone molecules.
+
+In response to these findings, in 1987 the international community adopted the Montreal Protocol on Substances that Deplete the Ozone Layer.
+The agreement was initially signed by 46 countries, and has since been ratified by 198 parties, including all member states of the United Nations.
+It sets out a schedule for the phase-out of the production and consumption of ozone-depleting substances (ODSs), including CFCs like R-12 and HCFCs like R-22.
+
+The phase-out scheduled differed for different substances and in different places.
+For instance, R-12 was phased out in developed countries in 1996, and in developing countries in 2010.
+Meanwhile, R-22 was phased out in developed countries in 2010, but it continues to be in-use in developing countries until 2030.
+
+## Greenhouse Warming Potential
+
+If you recall, the 
+
+## The Kigali Amendment
+
+

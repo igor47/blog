@@ -40,6 +40,9 @@ export default function Home({ posts }: { posts: Array<Post> }) {
       { posts.map(post => (
           <div className="d-flex flex-row flex-justify-content-between flex-wrap-reverse" key={post.slug}>
             <div className="flex-grow-1">
+              <small className="text-secondary text-danger">
+                {post.draft ? 'draft' : null}
+              </small>
               <Link href={`/posts/${post.slug}`}>
                 {post.title}
               </Link>
