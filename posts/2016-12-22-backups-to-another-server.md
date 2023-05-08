@@ -1,3 +1,6 @@
+---
+title: Backups to another server
+---
 
 I've been running a personal Linux server for just about ten years.
 This makes me a [Gladwellian expert](http://gladwell.com/outliers/the-10000-hour-rule/) at the task!

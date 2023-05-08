@@ -1,3 +1,6 @@
+---
+title: Setting up IMAP
+---
 
 Recently, I wanted the ability to more reliably check email while on my phone.
 So far, I had gotten by with [VX ConnectBot](http://connectbot.vx.sk/), which I would use to SSH into my phone and connect to my `tmux` session running `mutt`.

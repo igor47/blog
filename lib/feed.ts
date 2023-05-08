@@ -30,6 +30,7 @@ function generateFeed(posts: Post[]) {
       title: post.title,
       id: `https://igor.moomers.org/posts/${post.slug}`,
       link: `https://igor.moomers.org/posts/${post.slug}`,
+      description: post.description ?? undefined,
       date: post.date,
       //image: post.image ?? undefined,
     });

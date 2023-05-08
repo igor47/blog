@@ -13,6 +13,9 @@ export default function Post({ post, body }: { post: Post, body: string }) {
   const title = `Igor47 - ${ post.title }`
   const date = dayjs(post.date)
 
+  const description = post.description ?
+    <meta name="description" content={ post.description } key="description" /> : null
+
   return (<>
     <Head>
       <title>{title}</title>
@@ -20,6 +23,7 @@ export default function Post({ post, body }: { post: Post, body: string }) {
 
       <meta property="og:type" content="article" key="type" />
       <meta property="og:article:published_time" content={date.toISOString()} key="published_time" />
+      { description }
     </Head>
 
     <main>
