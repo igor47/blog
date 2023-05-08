@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Github pages&#58; proxies and redirects
+title: "Github pages: proxies and redirects"
+slug: github-pages-proxying-and-redirects
 ---
 
 When I wanted to start a github pages blog, github was serving it's page requests on `<username>.github.com`.
@@ -11,7 +12,7 @@ I also wanted the same thing under `igor.monksofcool.org`, which is another doma
 So, I configured apache to just proxy my domains to the github page.
 Here is my config:
 
-```
+```nginx
    ProxyPass / http://igor47.github.com/
    ProxyPassReverse / http://igor47.github.com/
 ```

@@ -12,7 +12,7 @@ We ended up spending most of the time on the sauna, and the spa itself ended up 
 
 # The Sauna #
 
-![All set up](/static/images/sauna-complete.jpg)
+![All set up](/images/sauna-complete.jpg)
 
 This is a photo of the completed sauna, currently set up in my back yard.
 It's a small wooden building, with a floor plan of 8' by 8'.
@@ -24,23 +24,23 @@ I wanted it to be unfinished wood, but it was going to get a lot of water and sw
 I eventually settled on building a little patch of deck, and I chose untreated redwood for the material.
 Redwood is relatively inexpensive, rot and mildew-resistant, and looks and smells good.
 
-![Sauna deck](/static/images/sauna-deck.jpg)
+![Sauna deck](/images/sauna-deck.jpg)
 
 This is a photo of the deck somewhat-finished (the floor boards are not yet nailed down here).
 I used 2x6s for the structural outside components.
 I raised them off the ground on short segments of 4x4, to allow for leveling and to create airflow underneath that would allow the boards to shed water and to dry.
 
-![Sauna deck feet](/static/images/sauna-deck-feet.jpg)
+![Sauna deck feet](/images/sauna-deck-feet.jpg)
 
 I read a lot of advice on the internet to not use 1x4s for decking, since it's too flexy and feels unstable.
 I decided to use them anyway, because it's much less expensive and I was worried about weight (remember, this is meant to be moved to different parties).
 I used a fairly dense grid of 2x3s to give a rigid support for the deck:
 
-![Sauna deck support](/static/images/sauna-deck-support.jpg)
+![Sauna deck support](/images/sauna-deck-support.jpg)
 
 The walls are fairly conventionally framed out of 2x4s:
 
-![Sauna walls framed out](/static/images/sauna-walls-framed.jpg)
+![Sauna walls framed out](/images/sauna-walls-framed.jpg)
 
 I used [aluminum foil vapor barrier](https://superiorsaunas.com/collections/foil-vapor-barrier/products/aluminum-foil-vapor-barrier) on the inside face of the walls.
 On top of the vapor barrier, I used [this cheap, thin cedar planking](https://www.homedepot.com/p/1-4-in-x-3-5-in-14-sq-ft-Western-Cedar-Planks-6-Pack-8203015/202106509).
@@ -51,16 +51,16 @@ It's much nicer to lean against the wall in a place where there's a stud, and it
 Inside, the walls are insulated with denium insulation.
 On the outside face, i used tyvek sheeting, and then the exterior walls are made of the thinest plywood I could find, painted with exterior-grade paint:
 
-![Sauna walls insulated](/static/images/sauna-walls-insulated.jpg)
+![Sauna walls insulated](/images/sauna-walls-insulated.jpg)
 
 Here you can see the walls laid out on the ground, with the plywood, tyvek, and insulation.
 In the next shot, you can see the walls set up with vapor barrier, before the cedar is installed.
 
-![Sauna walls before cedar](/static/images/sauna-walls-precedar.jpg)
+![Sauna walls before cedar](/images/sauna-walls-precedar.jpg)
 
 The walls themselves just sit on the deck, like so:
 
-![Sauna walls on the deck](/static/images/sauna-walls-on-deck.jpg)
+![Sauna walls on the deck](/images/sauna-walls-on-deck.jpg)
 
 To keep them aligned, we drilled holes through the bottom plate of each wall and into the 2x6 redwood of the deck.
 We then installed bolts, serving as pegs, through the wall bottom plates.
@@ -73,8 +73,8 @@ However, to avoid torque on the 2x6s of the deck, we wanted to bolt the walls to
 To do that, we installed [tee nuts](http://amzn.to/2DYnRKc) inside the wall.
 After putting two walls onto the deck, we would bolt the corner together; you can see that if you look carefully at the corners in the next photo.
 
-![Sauna walls bolted together](/static/images/sauna-walls-bolted.jpg)
-![Sauna wall bolts](/static/images/sauna-wall-bolt-closeup.jpg)
+![Sauna walls bolted together](/images/sauna-walls-bolted.jpg)
+![Sauna wall bolts](/images/sauna-wall-bolt-closeup.jpg)
 
 The cieling was made from 2" structural foam.
 We taped two 4'x8' pieces together and then sandwiched it -- cedar planking on the inside, and two 2x3s on top.
@@ -87,17 +87,17 @@ I installed some galvanized steel panels over the building just in time for the 
 I drafted several potential layouts of the sauna on paper before building benches.
 This is the layout we settled on:
 
-![Sauna layout](/static/images/sauna-layout.jpg)
+![Sauna layout](/images/sauna-layout.jpg)
 
 In many saunas, the benches hang from the walls, but we needed flat-pack walls free of hardware and flat-pack benches.
 We made the bench tops out of western red cedar 1x4s -- quite expensive.
 
-![Sauna bench tops](/static/images/sauna-bench-tops.jpg)
+![Sauna bench tops](/images/sauna-bench-tops.jpg)
 
 The structure beneath the cedar is just normal 2x4s.
 Weight is borne by rectangles made of 2x4s, which are bolted to the bench tops.
 
-![Sauna benches installed](/static/images/sauna-benches-installed.jpg)
+![Sauna benches installed](/images/sauna-benches-installed.jpg)
 
 ## The Stove ##
 
@@ -111,21 +111,21 @@ One particularly insane idea involved heating a metal plate inside the sauna fro
 Eventually, I decided to fabricate a wood-burning stove.
 I modeled mine on the principles of rocket mass heaters to ensure good draft through the room.
 
-![Sauna stove riser](/static/images/sauna-stove-riser.jpg)
+![Sauna stove riser](/images/sauna-stove-riser.jpg)
 
 Here, you can see the J-shaped riser where the combustion happens.
 This was fabricated from scrap 5x5 mild steel.
 The riser was installed in a larger box which is the surface which actually heats the sauna:
 
-![Sauna stove bottom](/static/images/sauna-stove-bottom.jpg)
-![Sauna stove heat exchanger](/static/images/sauna-stove-exchanger.jpg)
+![Sauna stove bottom](/images/sauna-stove-bottom.jpg)
+![Sauna stove heat exchanger](/images/sauna-stove-exchanger.jpg)
 
 The inside of the barrel has some 1x1 tubing for structure, and the outside is made of 16ga plate.
 The top plate of the box, which recieves the brunt of the heat coming out of the exchanger, was made from a thick piece of plate.
 I initially tried to insulate the riser with a mix of portland cement and perlite, but I wasn't seeing the rocketing I wanted.
 Using [2" ceramic fire blanket](http://amzn.to/2BjMWfB) created a much better effect.
 
-![Ceramic insulation around the riser](/static/images/sauna-stove-insulation.jpg)
+![Ceramic insulation around the riser](/images/sauna-stove-insulation.jpg)
 
 I created a 6" diameter exaust port by rolling the same 16ga plate.
 I used 3 90-degree elbows, two 4' long pieces, and a single 1' piece of single-wall stainless steel chimney pipe to vent to the outside.
@@ -135,8 +135,8 @@ I eventually got lucky with [London fireplace](https://londonchimney.com/) in Mi
 Here's the stove undergoing testing in the back yard.
 You can see it got quite warm (although we've single learned to get it much hotter with proper feeding).
 
-![The stove, assembled in the back yard](/static/images/sauna-stove-assembled.jpg)
-![Taking the stove's temperature](/static/images/sauna-stove-temperature.jpg)
+![The stove, assembled in the back yard](/images/sauna-stove-assembled.jpg)
+![Taking the stove's temperature](/images/sauna-stove-temperature.jpg)
 
 Running a rocket stove is pretty different from conventional stoves.
 It eats fuel very quickly, so it must be constantly fed.
@@ -192,12 +192,12 @@ To assemble a structure from the foam-and-cedar modules, I would use some kind o
 
 For the structure of the spa, I originally envisioned an organic dome in tension, made from pencil rod.
 
-![Spa dome concept](/static/images/spa-dome-sketch.jpg)
+![Spa dome concept](/images/spa-dome-sketch.jpg)
 
 However, when Jered and I prototyped the design, it was unclear how to keep the tension from deforming the entire structure.
 In the image below, you can see that the tensioned overhead X wants to turn the floor plan into an oval rather than a circle.
 
-![Spa dome prototype](/static/images/spa-dome-prototype.jpg)
+![Spa dome prototype](/images/spa-dome-prototype.jpg)
 
 I'd still love to create a dome of organic shapes (to conteract the traditional regular geodesic dome shape), but it might be easier at a place like Burning Man, where rebar in the ground can counteract the tension and create a rigid base for the rest of the structure.
 
@@ -207,7 +207,7 @@ I did buy a bunch of thinner bamboo poles.
 Because we had them, we attempted to use them.
 We prototyped a space made of several free-standing structures, arranged so as to inclose an area.
 
-![Bamboo pyramids](/static/images/spa-pyramids.jpg)
+![Bamboo pyramids](/images/spa-pyramids.jpg)
 
 In the end, we decided that bamboo is not good structural material.
 It was too light, broke too easily, and bent too easily.

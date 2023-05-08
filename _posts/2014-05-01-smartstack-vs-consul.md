@@ -47,7 +47,7 @@ I would welcome pull requests to [synapse](https://github.com/airbnb/synapse) th
 
 The first sentence here doesn't really even make sense.
 Sure, Synapse must be configured to discover the services you are going to want to talk to, but you could just as easily configure it to discover ALL of your services.
-On the other hand, explicitly specifying which services you are going to want to talk to from which box is extremely useful, because it allows you to build [a dependency graph of your infrastructure](/static/images/airbnb-infrastructure-oct13.png).
+On the other hand, explicitly specifying which services you are going to want to talk to from which box is extremely useful, because it allows you to build [a dependency graph of your infrastructure](/images/airbnb-infrastructure-oct13.png).
 I view this as a benefit, not a drawback.
 
 Another benefit is using [HAProxy](http://haproxy.1wt.eu/#desc) to actually route between services.

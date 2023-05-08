@@ -27,7 +27,7 @@ Here's how!
 3. Forward traffic to the local-openid server from apache.
   I did this in my `<VirtualHost>` section:
 
-   ```conf
+   ```apacheconf
    ProxyPass / http://localhost:4567/
    ProxyPassReverse / http://localhost:4567/
    RewriteEngine on

@@ -1,0 +1,12 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/prism-themes/themes/prism-ghcolors.css";
+
+pre > code {
+  display: block;
+  max-width: 572px;
+}
+
+main img {
+  max-width: 80%;
+  @extend .ms-4;
+}

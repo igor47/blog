@@ -23,7 +23,7 @@ This is what I did:
 The debug mode will not persist after the phone reboots.
 To fix this, I followed instructions [in this stackexachange question](http://stackoverflow.com/questions/13326806/enable-usb-debugging-through-clockworkmod-with-adb):
 
-```
+```bash
 adb shell
 mount /system
 cd /system
@@ -47,7 +47,7 @@ From `adb shell`, you can use the `input tap` command to send screen tap events.
 I had an icon for the settings menu on my home screen, so I got to it by running `input tap 250 800`.
 Once there, from `adb shell` run:
 
-```
+```bash
 input tap 600 400  # for bluetooth
 input tap 100 1100 # search for devices
 input tap 100 1000 # to pick the first device that you've found
