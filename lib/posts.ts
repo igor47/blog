@@ -2,7 +2,7 @@ import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import matter from 'gray-matter';
 
-const POSTS_DIR = join(process.cwd(), '_posts')
+const POSTS_DIR = join(process.cwd(), 'posts')
 type Post = {
   id: string,
   fullPath: string,
