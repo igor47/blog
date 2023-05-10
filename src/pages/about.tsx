@@ -30,7 +30,7 @@ export default function About() {
           />
         </div>
         <div className="col-6 col-lg-5 d-flex flex-column justify-content-center">
-          <h3 className="text-nowrap">Hello! I'm Igor.</h3>
+          <h3 className="text-nowrap">Hello! I’m Igor.</h3>
 
           <p className="lead">
             I make things.
