@@ -29,7 +29,6 @@ export default function Layout({ children }: { children: ReactNode }) {
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/ >
         <link rel="icon" href="/favicon.ico" />
-
       </Head>
 
       <div className="container-fluid">
@@ -46,30 +45,34 @@ export default function Layout({ children }: { children: ReactNode }) {
                 style={{ objectFit: "cover", objectPosition: "left", overflow: "hidden" }}
               /></Link>
 
-              <div className="d-flex justify-content-center flex-column flex-md-row ps-4 ps-md-0 pt-md-4 text-secondary">
-                <a href="https://github.com/igor47" className="my-2 mv-md0 mx-md-2 link-secondary">
-                  <Github size="24px" title="My Github" />
-                </a>
-
-                <a href="https://www.linkedin.com/in/igor47" className="my-2 mv-md0 mx-md-2 link-secondary">
-                  <Linkedin size="24px" title="Professional profile" />
-                </a>
-
-                <a href="https://www.linkedin.com/in/igor47" className="my-2 mv-md0 mx-md-2 link-secondary">
-                  <StackOverflow size="24px" title="My StackOverflow" />
-                </a>
-              </div>
-
-              <div className="d-flex justify-content-center flex-column ps-4 ps-md-0 pt-md-4">
-                <h3 className="mx-auto">Igor Serebryany</h3>
+              <div className="d-flex flex-column justify-content-center ps-4 ps-md-0 pt-md-4">
+                <h3 className="mx-auto text-nowrap">
+                  <Link href="/about" className="link-dark">Igor Serebryany</Link>
+                </h3>
                 <div className="mx-auto text-secondary">Software & Hardware</div>
-              </div>
 
+                <div className="d-flex justify-content-center flex-row pt-2">
+                  <a href="https://github.com/igor47" className="my-0 mx-2 link-secondary">
+                    <Github size="24px" title="My Github" />
+                  </a>
+
+                  <a href="https://www.linkedin.com/in/igor47" className="my-0 mx-2 link-secondary">
+                    <Linkedin size="24px" title="Professional profile" />
+                  </a>
+
+                  <a href="https://www.linkedin.com/in/igor47" className="my-0 mx-2 link-secondary">
+                    <StackOverflow size="24px" title="My StackOverflow" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="col-12 col-md-9 mt-3 mt-md-0">
-            <div style={{ maxWidth: '85rem' }}>{children}</div>
+          <div
+            className="col-12 col-md-9 mt-3 mt-md-0"
+            style={{ maxWidth: '85rem' }}
+          >
+            {children}
           </div>
         </div>
       </div>
