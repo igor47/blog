@@ -12,6 +12,7 @@ type Post = {
   content: string,
   draft: boolean,
   description: string | null,
+  image: string | null,
 }
 
 function getPosts(postsDir = POSTS_DIR) {
@@ -60,6 +61,7 @@ function getPosts(postsDir = POSTS_DIR) {
       slug: matterResult.data.slug || slug,
       title: matterResult.data.title,
       description: matterResult.data.description || null,
+      image: matterResult.data.image || null,
       content: matterResult.content,
       draft: matterResult.data.draft || false,
     });

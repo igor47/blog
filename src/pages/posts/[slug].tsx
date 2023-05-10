@@ -16,6 +16,28 @@ export default function Post({ post, body }: { post: Post, body: string }) {
   const description = post.description ?
     <meta name="description" content={ post.description } key="description" /> : null
 
+  let titleClass = 'mb-3'
+  let titleImage = null
+  let ogImage = null
+  if (post.image) {
+    titleClass = 'col-6 col-lg-5 d-flex flex-column justify-content-center'
+    titleImage = (
+      <div className="col-6 col-lg-5 d-flex flex-column justify-content-center">
+        <img
+          src={ post.image }
+          alt="A picture that describes this post"
+          className="rounded"
+          style={{
+            width: '100%',
+            height: '10rem',
+            objectFit: 'cover',
+          }}
+        />
+      </div>
+    )
+    ogImage = <meta property="og:image" content={ post.image } key="image" />
+  }
+
   return (<>
     <Head>
       <title>{title}</title>
@@ -24,11 +46,18 @@ export default function Post({ post, body }: { post: Post, body: string }) {
       <meta property="og:type" content="article" key="type" />
       <meta property="og:article:published_time" content={date.toISOString()} key="published_time" />
       { description }
+      { ogImage }
     </Head>
 
     <main>
-      <h3>{ post.title }</h3>
-      <small>{date.format('MMM YYYY')}</small>
+      <div className="row mb-3">
+        { titleImage }
+
+        <div className={titleClass}>
+          <h3 className="text-nowrap">{ post.title }</h3>
+          <small>{date.format('MMM YYYY')}</small>
+        </div>
+      </div>
 
       <div className="pt-3" dangerouslySetInnerHTML={{ __html: body }}>
       </div>

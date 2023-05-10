@@ -2,9 +2,9 @@
 title: "Refrigerants: What Are They?"
 date: 2023-05-08
 slug: refrigerants-what-are-they
-draft: true
 description: |
   Recoolit's core mission is to collect and destroy refrigerants. But when even are these gases? Read to find out what refrigerants do, the different kinds that exist, why they can be so concerning, and how the world has managed the risk.
+image: /images/refrigerants.jpg
 ---
 
 At [Recoolit](https://www.recoolit.com), our mission is to reduce climate impact by collecting and destroying waste refrigerants.
@@ -90,6 +90,25 @@ For instance, for R-3
 In the developed world, the phase-out began in 2019, and is scheduled to complete by 2036.
 In the developing world, however, the phase-out is not scheduled to end until 2045, with some countries receiving additional extensions to 2047 or later.
 
-## Refrigerants Today
+## How Recoolit Fits In
 
+Refrigerant pollution is a major global problem, and the world is working hard to solve it.
+However, as you can see, even the phase-out of ozone-depleting substances like R-22 will not be complete until 2030.
+With high-GWP HFCs like R-134a, the process has barely begun, and will last for decades.
 
+What do we do in the meantime?
+This is where Recoolit comes in.
+While the world works to phase out harmful refrigerants, we can work to reduce the amount of refrigerant pollution that is released into the atmosphere.
+
+Certainly, some of this release is accidental or the result of equipment malfunction.
+However, a significant portion of refrigerant pollution is the result of intentional venting.
+This is because, without Recoolit, technicians simply have no other way to dispose of refrigerant properly.
+Even well-intentioned technicians, who are concerned about pollution and environmental impacts, have no other choice when a system must be depressured for maintenance or repair.
+We've seen technicians vent refrigerant through a hose inserted into a bucket of water, in the (mistaken) belief that this will somehow "scrub" the refrigerant.
+
+Additionally, the process of recovering refrigerant is time-consuming and expensive.
+The international protocols do not provide any funding for the transition to cleaner refrigerants, or to mitigate the damage from refrigerant pollution.
+This is where <em>you</em> come in.
+Now that you know about the problem, you can help us solve it.
+Fund our work by [buying our carbon credits](https://registry.recoolit.com/buy).
+Tell your friends and colleagues about the problem, and about our solution.
