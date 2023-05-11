@@ -4,9 +4,9 @@ import Image from 'next/image'
 
 import dayjs from 'dayjs'
 
-import { generateFeed } from '../../lib/feed'
-import { getPosts } from '../../lib/posts'
-import type { Post } from '../../lib/posts'
+import { generateFeed } from '../lib/feed'
+import { getPosts } from '../lib/posts'
+import type { Post } from '../lib/posts'
 
 import atom from '../icons/atom.svg'
 import json from '../icons/json.svg'

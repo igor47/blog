@@ -6,8 +6,8 @@ import Link from 'next/link'
 
 import { Linkedin, Github, StackOverflow, House, ArrowReturnLeft, ChevronBarUp } from 'react-bootstrap-icons'
 
-import Me from '../public/images/me.jpg'
-import Myhead from '../public/images/myhead.jpg'
+import Me from '../../public/images/me.jpg'
+import Myhead from '../../public/images/myhead.jpg'
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (

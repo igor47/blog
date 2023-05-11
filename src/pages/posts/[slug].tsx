@@ -6,8 +6,8 @@ import prism from 'remark-prism';
 
 import dayjs from 'dayjs'
 
-import { getPosts } from '../../../lib/posts'
-import type { Post } from '../../../lib/posts'
+import { getPosts } from '../../lib/posts'
+import type { Post } from '../../lib/posts'
 
 export default function Post({ post, body }: { post: Post, body: string }) {
   const title = `Igor47 - ${ post.title }`
