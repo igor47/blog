@@ -47,7 +47,7 @@ export default function About() {
           <p>
             My typical medium, and most of my professional experience, is in software.
             At Airbnb, I was an early engineer on the SRE team, and helped scale both the team and the infrastructure through hypergrowth.
-            Since then, I've focused on leveraging software to solve problems in the climate space.
+            Since then, I’ve focused on leveraging software to solve problems in the climate space.
           </p>
         </div>
 
