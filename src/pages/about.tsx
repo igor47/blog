@@ -7,7 +7,7 @@ export default function About() {
       <title>Igor47 - About</title>
 
       <meta property="og:title" content="Igor Serebryany" key="title" />
-      <meta name="description" content="About Igor Serebryany's life, interests, and career" key="description" />
+      <meta name="description" content="Igor Serebryany -- the man, the legend" key="description" />
 
       <meta property="og:type" content="profile" key="type" />
       <meta property="og:profile:first_name" content="Igor" />
@@ -35,7 +35,7 @@ export default function About() {
           <p className="lead">
             I make things.
             I love humans, nature, our planet, science, ideas, and anything else that gets people talking.
-            I am always curious.
+            I am always curious!
           </p>
         </div>
       </div>
@@ -47,6 +47,7 @@ export default function About() {
           <p>
             My typical medium, and most of my professional experience, is in software.
             At Airbnb, I was an early engineer on the SRE team, and helped scale both the team and the infrastructure through hypergrowth.
+            Since then, I've focused on leveraging software to solve problems in the climate space.
           </p>
         </div>
 
@@ -82,7 +83,7 @@ export default function About() {
           <h3>Tools</h3>
 
           <p>
-            I am fascinated by how people use technology, and I love to build tools.
+            I am fascinated by how people and groups use, and are shaped by, their tools.
             At Airbnb, I founded and lead the Developer Happiness team, which focused on internal infrastructure.
             I have also built tools for data scientists at <Link href="/posts/building-etl-kubernetes">Aclima</Link> and for non-techinical users at <a href="https://app.recoolit.com">Recoolit</a>.
           </p>
@@ -134,8 +135,7 @@ export default function About() {
           <p>
             I am deeply concerned about the climate crisis, and focus most of my energy here.
             I work in the space as an angel investor, philanthropist, advisor, and technical contributor.
-            I have spent several years working building technical infrastructure at Aclima and Recoolit full-time.
-            I would <b>love</b> to talk to <b>you</b> about your high-leverage climate idea.
+            I would <b>love</b> to talk to <b>you</b> about your high-leverage climate idea!
           </p>
         </div>
       </div>
@@ -147,7 +147,7 @@ export default function About() {
           <p>
             I love getting off my computer and building stuff in the real world.
             I enjoy electronics, <Link href="/posts/minimal-viable-air-quality">hardware hacking</Link>, woodworking, <Link href="/posts/my-projects-belden-spa">carpentry, and welding</Link>.
-            I am always looking for collaborators, especially in mechanical engineering!
+            I also love to experience the world, and am frequently at sea on a sailboat, in the woods camping, or on the slopes with my board.
           </p>
         </div>
 
