@@ -3,7 +3,7 @@ title: "Refrigerants: What Are They?"
 date: 2023-05-08
 slug: refrigerants-what-are-they
 description: |
-  Recoolit's core mission is to collect and destroy refrigerants. But when even are these gases? Read to find out what refrigerants do, the different kinds that exist, why they can be so concerning, and how the world has managed the risk.
+  Recoolit's core mission is to collect and destroy refrigerants. But when even are these gasses? Read to find out what refrigerants do, the different kinds that exist, why they can be so concerning, and how the world has managed the risk.
 image: /images/refrigerants.jpg
 ---
 
@@ -25,7 +25,7 @@ In a heat pump on "warming" mode, this heat exchanger is located inside a buildi
 The gas is then pumped to a second heat exchanger, where it is allowed to expand, turning it back into a liquid.
 The expansion cools the fluid.
 It's then pumped through a second heat exchanger, where it becomes warmer, while the air around it becomes cooler.
-In a heat pump on "cooling" mode, this second heat exchanger is inside the refrigerator, freezer, or too-warm room or build.
+In a heat pump on "cooling" mode, this second heat exchanger is inside the refrigerator, freezer, or too-warm room or building.
 
 The fluid is then pumped back to the compressor, and the cycle begins again.
 Mechanically, all heat pumps rely on just these few components -- a compressor, pumps, heat exchangers, and the fluid -- sometimes a gas, sometimes a liquid -- that runs between them.
@@ -52,7 +52,7 @@ These properties led to R-12 becoming the most popular refrigerant in the world,
 When searching for safer replacements to early refrigerants, scientists looked for substances which were highly stable, since stable substances pose less of a health risk to humans.
 This made R-12 an attractive choice, since it was highly stable and non-toxic.
 However, this stability also proved to be a problem.
-In the 1970s, scientists studying the ultimate fate of CFCs like R-12 discovered that these gases could make their way up to the stratosphere.
+In the 1970s, scientists studying the ultimate fate of CFCs like R-12 discovered that these gasses could make their way up to the stratosphere.
 There, they could be broken down by ultraviolet radiation, releasing chlorine atoms (the first C in CFC and HCFC).
 The chlorine would then react with, and destroy, atmospheric ozone.
 
@@ -66,9 +66,9 @@ Meanwhile, R-22, an HCFC common in home and commercial heat pumps, was phased ou
 
 ## GWP and the Kigali Amendment
 
-If you recall, one of the properties of a good refrigerant is it's ability to absorb and release heat.
+If you recall, one of the properties of a good refrigerant is its ability to absorb and release heat.
 Refrigerants continue to play this role even after they've been released into the atmosphere.
-In particular, they absorb and release heat in the form of infrared radiation, which is the same type of radiation that is absorbed and released by greenhouse gases like carbon dioxide and methane.
+In particular, they absorb and release heat in the form of infrared radiation, which is the same type of radiation that is absorbed and released by greenhouse gasses like carbon dioxide and methane.
 
 The heat-trapping ability of a greenhouse gas is measured by its global warming potential (GWP).
 The standard basis of comparison is the most common greenhouse gas, carbon dioxide (CO2), which has a GWP of 1.
@@ -103,7 +103,7 @@ While the world works to phase out harmful refrigerants, we can work to reduce t
 Certainly, some of this release is accidental or the result of equipment malfunction.
 However, a significant portion of refrigerant pollution is the result of intentional venting.
 This is because, without Recoolit, technicians simply have no other way to dispose of refrigerant properly.
-Even well-intentioned technicians, who are concerned about pollution and environmental impacts, have no other choice when a system must be depressured for maintenance or repair.
+Even well-intentioned technicians, who are concerned about pollution and environmental impacts, have no other choice when a system must be drained for maintenance or repair.
 We've seen technicians vent refrigerant through a hose inserted into a bucket of water, in the (mistaken) belief that this will somehow "scrub" the refrigerant.
 
 Additionally, the process of recovering refrigerant is time-consuming and expensive.
