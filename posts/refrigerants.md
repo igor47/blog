@@ -3,7 +3,7 @@ title: "Refrigerants: What Are They?"
 date: 2023-05-08
 slug: refrigerants-what-are-they
 description: |
-  Recoolit's core mission is to collect and destroy refrigerants. But when even are these gasses? Read to find out what refrigerants do, the different kinds that exist, why they can be so concerning, and how the world has managed the risk.
+  Recoolit prevents global warming by collecting and destroying refrigerants. But when even are refrigerants? Read to find out what refrigerants do, the different kinds that exist, why they can be so concerning, and how the world has managed the risk.
 image: /images/refrigerants.jpg
 ---
 
