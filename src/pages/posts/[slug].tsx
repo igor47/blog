@@ -43,6 +43,8 @@ export default function Post({ post, body }: { post: Post, body: string }) {
       <title>{title}</title>
       <meta property="og:title" content={ post.title } key="title" />
 
+      <meta property="og:site_name" content="Igor's Writing" key="site_name" />
+
       <meta property="og:type" content="article" key="type" />
       <meta property="og:article:published_time" content={date.toISOString()} key="published_time" />
       { description }

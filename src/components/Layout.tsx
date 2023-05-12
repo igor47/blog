@@ -17,6 +17,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <meta name="description" content="Igor's internet home page" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        <meta property="og:site_name" content="Igor's Website" key="site_name" />
 
         <meta property="og:type" content="website" key="type" />
         <meta property="og:title" content="Igor47 - Home" key="title" />
