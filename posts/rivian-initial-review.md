@@ -35,13 +35,14 @@ I haven't had to wait for a charging station yet.
 
 The recommended route to Boulder from California would have taken us though Wyoming, which has few EV chargers.
 We opted to take a slightly longer route through Green River instead.
-But, knowing what I know now, I think the Wyoming route would also be okay.
+Knowing what I know now, I think the Wyoming route would also be okay.
 
 We were worried that we'd be waiting for the car to charge at our stops.
 In fact, it's mostly been the other way, with the car being fully charged while S and I are still dithering somewhere.
 On the drive back, because we were more comfortable with the charging infrastructure, we would stop for a quick bio break while the car gained 20% to 30% of charge, and then we'd head to the next charger.
 It's much nicer to hang out at most chargers than at gas stations (though we **really** miss windshield cleaning supplies at most charging stations).
-My body is much happier with more, longer stops on long stretches of road.
+
+My body is much happier with more, longer stops and opportunities to walk around and stretch while the car is charging.
 
 ## Camping
 
@@ -55,13 +56,13 @@ There's more storage space (the frunk!), so we didn't need to bring a cargo rack
 The door opens in two halves, and I really enjoy sleeping with the bottom half closed.
 It feels like my bed is less likely to slide out of the car, and we can still keep the top half open for a nice breeze.
 
-Also, I really like all the camping settings in software.
+I really like all the camping settings in software.
 For instance, self-leveling is better than having to look for correct-sized rocks to put under the car.
 On the other hand, I've found the software quite buggy (see below).
 Our first attempt to use self-leveling in Nevada resulted in the car constantly adjusting it's height until the compressor overheated, and then we just had to wait for it to cool down and try again.
 On another occasion in Utah, I reset self-leveling while packing the car, and then when I got in it wasn't reset and I had to reset it again.
 
-Also, while I appreciate all the attempts to control lighting while camping, they, too, are very buggy.
+While I appreciate all the attempts to control lighting while camping, they, too, are very buggy.
 For instance, there's a "keep screens off" setting, which claims you'll need to press the brake to turn the screens back on.
 In fact, the screens come back on when you touch them.
 The light controls are sometimes-broken and sometimes-buggy.
@@ -69,9 +70,9 @@ For instance, the tail gate light just keeps turning on whenever I open a door, 
 To avoid that bright light coming on whenever I exit the car to pee, I've resorted to just setting the car to "do not use energy" mode.
 It's nice that this exists -- but it also means that all the other lights don't work.
 
-Also, it seems like even in "do not use energy" mode, the windows still work.
-This is great -- I remember having to put the key into the Subaru and turn it on to open/close windows.
-However, sometimes the windows *do not* work -- another bug?
+Finally, it seems like even in "do not use energy" mode, the windows still work.
+This is great -- in my Subie, I would have to insert the key and turn the car on to get fresh air or keep out bugs/the cold.
+However, at least once, the windows *do not* work in that mode -- another bug?
 
 ## Driver+
 
@@ -80,11 +81,12 @@ The Rivian's Driver+ adds more effective lane-keeping.
 This is great when it works, mostly on straight interstate highways.
 It does not work on any roads that are not the interstate.
 It turns off when you change lanes.
+It turns off in less-than-ideal visibility, like when it's raining ("camera blurry").
+It turns off for some, but not most, tunnels.
 It also sometimes turns off for no reason, at the oddest time, with a loud beep, and then you swerve and catch the car before it smashes into something.
 
 Part of the reason we didn't bring the cargo rack is that using a "rear accessory" turns off all self-driving features, including good-old adaptive cruise control.
 The Subaru still allowed me to use ACC with my cargo rack plugged in (it has brake and turn lights), so on a longer road trip with more outdoor/camping time, I would be pretty annoyed about that.
-The Subaru also did better with ACC in rain and other bad weather, where the Rivian just says "camera blurry" and turns everything off.
 
 A common complaint on forums is about how Driver+ mutes your music for a moment whenever anything changes.
 This is indeed pretty annoying.
@@ -118,6 +120,8 @@ I think this is a customer-hostile move -- I just don't see how it benefits the 
 I have a version of the car with the Meridian-branded sound system, and it's ... okay.
 I mean, it sounds fine, somewhat better than the Subaru, but mostly I think because the car is pretty quiet.
 The bluetooth in the car seems fairly reliable, better than the Subaru.
+Audio books work well in the `voice` EQ preset, and I tend to use the `rock` preset for all music.
+
 I also use the in-car version of Spotify, which is barely passable.
 Basic things -- for example, searching for a song, and then adding it to the current playlist -- are not possible.
 But it's nice that there's music without having to connect my phone to the car.
