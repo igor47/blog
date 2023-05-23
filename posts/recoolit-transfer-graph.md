@@ -18,7 +18,7 @@ This post explains the technical details of how we create this transparency.
 ## Brief Overview of Recoolit
 
 When refrigerators, air conditioners, or other kinds of heat pumps reach end-of-life or need maintenance, the refrigerants inside need to be removed from the system.
-This might be because the refrigerant is contaminated, or maybe just because the refrigerant is at high pressure inside the system, and needs to be de-pressurized before the system can be serviced safely.
+This is because refrigerant is at high pressure inside the system, and needs to be depressurized before the system can be serviced safely.
 It is common for refrigerants to be vented into the atmosphere during this process.
 Recoolit provides technicians with the tools, know-how, and incentives to capture these waste gasses instead of releasing them.
 Then, we destroy the captured gasses in a high-temperature incinerator, permanently preventing their release into the atmosphere.
@@ -28,11 +28,9 @@ We also have to pay for the cost of destroying the refrigerants, including getti
 Finally, we have to cover our operational expenses.
 This includes buying and maintaining the pumps and cylinders that we use to capture and store refrigerants.
 We maintain several depots, where technicians can borrow the equipment needed for recovery.
-Finally, we pay for a warehouse were we store refrigerants before they are destroyed.
+Finally, we pay for a warehouse where we store refrigerants before they are destroyed.
 
 We cover all of these costs by selling carbon credits to individuals and organizations that want to offset their carbon emissions.
-None of this work could happen without your support.
-Feel free to take a break from this post and [buy some carbon credits](https://www.recoolit.com/buy)!
 
 ## Why Transparency?
 
@@ -61,23 +59,23 @@ This is where a technician captures refrigerants from a refrigerator, air condit
 At this step, we collect photos of the equipment that's being serviced, the reason for the refrigerant recovery, the amount of gas recovered, and the type of gas recovered (though we don't always know the exact type of gas at this point).
 
 Next, technicians return the cylinder used for the recovery to one of our depots.
-We verify the amount of gas recovered, and we also test the gas using a basic refrigerant identifier device.
+We verify the amount of gas recovered, and we also test the gas using a gas analyzer.
 We pay the technician for the amount of gas they collected.
 This payment compensates the technician for the time and effort they spent performing the recovery.
 
 Because we want to return the smaller recovery cylinders back into the field, we will often consolidate the gas from multiple recovery cylinders into a larger storage cylinder.
 We cannot mix different types of refrigerants, so we have to keep track of the type of gas in each cylinder.
 Every time gas is transferred, we keep detailed records on the source and destination cylinders and weights.
-Some small amount of gas is always lost during transfers, and the loses are not included in the carbon credits we sell.
+Some small amount of gas is always lost during transfers, and the losses are not included in the carbon credits we sell.
 
 Next, we transport the gas to our destruction facility.
 Every time we transport gas, we weigh and test the cylinders at both ends.
 We maintain a chain of custody for the cylinders at all times, using signed transport manifests.
 Some of the refrigerants we transport are becoming expensive, because they are no longer allowed to be produced under internal agreements.
-Our procedures ensure that no loss or theft of refrigerants occurs during transport.
+Our procedures protect against loss or theft of refrigerants during transport.
 
 Finally, our refrigerants go through the destruction process.
-First, we taking a sample of each cylinder that has arrived at the destruction facility.
+First, we take a sample of each cylinder that has arrived at the destruction facility.
 The sample is lab-tested under rigorous standards, to confirm the exact makeup of the contents of the cylinder.
 Next, the cylinder is hooked up to a high-temperature incinerator.
 In Indonesia, we partner with cement kiln operators, because their facilities reach the high temperatures needed to destroy refrigerants and need only minimal modifications to do so.
@@ -106,9 +104,9 @@ Events include things like "the gas was tested", "the cylinder was transported",
 
 ## An example
 
-This might be easier with an example, so lets use some real data from our public registry.
+This might be easier with an example, so let's use some real data from our public registry.
 I bought some credits from Recoolit, and [here is my receipt for that purchase](https://registry.recoolit.com/purchases/f436f5ca-a6fe-49c4-b10c-f4e46cafcb8d).
-Lets look at the same data in our internal system:
+This is a view of the same data in our internal system:
 
 ![Igor's purchase graph](/images/igor-purchase-graph.png)
 
@@ -166,6 +164,10 @@ When we display it, it would look more like this:
 ![Decomposed paths](/images/transfer-path-decomposed.png)
 
 There are two paths in this graph -- the one on the left, and the one on the right -- and the nodes in green are duplicated between the two paths.
+Here's how the same data might look in your purchase receipt:
+
+![Paths in the purchase receipts](/images/transfer-path-final.png)
+
 Doing this is surprisingly non-trivial because it's not clear, just from the subgraph, how many paths through a particular node there are.
 To make it easier, we actually keep track of the paths when we construct the graph.
 Each time we begin trying to allocate gas from a destruction, we generate a path identifier.
