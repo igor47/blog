@@ -130,16 +130,31 @@ In this case, the purchase of 30 tonnes of CO2e was covered by 3 different destr
 We destroyed 13235 grams of R-410a and 193 grams of R-32 to cover this purchase, and these gases were recovered by two technicians on 3 different occasions.
 Three of the five recoveries were on the same day into three different cylinders, indicating a large recovery job that filled up multiple cylinders!
 
+## Allocating purchases
+
+We allocate purchases using a depth-first search through the graph, starting at the destruction node.
+Every time we find a node that has enough gas to cover the purchase, we recursively look through the source nodes.
+The recursion terminates at a recovery node.
+We then propagate the list back up through the stack, allocating the purchase to each node in the path.
+
+Allocating the purchase means creating edges.
+For each purchase, we create a `sale` node in the graph.
+For each node that contributes gas to the purchase, we create a `sale` edge, from the source node to the `sale` node.
+To find all the nodes involved in allocating a sale, we look for all nodes connected to the `sale` node through a `sale` edge.
+
+Each `sale` edge includes the amount of gas that was allocated to the sale.
+To figure out if a node still has enough gas to cover the sale, we subtract the sum of all `sale` edges from the weight of the node's outgoing transfer edge.
+
 ## Formatting for display
 
 We've already discussed all of the data we collect during operations to enable this kind of transparency.
-You can now also see how our system allocates your purchase to destructions and recoveries.
+You can now also know how our system allocates your purchase to destructions and recoveries.
 The final piece is presenting this data in a way that is easy to understand.
 
 In your receipt, we show you a path-decomposed version of the transfer graph.
 A path is a linked list of edges and nodes, starting at a recovery and ending at a destruction.
 However, in your purchase subgraph, a single node or edge might be involved in multiple paths.
-When we do the decomposition, we clone the nodes and edges, so that each path has its own copy.
+When we do the decomposition, we clone the shared nodes and edges, so that each path has its own copy.
 Here's an example of a non-decomposed graph:
 
 ![Non-path decomposed graph](/images/transfer-path.png)
@@ -151,6 +166,11 @@ When we display it, it would look more like this:
 ![Decomposed paths](/images/transfer-path-decomposed.png)
 
 There are two paths in this graph -- the one on the left, and the one on the right -- and the nodes in green are duplicated between the two paths.
+Doing this is surprisingly non-trivial because it's not clear, just from the subgraph, how many paths through a particular node there are.
+To make it easier, we actually keep track of the paths when we construct the graph.
+Each time we begin trying to allocate gas from a destruction, we generate a path identifier.
+When we find a path that works, we store the path identifier in the `sale` edges that track the allocated purchase.
+This means that a node might actually have multiple edges connecting it to a `sale` node, each with a different path identifier.
 
 ## Wrapping up
 
