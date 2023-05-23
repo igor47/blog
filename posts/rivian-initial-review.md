@@ -147,6 +147,9 @@ Good look trying to figure out which side of the fob is even the one with the bu
 
 Once you figure out what button to use -- good luck getting the car to respond.
 I just love standing in the rain with my friend and her 5-year-old, all of us getting wet while I repeatedly hit the unlock button while the car *thinks about something*.
+S also pointed out that this makes her feel unsafe.
+Imagine a lone woman walking to her car on a dark street -- she wants that car to freakin' unlock!
+
 I don't understand why this could work instantly in my Subaru, but takes sometimes a minute on my Rivian.
 I bet it has something to do with the software.
 Speaking of which...
@@ -164,6 +167,7 @@ Other examples:
 * the lights button on the rear screen and the front screen are not aware of each other
 * the car forgets about it's leveling state
 * the bluetooth will just randomly turn back on, even after it's been turned off
+* sometimes battery pre-conditioning doesn't activate automatically; no way to do it manually
 * sometimes the car will refuse to charge, and you have to hard-reboot it
 
 Oh, Rivian support recommends a hard-reboot for most troubleshooting.
@@ -199,6 +203,27 @@ People are saying that [the service centers are chaotic and overwhelmed](https:/
 Also, it seems like even minor accidents can result in [huge repair bills](https://www.theautopian.com/heres-why-that-rivian-r1t-repair-cost-42000-after-just-a-minor-fender-bender/).
 I'm worried that, if I need immediate maintenance, I might be out of luck.
 Thankfully, this is an adventure mobile and I don't critically need it, but it would suck to miss a trip.
+
+## Minor Peeves
+
+The car goes out of it's way to hide kilowatts from you -- range is measured in `%` or miles.
+It does show efficiency in miles per kWh, but not how much kWh are left in the battery.
+I would really like to connect the speed of the charger I'm pulling up to -- invariably in kWh -- to the capacity of the battery, which is a mystery and nowhere in the UI.
+I would also *love* to see a live indication of how much power the car is using while camping.
+
+There is no cruise control resume.
+If you brake because a car swerved into your lane, or because you stopped at at a sign on a long stretch of highway, you'll have to re-set your previous cruise control speed manually.
+
+The camera button is hidden in an overflow menu.
+If you need help navigating into a tight parking spot, you'll have to pause and click around mid-park.
+
+The windshield wipers are kind of hard to use manually.
+The control is small, and the first tap only shows you the current setting, so you always need at least two.
+I would love to just leave it on auto, but it's often way too fast in low-rain conditions.
+
+The AC controls decide on their own whether the car is heating or cooling.
+I really miss just having a fan blow outside air.
+This would be especially nice while camping, where I don't want to use power for heat or AC, but a little extra airflow would be lovely (and help keep bugs off me!).
 
 ## Summing Up
 
