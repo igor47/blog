@@ -2,7 +2,6 @@
 title: Purchase Allocation via Graph
 date: 2023-05-11
 slug: purchase-allocation-via-graph
-draft: true
 description: |
   Recoolit is focused on transparency, and every purchase is allocated to a specific molecules recovered in the field. This post describes how we do that.
 image: /images/transfer-graph-2.png
@@ -13,13 +12,13 @@ image: /images/transfer-graph-2.png
 When you [buy carbon credits from Recoolit](https://www.recoolit.com/buy), you are buying a specific amount of prevented atmospheric warming.
 We prevent warming by preventing the release of refrigerants into the atmosphere.
 (Note: if you want to learn more about how refrigerants cause warming, check out [our post on refrigerants](/posts/refrigerants-what-are-they).)
-Our purchase receipts are designed to be transparent, and show you exactly how much warming you are preventing, and exactly how we prevented this warming.
+Our purchase receipts are designed to be transparent -- you see exactly how much warming you are preventing, and exactly how.
 This post explains the technical details of how we create this transparency.
 
 ## Brief Overview of Recoolit
 
 When refrigerators, air conditioners, or other kinds of heat pumps reach end-of-life or need maintenance, the refrigerants inside need to be removed from the system.
-This might be because the refrigerants are contaminated, or maybe just because the refrigerants are at high pressure inside the system, and need to be removed before the system can be serviced safely.
+This might be because the refrigerant is contaminated, or maybe just because the refrigerant is at high pressure inside the system, and needs to be de-pressurized before the system can be serviced safely.
 It is common for refrigerants to be vented into the atmosphere during this process.
 Recoolit provides technicians with the tools, know-how, and incentives to capture these waste gasses instead of releasing them.
 Then, we destroy the captured gasses in a high-temperature incinerator, permanently preventing their release into the atmosphere.
@@ -39,7 +38,7 @@ Feel free to take a break from this post and [buy some carbon credits](https://w
 
 The world has almost no way to pay for pollution remediation.
 Sometimes, governments will force polluters to pay for the cost of cleaning up their pollution.
-Other times, governments will directly pay for cleanup using tax dollars, especially when the pollution is a public health hazard and there is no obvious resonponsible party who can be forced to tackle the cost.
+Other times, governments will directly pay for cleanup using tax dollars, especially when the pollution is a public health hazard and there is no obvious responsible party who can be forced to tackle the cost.
 
 So, even with the growing awareness that climate change is a big, looming problem, there are too few ways to get money to organizations that are tackling the issue.
 The voluntary carbon credit markets -- where individuals and companies pay for carbon credits out of a sense of social responsibility, and not for any regulatory reason -- are one of the few ways to pay for climate change remediation.
@@ -48,12 +47,12 @@ However, the voluntary carbon credit markets have been a bit of a mess.
 There are no international agreements or standards on how to quantify the impact of carbon credits.
 A few private organizations have stepped in to fill this gap, but their standards are not universally accepted.
 Finally, some of the largest private organizations -- known as registries -- have faced controversy.
-For instance, Verra, one of the largest registries, has been criticized for allowing carbon credits to be sold for projects that were already underway, and for projects that were not actually reducing emissions.
+For instance, Verra, one of the largest registries, [has been criticized](https://www.theguardian.com/environment/2023/jan/18/revealed-forest-carbon-offsets-biggest-provider-worthless-verra-aoe) for allowing carbon credits to be sold for projects that were already underway, and for projects that were not actually preventing warming.
 
-For these reasons, when we started Recoolit, we were determined to be as transparent as possible from day one.
+For these reasons, Recoolit's founder Louis was determined for the company to be as transparent as possible from day one.
 We collect detailed data on every step of our operational process.
-When you make a purchase, we show you all of the data we've collected that pertains to the mollecules that went into your purchase.
-Finally, we we show as much data as possible on [our public registry](https://registry.recoolit.com/registry), so that anyone can see exactly what we are doing.
+When you make a purchase, we show you all of the data we've collected that pertains to the molecules that went into your purchase.
+Finally, we show as much data as possible on [our public registry](https://registry.recoolit.com/registry), so that anyone can see exactly what we are doing.
 
 ## What Is Our Data?
 
@@ -64,6 +63,7 @@ At this step, we collect photos of the equipment that's being serviced, the reas
 Next, technicians return the cylinder used for the recovery to one of our depots.
 We verify the amount of gas recovered, and we also test the gas using a basic refrigerant identifier device.
 We pay the technician for the amount of gas they collected.
+This payment compensates the technician for the time and effort they spent performing the recovery.
 
 Because we want to return the smaller recovery cylinders back into the field, we will often consolidate the gas from multiple recovery cylinders into a larger storage cylinder.
 We cannot mix different types of refrigerants, so we have to keep track of the type of gas in each cylinder.
@@ -72,13 +72,18 @@ Some small amount of gas is always lost during transfers, and the loses are not 
 
 Next, we transport the gas to our destruction facility.
 Every time we transport gas, we weigh and test the cylinders at both ends.
-We maintain manifests of transports, and we sign for cylinders at either end.
+We maintain a chain of custody for the cylinders at all times, using signed transport manifests.
 Some of the refrigerants we transport are becoming expensive, because they are no longer allowed to be produced under internal agreements.
-We take care prevent any theft or loss of refrigerants during transport.
+Our procedures ensure that no loss or theft of refrigerants occurs during transport.
 
 Finally, our refrigerants go through the destruction process.
-This involves taking a sample of each cylinder before it is hooked up to the incinerator.
+First, we taking a sample of each cylinder that has arrived at the destruction facility.
 The sample is lab-tested under rigorous standards, to confirm the exact makeup of the contents of the cylinder.
+Next, the cylinder is hooked up to a high-temperature incinerator.
+In Indonesia, we partner with cement kiln operators, because their facilities reach the high temperatures needed to destroy refrigerants and need only minimal modifications to do so.
+
+After destruction, the cylinders are shipped back to us.
+We vacuum-test the cylinders to make sure they're not leaking, and use them for future recoveries or consolidations.
 
 ## Building the transfer graph
 
@@ -91,7 +96,7 @@ In this graph, the edges are transfers from a source to a destination node.
 Each edge has a weight, which is the amount of gas transferred, as well as a gas type.
 
 Because cylinders are reused, the nodes are actually a specific cylinder ID during a specific time interval.
-A node is created when gas is first transferred into it, and "closes" when all of the gas is transferred out and we vacuum-test the cylinder to make sure it does not leak.
+A node is created when gas is first transferred into it, and "closes" when all of the gas is transferred out and we vacuum out the cylinder.
 A subsequent transfer into the same cylinder ID would create a new node.
 
 Each node can have multiple incoming and also outgoing edges.
@@ -132,8 +137,20 @@ You can now also see how our system allocates your purchase to destructions and 
 The final piece is presenting this data in a way that is easy to understand.
 
 In your receipt, we show you a path-decomposed version of the transfer graph.
-What we mean is that, for each recovery that contributed to the purchase, we show you the complete path from that recovery to the destruction.
-This 
+A path is a linked list of edges and nodes, starting at a recovery and ending at a destruction.
+However, in your purchase subgraph, a single node or edge might be involved in multiple paths.
+When we do the decomposition, we clone the nodes and edges, so that each path has its own copy.
+Here's an example of a non-decomposed graph:
+
+![Non-path decomposed graph](/images/transfer-path.png)
+
+You can see that this includes two recoveries -- one in the blue box, and one in the red box.
+The green box includes a consolidation and destruction nodes that are shared between the two paths.
+When we display it, it would look more like this:
+
+![Decomposed paths](/images/transfer-path-decomposed.png)
+
+There are two paths in this graph -- the one on the left, and the one on the right -- and the nodes in green are duplicated between the two paths.
 
 ## Wrapping up
 
