@@ -65,10 +65,9 @@ export async function getStaticProps() {
   // generate rss feeds
   generateFeed(posts)
 
-
   return {
     props: {
-      posts: posts.map(post => ({
+      posts: posts.filter(post => !post.draft).map(post => ({
         ...post,
         date: post.date.toISOString(),
       }))

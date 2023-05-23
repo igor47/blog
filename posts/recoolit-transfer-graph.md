@@ -125,7 +125,7 @@ Here's an example of a more complicated sale, which involved multiple kinds of g
 ![A more complicated purchase graph](/images/complicated-purchase-graph.png)
 
 In this case, the purchase of 30 tonnes of CO2e was covered by 3 different destructions.
-We destroyed 13235 grams of R-410a and 193 grams of R-32 to cover this purchase, and these gases were recovered by two technicians on 3 different occasions.
+We destroyed 13235 grams of R-410a and 193 grams of R-32 to cover this purchase, and these gasses were recovered by two technicians on 3 different occasions.
 Three of the five recoveries were on the same day into three different cylinders, indicating a large recovery job that filled up multiple cylinders!
 
 ## Allocating purchases

@@ -49,6 +49,8 @@ export default function Post({ post, body }: { post: Post, body: string }) {
       <meta property="og:article:published_time" content={date.toISOString()} key="published_time" />
       { description }
       { ogImage }
+
+      { post.draft ? <meta name="robots" content="noindex" key="robots" /> : null }
     </Head>
 
     <main>
@@ -56,7 +58,12 @@ export default function Post({ post, body }: { post: Post, body: string }) {
         { titleImage }
 
         <div className={titleClass}>
-          <h3 className="text-nowrap">{ post.title }</h3>
+          <h3 className="text-nowrap">
+            { post.title }
+            <sup className="text-secondary text-danger">
+              {post.draft ? 'draft' : null}
+            </sup>
+          </h3>
           <small>{date.format('MMM YYYY')}</small>
         </div>
       </div>
