@@ -67,7 +67,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts: posts.filter(post => !post.draft).map(post => ({
+      posts: posts.filter(post => process.env.NODE_ENV === 'development' || !post.draft).map(post => ({
         ...post,
         date: post.date.toISOString(),
       }))
