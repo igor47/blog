@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Linkedin, Github, StackOverflow, House, ArrowReturnLeft, ChevronBarUp } from 'react-bootstrap-icons'
+import { Linkedin, Github, Headphones, House, ArrowReturnLeft, ChevronBarUp } from 'react-bootstrap-icons'
 
 import Me from '../../public/images/me.jpg'
 import Myhead from '../../public/images/myhead.jpg'
@@ -61,8 +61,8 @@ export default function Layout({ children }: { children: ReactNode }) {
                     <Linkedin size="24px" title="Professional profile" />
                   </a>
 
-                  <a href="https://www.linkedin.com/in/igor47" className="my-0 mx-2 link-secondary">
-                    <StackOverflow size="24px" title="My StackOverflow" />
+                  <a href="https://www.last.fm/user/igor47" className="my-0 mx-2 link-secondary">
+                    <Headphones size="24px" title="What I'm Listening To" />
                   </a>
                 </div>
               </div>
