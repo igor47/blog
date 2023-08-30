@@ -6,6 +6,7 @@ import prism from 'remark-prism';
 
 import dayjs from 'dayjs'
 
+import { bootstrapize } from '../../lib/bootstrap'
 import { getPosts } from '../../lib/posts'
 import type { Post } from '../../lib/posts'
 
@@ -58,7 +59,7 @@ export default function Post({ post, body }: { post: Post, body: string }) {
         { titleImage }
 
         <div className={titleClass}>
-          <h3 className="text-nowrap">
+          <h3>
             { post.title }
             <sup className="text-secondary text-danger">
               {post.draft ? 'draft' : null}
@@ -92,6 +93,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
   const post = posts.find(p => p.slug === params.slug)!
   const body = await (remark()
     .use(prism)
+    .use(bootstrapize)
     .use(html, { sanitize: false })
     .process(post.content))
 
