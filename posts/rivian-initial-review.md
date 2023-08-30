@@ -137,7 +137,7 @@ I proceeded to spend 20 minutes trying to get the speaker to stay connected to m
 It did this thing where it would *almost* connect, like just for a moment, and then disconnect again, that was close enough to working that I Just. Kept. Messing. With. It.
 On another occasion, I finally got connected and was playing music, and then it just stopped working for no reason and  I couldn't get it to work again.
 On yet a few more occasions, it powered on and made it's loud boot-up noises while we were sleeping in the car and the speaker was inserted into it's speaker-slot.
-This was alarming and embarrassing.
+This was alarming and embarrassing (because there were some people sleeping in the car next to us).
 
 In short, I hate the camp speaker.
 
@@ -162,7 +162,7 @@ Speaking of which...
 
 Okay, so, I'm a software guy.
 This car is chock full of software.
-And -- it's just the worst.
+And -- it's pretty bad.
 It's buggy as all hell.
 
 I gave some examples already, such as the tailgate light or the display not staying off, or the nav being unreliable.
