@@ -7,7 +7,7 @@ description: |
 image: /images/refrigerants.jpg
 ---
 
-<small>**Note**: This is cross-posted to the [Recoolit blog](https://www.recoolit.com/blog).</small>
+<small>**Note**: This is cross-posted to the [Recoolit blog](https://www.recoolit.com/post/refrigerants-what-are-they).</small>
 
 At [Recoolit](https://www.recoolit.com), our mission is to reduce climate impact by collecting and destroying waste refrigerants.
 This mission is often unclear to people who aren't familiar with the refrigeration industry.

@@ -101,7 +101,7 @@ There is no case against him, and they will let him out soon."
 ## Aftermath
 
 Stalin died in 1953.
-It was not until 1956 that his successor, Khrushchev, denounced Stalin and began the "de-Stalinization" of the USSR.
+It was not until 1956 that his successor, Khrushchev, [denounced Stalin](https://www.britannica.com/event/Khrushchevs-secret-speech) and began the "de-Stalinization" of the USSR.
 However, almost immediately after Stalin's death, many of the political prisoners arrested during his rule were released.
 Among them, my grandfather Lev.
 

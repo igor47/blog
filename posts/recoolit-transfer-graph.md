@@ -7,7 +7,7 @@ description: |
 image: /images/transfer-graph-2.png
 ---
 
-<small>**Note**: This is cross-posted to the [Recoolit blog](https://www.recoolit.com/blog).</small>
+<small>**Note**: This is cross-posted to the [Recoolit blog](https://www.recoolit.com/post/purchase-allocations-eng).</small>
 
 When you [buy carbon credits from Recoolit](https://www.recoolit.com/buy), you are buying a specific amount of prevented atmospheric warming.
 We prevent warming by preventing the release of refrigerants into the atmosphere.
