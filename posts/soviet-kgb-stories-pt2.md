@@ -1,8 +1,10 @@
+---
 title: Soviet KGB Stories II
 date: 2023-09-21
 slug: soviet-kgb-stories-pt2
 description: |
   A story of how my grandfather Lev was exiled to the uranium mines.
+image: /images/uranium.jpg
 ---
 
 <small>**Note**: There is a [previous post](/posts/soviet-kgb-stories-pt1), about my uncle.</small>
