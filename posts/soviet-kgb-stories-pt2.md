@@ -55,12 +55,12 @@ He ended up serving as a medic on the front lines through the entire war.
 After Germany surrendered in 1945, Lev was not immediately released from the military.
 He ended up serving in the occupation for another year, helping rebuild medical facilities in a Germany that had been reduced to rubble by the Allied campaign.
 
-When Lev finally returned to Odessa in October of 1946, the medical school he had been in had already finished more than a month of classes.
+When Lev finally returned to Odessa in October of 1946, his medical school had already finished more than a month of classes.
 He was told to come back the following year to restart his education.
-Lev was already way behind -- he would be four or 5 years older than his classmates -- and he didn't want to put life off for another year.
-Wandering around Odessa, he discovered that the pharmacy school was still recruiting students.
-My grandmother had actually seen the same sign when she showed up a little late to attend medical school because of illness.
-And that's why I'm here today to write this little story!
+Lev was already way behind -- he would be four or five years older than his classmates -- and he didn't want to put life off for another year.
+Wandering around Odessa, he saw an announcement that the pharmacy school was still recruiting students.
+My grandmother had actually seen the same announcement when she showed up in Odessa to start school, a little late due to illness.
+And that's why I'm here to write this story today!
 
 ## After School
 
@@ -94,7 +94,7 @@ Instead, he provided medical services to the miners and surrounding community.
 Nevertheless, he was not free to leave, and my grandmother could not visit him.
 
 Instead, my grandmother expanded much effort trying to free him.
-She spoke to any lawyers, and visited many government officials.
+She spoke to many lawyers, and visited many government officials.
 She was finally told by a well-respected advocate in Kiev, -- "Child, you just have to wait.
 There is no case against him, and they will let him out soon."
 
