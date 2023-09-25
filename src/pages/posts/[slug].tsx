@@ -1,8 +1,11 @@
 import Head from 'next/head'
 
-import { remark } from 'remark';
-import html from 'remark-html';
-import prism from 'remark-prism';
+import rehypePrism from '@mapbox/rehype-prism'
+import rehypeFormat from 'rehype-format'
+import rehypeStringify from 'rehype-stringify'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import {unified} from 'unified'
 
 import dayjs from 'dayjs'
 
@@ -91,11 +94,15 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: { params: { slug: string } }) {
   const posts = getPosts()
   const post = posts.find(p => p.slug === params.slug)!
-  const body = await (remark()
-    .use(prism)
+  const body = await unified()
+    .use(remarkParse)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    // @ts-ignore -- this has some kind of typing issue
+    .use(rehypePrism, { ignoreMissing: true })
+    .use(rehypeFormat)
     .use(bootstrapize)
-    .use(html, { sanitize: false })
-    .process(post.content))
+    .use(rehypeStringify)
+    .process(post.content)
 
   return {
     props: {

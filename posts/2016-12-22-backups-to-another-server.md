@@ -202,7 +202,7 @@ If this succeeds, it's time to add the script to a cron tab to run regularly.
 
 My `moobacker` user's crontab looks like this:
 
-```crontab
+```cron
 MAILTO="admins@example.org"
 
 # m h  dom mon dow   command
