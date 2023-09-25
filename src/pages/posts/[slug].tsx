@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import rehypePrism from '@mapbox/rehype-prism'
 import rehypeFormat from 'rehype-format'
+import rehypeSlug from 'rehype-slug'
 import rehypeStringify from 'rehype-stringify'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
@@ -100,6 +101,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
     // @ts-ignore -- this has some kind of typing issue
     .use(rehypePrism, { ignoreMissing: true })
     .use(rehypeFormat)
+    .use(rehypeSlug)
     .use(bootstrapize)
     .use(rehypeStringify)
     .process(post.content)
