@@ -8,6 +8,14 @@ image: /images/cute-friendly-cloud.png
 draft: true
 ---
 
+rename: why i self host
+
+corporations enter the internet
+the end result was to disempower the individuals.
+where as before it seemed like the internet was all people doing their own thing
+then later it just became a bunch of big companies trying to do a thing to make some money to make a return on capital invested.
+
+
 There's something beautiful and special about open-source software.
 It's not perfect by any means, and I don't mean to look at it through rose-tinted glasses.
 But -- where else is there a community of practice that brings together so many people from so many different backgrounds to work together on what is essentially a shared project, with no money involved?
