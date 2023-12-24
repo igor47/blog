@@ -1,5 +1,6 @@
 import Head from 'next/head'
 
+import rehypeRaw from 'rehype-raw'
 import rehypePrism from '@mapbox/rehype-prism'
 import rehypeFormat from 'rehype-format'
 import rehypeSlug from 'rehype-slug'
@@ -98,6 +99,8 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
   const body = await unified()
     .use(remarkParse)
     .use(remarkRehype, { allowDangerousHtml: true })
+    // raw html support
+    .use(rehypeRaw)
     // @ts-ignore -- this has some kind of typing issue
     .use(rehypePrism, { ignoreMissing: true })
     .use(rehypeFormat)
