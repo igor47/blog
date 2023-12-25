@@ -24,6 +24,8 @@ export default function Layout({ children }: { children: ReactNode }) {
         <meta property="og:description" content="Igor's internet home page and blog" key="description" />
         <meta property="og:image" content={`https://igor47.com${Myhead.src}`} key="image" />
 
+        <script defer data-api="/api/event" data-domain="igor.moomers.org" src="/js/script.js"></script>
+
         <link rel="manifest" href="/site.webmanifest" />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
