@@ -313,8 +313,7 @@ This connector role was performed by several people in the engineering organizat
 
 ## What Didn't Work? ##
 
-It took me quite a while to write the preceding section.
-I knew that I had been incredibly productive at Airbnb, but writing it down really threw it into relief.
+While I knew that I had been incredibly productive at Airbnb, writing everything that I worked on really created some perspective.
 Looking back over that I worked on, I see that my technical projects -- Chef, SmartStack, Deployboard, the work on Monitoring -- were very successful.
 They made life easier for other engineers, and have survived the test of time to continue providing value.
 
@@ -334,7 +333,8 @@ When our builds were slow, I jumped in with both feet and made them faster -- by
 In the meantime, I let things fall to the floor.
 I ignored the structural problems that lead to the situation, or merely kvetched about them and left others to try to solve them.
 I spent too much time writing code, and not enough time influencing or guiding other contributors -- which would have allowed me to focus on a broader range of problems.
-I let myself be seduced by the promise of definitely solving a smaller problem in favor of some probability of solving a larger one.
+I focused on my ability, as an IC, to definitively solve smaller (though usually still very important) problems.
+This took away from my ability to address the larger ones.
 
 This wasn't *entirely* my fault.
 Airbnb could have done better to support my transition.
@@ -342,15 +342,9 @@ The engineering team is completely flat -- even though we have engineering level
 Expectations around what engineers should be focusing on at each level are vague at best, and there's no consensus among managers about what makes a more senior engineer.
 Mike Curtis once told me, in a one-on-one, that it should be possible to reach the highest engineering levels by focusing on deep technical work, but I think that assertion would come as a surprise to most of his engineering managers.
 
-My constant argument to the eng management at Airbnb was to make technical leadership an explicit role, rather than something a few engineers did in their spare time.
-I think I failed to convince anyone, least of all Mike Curtis, of this argument.
-However, some Airbnb engineers were able to make the transition on their own, despite lack of official support.
-I was not one of them.
-
-Finally, I think my biggest failure at Airbnb was making it personal.
-I invested so much life and energy into my work that it became all too easy to become frustrated when things didn't seem to be working out.
-When things got really tough -- see next section -- I lashed out and became a liability.
-I failed to keep my reactions in check, and injected negativity into my entire team.
+I had always wanted to make technical leadership an explicit role, not something a few engineers did in their spare time.
+I didn't succeed in making this vision a reality.
+I don't think I really even tried.
 
 If I could change anything about my time at Airbnb, it would be a change in focus.
 I wish I was more focused on building relationships, and less on accomplishing objectives.
@@ -359,38 +353,43 @@ In the end, when I was leaving, it was the relationships that I did manage to bu
 ## Why I Quit ##
 
 It took about 6 months for the Developer Happiness team to go from three to 4 engineers.
-During this time, it felt like the world was on fire.
-The builds and tests were constantly broken.
-It could take an entire day to ship a simple change, and we were concerned about a code backlog so deep we couldn't clear it in one day.
-We were trying to keep the existing system running through multiple crises, even while trying to build and roll out a replacement with minimal headcount.
-It was very frustrating to feel like we were holding the world up on our shoulders while being ignored by the engineering management and failing to secure any help for our team.
+This was an incredibly stressful time.
+Between broken builds, broken tests, and bugs in the code, it could take an entire day to ship a single changeset.
+We were concerned about a code backlog so deep we couldn't clear it in one day.
+We were performing heroics to keep the system running, at the same time trying to build and roll out a replacement, all with minimal headcount.
+Yet, we didn't seem to get the recognition and support we deserved from engineering management.
 
-So, in the summer of 2015, when our existing engineering manager approached me about potentially taking over as the new manager, I refused.
-Besides, being in the middle of several technical projects which I felt couldn't afford to lose me as an IC, I also had an ideological aversion to going into management.
-Although Airbnb had a narrative about parallel career paths for ICs and managers, I didn't feel that we were living up to our words.
+From the founding of the team, our manager was part-time, also managing a separate product team.
+In the summer of 2015, he approached me about potentially taking over as the full-time manager.
+However, I was in the middle of several deep technical projects, which I felt couldn't lose me as an IC.
+Also, I felt I was a role model for the parallel IC career path at Airbnb.
 I wanted to continue being an example of a successful IC who got things done without transitioning.
 
-Instead, another recently-hired team member took on the management role, and was joined by a newly-hired project manager.
-Together, the two of them came up with broad roadmap for the team, and then conducted offsites to plan specific projects to meet the roadmap.
+As a result, I declined the offer.
+Instead, another recently-hired team member took on the management role, and we also added a newly-hired project manager.
+Together, the two of them came up with broad roadmap for the team.
+They organized a process to plan specific projects to meet that roadmap.
 
 This process turned out to be incredibly frustrating for me.
 I was spending all my time putting out fires and shipping high-impact code, but the new roadmap had no room for several of the projects I thought were most important, including some that I was in the middle of working on.
-I was very angry at losing control over what I saw as 'my team', and at being sidelined in the decision-making.
-It felt like I was demoted from a technical leadership role that I carved out for myself to just being another IC.
 
-The combination of high-stress firefighting and loss of control in planning lead me to utterly burn out.
+More, this situation epitomized the disconnect between the Airbnb engineering team's vision for technical leadership, and the reality.
+It seemed to me that senior engineers should have a lot of input over our planning process.
+Instead, I faced what I now recognize as the structural disadvantage of remaining an IC.
+The new manager and PM had all their time to influence, plan, and decide.
+As an IC, I had to split my time between those activities and actually participating in the tech process -- coding, code review, maintenance, mentoring.
+To live up to our goals, the management team would need to put a lot of effort into active engagement and deference.
+This just didn't seem likely.
+
+The combination of high-stress firefighting, loss of control in planning, and disillusionment with our ideals lead me to utterly burn out.
 I ended up taking a two-month leave of absence in March 2016.
-First, however, I made an ass of myself in several team meetings.
-I claimed (who knows how accurately) that our work was so undervalued by the management organization as to be structurally doomed, and that we would never be able to effect the changes we sought.
+By the time I returned from leave, I was even further sidelined in my own team.
+Instead of continuing to fight for influence, I decided to step aside.
 
-As a result, when I returned from leave, I was even further sidelined.
-My manager, as well as his manager, asked me to join a different team, which was a sort of dumping ground for cranky senior engineers.
-One argument was that "there's no need for an engineer of your level on the developer infrastructure projects" -- an argument that seemed patently false.
-
-In several conversations, it became apparent that I had a very different vision of the engineering team from the engineering managers.
-I thought that technical leaders with proven technical accomplishments should play a more active and official role throughout the team -- in creating new teams, planning projects, and guiding newer engineers.
-Instead, I was asked to minimize my input, let teams come up with roadmaps and projects that I felt were destined to fail, and in general stay out of the way.
-
-As a result, instead of continuing my technical leadership work with Developer Infrastructure, I picked a nice and hard technical project I could do by myself -- the Ruby upgrade.
-While I resolved to finish this project, it was clear both that this wasn't the kind of work I wanted to be doing and that it wasn't the kind of work that was likely to get me any brownie points with the engineering management.
-I quit as soon as the project was complete.
+The Observability team I joined consisted of some of the most senior engineers working on some of the deepest technical problems of the infrastructure.
+I focused on a single project, the Ruby upgrade, and lead it through to completion almost single-handedly.
+However, it was clear to me that this wasn't the kind of work I wanted to be doing.
+I enjoyed the social aspects of my job as much or more as the deep technical ones.
+I am most passionate about the interface of people and technology, and I wanted to be a technical leader.
+It felt like the right moment to move on from Airbnb.
+I announced the completion of the Ruby upgrade, and my departure, in the same all-hands meeting.
