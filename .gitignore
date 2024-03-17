@@ -47,3 +47,13 @@ next-env.d.ts
 
 # feeds are auto-generated
 public/feed.*
+
+# for yarn 2
+# from: https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
