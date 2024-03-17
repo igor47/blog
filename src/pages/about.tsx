@@ -6,8 +6,10 @@ export default function About() {
     <Head>
       <title>Igor47 - About</title>
 
-      <meta property="og:title" content="Igor Serebryany" key="title" />
       <meta name="description" content="About Me, Igor Serebryany" key="description" />
+
+      <meta property="og:title" content="Igor Serebryany" key="title" />
+      <meta property="og:url" content="https://igor.moomers.org/about" key="url" />
 
       <meta property="og:type" content="profile" key="type" />
       <meta property="og:profile:first_name" content="Igor" />
@@ -19,7 +21,7 @@ export default function About() {
       <div className="row mb-3">
         <div className="col-6 col-lg-5 d-flex flex-column justify-content-center">
           <img
-            src="/images/me_hero.jpg"
+            src="/images/me-sailing.jpg"
             alt="Igor Serebryany"
             className="rounded"
             style={{

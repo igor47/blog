@@ -2,8 +2,19 @@ import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import matter from 'gray-matter';
 
+import rehypeRaw from 'rehype-raw'
+import rehypePrism from '@mapbox/rehype-prism'
+import rehypeFormat from 'rehype-format'
+import rehypeSlug from 'rehype-slug'
+import rehypeStringify from 'rehype-stringify'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import {unified} from 'unified'
+
+import { bootstrapize } from './bootstrap'
+
 const POSTS_DIR = join(process.cwd(), 'posts')
-type Post = {
+export type Post = {
   id: string,
   fullPath: string,
   date: Date,
@@ -13,9 +24,10 @@ type Post = {
   draft: boolean,
   description: string | null,
   image: string | null,
+  isNowPage: boolean,
 }
 
-function getPosts(postsDir = POSTS_DIR) {
+export function getPosts(postsDir = POSTS_DIR) {
   // Get file names under /posts
   const fileNames = readdirSync(postsDir);
   const posts: Array<Post> = []
@@ -64,16 +76,25 @@ function getPosts(postsDir = POSTS_DIR) {
       image: matterResult.data.image || null,
       content: matterResult.content,
       draft: matterResult.data.draft || false,
+      isNowPage: !!matterResult.data.isNowPage,
     });
   }
 
   return posts.sort((a, b) => b.date.valueOf() - a.date.valueOf());
 }
 
-export {
-  getPosts,
-}
+export async function makePostBody(post: Post) {
+  return unified()
+    .use(remarkParse)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    // raw html support
+    .use(rehypeRaw)
+    // @ts-expect-error -- this has some kind of typing issue
+    .use(rehypePrism, { ignoreMissing: true })
+    .use(rehypeFormat)
+    .use(rehypeSlug)
+    .use(bootstrapize)
+    .use(rehypeStringify)
+    .process(post.content)
 
-export type {
-  Post,
 }

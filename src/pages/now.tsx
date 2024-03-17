@@ -1,17 +1,12 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
+import { getPosts, makePostBody } from '@/lib/posts'
+import type { Post } from '@/lib/posts'
 import dayjs from 'dayjs'
 
-import { getPosts, makePostBody } from '../../lib/posts'
-import type { Post } from '../../lib/posts'
-
-export default function Post({ post, body }: { post: Post, body: string }) {
-  const title = `Igor47 - ${ post.title }`
+export default function Now({ post, body }: { post: Post, body: string }) {
   const date = dayjs(post.date)
-
-  const description = post.description ?
-    <meta name="description" content={ post.description } key="description" /> : null
-
   let titleClass = 'mb-3'
   let titleImage = null
   let ogImage = null
@@ -36,17 +31,11 @@ export default function Post({ post, body }: { post: Post, body: string }) {
 
   return (<>
     <Head>
-      <title>{title}</title>
-      <meta property="og:title" content={ post.title } key="title" />
+      <title>Igor47 - Now</title>
 
-      <meta property="og:site_name" content="Igor's Writing" key="site_name" />
-
-      <meta property="og:type" content="article" key="type" />
-      <meta property="og:article:published_time" content={date.toISOString()} key="published_time" />
-      { description }
-      { ogImage }
-
-      { post.draft ? <meta name="robots" content="noindex" key="robots" /> : null }
+      <meta property="og:title" content="Igor's Now Page" key="title" />
+      <meta name="description" content="Igor Serebryany -- Now" key="description" />
+      <meta property="og:url" content="https://igor.moomers.org/now" key="url" />
     </Head>
 
     <main>
@@ -70,29 +59,19 @@ export default function Post({ post, body }: { post: Post, body: string }) {
   </>)
 }
 
-export async function getStaticPaths() {
+export async function getStaticProps() {
   const posts = getPosts()
+  const nows = posts.filter(post => post.isNowPage)
 
-  return {
-    paths: posts.map(post => ({
-      params: {
-        slug: post.slug,
-      },
-    })),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }: { params: { slug: string } }) {
-  const posts = getPosts()
-  const post = posts.find(p => p.slug === params.slug)!
-  const body = await makePostBody(post)
+  nows.sort((a, b) => a.date.getTime() - b.date.getTime())
+  const now = nows[0]
+  const body = await makePostBody(now)
 
   return {
     props: {
       post: {
-        ...post,
-        date: post.date.toISOString(),
+        ...now,
+        date: now.date.toISOString(),
       },
       body: body.toString(),
     }

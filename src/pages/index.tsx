@@ -16,6 +16,7 @@ export default function Home({ posts }: { posts: Array<Post> }) {
   return (<>
     <Head>
       <title>Igor47 - Home</title>
+      <meta property="og:url" content="https://igor.moomers.org/" key="url" />
     </Head>
 
     <main>
@@ -60,17 +61,31 @@ export default function Home({ posts }: { posts: Array<Post> }) {
 }
 
 export async function getStaticProps() {
-  const posts = getPosts()
+  let posts = getPosts()
 
   // generate rss feeds
   generateFeed(posts)
 
+  // treat the latest now page specially
+  const nows = posts.filter(post => post.isNowPage)
+  nows.sort((a, b) => a.date.getTime() - b.date.getTime())
+  const now = nows[0]
+
+  // exclude now page
+  posts = posts.filter(post => post.slug !== now.slug)
+
+  // potentially exclude drafts
+  if (process.env.NODE_ENV !== 'development') {
+    posts = posts.filter(post => !post.draft)
+  }
+
   return {
     props: {
-      posts: posts.filter(post => process.env.NODE_ENV === 'development' || !post.draft).map(post => ({
+      posts: posts.map(post => ({
         ...post,
         date: post.date.toISOString(),
-      }))
+      })),
+      now: now.slug,
     }
   }
 }
