@@ -52,7 +52,7 @@ function NavLinks() {
     {"link-secondary": curPath !== path }, { "link-dark": curPath === path });
 
   return (
-    <div id="Nav" className="d-flex flex-column ps-2 ps-md-0 py-md-2">
+    <div id="Nav" className="d-flex flex-column">
       <Link href="/" className={ linkClsx("/") }>
         <House size="30" className="my-0 mx-2" />
         <span className="align-baseline">Home</span>
@@ -90,7 +90,7 @@ function Nav() {
         <Socials />
       </div>
 
-      <div className="d-flex align-items-center justify-content-center ps-2 ps-md-0 py-md-2">
+      <div className="d-flex flex-grow-1 align-items-center justify-content-center mt-md-2">
         <NavLinks />
       </div>
     </div>
@@ -153,6 +153,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         <div className="row pt-2">
           <div className="col-12 col-md-3">
             <Nav />
+          </div>
+
+          <div className="col-12 mt-2 d-md-none border-bottom">
           </div>
 
           <div

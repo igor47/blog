@@ -20,21 +20,32 @@ export default function Home({ posts }: { posts: Array<Post> }) {
     </Head>
 
     <main>
-      <h3>
-        All Posts -
+      <div className="d-flex flex-row">
+        <h3 className="align-self-end me-auto">
+          All Posts
+        </h3>
 
-        <a href="/feed.atom" target="_blank">
-          <Image src={atom} alt="Atom feed" width={18} height={18} className="link-secondary mx-2" />
-        </a>
+        <small className="d-flex flex-row align-items-center">
+          <div>
+            Feeds:
+          </div>
 
-        <a href="/feed.json" target="_blank">
-          <Image src={json} alt="JSON feed" width={18} height={18} className="link-secondary mx-2" />
-        </a>
+          <a href="/feed.atom" target="_blank" className="d-flex flex-column ms-2 link-secondary align-items-center">
+            <Image src={atom} alt="Atom feed" width={18} height={18} />
+            Atom
+          </a>
 
-        <a href="/feed.xml" target="_blank">
-          <Image src={rss} alt="RSS feed" width={18} height={18} className="link-secondary mx-2" />
-        </a>
-      </h3>
+          <a href="/feed.json" target="_blank" className="d-flex flex-column ms-2 link-secondary align-items-center">
+            <Image src={json} alt="JSON feed" width={18} height={18} />
+            JSON
+          </a>
+
+          <a href="/feed.xml" target="_blank" className="d-flex flex-column ms-2 link-secondary align-items-center">
+            <Image src={rss} alt="RSS feed" width={18} height={18} />
+            RSS2
+          </a>
+        </small>
+      </div>
 
       <div className="pt-3">
 
