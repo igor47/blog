@@ -15,8 +15,8 @@ Thanks as always, Raph!
 ### Work ###
 
 Direct emissions from just residential buildings are [almost 6% of all CO2 emissions](hhttps://www.iea.org/data-and-statistics/charts/global-co2-emissions-from-buildings-including-embodied-emissions-from-new-construction-2022) -- that's 2x the emissions from aviation.
-Indirect emissions -- that is, energy use in residential buildings -- are another 11% of **all** emissions.
-The solution to these issues is to electrify buildings, starting with homes.
+Indirect emissions -- that is, emissions due to energy use in residential buildings -- are another **11% of all** emissions.
+To reduce building emissions, we have to electrify buildings and then/simultaneously de-carbonize the grid.
 The [IRA](https://home.treasury.gov/policy-issues/inflation-reduction-act) has a number of provisions to accelerate building electrification.
 For instance, sections [25C and 25D](https://assets.ctfassets.net/v4qx5q5o44nj/3FYfJiYMILiXGFghFEUx0D/279f180456183d560d9c68d4de8baa67/factsheet_25C_25D.pdf) provide generous tax credits for moving to heat pump or geothermal home heating.
 
