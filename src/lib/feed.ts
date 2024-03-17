@@ -34,7 +34,8 @@ function generateFeed(posts: Post[]) {
       link: `https://igor.moomers.org/posts/${post.slug}`,
       description: post.description ?? undefined,
       date: post.date,
-      //image: post.image ?? undefined,
+      image: post.image ?? undefined,
+      content: post.content,
     });
   });
 
