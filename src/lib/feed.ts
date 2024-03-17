@@ -25,16 +25,18 @@ function generateFeed(posts: Post[]) {
     }
   });
 
+  const base = "https://igor.moomers.org/"
+
   posts.forEach(post => {
     if (post.draft) return;
 
     feed.addItem({
       title: post.title,
-      id: `https://igor.moomers.org/posts/${post.slug}`,
-      link: `https://igor.moomers.org/posts/${post.slug}`,
+      id: (new URL(`/posts/${post.slug}`, base)).toString(),
+      link: (new URL(`/posts/${post.slug}`, base)).toString(),
       description: post.description ?? undefined,
       date: post.date,
-      image: post.image ?? undefined,
+      image: post.image && (new URL(post.image, base)).toString() || undefined,
       content: post.content,
     });
   });
