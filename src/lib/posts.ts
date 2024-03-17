@@ -21,7 +21,7 @@ function getPosts(postsDir = POSTS_DIR) {
   const posts: Array<Post> = []
 
   for (const fileName of fileNames) {
-    let skipReasons: String[] = [];
+    const skipReasons: string[] = [];
 
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '');

@@ -7,7 +7,7 @@ export default function About() {
       <title>Igor47 - About</title>
 
       <meta property="og:title" content="Igor Serebryany" key="title" />
-      <meta name="description" content="Igor Serebryany -- the man, the legend" key="description" />
+      <meta name="description" content="About Me, Igor Serebryany" key="description" />
 
       <meta property="og:type" content="profile" key="type" />
       <meta property="og:profile:first_name" content="Igor" />

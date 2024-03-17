@@ -101,7 +101,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
     .use(remarkRehype, { allowDangerousHtml: true })
     // raw html support
     .use(rehypeRaw)
-    // @ts-ignore -- this has some kind of typing issue
+    // @ts-expect-error -- this has some kind of typing issue
     .use(rehypePrism, { ignoreMissing: true })
     .use(rehypeFormat)
     .use(rehypeSlug)
