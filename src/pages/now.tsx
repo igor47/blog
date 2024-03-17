@@ -1,12 +1,9 @@
 import Head from 'next/head'
-import Link from 'next/link'
 
 import { getPosts, makePostBody } from '@/lib/posts'
 import type { Post } from '@/lib/posts'
-import dayjs from 'dayjs'
 
 export default function Now({ post, body }: { post: Post, body: string }) {
-  const date = dayjs(post.date)
   let titleClass = 'mb-3'
   let titleImage = null
   let ogImage = null
@@ -36,6 +33,7 @@ export default function Now({ post, body }: { post: Post, body: string }) {
       <meta property="og:title" content="Igor's Now Page" key="title" />
       <meta name="description" content="Igor Serebryany -- Now" key="description" />
       <meta property="og:url" content="https://igor.moomers.org/now" key="url" />
+      { ogImage }
     </Head>
 
     <main>
