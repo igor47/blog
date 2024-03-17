@@ -49,21 +49,33 @@ export default function Now({ post, body }: { post: Post, body: string }) {
               {post.draft ? 'draft' : null}
             </sup>
           </h3>
-          <small>{date.format('MMM YYYY')}</small>
         </div>
       </div>
 
       <div className="pt-3" dangerouslySetInnerHTML={{ __html: body }}>
       </div>
+
+      <small>
+        See more now pages <a href="https://nownownow.com/">
+          here
+        </a> or <a href="https://nownownow.com/about">
+          learn more
+        </a> .
+      </small>
     </main>
   </>)
 }
 
 export async function getStaticProps() {
   const posts = getPosts()
-  const nows = posts.filter(post => post.isNowPage)
-
+  let nows = posts.filter(post => post.isNowPage)
   nows.sort((a, b) => a.date.getTime() - b.date.getTime())
+
+  // potentially exclude drafts
+  if (process.env.NODE_ENV !== 'development') {
+    nows = nows.filter(post => !post.draft)
+  }
+
   const now = nows[0]
   const body = await makePostBody(now)
 

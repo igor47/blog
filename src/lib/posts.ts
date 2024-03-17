@@ -96,5 +96,4 @@ export async function makePostBody(post: Post) {
     .use(bootstrapize)
     .use(rehypeStringify)
     .process(post.content)
-
 }
