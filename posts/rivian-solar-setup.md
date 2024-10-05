@@ -23,20 +23,23 @@ Read on to learn about the process and all the choices and pieces that went into
 ## Panel Mounting
 
 The Rivian R1S has a glass roof, and is thus a greenhouse.
-As an experiment, parked in a sunny spot in my driveway and ran the AC on max.
+As an experiment, I parked in a sunny spot in my driveway and ran the AC on max.
 The car remained somewhere north of 85, and the AC was clearly struggling.
 
 It made sense to use the solar panels to shade the car, which then further implies just mounting the panels on the roof.
 Solar panel mounting is somewhat of a black art, so far as my internet research went.
-I eventually discovered unistrut, which is available [at my local home depot](https://www.homedepot.com/p/Superstrut-10-ft-12-Gauge-Half-Slotted-Metal-Framing-Strut-Channel-in-Gold-Galvanized-ZA1200HS-10/100125003).
+I eventually discovered unistrut, which is available [at my local Home Depot](https://www.homedepot.com/p/Superstrut-10-ft-12-Gauge-Half-Slotted-Metal-Framing-Strut-Channel-in-Gold-Galvanized-ZA1200HS-10/100125003).
 I could mount it to my cargo cross-bars using [t-channel bolts](https://www.rivianforums.com/forum/threads/crossbar-track-bolts-my-findings-what-are-you-using.14193/).
 It comes in 10' lengths, and I needed somewhat more, but it was easy to get the necessary hardware to join a 2' length to the 10' length.
 
-All the hardware for this at home depot was 3/8", including these [square washers](https://www.homedepot.com/p/Superstrut-3-8-in-Square-Strut-Washer-Silver-Galvanized-5-Pack-ZAB2413-8EG-10/100390468) which I could use to hold the panels to the strut where two panels abutted.
-However, I could not use the square washers to hold the end of the panel -- I needed solar-panel specific [end-clamps](https://amzn.to/4dshqy7).
-As solar panels are all made in China, all the hardware is metric -- those end clamps use 8mm bolts.
-To make life "simpler" for myself, I wanted to minimize the variety of fasteners, but try as I might I could not find imperial size end clamps.
-I ended up using the metric ones, but I drilled the holes out for a 3/8" bolt and used a dremel to grind away some of the metal around the hole so I could get a hex-head bolt to rotate in the tight space.
+All the hardware for this at Home Depot was 3/8", including these [square washers](https://www.homedepot.com/p/Superstrut-3-8-in-Square-Strut-Washer-Silver-Galvanized-5-Pack-ZAB2413-8EG-10/100390468) which I could use to hold the panels to the strut where two panels abutted.
+However, I could not use the square washers to hold the end of the panel -- they slipped off when not supported on both sides.
+I needed solar-panel specific [end-clamps](https://amzn.to/4dshqy7).
+
+As solar panels are all made in China, most solar hardware is metric, and I could only find those clamps with 8mm bolts.
+To make life "simpler" for myself, I wanted to minimize the variety of fasteners.
+I "imperialized" the metric hardware by drilled out the holes out for a 3/8" bolt.
+I also had to use a dremel to grind away some of the metal around the hole, so I could get a hex-head bolt to rotate in the tight space.
 
 The end result looks like this:
 ![car with panels mounted, in my driveway](/images/bmsolar/car-with-panels.jpg)
@@ -55,9 +58,9 @@ Alas, panels seem to come in generally squarish dimensions.
 I ended up with a piece of aluminet hanging off the unistrut for side-shade.
 
 I also wish I could have had thinner, lighter, more flexible panels.
-The glass panels with aluminum mounting borders are most common for industrial installations, and so are cheapest.
-The flexible panel market is more for hobbyists, and those panels tend to be higher cost per watt, lower watts per m^2^, and less readily available for purchase.
-I'm also pretty nervous about the glass -- besides the weight, I really don't want it to shatter in the back of an open trailer.
+Besides trying to save space and weight, I'm also pretty nervous about breaking those big sheets of glass.
+However, the glass panels with aluminum mounting borders are most common for industrial installations, and so are cheapest.
+The flexible panel market is more for hobbyists, and those panels tend to be higher cost per watt, lower watts per m<sup>2</sup>, and less readily available for purchase.
 
 ## Calculating Power Needs
 
