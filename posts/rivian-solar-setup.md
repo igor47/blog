@@ -1,5 +1,5 @@
 ---
-title: "A Solar-Powered EV at Burning Man 2024"
+title: "A Solar-powered EV at Burning Man 2024"
 date: 2024-09-28
 slug: solar-ev-at-burning-man-2024
 description: |
@@ -7,7 +7,7 @@ description: |
 image: /images/bmsolar/back-of-system-burn.png
 ---
 
-# My Projects: Burning Man 2024 Solar EV
+# A Solar-powered EV at Burning Man 2024
 
 For burning man 2024, I had two goals which sadly remain kind of unusual in 2024:
 * Drive my EV there
