@@ -1,5 +1,5 @@
 ---
-title: "My Projects: Solar Burning Man"
+title: "A Solar-Powered EV at Burning Man 2024"
 date: 2024-09-28
 slug: solar-ev-at-burning-man-2024
 description: |
