@@ -2,18 +2,23 @@ import Head from 'next/head'
 
 import Shutbox from '@/components/Shutbox'
 
+import DiceImg from '@/../public/images/dice.png'
+
 export default function ShutboxPage() {
-    return (<>
-      <Head>
-        <title>Shutbox</title>
+  const diceUrl = (new URL(DiceImg.src, "https://igor.moomers.org")).toString();
 
-        <meta property="og:title" content="Shutbox" key="title" />
-        <meta name="description" content="Shutbox -- a very simple game." key="description" />
-        <meta property="og:url" content="https://igor.moomers.org/toys/shutbox" key="url" />
-      </Head>
+  return (<>
+    <Head>
+      <title>Shutbox</title>
 
-      <main>
-        <Shutbox />
-      </main>
-    </>);
+      <meta property="og:title" content="Shutbox" key="title" />
+      <meta name="description" content="Shutbox -- a very simple game." key="description" />
+      <meta property="og:url" content="https://igor.moomers.org/toys/shutbox" key="url" />
+      <meta property="og:image" content={diceUrl} key="image" />
+    </Head>
+
+    <main>
+      <Shutbox />
+    </main>
+  </>);
 }
