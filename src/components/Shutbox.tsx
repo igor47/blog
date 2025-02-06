@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   Square,
   XSquareFill,
@@ -75,7 +75,12 @@ function Tile({ value, closed, selectable, selected, onClick }: TileProps) {
 
   const iconNode = <Component width="100%" height="auto" className={classes} />;
   if (selectable) {
-    return <button className="border-0 bg-transparent p-0" onClick={onClick}>{iconNode}</button>;
+    return <button className="border-0 bg-transparent p-0 position-relative" onClick={onClick}>
+      {iconNode}
+      <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        {value}
+      </span>
+    </button>;
   } else {
     return iconNode;
   }
@@ -111,6 +116,13 @@ function Die({ value }: { value: number | null }) {
   )
 }
 
+const enum Action {
+  Roll = 'Roll the dice!',
+  Pick = 'Pick tiles!',
+  Close = 'Close tiles',
+  Restart = 'New Game',
+}
+
 export default function Shutbox() {
   const tiles = useMemo(() => [1, 2, 3, 4, 5, 6, 7, 8, 9], []);
   const [closed, setClosed] = useState<number[]>([]);
@@ -122,7 +134,6 @@ export default function Shutbox() {
 
   const rolling = dice[0] === null || dice[1] === null;
   const canRoll = !rolling && !hasRolled;
-
   const canClose = (() => {
     if(!dice[0] || !dice[1]) return false;
     const sum = dice[0] + dice[1];
@@ -176,7 +187,7 @@ export default function Shutbox() {
     updateSelectable();
   }, [tiles, hasRolled, dice, closed, selected, setSelectable, setGameOver]);
 
-  function rollDice() {
+  const rollDice = useCallback(() => {
     if (!canRoll) return;
 
     setDice([null, null]);
@@ -187,35 +198,97 @@ export default function Shutbox() {
       setDice([die1, die2]);
       setHasRolled(true);
     }, 750);
-  }
+  }, [canRoll, setDice, setHasRolled]);
 
-  function toggleTile(tile: number) {
+  const toggleTile = useCallback((tile: number) => {
     if (!selectable.includes(tile)) return;
     if (selected.includes(tile)) {
       setSelected(selected.filter((t) => t !== tile));
     } else {
       setSelected([...selected, tile])
     }
-  }
+  }, [selectable, selected, setSelected]);
 
-  function closeTiles() {
+  const closeTiles = useCallback(() => {
     if (!canClose) return;
     setClosed([...closed, ...selected]);
     setSelected([]);
     setHasRolled(false);
     if(closed.length === 9) setGameOver('win');
-  }
+  }, [canClose, closed, selected, setClosed, setSelected, setHasRolled, setGameOver]);
 
-  function resetGame() {
+  const resetGame = useCallback(() => {
     setClosed([]);
     setDice([6, 6]);
     setHasRolled(false);
     setSelectable([]);
     setSelected([]);
     setGameOver(false);
+  }, [])
+
+  const handleKeyPress = useCallback((event: KeyboardEvent) => {
+    switch (event.key) {
+      case 'a':
+        if (gameOver) {
+          resetGame();
+        } else {
+          closeTiles(); rollDice();
+        }
+        return;
+      case '1':
+        toggleTile(1);
+        return;
+      case '2':
+        toggleTile(2);
+        return;
+      case '3':
+        toggleTile(3);
+        return;
+      case '4':
+        toggleTile(4);
+        return;
+      case '5':
+        toggleTile(5);
+        return;
+      case '6':
+        toggleTile(6);
+        return;
+      case '7':
+        toggleTile(7);
+        return;
+      case '8':
+        toggleTile(8);
+        return;
+      case '9':
+        toggleTile(9);
+        return;
+    }
+  }, [gameOver, resetGame, closeTiles, rollDice, toggleTile]);
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [handleKeyPress]);
+
+  let action = Action.Roll;
+  let actionMethod = rollDice;
+  if (gameOver) {
+    action = Action.Restart;
+    actionMethod = resetGame;
+  } else if (hasRolled) {
+    action = canClose ? Action.Close : Action.Pick;
+    actionMethod = canClose ? closeTiles : () => {};
   }
 
   const colStyle = clsx("col p-0 p-sm-1");
+  const actionBtnStyle = clsx(
+    "btn position-relative",
+    {"btn-primary": action === Action.Roll},
+    {"btn-secondary": action === Action.Pick},
+    {"btn-danger": action === Action.Close},
+    {"btn-success": action === Action.Restart},
+  )
+  const actionBtnDisabled = action === Action.Pick;
 
   return (<>
     <div className="row">
@@ -254,18 +327,12 @@ export default function Shutbox() {
         <Die value={dice[1]} />
       </div>
       <div className={clsx(colStyle, "col-6 d-flex align-items-center")}>
-        {!hasRolled && !gameOver &&
-          <button className="btn btn-primary" onClick={rollDice} disabled={!canRoll}>Roll the dice</button>
-        }
-        {hasRolled && !canClose && !gameOver &&
-          <button className="btn btn-secondary">Pick tiles!</button>
-        }
-        {hasRolled && canClose && !gameOver &&
-          <button className="btn btn-danger" onClick={closeTiles}>Close tiles</button>
-        }
-        {gameOver &&
-          <button className="btn btn-success" onClick={resetGame}>New Game</button>
-        }
+        <button className={actionBtnStyle} onClick={actionMethod} disabled={actionBtnDisabled}>
+          {action}
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            a
+            </span>
+        </button>
       </div>
     </div>
 
