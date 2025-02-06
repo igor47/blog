@@ -1,0 +1,21 @@
+.rolling-die {
+  animation: rollDice 0.1s infinite linear;
+}
+
+.die-1 { position: absolute; animation: showFace 0.06s infinite steps(6) 0s; }
+.die-2 { position: absolute; animation: showFace 0.06s infinite steps(6) 0.01s; }
+.die-3 { position: absolute; animation: showFace 0.06s infinite steps(6) 0.02s; }
+.die-4 { position: absolute; animation: showFace 0.06s infinite steps(6) 0.03s; }
+.die-5 { position: absolute; animation: showFace 0.06s infinite steps(6) 0.04s; }
+.die-6 { position: absolute; animation: showFace 0.06s infinite steps(6) 0.05s; }
+
+@keyframes rollDice {
+  0% { transform: rotate(0); }
+  50% { transform: rotateY(90deg); }
+}
+
+@keyframes showFace {
+  0% { opacity: 1; }
+  16.66% { opacity: 0; }
+  100% { opacity: 0; }
+}
