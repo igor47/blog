@@ -89,7 +89,6 @@ export async function makePostBody(post: Post) {
     .use(remarkRehype, { allowDangerousHtml: true })
     // raw html support
     .use(rehypeRaw)
-    // @ts-expect-error -- this has some kind of typing issue
     .use(rehypePrism, { ignoreMissing: true })
     .use(rehypeFormat)
     .use(rehypeSlug)
