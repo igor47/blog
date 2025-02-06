@@ -118,7 +118,7 @@ export default function Shutbox() {
   const [hasRolled, setHasRolled] = useState(false);
   const [selectable, setSelectable] = useState<number[]>([]);
   const [selected, setSelected] = useState<number[]>([]);
-  const [gameOver, setGameOver] = useState(false);
+  const [gameOver, setGameOver] = useState<false | 'win' | 'lose'>(false);
 
   const rolling = dice[0] === null || dice[1] === null;
   const canRoll = !rolling && !hasRolled;
@@ -170,7 +170,7 @@ export default function Shutbox() {
       }
 
       setSelectable(newSelectable);
-      if (newSelectable.length === 0) setGameOver(true);
+      if (newSelectable.length === 0) setGameOver('lose');
     }
 
     updateSelectable();
@@ -203,6 +203,7 @@ export default function Shutbox() {
     setClosed([...closed, ...selected]);
     setSelected([]);
     setHasRolled(false);
+    if(closed.length === 9) setGameOver('win');
   }
 
   function resetGame() {
@@ -272,10 +273,10 @@ export default function Shutbox() {
       {gameOver &&
         <div className="col text-center">
           Game Over!
-          {closed.length === 9 &&
+          {gameOver === 'win' &&
             <span className="text-success ps-2 fs-2">You shut the box!</span>
           }
-          {closed.length < 9 &&
+          {gameOver === 'lose' &&
             <span className="text-danger ps-2 fs-2">You lose!</span>
           }
         </div>
