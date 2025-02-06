@@ -185,7 +185,12 @@ export default function Shutbox() {
     }
 
     updateSelectable();
-  }, [tiles, hasRolled, dice, closed, selected, setSelectable, setGameOver]);
+  }, [tiles, hasRolled, dice, closed, selected]);
+
+  useEffect(() => {
+    if(tiles.every((tile) => closed.includes(tile)))
+      setGameOver('win');
+  }, [tiles, closed]);
 
   const rollDice = useCallback(() => {
     if (!canRoll) return;
@@ -198,7 +203,7 @@ export default function Shutbox() {
       setDice([die1, die2]);
       setHasRolled(true);
     }, 750);
-  }, [canRoll, setDice, setHasRolled]);
+  }, [canRoll]);
 
   const toggleTile = useCallback((tile: number) => {
     if (!selectable.includes(tile)) return;
@@ -207,15 +212,14 @@ export default function Shutbox() {
     } else {
       setSelected([...selected, tile])
     }
-  }, [selectable, selected, setSelected]);
+  }, [selectable, selected]);
 
   const closeTiles = useCallback(() => {
     if (!canClose) return;
     setClosed([...closed, ...selected]);
     setSelected([]);
     setHasRolled(false);
-    if(closed.length === 9) setGameOver('win');
-  }, [canClose, closed, selected, setClosed, setSelected, setHasRolled, setGameOver]);
+  }, [canClose, closed, selected]);
 
   const resetGame = useCallback(() => {
     setClosed([]);
@@ -329,9 +333,11 @@ export default function Shutbox() {
       <div className={clsx(colStyle, "col-6 d-flex align-items-center")}>
         <button className={actionBtnStyle} onClick={actionMethod} disabled={actionBtnDisabled}>
           {action}
+          {actionBtnDisabled ||
             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             a
             </span>
+          }
         </button>
       </div>
     </div>
