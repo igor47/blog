@@ -8,6 +8,12 @@ image: /images/rr-jira-pica.png
 isNowPage: true
 ---
 
+**Note**: This is an old NowNowNow post!
+The next post after this one [is here](/posts/now-feb-2025).
+The most recent post [is here](/now).
+
+---
+
 I'm finally getting around to making a [now page](https://nownownow.com/about).
 I've been meaning to do this for a while, ever since I heard about `now` pages from [Raph Lee](https://www.linkedin.com/in/raphaeltlee/).
 Thanks as always, Raph!
