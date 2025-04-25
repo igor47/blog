@@ -1,4 +1,4 @@
-FROM node:18-alpine AS base
+FROM node:22.14-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -7,7 +7,7 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY .yarn ./.yarn
 COPY package.json yarn.lock .yarnrc.yml ./
-RUN yarn --frozen-lockfile
+RUN yarn --immutable
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -29,7 +29,7 @@ RUN yarn build
 FROM base AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
@@ -47,6 +47,6 @@ USER nextjs
 
 EXPOSE 3000
 
-ENV PORT 3000
+ENV PORT=3000
 
 CMD ["node", "server.js"]
