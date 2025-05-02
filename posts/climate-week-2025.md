@@ -8,7 +8,12 @@ image: /images/green-vs-dystopia.png
 draft: true
 ---
 
-I went to two events at SF Climate week this year, both hosted by [Giving Green](https://www.givinggreen.earth/).
+If you care about climate change, this is a critical moment.
+[2024 was the warmest year on record](https://www.nasa.gov/news-release/temperatures-rising-nasa-confirms-2024-warmest-year-on-record/), and we're continuing to hit [devastating](https://www.bbc.com/news/articles/cd9qy4knd8wo) [climate](https://content-drupal.climate.gov/news-features/event-tracker/hurricane-helenes-extreme-rainfall-and-catastrophic-inland-flooding) [disasters](https://www.theguardian.com/environment/2024/sep/27/heat-wave-death-record-southwest).
+Meanwhile, we are facing [the most climate-hostile administration](https://www.theguardian.com/environment/2025/may/01/trump-air-climate-pollution-regulation-100-days), even while international corporations [retreat](https://apnews.com/article/bp-oil-green-reset-1b9cfca4c2da138f83ace86b5945e053) from their [climate pledges](https://www.spglobal.com/market-intelligence/en/news-insights/articles/2025/1/with-jpmorgan-gone-all-major-us-banks-have-now-left-global-climate-alliance-85961423).
+
+What's a climate-concerned citizen to do in this time?
+To find out, I went to two events at SF Climate week this year, both hosted by [Giving Green](https://www.givinggreen.earth/).
 The first was a private panel specifically focused on philanthropy in the age of Trump.
 The panelists included representatives from [outlier projects](https://www.outlierprojects.org/), [1.5Climate](https://onepointfiveclimate.org/), and [Skyline Foundation](https://skylinefoundation.org/).
 Though the event was ostensibly a panel, it really took the form more of a general conversation, with folks throwing ideas back and forth around the room.
@@ -87,7 +92,7 @@ He mentioned a useful heuristic of "do they want to get off the phone with me to
 
 ## Impact Investing
 
-The final event of the day was a discussion between [Breene Murphy](https://www.linkedin.com/in/breene-murphy-climate-friendly-401k/) and (Dan Chu)[https://www.linkedin.com/in/dan-chu-scf/].
+The final event of the day was a discussion between [Breene Murphy](https://www.linkedin.com/in/breene-murphy-climate-friendly-401k/) and [Dan Chu](https://www.linkedin.com/in/dan-chu-scf/).
 This was probably the most informative and action-oriented event of the day.
 
 For most of us, our savings and assets are invested for the purposes of maximizing financial return, agnostic of how that's accomplished.
@@ -146,10 +151,21 @@ Other sources agree:
   <footer>— <cite><a href="https://ieefa.org/resources/ieefa-update-blackrock-investors-sustainable-portfolios-provide-stronger-risk-adjusted">Larry Fink, BlackRock</a></cite></footer>
 </blockquote>
 
-Either way, I found this presentation to be incredibly action-oriented.
-Some steps I would like to take next:
+I lean more on Larry Fink than Dan Chus side here.
+I think climate investing has the potential to both make a difference, while providing *better* returns.
+I'm down to put some money behind this conviction, and would like to encourage my friends and family to do the same.
+
+## Summing Up
+
+In an unprecedented dark moment for climate change, I found my day at SF Climate week inspiring and full of actionable insights.
+An important next step for me is to continue to participate in this community.
+This also feels like a good moment to step up my climate philanthropy, and encourage my fellow philanthropists to do the same.
+We can't close the gaps left by the retreat of federal funding, but we should strive to preserve what we can.
+
+Additionally, I have a ton of next steps on the impact investing front:
 
 * Look into shareholder activism using iconik
 * Look into shifting my assets, perhaps using something like [Values Advisor](https://valuesadvisor.org/)
-* Continue doing more early-stage climate investing (If you're looking for angel investors in your climate tech company -- get in touch!)
-* Discuss impact investing with my community
+* Continue doing more early-stage climate investing
+
+If you're looking for angel investors in your climate tech company -- get in touch!
