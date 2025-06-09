@@ -5,10 +5,9 @@ slug: climate-week-2025
 description: |
   My takeaways from the (few) events I attended at SF Climate Week 2025.
 image: /images/green-vs-dystopia.png
-draft: true
 ---
 
-If you care about climate change, this is a critical moment.
+We're in a critical moment for the climate.
 [2024 was the warmest year on record](https://www.nasa.gov/news-release/temperatures-rising-nasa-confirms-2024-warmest-year-on-record/), and we're continuing to hit [devastating](https://www.bbc.com/news/articles/cd9qy4knd8wo) [climate](https://content-drupal.climate.gov/news-features/event-tracker/hurricane-helenes-extreme-rainfall-and-catastrophic-inland-flooding) [disasters](https://www.theguardian.com/environment/2024/sep/27/heat-wave-death-record-southwest).
 Meanwhile, we are facing [the most climate-hostile administration](https://www.theguardian.com/environment/2025/may/01/trump-air-climate-pollution-regulation-100-days), even while international corporations [retreat](https://apnews.com/article/bp-oil-green-reset-1b9cfca4c2da138f83ace86b5945e053) from their [climate pledges](https://www.spglobal.com/market-intelligence/en/news-insights/articles/2025/1/with-jpmorgan-gone-all-major-us-banks-have-now-left-global-climate-alliance-85961423).
 
@@ -35,7 +34,7 @@ Their response to Trump was to take a basically defensive posture focused on adv
 The response in the room, and on the panel, was more varied.
 Some ideas I heard:
 
-* There is a lot of opportunity for what [Aimee](https://www.linkedin.com/in/aimee-gotway-bailey/) calls "revenge policymaking" in the states.
+* There is a lot of opportunity for what my colleague [Aimee](https://www.linkedin.com/in/aimee-gotway-bailey/) calls "revenge policymaking" in the states.
   California recently became the 4th largest economy in the world, eclipsing Japan, and there's certainly a lot of appetite here and in other blue states (NY, Washington) to continue making climate progress.
   This thread aligns well with movements like Abundance ([substack](https://substack.com/@modernpower), [book](https://bookshop.org/p/books/abundance-what-progress-takes-derek-thompson/20165403)), which are also oriented around building effective governance.
   I broadly agree that Dems have a brand problem in state and local governments, a (not-unwarranted) perception of dysfunction that doesn't do us any favors when running for national office.
@@ -43,21 +42,23 @@ Some ideas I heard:
 
 * At the same time, it took a lot of effort to get the IRA and IIJA passed federally, and it was not possible without a lot of infrastructure in DC.
   To retreat from federal policy would cause that infrastructure to wither -- that is, to wither **more** given the attrition that's already happening in DC as a result of DOGE and other efforts.
-  People were particularly concerned about NOAA and the Loan Programs Office at the DoE. Nobody thinks philanthropy can fully back-stop the massive federal spending cuts, but we can at least reduce the damage.
+  People were particularly concerned about NOAA and the Loan Programs Office at the DoE.
+  Nobody thinks philanthropy can fully back-stop the massive federal spending cuts, but we can at least reduce the damage.
 
 * There is clear and growing need for adaptation on top of mitigation.
   Outlier Projects in particular is focused on getting past the "moral hazard"/"you're giving in" reactions to approaches like [SRM](https://en.wikipedia.org/wiki/Solar_radiation_modification).
   This is also a place where climate tech and philanthropy approaches more traditional community building.
   In a time of overshoot and climate disruption, community resilience might be more important than CDR.
-  My experience at Recoolit has me feeling skeptical that there's anyone out there willing to pay for the latter.
+  My experience at [Recoolit](https://www.recoolit.com/) has me feeling skeptical that there's anyone out there willing to pay for the latter.
 
 * The US is just one emitter, and there's a whole world out there.
-  Certainly, my experience with the [Founders Pledge Climate Fund](https://www.founderspledge.com/funds/climate-fund/about) shows that they're laser-focused on growing emissions in the developing world.
+  Another group I'm involved with, the [Founders Pledge Climate Fund](https://www.founderspledge.com/funds/climate-fund/about), has also been very focused on growing emissions in the developing world.
   Opinions in the room mostly leaned towards "We are American philanthropists, familiar with the US space and most interested in making a difference in the US".
   One bogeyman was a rumored upcoming executive order that would prohibit 501(c)(3) investments outside the US, though folks were both prepared for legal action in response, and convinced that there would continue to be *some* way to fund work outside the country.
-  Another concern, which I personally reacted viscerally to, was something along the lines of "should we be telling people in other countries what to do".
-  Personally, I'm extremely over the power aversion on the left, which I believe got us into this mess in the first place.
-  IMHO, if you believe in something, you should both advocate for it and build and exercise power to achieve it.
+  Another concern was something along the lines of "should we be telling people in other countries what to do".
+  I strongly disagree with this objection, and strongly feel that we on the left should have a much stronger focus on building and wielding political power.
+  There's a large space between wielding power coercively and being a strong advocate for things we believe in.
+  Our aversion to power has ceded the field to folks who are much less scrupulous about things.
 
 * Besides being defensive/reactive, a lot of folks in the room discussed going on the offense.
   For instance, folks brought up coming up with our own version of Project 2025, so that we're ready with a comprehensive agenda when the moment times.
@@ -88,7 +89,7 @@ Aleman mentioned [Deploy/US](https://www.deployus.org/) as the organization they
 I was curious to hear how both panelists thought about the effectiveness of their philanthropy.
 For metrics and data oriented people, it can be difficult to think through contributions whose effects might not be evident for decades.
 Newman mentioned that he generally attempts to establish his grantees are experts, and then defers to their expertise.
-He mentioned a useful heuristic of "do they want to get off the phone with me to get back to work", vs "are they focused on developing relationships with donors like me".
+He mentioned a useful heuristic of "do they want to get off the phone with me to get back to work", vs "are they more focused on developing relationships with donors like me".
 
 ## Impact Investing
 
