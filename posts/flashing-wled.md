@@ -77,7 +77,8 @@ However, for ESP32C3, there are at least 3 additional files necessary:
 * partitions -- a map of the flash space, read by the bootloader to understand how to run the main code
 * boot_app0 -- used by the OTA update process to understand which version of the app to run, kinda like the slots in an Android filesystem
 
-Parsing through `build.py` and the relevant `_template.json` file for my ESP32C3 microcontroller, I figured out the correct files and flash offset locations for each one.
+All of these files are available in the web installer's repo.
+My job was to parse through `build.py` and the relevant `_template.json` file for my ESP32C3 microcontroller to figure out the correct files and flash offset locations.
 This resulted in the following incantation to get WLED running on the controller:
 
 ```console
