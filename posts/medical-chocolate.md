@@ -59,6 +59,7 @@ Thankfully the tinctures were *very* well-labeled.
 To figure out how much of each tincture to use, it is necessary to solve a system of two linear equations, one for the total THC and one for the total CBD.
 Rather than walk through the math, here's a calculator:
 
+<!-- FEED: (Interactive calculator available at https://igor.moomers.org/posts/medical-chocolate) -->
 <!-- CHOCOLATE_CALCULATOR -->
 
 This works out to 2.44ml of oil added to 65 grams of chocolate.

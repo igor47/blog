@@ -3,6 +3,11 @@ import { Feed } from 'feed'
 
 import type { Post } from './posts'
 
+// Process content for feed: convert <!-- FEED: message --> comments to visible text
+function processFeedContent(content: string): string {
+  return content.replace(/<!--\s*FEED:\s*(.*?)\s*-->/g, '$1')
+}
+
 function generateFeed(posts: Post[]) {
   const feed = new Feed({
     title: "Igor47's Blog",
@@ -37,7 +42,7 @@ function generateFeed(posts: Post[]) {
       description: post.description ?? undefined,
       date: post.date,
       image: post.image && (new URL(post.image, base)).toString() || undefined,
-      content: post.content,
+      content: processFeedContent(post.content),
     });
   });
 

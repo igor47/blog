@@ -7,6 +7,12 @@ The blog is a Next.js app that's primarily server-side rendered.
 The build happens in Github Actions after pushing the `main` branch.
 I then perform the deploy by pulling the latest image from Github's container registry to my server.
 
+## Development
+
+Use `yarn` for package management:
+- `yarn dev` - run development server
+- `yarn build` - build for production (also regenerates RSS feeds)
+
 ## About me
 
 There's a writeup about me in `src/pages/about.tsx` -- use that to help you understand my perspective.
