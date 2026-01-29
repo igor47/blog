@@ -4,6 +4,9 @@ import dayjs from 'dayjs'
 
 import { getPosts, makePostBody } from '../../lib/posts'
 import type { Post } from '../../lib/posts'
+import ChocolateCalculator from '../../components/ChocolateCalculator'
+
+const CHOCOLATE_CALCULATOR_MARKER = '<!-- CHOCOLATE_CALCULATOR -->';
 
 export default function Post({ post, body }: { post: Post, body: string }) {
   const title = `Igor47 - ${ post.title }`
@@ -64,7 +67,16 @@ export default function Post({ post, body }: { post: Post, body: string }) {
         </div>
       </div>
 
-      <div className="pt-3" dangerouslySetInnerHTML={{ __html: body }}>
+      <div className="pt-3">
+        {body.includes(CHOCOLATE_CALCULATOR_MARKER) ? (
+          <>
+            <div dangerouslySetInnerHTML={{ __html: body.split(CHOCOLATE_CALCULATOR_MARKER)[0] }} />
+            <ChocolateCalculator />
+            <div dangerouslySetInnerHTML={{ __html: body.split(CHOCOLATE_CALCULATOR_MARKER)[1] || '' }} />
+          </>
+        ) : (
+          <div dangerouslySetInnerHTML={{ __html: body }} />
+        )}
       </div>
     </main>
   </>)
