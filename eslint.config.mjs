@@ -1,4 +1,5 @@
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import nextTypescript from "eslint-config-next/typescript";
 import unusedImports from "eslint-plugin-unused-imports";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -13,17 +14,19 @@ const compat = new FlatCompat({
     allConfig: js.configs.all
 });
 
-export default [...compat.extends(
-    "eslint:recommended",
-    "next",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
-), {
-    plugins: {
-        "@typescript-eslint": typescriptEslint,
-        "unused-imports": unusedImports,
+export default [
+    ...nextCoreWebVitals,
+    ...nextTypescript,
+    ...compat.extends("prettier"),
+    {
+        plugins: {
+            "unused-imports": unusedImports,
+        },
+        rules: {
+            "@next/next/no-img-element": "off",
+        },
     },
-    rules: {
-        "@next/next/no-img-element": "off",
-    },
-}];
+    {
+        ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts"]
+    }
+];
