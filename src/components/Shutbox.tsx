@@ -128,12 +128,52 @@ export default function Shutbox() {
   const [closed, setClosed] = useState<number[]>([]);
   const [dice, setDice] = useState<[number | null, number | null]>([6, 6]);
   const [hasRolled, setHasRolled] = useState(false);
-  const [selectable, setSelectable] = useState<number[]>([]);
   const [selected, setSelected] = useState<number[]>([]);
-  const [gameOver, setGameOver] = useState<false | 'win' | 'lose'>(false);
 
   const rolling = dice[0] === null || dice[1] === null;
   const canRoll = !rolling && !hasRolled;
+
+  const selectable = useMemo(() => {
+    if(!hasRolled) return [];
+    if(!dice[0] || !dice[1]) return [];
+
+    const sum = dice[0] + dice[1];
+    const newSelectable = [];
+
+    const alreadySelected = selected[0] || false;
+    if (alreadySelected) {
+      newSelectable.push(alreadySelected);
+      if (sum !== alreadySelected) {
+        const compliment = sum - alreadySelected;
+        newSelectable.push(compliment);
+      }
+    } else {
+      for (const tile of tiles) {
+        if (tile > sum) break;
+        if (closed.includes(tile)) continue;
+        if (tile === sum) {
+          newSelectable.push(tile);
+          continue;
+        }
+
+        const compliment = sum - tile;
+        if (tile === compliment) continue;
+        if (!tiles.includes(compliment)) continue;
+        if (closed.includes(compliment)) continue;
+
+        newSelectable.push(tile);
+      }
+    }
+
+    return newSelectable;
+  }, [tiles, hasRolled, dice, closed, selected]);
+
+  const gameOver = useMemo(() => {
+    if (tiles.every((tile) => closed.includes(tile))) return 'win';
+    if (hasRolled && dice[0] && dice[1] && selectable.length === 0) return 'lose';
+    return false;
+  }, [tiles, closed, hasRolled, dice, selectable]);
+
   const canClose = (() => {
     if(!dice[0] || !dice[1]) return false;
     const sum = dice[0] + dice[1];
@@ -141,56 +181,6 @@ export default function Shutbox() {
     if (sum !== selectedSum) return false;
     return true;
   })();
-
-  useEffect(() => {
-    function updateSelectable() {
-      if(!hasRolled) {
-        setSelectable([]);
-        return;
-      }
-
-      if(!dice[0] || !dice[1]) return;
-      const sum = dice[0] + dice[1];
-      const newSelectable = [];
-
-      const alreadySelected = selected[0] || false;
-      if (alreadySelected) {
-        newSelectable.push(alreadySelected);
-        if (sum !== alreadySelected) {
-          const compliment = sum - alreadySelected;
-          newSelectable.push(compliment);
-        }
-      } else {
-        for (const tile of tiles) {
-          console.log("evaluating tile for sum ", tile, sum);
-          if (tile > sum) break;
-          if (closed.includes(tile)) continue;
-          if (tile === sum) {
-            newSelectable.push(tile);
-            continue;
-          }
-
-          const compliment = sum - tile;
-          console.log("compliment", compliment);
-          if (tile === compliment) continue;
-          if (!tiles.includes(compliment)) continue;
-          if (closed.includes(compliment)) continue;
-
-          newSelectable.push(tile);
-        }
-      }
-
-      setSelectable(newSelectable);
-      if (newSelectable.length === 0) setGameOver('lose');
-    }
-
-    updateSelectable();
-  }, [tiles, hasRolled, dice, closed, selected]);
-
-  useEffect(() => {
-    if(tiles.every((tile) => closed.includes(tile)))
-      setGameOver('win');
-  }, [tiles, closed]);
 
   const rollDice = useCallback(() => {
     if (!canRoll) return;
@@ -225,9 +215,7 @@ export default function Shutbox() {
     setClosed([]);
     setDice([6, 6]);
     setHasRolled(false);
-    setSelectable([]);
     setSelected([]);
-    setGameOver(false);
   }, [])
 
   const handleKeyPress = useCallback((event: KeyboardEvent) => {
