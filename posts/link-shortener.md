@@ -4,7 +4,7 @@ date: 2023-08-30
 slug: self-hosted-link-shortener
 description: |
   I wrote a self-hosted link shortener!
-image: /images/rusty-scissors.png
+image: /images/rusty-scissors.jpg
 ---
 
 I embarked on a yak shave so epic, it resulted in me writing an entire URL shortening service in rust.

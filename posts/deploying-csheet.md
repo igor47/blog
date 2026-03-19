@@ -4,7 +4,7 @@ date: 2025-11-25
 slug: deploy-options-2025
 description: |
   It's 2025, and there are a ton of options for deploying your web app. I still picked Cloud Run.
-image: /images/cloud-options.png
+image: /images/cloud-options.jpg
 draft: true
 ---
 

@@ -4,7 +4,7 @@ date: 2024-09-28
 slug: solar-ev-at-burning-man-2024
 description: |
   How to go to Burning Man in an EV, and charge it with solar while you're there!
-image: /images/bmsolar/back-of-system-burn.png
+image: /images/bmsolar/back-of-system-burn.jpg
 ---
 
 # A Solar-powered EV at Burning Man 2024
@@ -158,7 +158,7 @@ I found this incredibly satisfying, though opinions differed on whether this mad
 On the other hand, some things didn't work well, mostly having to do with the Rivian.
 First -- we pulled a pretty heavy trailer, which really affected my range.
 
-![Rivian with the trailer](/images/bmsolar/rivian-with-trailer.png)
+![Rivian with the trailer](/images/bmsolar/rivian-with-trailer.jpg)
 
 As a result, we arrived to camp with about 49% range -- clearly not enough to get back to a charger in Fernley.
 All week long, I kept trying to charge up the Rivian off solar, but all I managed to do was keep it at 47%.

@@ -4,7 +4,7 @@ date: 2025-02-17
 slug: now-feb-2025
 description: |
   Now page for Feb 2025
-image: /images/city-burns.png
+image: /images/city-burns.jpg
 isNowPage: true
 ---
 

@@ -4,7 +4,7 @@ date: 2025-04-25
 slug: climate-week-2025
 description: |
   My takeaways from the (few) events I attended at SF Climate Week 2025.
-image: /images/green-vs-dystopia.png
+image: /images/green-vs-dystopia.jpg
 ---
 
 We're in a critical moment for the climate.

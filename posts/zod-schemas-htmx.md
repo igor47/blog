@@ -4,7 +4,7 @@ date: 2025-11-14
 slug: zod-schemas-htmx
 description: |
   My experience creating a data boundary layer with Zod in Hono and HTMX.
-image: /images/abstract-data-parsing-quilt.png
+image: /images/abstract-data-parsing-quilt.jpg
 ---
 
 The last few months, I've been working on [CSheet](https://www.csheet.net), my LLM-assisted DnD-5e character sheet tracker.

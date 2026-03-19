@@ -4,7 +4,7 @@ date: 2023-09-27
 slug: why-self-host
 description: |
   I'm hosting a lot of my own infrastructure. I want to convince you to do the same.
-image: /images/cute-friendly-cloud.png
+image: /images/cute-friendly-cloud.jpg
 draft: true
 ---
 
