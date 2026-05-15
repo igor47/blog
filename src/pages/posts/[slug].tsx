@@ -5,8 +5,33 @@ import dayjs from 'dayjs'
 import { getPosts, makePostBody } from '../../lib/posts'
 import type { Post } from '../../lib/posts'
 import ChocolateCalculator from '../../components/ChocolateCalculator'
+import GistEmbed from '../../components/GistEmbed'
 
-const CHOCOLATE_CALCULATOR_MARKER = '<!-- CHOCOLATE_CALCULATOR -->';
+const MARKER_RE = /<!--\s*(CHOCOLATE_CALCULATOR|GIST_EMBED:[^>]+?)\s*-->/g;
+
+type BodySegment =
+  | { kind: 'html'; html: string }
+  | { kind: 'chocolate' }
+  | { kind: 'gist'; url: string };
+
+function parseBody(body: string): BodySegment[] {
+  const segments: BodySegment[] = [];
+  let lastIndex = 0;
+  for (const match of Array.from(body.matchAll(MARKER_RE))) {
+    const before = body.slice(lastIndex, match.index);
+    if (before) segments.push({ kind: 'html', html: before });
+    const token = match[1];
+    if (token === 'CHOCOLATE_CALCULATOR') {
+      segments.push({ kind: 'chocolate' });
+    } else if (token.startsWith('GIST_EMBED:')) {
+      segments.push({ kind: 'gist', url: token.slice('GIST_EMBED:'.length) });
+    }
+    lastIndex = match.index + match[0].length;
+  }
+  const tail = body.slice(lastIndex);
+  if (tail) segments.push({ kind: 'html', html: tail });
+  return segments;
+}
 
 export default function Post({ post, body }: { post: Post, body: string }) {
   const title = `Igor47 - ${ post.title }`
@@ -68,15 +93,15 @@ export default function Post({ post, body }: { post: Post, body: string }) {
       </div>
 
       <div className="pt-3">
-        {body.includes(CHOCOLATE_CALCULATOR_MARKER) ? (
-          <>
-            <div dangerouslySetInnerHTML={{ __html: body.split(CHOCOLATE_CALCULATOR_MARKER)[0] }} />
-            <ChocolateCalculator />
-            <div dangerouslySetInnerHTML={{ __html: body.split(CHOCOLATE_CALCULATOR_MARKER)[1] || '' }} />
-          </>
-        ) : (
-          <div dangerouslySetInnerHTML={{ __html: body }} />
-        )}
+        {parseBody(body).map((segment, i) => {
+          if (segment.kind === 'html') {
+            return <div key={i} dangerouslySetInnerHTML={{ __html: segment.html }} />
+          }
+          if (segment.kind === 'chocolate') {
+            return <ChocolateCalculator key={i} />
+          }
+          return <GistEmbed key={i} url={segment.url} />
+        })}
       </div>
     </main>
   </>)
