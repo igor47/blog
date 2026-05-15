@@ -75,7 +75,7 @@ export async function getStaticProps() {
   let posts = getPosts()
 
   // generate rss feeds
-  generateFeed(posts)
+  await generateFeed(posts)
 
   // treat the latest now page specially
   const nows = posts.filter(post => post.isNowPage)

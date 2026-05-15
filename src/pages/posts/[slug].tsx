@@ -7,12 +7,13 @@ import type { Post } from '../../lib/posts'
 import ChocolateCalculator from '../../components/ChocolateCalculator'
 import GistEmbed from '../../components/GistEmbed'
 
-const MARKER_RE = /<!--\s*(CHOCOLATE_CALCULATOR|GIST_EMBED:[^>]+?)\s*-->/g;
+const MARKER_RE = /<!--\s*(CHOCOLATE_CALCULATOR|GIST_EMBED:\S+(?:\s+height=\d+)?)\s*-->/g;
+const GIST_RE = /^GIST_EMBED:(\S+?)(?:\s+height=(\d+))?$/;
 
 type BodySegment =
   | { kind: 'html'; html: string }
   | { kind: 'chocolate' }
-  | { kind: 'gist'; url: string };
+  | { kind: 'gist'; url: string; height?: number };
 
 function parseBody(body: string): BodySegment[] {
   const segments: BodySegment[] = [];
@@ -23,8 +24,15 @@ function parseBody(body: string): BodySegment[] {
     const token = match[1];
     if (token === 'CHOCOLATE_CALCULATOR') {
       segments.push({ kind: 'chocolate' });
-    } else if (token.startsWith('GIST_EMBED:')) {
-      segments.push({ kind: 'gist', url: token.slice('GIST_EMBED:'.length) });
+    } else {
+      const gistMatch = token.match(GIST_RE);
+      if (gistMatch) {
+        segments.push({
+          kind: 'gist',
+          url: gistMatch[1],
+          height: gistMatch[2] ? parseInt(gistMatch[2], 10) : undefined,
+        });
+      }
     }
     lastIndex = match.index + match[0].length;
   }
@@ -100,7 +108,7 @@ export default function Post({ post, body }: { post: Post, body: string }) {
           if (segment.kind === 'chocolate') {
             return <ChocolateCalculator key={i} />
           }
-          return <GistEmbed key={i} url={segment.url} />
+          return <GistEmbed key={i} url={segment.url} height={segment.height} />
         })}
       </div>
     </main>

@@ -31,7 +31,7 @@ An attacker who gains access to my account won't necessarily also get root on th
 Idea: what if I could grant global access only while I'm using `claude` for sudo tasks, and then automatically revoke it when I'm done?
 The end result is this script, which I keep as `claude-sudo` in my `~/bin` (which is in my `$PATH`):
 
-<!-- GIST_EMBED:https://gist.github.com/igor47/4c6b5e917fc776896afcc2b0e768ed49 -->
+<!-- GIST_EMBED:https://gist.github.com/igor47/4c6b5e917fc776896afcc2b0e768ed49 height=600 -->
 
 When I realize that a `claude` session needs `sudo` access, I'll `CTRL-D` it and then re-start with `claude-sudo --resume`.
 This puts a little indicator into my `tmux` status bar, just to help me remember to kill it when I'm done with it:

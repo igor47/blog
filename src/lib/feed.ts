@@ -2,13 +2,23 @@ import { writeFileSync } from 'node:fs'
 import { Feed } from 'feed'
 
 import type { Post } from './posts'
+import { GIST_MARKER_RE, gistContentMarkdown } from '../components/GistEmbed'
 
-// Process content for feed: convert <!-- FEED: message --> comments to visible text
-function processFeedContent(content: string): string {
-  return content.replace(/<!--\s*FEED:\s*(.*?)\s*-->/g, '$1')
+// Process content for feed: convert <!-- FEED: message --> comments to visible text,
+// and substitute <!-- GIST_EMBED:URL --> markers with the gist's current content.
+async function processFeedContent(content: string): Promise<string> {
+  let result = content.replace(/<!--\s*FEED:\s*(.*?)\s*-->/g, '$1')
+
+  const matches = Array.from(result.matchAll(GIST_MARKER_RE))
+  for (const match of matches) {
+    const replacement = await gistContentMarkdown(match[1])
+    result = result.replace(match[0], replacement)
+  }
+
+  return result
 }
 
-function generateFeed(posts: Post[]) {
+async function generateFeed(posts: Post[]) {
   const feed = new Feed({
     title: "Igor47's Blog",
     description: "The feed for Igor's personal writing",
@@ -32,8 +42,8 @@ function generateFeed(posts: Post[]) {
 
   const base = "https://igor.moomers.org/"
 
-  posts.forEach(post => {
-    if (post.draft) return;
+  for (const post of posts) {
+    if (post.draft) continue;
 
     feed.addItem({
       title: post.title,
@@ -42,9 +52,9 @@ function generateFeed(posts: Post[]) {
       description: post.description ?? undefined,
       date: post.date,
       image: post.image && (new URL(post.image, base)).toString() || undefined,
-      content: processFeedContent(post.content),
+      content: await processFeedContent(post.content),
     });
-  });
+  }
 
   feed.addCategory("Technology");
   feed.addCategory("Philosophy");
