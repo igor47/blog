@@ -50,6 +50,10 @@ const nextConfig = {
     return redirects
   },
   output: "standalone",
+  sassOptions: {
+    quietDeps: true,
+    silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'if-function'],
+  },
 }
 
 module.exports = nextConfig
