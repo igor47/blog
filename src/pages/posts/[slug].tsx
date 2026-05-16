@@ -44,9 +44,12 @@ function parseBody(body: string): BodySegment[] {
 export default function Post({ post, body }: { post: Post, body: string }) {
   const title = `Igor47 - ${ post.title }`
   const date = dayjs(post.date)
+  const canonicalUrl = `https://igor.moomers.org/posts/${post.slug}`
 
-  const description = post.description ?
-    <meta name="description" content={ post.description } key="description" /> : null
+  const descriptionMeta = post.description ? (<>
+    <meta name="description" content={ post.description } key="description" />
+    <meta property="og:description" content={ post.description } key="og_description" />
+  </>) : null
 
   let titleClass = 'mb-3'
   let titleImage = null
@@ -67,19 +70,22 @@ export default function Post({ post, body }: { post: Post, body: string }) {
         />
       </div>
     )
-    ogImage = <meta property="og:image" content={ post.image } key="image" />
+    const absoluteImage = (new URL(post.image, "https://igor.moomers.org")).toString()
+    ogImage = <meta property="og:image" content={ absoluteImage } key="image" />
   }
 
   return (<>
     <Head>
       <title>{title}</title>
+      <link rel="canonical" href={ canonicalUrl } key="canonical" />
       <meta property="og:title" content={ post.title } key="title" />
+      <meta property="og:url" content={ canonicalUrl } key="url" />
 
       <meta property="og:site_name" content="Igor's Writing" key="site_name" />
 
       <meta property="og:type" content="article" key="type" />
-      <meta property="og:article:published_time" content={date.toISOString()} key="published_time" />
-      { description }
+      <meta property="article:published_time" content={date.toISOString()} key="published_time" />
+      { descriptionMeta }
       { ogImage }
 
       { post.draft ? <meta name="robots" content="noindex" key="robots" /> : null }
