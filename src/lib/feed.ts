@@ -2,6 +2,7 @@ import { writeFileSync } from 'node:fs'
 import { Feed } from 'feed'
 
 import type { Post } from './posts'
+import { makePostBody } from './posts'
 import { GIST_MARKER_RE, gistContentMarkdown } from '../components/GistEmbed'
 
 // Process content for feed: convert <!-- FEED: message --> comments to visible text,
@@ -27,7 +28,7 @@ async function generateFeed(posts: Post[]) {
     language: "en",
     image: "https://igor.moomers.org/images/myhead.jpg",
     favicon: "https://igor.moomers.org/favicon.ico",
-    copyright: "All rights reserved 2023, Igor Serebryany",
+    copyright: `All rights reserved ${new Date().getFullYear()}, Igor Serebryany`,
     generator: "NextJs + Feed",
     feedLinks: {
       rss2: "https://igor.moomers.org/feed.xml",
@@ -52,7 +53,7 @@ async function generateFeed(posts: Post[]) {
       description: post.description ?? undefined,
       date: post.date,
       image: post.image && (new URL(post.image, base)).toString() || undefined,
-      content: await processFeedContent(post.content),
+      content: String(await makePostBody({ ...post, content: await processFeedContent(post.content) })),
     });
   }
 
