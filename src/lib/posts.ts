@@ -12,6 +12,7 @@ import remarkRehype from 'remark-rehype'
 import {unified} from 'unified'
 
 import { bootstrapize } from './bootstrap'
+import { absolutizeUrls } from './absolutize'
 
 const POSTS_DIR = join(process.cwd(), 'posts')
 export type Post = {
@@ -83,8 +84,8 @@ export function getPosts(postsDir = POSTS_DIR) {
   return posts.sort((a, b) => b.date.valueOf() - a.date.valueOf());
 }
 
-export async function makePostBody(post: Post) {
-  return unified()
+export async function makePostBody(post: Post, opts: { absolutizeBase?: string } = {}) {
+  const pipeline = unified()
     .use(remarkParse)
     .use(remarkRehype, { allowDangerousHtml: true })
     // raw html support
@@ -93,6 +94,10 @@ export async function makePostBody(post: Post) {
     .use(rehypeFormat)
     .use(rehypeSlug)
     .use(bootstrapize)
-    .use(rehypeStringify)
-    .process(post.content)
+
+  if (opts.absolutizeBase) {
+    pipeline.use(absolutizeUrls(opts.absolutizeBase))
+  }
+
+  return pipeline.use(rehypeStringify).process(post.content)
 }

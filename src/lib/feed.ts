@@ -53,7 +53,10 @@ async function generateFeed(posts: Post[]) {
       description: post.description ?? undefined,
       date: post.date,
       image: post.image && (new URL(post.image, base)).toString() || undefined,
-      content: String(await makePostBody({ ...post, content: await processFeedContent(post.content) })),
+      content: String(await makePostBody(
+        { ...post, content: await processFeedContent(post.content) },
+        { absolutizeBase: base },
+      )),
     });
   }
 
