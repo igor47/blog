@@ -6,9 +6,11 @@ import { makePostBody } from './posts'
 import { GIST_MARKER_RE, gistContentMarkdown } from '../components/GistEmbed'
 
 // Process content for feed: convert <!-- FEED: message --> comments to visible text,
-// and substitute <!-- GIST_EMBED:URL --> markers with the gist's current content.
-async function processFeedContent(content: string): Promise<string> {
-  let result = content.replace(/<!--\s*FEED:\s*(.*?)\s*-->/g, '$1')
+// substitute <!-- GIST_EMBED:URL --> markers with the gist's current content,
+// and prepend the post's header image so RSS readers (e.g. Substack) that pick
+// the cover image from the first <img> in the body show it.
+async function processFeedContent(post: Post): Promise<string> {
+  let result = post.content.replace(/<!--\s*FEED:\s*(.*?)\s*-->/g, '$1')
 
   const matches = Array.from(result.matchAll(GIST_MARKER_RE))
   for (const match of matches) {
@@ -16,7 +18,24 @@ async function processFeedContent(content: string): Promise<string> {
     result = result.replace(match[0], replacement)
   }
 
+  if (post.image) {
+    const alt = post.title.replace(/]/g, '\\]')
+    result = `![${alt}](${post.image})\n\n${result}`
+  }
+
   return result
+}
+
+// The `feed` library derives an item enclosure's MIME type from the file
+// extension, producing non-standard types like `image/jpg`. Substack and other
+// strict readers may reject those, so normalize at build time.
+const MIME_FIXES: Array<[RegExp, string]> = [
+  [/type="image\/jpg"/g, 'type="image/jpeg"'],
+  [/type="image\/svg"/g, 'type="image/svg+xml"'],
+]
+
+function fixEnclosureMimeTypes(xml: string): string {
+  return MIME_FIXES.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), xml)
 }
 
 async function generateFeed(posts: Post[]) {
@@ -54,7 +73,7 @@ async function generateFeed(posts: Post[]) {
       date: post.date,
       image: post.image && (new URL(post.image, base)).toString() || undefined,
       content: String(await makePostBody(
-        { ...post, content: await processFeedContent(post.content) },
+        { ...post, content: await processFeedContent(post) },
         { absolutizeBase: base },
       )),
     });
@@ -64,8 +83,8 @@ async function generateFeed(posts: Post[]) {
   feed.addCategory("Philosophy");
   feed.addCategory("Humanity");
 
-  writeFileSync('./public/feed.xml', feed.rss2());
-  writeFileSync('./public/feed.atom', feed.atom1());
+  writeFileSync('./public/feed.xml', fixEnclosureMimeTypes(feed.rss2()));
+  writeFileSync('./public/feed.atom', fixEnclosureMimeTypes(feed.atom1()));
   writeFileSync('./public/feed.json', feed.json1());
 }
 
