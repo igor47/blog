@@ -25,6 +25,7 @@ export type Post = {
   draft: boolean,
   description: string | null,
   image: string | null,
+  canonical: string | null,
   isNowPage: boolean,
 }
 
@@ -77,6 +78,7 @@ export function getPosts(postsDir = POSTS_DIR) {
       title: matterResult.data.title,
       description: matterResult.data.description || null,
       image: matterResult.data.image || null,
+      canonical: matterResult.data.canonical || null,
       content: matterResult.content,
       draft: matterResult.data.draft || false,
       isNowPage: !!matterResult.data.isNowPage,

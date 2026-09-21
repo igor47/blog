@@ -44,7 +44,9 @@ function parseBody(body: string): BodySegment[] {
 export default function Post({ post, body }: { post: Post, body: string }) {
   const title = `Igor47 - ${ post.title }`
   const date = dayjs(post.date)
-  const canonicalUrl = `https://igor.moomers.org/posts/${post.slug}`
+  const postUrl = `https://igor.moomers.org/posts/${post.slug}`
+  // cross-posted content points search engines at the original publication
+  const canonicalUrl = post.canonical || postUrl
 
   const descriptionMeta = post.description ? (<>
     <meta name="description" content={ post.description } key="description" />
@@ -79,7 +81,7 @@ export default function Post({ post, body }: { post: Post, body: string }) {
       <title>{title}</title>
       <link rel="canonical" href={ canonicalUrl } key="canonical" />
       <meta property="og:title" content={ post.title } key="title" />
-      <meta property="og:url" content={ canonicalUrl } key="url" />
+      <meta property="og:url" content={ postUrl } key="url" />
 
       <meta property="og:site_name" content="Igor's Writing" key="site_name" />
 
