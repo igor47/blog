@@ -1,5 +1,5 @@
 ---
-title: sudo access for claude
+title: sudo Access for claude
 date: 2026-05-15
 slug: claude-sudo
 description: |

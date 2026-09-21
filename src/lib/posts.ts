@@ -29,8 +29,10 @@ export type Post = {
 }
 
 export function getPosts(postsDir = POSTS_DIR) {
-  // Get file names under /posts
-  const fileNames = readdirSync(postsDir);
+  // Get file names under /posts, ignoring subdirectories and non-markdown files
+  const fileNames = readdirSync(postsDir, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.md'))
+    .map((entry) => entry.name);
   const posts: Array<Post> = []
 
   for (const fileName of fileNames) {
